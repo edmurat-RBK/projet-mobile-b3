@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
             direction = Vector3.zero;
         }
         //direction.x = value.Get<Vector2>().x;
-        Debug.Log(direction);
+
     }
     
     private void Update()
