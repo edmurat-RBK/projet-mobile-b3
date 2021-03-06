@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour
 {
+    public static TerrainManager TMInstance;
     public List<TerrainObject> terrainPool;
     public float terrainLenght;
     public float scrollSpeed;
@@ -17,7 +18,16 @@ public class TerrainManager : MonoBehaviour
 
     private void Awake()
     {
+        if (TMInstance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            TMInstance = this;
+        }
         terrainQueue = new Queue<GameObject>();
+        
     }
 
     private void Start()

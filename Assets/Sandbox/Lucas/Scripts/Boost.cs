@@ -15,7 +15,7 @@ public class Boost : MonoBehaviour
     public bool clickDown;
     public Vector2 firstPos;
     public Vector2 secondPos;
-    public TerrainManager terrainManager;
+    
     public void OnBoost()
     {
         Debug.Log("onboost");
@@ -47,8 +47,8 @@ public class Boost : MonoBehaviour
         {
             if (secondPos.y > firstPos.y + SwipeLength)
             {
+                TerrainManager.TMInstance.Boost(boostDuration);
                 
-                terrainManager.Boost(boostDuration);
                 ResetPos();
                 
 
