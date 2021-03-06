@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
+    
     public Text highScoreText;
     float highScore;
     int displayedScore;
@@ -20,8 +21,9 @@ public class HighScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        displayedScore = (int)highScore;
-        highScoreText.text = displayedScore.ToString();
+        displayedScore = (int)highScore; 
+
+        highScoreText.text = displayedScore.ToString(); 
 
         highScore = highScore + (TerrainManager.TMInstance.scrollSpeed / TerrainManager.TMInstance.baseScrollspeed) * Time.deltaTime * multiplier;
     }

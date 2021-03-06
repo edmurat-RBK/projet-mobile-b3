@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: HighScore
 --- !u!222 &2533122
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -449,6 +449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca16a7c104155fe4480951d836052c9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  highScoreText: {fileID: 2533121}
+  multiplier: 0
 --- !u!1 &1814354905
 GameObject:
   m_ObjectHideFlags: 0
