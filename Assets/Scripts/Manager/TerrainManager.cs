@@ -11,7 +11,8 @@ public class TerrainManager : MonoBehaviour
     public float terrainLenght;
     public float scrollSpeed;
     public float boostSpeed;
-    float baseScrollspeed;
+    [HideInInspector]
+    public float baseScrollspeed;
     public int terrainCount;
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
