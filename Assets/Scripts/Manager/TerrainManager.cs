@@ -64,7 +64,7 @@ public class TerrainManager : MonoBehaviour
 
     private void AddTerrain(Vector3 position)
     {
-        GameObject newInstance = Instantiate(terrainPool[Random.Range(0, terrainPool.Count)].terrainObject, position, Quaternion.identity,worldParentObject.transform); ;
+        GameObject newInstance = Instantiate(terrainPool[Random.Range(0, terrainPool.Count)].terrainObject, position, Quaternion.identity,worldParentObject.transform);
         terrainQueue.Enqueue(newInstance);
     }
 
