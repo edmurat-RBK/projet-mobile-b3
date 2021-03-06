@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4607900667861616941}
   - component: {fileID: 1993014039187432950}
   - component: {fileID: 4607900667861616946}
+  - component: {fileID: 7167750646266379210}
   - component: {fileID: 4607900667861616947}
   - component: {fileID: 4607900667861616943}
   m_Layer: 0
@@ -149,6 +150,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   inertiaTiming: 0.25
+--- !u!114 &7167750646266379210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607900667861616944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19aa0bbf8c454384ea341565c98fb5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostDuration: 2
+  SwipeLength: 200
+  clickDown: 0
+  firstPos: {x: 0, y: 0}
+  secondPos: {x: 0, y: 0}
 --- !u!212 &4607900667861616947
 SpriteRenderer:
   m_ObjectHideFlags: 0

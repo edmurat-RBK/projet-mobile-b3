@@ -19,7 +19,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     public void MoveBack()
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), 200/speedMultiplicator * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), TerrainManager.TMInstance.scrollSpeed/speedMultiplicator * Time.deltaTime);
     }
 
     public void Death()
