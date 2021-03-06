@@ -6,22 +6,34 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour
 {
+    public static TerrainManager TMInstance;
     public List<TerrainObject> terrainPool;
     public float terrainLenght;
     public float scrollSpeed;
+    public float boostSpeed;
+    float baseScrollspeed;
     public int terrainCount;
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
 
     private void Awake()
     {
+        if (TMInstance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            TMInstance = this;
+        }
         terrainQueue = new Queue<GameObject>();
+        
     }
 
     private void Start()
     {
         worldParentObject = GameObject.Find("----- WORLD -----");
-
+        baseScrollspeed = scrollSpeed;
         for(int i = 0; i<terrainCount; i++)
         {
             AddTerrain(new Vector3(0, 0, 200*i));
@@ -56,11 +68,19 @@ public class TerrainManager : MonoBehaviour
         }
     }
 
-    public void Boost()
+    public void Boost(float duration)
     {
         // TO-DO
         Debug.Log("Boost!");
+        scrollSpeed = boostSpeed;
+        Invoke("EndBoost", duration);
     }
+    
+    void EndBoost()
+    {
+        scrollSpeed = baseScrollspeed;
+    }
+
 
     private void AddTerrain(Vector3 position)
     {
