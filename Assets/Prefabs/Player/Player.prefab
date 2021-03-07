@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 5171321736489967200}
   - component: {fileID: 557316311786618795}
   - component: {fileID: 1614060771505320672}
+  - component: {fileID: -7695616608007525149}
+  - component: {fileID: 3305028626235436058}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -227,3 +229,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8662309422103473596}
   m_Mesh: {fileID: 5060444177187149915, guid: 51fda6181c07b3344aced012e54ef509, type: 3}
+--- !u!114 &-7695616608007525149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662309422103473596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19aa0bbf8c454384ea341565c98fb5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostDuration: 2
+  SwipeLength: 200
+  clickDown: 0
+  firstPos: {x: 0, y: 0}
+  secondPos: {x: 0, y: 0}
+  isBoosting: 0
+--- !u!114 &3305028626235436058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662309422103473596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1067203df3526b41bb0d70e285f1d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -18,7 +18,7 @@ public class Attaque : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ennemy" && boostRef.isBoosting)
+        if (collision.gameObject.CompareTag("Ennemy") && boostRef.isBoosting)
         {
             collision.gameObject.GetComponent<GlobalEnnemiBehavior>().Death();
             Debug.Log("KABOOOOOM");

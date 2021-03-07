@@ -20,7 +20,6 @@ public class Boost : MonoBehaviour
     
     public void OnBoost()
     {
-        Debug.Log("onboost");
         bool callOnce;
         callOnce = true;
 

@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             /*transform.position += direction * speed * Time.deltaTime; //déplace le joueur selon le vecteur et la vitesse */
             
-            rb.velocity = direction; //fait bouger le vaisseau dans la bonne direction
+            rb.velocity = direction*speed*Time.deltaTime; //fait bouger le vaisseau dans la bonne direction
             
         }
         else
