@@ -16,6 +16,7 @@ public class TerrainManager : MonoBehaviour
     public int terrainCount;
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
+    Boost boostRef;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class TerrainManager : MonoBehaviour
     private void Start()
     {
         worldParentObject = GameObject.Find("----- WORLD -----");
+        boostRef = FindObjectOfType<Boost>();
         baseScrollspeed = scrollSpeed;
         for(int i = 0; i<terrainCount; i++)
         {
@@ -74,12 +76,14 @@ public class TerrainManager : MonoBehaviour
         // TO-DO
         Debug.Log("Boost!");
         scrollSpeed = boostSpeed;
+        boostRef.isBoosting = true;
         Invoke("EndBoost", duration);
     }
     
     void EndBoost()
     {
         scrollSpeed = baseScrollspeed;
+        boostRef.isBoosting = false;
     }
 
 

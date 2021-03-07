@@ -15,6 +15,8 @@ public class Boost : MonoBehaviour
     public bool clickDown;
     public Vector2 firstPos;
     public Vector2 secondPos;
+    [HideInInspector]
+    public bool isBoosting;
     
     public void OnBoost()
     {
@@ -40,6 +42,7 @@ public class Boost : MonoBehaviour
     {
         firstPos = Vector2.zero;
         secondPos = Vector2.zero;
+        
     }
     private void Update()
     {
