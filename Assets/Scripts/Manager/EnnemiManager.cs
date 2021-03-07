@@ -6,6 +6,7 @@ public class EnnemiManager : MonoBehaviour
 {
     public static EnnemiManager EMInstance;
 
+    public Transform deadZone;
     public List<GameObject> ennemiList = new List<GameObject>();
 
 
