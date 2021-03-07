@@ -12,11 +12,14 @@ GameObject:
   - component: {fileID: 4607900667861616941}
   - component: {fileID: 1993014039187432950}
   - component: {fileID: 4607900667861616946}
+  - component: {fileID: 7167750646266379210}
   - component: {fileID: 4607900667861616947}
   - component: {fileID: 4607900667861616943}
+  - component: {fileID: 195870098234083403}
+  - component: {fileID: 3754745917405203386}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,8 +150,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8b9ed5947512747b533b9f324a3463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 20
   inertiaTiming: 0.25
+--- !u!114 &7167750646266379210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607900667861616944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19aa0bbf8c454384ea341565c98fb5d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boostDuration: 2
+  SwipeLength: 200
+  clickDown: 0
+  firstPos: {x: 0, y: 0}
+  secondPos: {x: 0, y: 0}
+  isBoosting: 0
 --- !u!212 &4607900667861616947
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -213,5 +234,30 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &195870098234083403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607900667861616944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1067203df3526b41bb0d70e285f1d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3754745917405203386
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607900667861616944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.43, y: 3.83, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}

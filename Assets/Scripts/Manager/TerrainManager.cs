@@ -6,22 +6,37 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour
 {
+    public static TerrainManager TMInstance;
     public List<TerrainObject> terrainPool;
     public float terrainLenght;
     public float scrollSpeed;
+    public float boostSpeed;
+    [HideInInspector]
+    public float baseScrollspeed;
     public int terrainCount;
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
+    Boost boostRef;
 
     private void Awake()
     {
+        if (TMInstance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            TMInstance = this;
+        }
         terrainQueue = new Queue<GameObject>();
+        
     }
 
     private void Start()
     {
         worldParentObject = GameObject.Find("----- WORLD -----");
-
+        boostRef = FindObjectOfType<Boost>();
+        baseScrollspeed = scrollSpeed;
         for(int i = 0; i<terrainCount; i++)
         {
             AddTerrain(new Vector3(0, 0, 200*i));
@@ -56,15 +71,25 @@ public class TerrainManager : MonoBehaviour
         }
     }
 
-    public void Boost()
+    public void Boost(float duration)
     {
         // TO-DO
         Debug.Log("Boost!");
+        scrollSpeed = boostSpeed;
+        boostRef.isBoosting = true;
+        Invoke("EndBoost", duration);
     }
+    
+    void EndBoost()
+    {
+        scrollSpeed = baseScrollspeed;
+        boostRef.isBoosting = false;
+    }
+
 
     private void AddTerrain(Vector3 position)
     {
-        GameObject newInstance = Instantiate(terrainPool[Random.Range(0, terrainPool.Count)].terrainObject, position, Quaternion.identity,worldParentObject.transform); ;
+        GameObject newInstance = Instantiate(terrainPool[Random.Range(0, terrainPool.Count)].terrainObject, position, Quaternion.identity,worldParentObject.transform);
         terrainQueue.Enqueue(newInstance);
     }
 

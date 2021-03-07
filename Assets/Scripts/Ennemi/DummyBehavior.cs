@@ -15,7 +15,10 @@ public class DummyBehavior : GlobalEnnemiBehavior
     }
     private void Update()
     {
-        if(ennemiLife <= 0)
+        MoveBack();
+
+
+        if(ennemiLife <= 0 || transform.position.z < EnnemiManager.EMInstance.deadZone.position.x)
         {
             Death();
         }

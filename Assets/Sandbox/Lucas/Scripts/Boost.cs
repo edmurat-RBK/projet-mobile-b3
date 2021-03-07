@@ -10,10 +10,14 @@ using UnityEngine.InputSystem;
 
 public class Boost : MonoBehaviour
 {
+    public float boostDuration;
+    public int SwipeLength;
     public bool clickDown;
     public Vector2 firstPos;
     public Vector2 secondPos;
-
+    [HideInInspector]
+    public bool isBoosting;
+    
     public void OnBoost()
     {
         Debug.Log("onboost");
@@ -38,14 +42,19 @@ public class Boost : MonoBehaviour
     {
         firstPos = Vector2.zero;
         secondPos = Vector2.zero;
+        
     }
     private void Update()
     {
         if (firstPos != Vector2.zero && secondPos != Vector2.zero)
         {
-            if (secondPos.y > firstPos.y + 5)
+            if (secondPos.y > firstPos.y + SwipeLength)
             {
-                Debug.Log("Booooost");
+                TerrainManager.TMInstance.Boost(boostDuration);
+                
+                ResetPos();
+                
+
             }
         }
     }
