@@ -11,41 +11,76 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    bool move;
-    Vector3 direction;
+    public bool move;
+    public Vector3 direction;
     Rigidbody rb;
     [Range (0,1)]
     public float inertiaTiming;
 
+    private void OnEnable()
+    {
+        InputManager.OnStartTouch += Move;
+        InputManager.OnEndTouch += Move;
+    }
+    private void OnDisable()
+    {
+        InputManager.OnStartTouch -= Move;
+        InputManager.OnEndTouch -= Move;
+    }
+
+
+
+    private void Move(Vector2 position)
+    {
+        if (position == Vector2.zero)
+        {
+            position.x = Screen.width / 2;
+        }
+        move = !move;
+        if (position.x <= Screen.width / 4)
+        {
+            
+            direction.x = -1;
+        }
+        else if (position.x > (Screen.width / 4) * 3)
+        {
+            direction.x = 1;
+            
+        }
+        else
+        {
+            direction.x = 0;
+        }
+    }
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-    public void OnMove(InputValue value) //recupère le vecteur qui correspond à la direction donnée
-    {
-        move = !move;
-        direction.x = value.Get<Vector2>().x; //prends la direction du mouvement uniquement sur les cotés
+    //public void OnMove(InputValue value) //recupère le vecteur qui correspond à la direction donnée
+    //{
+    //    move = !move;
+    //    direction.x = value.Get<Vector2>().x; //prends la direction du mouvement uniquement sur les cotés
         
-    }
-    public void OnMouseMove(InputValue value) //recupère le vecteur qui correspond à la direction donnée
-    {
-        move = !move;
+    //}
+    //public void OnMouseMove(InputValue value) //recupère le vecteur qui correspond à la direction donnée
+    //{
+    //    move = !move;
 
-        if (Mouse.current.position.ReadValue().x < Screen.width / 4)
-        {
-            direction.x = -1;
-        }
-        else if (Mouse.current.position.ReadValue().x > (Screen.width / 4) * 3)
-        {
-            direction.x = 1;
-        }
-        else
-        {
-            direction = Vector3.zero;
-        }
-        //direction.x = value.Get<Vector2>().x;
+    //    if (Mouse.current.position.ReadValue().x < Screen.width / 4)
+    //    {
+    //        direction.x = -1;
+    //    }
+    //    else if (Mouse.current.position.ReadValue().x > (Screen.width / 4) * 3)
+    //    {
+    //        direction.x = 1;
+    //    }
+    //    else
+    //    {
+    //        direction = Vector3.zero;
+    //    }
+    //    //direction.x = value.Get<Vector2>().x;
 
-    }
+    //}
     
     private void Update()
     {
