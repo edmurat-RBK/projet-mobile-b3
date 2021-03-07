@@ -39,7 +39,7 @@ public class TerrainManager : MonoBehaviour
         baseScrollspeed = scrollSpeed;
         for(int i = 0; i<terrainCount; i++)
         {
-            AddTerrain(new Vector3(0, 0, 200*i));
+            AddTerrain(new Vector3(0, 0, terrainLenght*i));
         }
     }
 
