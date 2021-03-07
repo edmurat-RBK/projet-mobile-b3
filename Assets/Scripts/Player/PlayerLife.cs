@@ -23,8 +23,20 @@ public class PlayerLife : MonoBehaviour
 
     public float lifeDecreaseSpeed = 1f;
     public float decreaseMultiplicator = 0f;
+    public static PlayerLife playerLifeInstance;
     #endregion
 
+    private void Awake()
+    {
+        if (playerLifeInstance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            playerLifeInstance = this;
+        }
+    }
 
     void Start()
     {
