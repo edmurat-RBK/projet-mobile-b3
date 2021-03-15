@@ -27,26 +27,26 @@ public class InputManager : MonoBehaviour
     }
     private void Start()
     {
-        touchController.Touch.TouchPress1.started += ctx => StartTouch1();
-        touchController.Touch.TouchPress1.canceled += ctx => EndTouch1();
-        touchController.Touch.TouchPress2.started += ctx => StartTouch2();
-        touchController.Touch.TouchPress2.canceled += ctx => EndTouch2();
+        touchController.Touch.TouchPress1.started += ctx => StartTouch1(ctx);
+        touchController.Touch.TouchPress1.canceled += ctx => EndTouch1(ctx);
+        touchController.Touch.TouchPress2.started += ctx => StartTouch2(ctx);
+        touchController.Touch.TouchPress2.canceled += ctx => EndTouch2(ctx);
     }
 
-    void StartTouch1()
+    void StartTouch1(InputAction.CallbackContext context)
     {
         OnStartTouch1?.Invoke(touchController.Touch.TouchPosition1.ReadValue<Vector2>());
     }
-    void EndTouch1()
+    void EndTouch1(InputAction.CallbackContext context)
     {
         OnEndTouch1?.Invoke(touchController.Touch.TouchPosition1.ReadValue<Vector2>());
     }
 
-    void StartTouch2()
+    void StartTouch2(InputAction.CallbackContext context)
     {
         OnStartTouch2?.Invoke(touchController.Touch.TouchPosition2.ReadValue<Vector2>());
     }
-    void EndTouch2()
+    void EndTouch2(InputAction.CallbackContext context)
     {
         OnEndTouch2?.Invoke(touchController.Touch.TouchPosition2.ReadValue<Vector2>());
     }
