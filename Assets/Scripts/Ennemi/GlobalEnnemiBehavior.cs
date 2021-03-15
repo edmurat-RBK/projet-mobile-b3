@@ -11,7 +11,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     private void Start()
     {
-        EnnemiManager.EMInstance.ennemiList.Add(this.gameObject);
+        GameManager.Instance.ennemiManager.ennemiList.Add(this.gameObject);
     }
 
 
@@ -24,7 +24,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     public void Death()
     {
-        EnnemiManager.EMInstance.ennemiList.Remove(this.gameObject);
+        GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
         Destroy(gameObject);
     }
 }

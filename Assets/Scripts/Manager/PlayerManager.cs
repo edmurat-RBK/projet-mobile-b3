@@ -4,21 +4,11 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager PMInstance;
+    public bool playerIsAlive;
 
+    public float maxPlayerLife = 10f;
+    public float playerLife = 10f;
 
-
-    public int coinCounter = 0;
-
-    private void Awake()
-    {
-        if(PMInstance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            PMInstance = this;
-        }
-    }
+    public float lifeDecreaseSpeed = 1f;
+    public float decreaseMultiplicator = 0f;
 }

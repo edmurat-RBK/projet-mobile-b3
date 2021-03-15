@@ -32,10 +32,10 @@ public class EnnemiSpawner : MonoBehaviour
     void CreateNewWave()
     {
 
-        if(EnnemiManager.EMInstance.ennemiList.Count < maxEnnemiInLevel)//Tant que la liste d'ennemi active n'est pas pleine...
+        if(GameManager.Instance.ennemiManager.ennemiList.Count < maxEnnemiInLevel)//Tant que la liste d'ennemi active n'est pas pleine...
         {
             
-            for (int i = 0; i < (maxEnnemiInLevel - EnnemiManager.EMInstance.ennemiList.Count); i++)
+            for (int i = 0; i < (maxEnnemiInLevel - GameManager.Instance.ennemiManager.ennemiList.Count); i++)
             {
                 int index = Random.Range(0, spawnPointList.Count);//On tire un point de spawn random
 
