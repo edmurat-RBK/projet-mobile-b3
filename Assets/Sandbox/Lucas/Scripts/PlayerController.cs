@@ -12,20 +12,26 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public bool move;
+    bool movePrio;
     public Vector3 direction;
+    public Vector3 direction2;
     Rigidbody rb;
     [Range (0,1)]
     public float inertiaTiming;
 
     private void OnEnable()
     {
-        InputManager.OnStartTouch += Move;
-        InputManager.OnEndTouch += Move;
+        InputManager.OnStartTouch1 += Move;
+        InputManager.OnEndTouch1 += Move;
+        InputManager.OnStartTouch2 += MovePrio;
+        InputManager.OnEndTouch2 += MovePrio;
     }
     private void OnDisable()
     {
-        InputManager.OnStartTouch -= Move;
-        InputManager.OnEndTouch -= Move;
+        InputManager.OnStartTouch1 -= Move;
+        InputManager.OnEndTouch1 -= Move;
+        InputManager.OnStartTouch2 -= MovePrio;
+        InputManager.OnEndTouch2 -= MovePrio;
     }
 
 
@@ -50,6 +56,25 @@ public class PlayerController : MonoBehaviour
         else
         {
             direction.x = 0;
+        }
+    }
+
+    private void MovePrio(Vector2 position)
+    {
+        movePrio = !movePrio;
+        if (position.x <= Screen.width / 4)
+        {
+            
+            direction2.x = -1;
+        }
+        else if (position.x > (Screen.width / 4) * 3)
+        {
+            direction2.x = 1;
+            
+        }
+        else
+        {
+            direction2.x = 0;
         }
     }
     private void Start()
@@ -84,12 +109,16 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        if (move)
+        if (move && !movePrio)
         {
             /*transform.position += direction * speed * Time.deltaTime; //déplace le joueur selon le vecteur et la vitesse */
             
             rb.velocity = direction*speed*Time.deltaTime; //fait bouger le vaisseau dans la bonne direction
             
+        }
+        else if (movePrio)
+        {
+            rb.velocity = direction2*speed*Time.deltaTime;
         }
         else
         {
