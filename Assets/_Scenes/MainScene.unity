@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -236,12 +236,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &124492294 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6527764268778969909, guid: a7bd619b33b4013419e868e8eacacafb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6527764268834963763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &244351898
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,6 +266,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &436394632 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
+    type: 3}
+  m_PrefabInstance: {fileID: 6083765253531162004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &656809943
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,7 +758,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 9075757704186622252}
+  - {fileID: 436394632}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -856,7 +856,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15, y: 15, z: 70}
   m_Center: {x: 0, y: 10, z: 40}
---- !u!1001 &6527764268834963763
+--- !u!1001 &6083765253531162004
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -939,7 +939,7 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a7bd619b33b4013419e868e8eacacafb, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
 --- !u!114 &6659876128235658967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -952,11 +952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8221debc86914c438cb0c6d487200c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIsAlive: 0
-  maxPlayerLife: 100
-  playerLife: 100
-  lifeDecreaseSpeed: 1
-  decreaseMultiplicator: 1
 --- !u!114 &8662309423019487756
 MonoBehaviour:
   m_ObjectHideFlags: 0
