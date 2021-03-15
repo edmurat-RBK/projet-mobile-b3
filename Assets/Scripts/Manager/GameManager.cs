@@ -39,8 +39,10 @@ public class GameManager : MonoBehaviour
     private static GameManager _instance = null;
     #endregion
 
-    public InputManager inputManager;
     public PlayerManager playerManager;
+    public EconomicManager economicManager;
     public EnnemiManager ennemiManager;
+    public WaveManager waveManager;
     public TerrainManager terrainManager;
+    public InputManager inputManager;
 }

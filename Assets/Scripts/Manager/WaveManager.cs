@@ -7,8 +7,7 @@ using UnityEngine;
 /// Matis Duperray
 /// Gère l'apparition des ennemies dans le jeu | Gère également le nombre d'ennemi max à l'écran
 /// </summary>
-
-public class EnnemiSpawner : MonoBehaviour
+public class WaveManager : MonoBehaviour
 {
     public List<Transform> spawnPointList = new List<Transform>();
 
@@ -32,9 +31,9 @@ public class EnnemiSpawner : MonoBehaviour
     void CreateNewWave()
     {
 
-        if(GameManager.Instance.ennemiManager.ennemiList.Count < maxEnnemiInLevel)//Tant que la liste d'ennemi active n'est pas pleine...
+        if (GameManager.Instance.ennemiManager.ennemiList.Count < maxEnnemiInLevel)//Tant que la liste d'ennemi active n'est pas pleine...
         {
-            
+
             for (int i = 0; i < (maxEnnemiInLevel - GameManager.Instance.ennemiManager.ennemiList.Count); i++)
             {
                 int index = Random.Range(0, spawnPointList.Count);//On tire un point de spawn random
@@ -51,7 +50,7 @@ public class EnnemiSpawner : MonoBehaviour
 
             }
         }
-        
+
     }
 
     IEnumerator SpawnCoolDown()
