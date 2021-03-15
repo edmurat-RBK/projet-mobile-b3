@@ -43,4 +43,5 @@ public class GameManager : MonoBehaviour
     public PlayerManager playerManager;
     public EnnemiManager ennemiManager;
     public TerrainManager terrainManager;
+    public WaveManager waveManager;
 }
