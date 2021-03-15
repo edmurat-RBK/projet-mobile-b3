@@ -127,12 +127,12 @@ GameObject:
   - component: {fileID: 8662309422103473569}
   - component: {fileID: 6659876128593822074}
   - component: {fileID: 8662309422103473598}
-  - component: {fileID: 8662309422103473571}
   - component: {fileID: 5171321736489967200}
   - component: {fileID: 557316311786618795}
   - component: {fileID: 1614060771505320672}
   - component: {fileID: -7695616608007525149}
   - component: {fileID: 3305028626235436058}
+  - component: {fileID: 8662309422103473571}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8662309422103473596}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 7}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1050496107}
@@ -267,26 +267,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8b9ed5947512747b533b9f324a3463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  speed: 20
   move: 0
+  movePrio: 0
   direction: {x: 0, y: 0, z: 0}
-  inertiaTiming: 0.25
---- !u!54 &8662309422103473571
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8662309422103473596}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 124
-  m_CollisionDetection: 0
+  direction2: {x: 0, y: 0, z: 0}
+  inertiaTiming: 0.1
 --- !u!65 &5171321736489967200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -363,8 +349,11 @@ MonoBehaviour:
   SwipeLength: 200
   clickDown: 0
   callOnce: 1
+  callOnce2: 1
   firstPos: {x: 0, y: 0}
   secondPos: {x: 0, y: 0}
+  firstPos2: {x: 0, y: 0}
+  secondPos2: {x: 0, y: 0}
   isBoosting: 0
 --- !u!114 &3305028626235436058
 MonoBehaviour:
@@ -378,3 +367,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1067203df3526b41bb0d70e285f1d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &8662309422103473571
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662309422103473596}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
