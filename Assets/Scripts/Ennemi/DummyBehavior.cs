@@ -15,6 +15,17 @@ public class DummyBehavior : GlobalEnnemiBehavior
     }
     private void Update()
     {
+        #region Debug
+        Debug.DrawRay(transform.position, transform.forward*50, Color.red);
+        Debug.DrawRay(transform.position, (transform.forward + transform.right/2)*50, Color.red);
+        Debug.DrawRay(transform.position, (transform.forward - transform.right/2)*50, Color.red);
+        Debug.DrawRay(transform.position, transform.right*20, Color.blue);
+        Debug.DrawRay(transform.position, -transform.right*20, Color.blue);
+        #endregion
+
+
+        CheckDirection();
+        Movement();
         MoveBack();
 
 
