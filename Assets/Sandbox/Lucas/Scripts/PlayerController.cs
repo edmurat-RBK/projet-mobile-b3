@@ -45,12 +45,12 @@ public class PlayerController : MonoBehaviour
             position.x = Screen.width / 2;
         }
         move = !move;
-        if (position.x <= Screen.width / 4)
+        if (position.x <= Screen.width / 3)
         {
             
             direction.x = -1;
         }
-        else if (position.x > (Screen.width / 4) * 3)
+        else if (position.x > (Screen.width / 3) * 2)
         {
             direction.x = 1;
             
@@ -64,12 +64,12 @@ public class PlayerController : MonoBehaviour
     private void MovePrio(Vector2 position)
     {
         movePrio = !movePrio;
-        if (position.x <= Screen.width / 4)
+        if (position.x <= Screen.width /3)
         {
             
             direction2.x = -1;
         }
-        else if (position.x > (Screen.width / 4) * 3)
+        else if (position.x > (Screen.width /3) * 2)
         {
             direction2.x = 1;
             
