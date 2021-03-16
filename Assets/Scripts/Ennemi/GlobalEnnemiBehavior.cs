@@ -22,13 +22,27 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     bool obstacleOnRight = false;
     bool obstacleOnLeft = false;
 
+    bool playerOnRight = false;
+    bool playerOnLeft = false;
 
 
 
 
-    public void MoveBack()
+
+    public void MoveBack(bool stopAtPlayerPos)
     {
-        transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/speedMultiplicator * Time.deltaTime);
+        if(stopAtPlayerPos == false)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/speedMultiplicator * Time.deltaTime);
+        }
+        else if(stopAtPlayerPos == true)
+        {
+            if(playerOnLeft == false && playerOnRight == false)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+            }
+        }
+
     }
 
     public void Death()
@@ -43,8 +57,6 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * 50f, Color.red);
         Debug.DrawRay(transform.position, (transform.forward + transform.right / 3) * 20, Color.red);
         Debug.DrawRay(transform.position, (transform.forward - transform.right / 3) * 20, Color.red);
-        Debug.DrawRay(transform.position + Vector3.up, transform.right * 20, Color.blue);
-        Debug.DrawRay(transform.position + Vector3.up, -transform.right * 20, Color.blue);
         #endregion
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 50f, obstacleMask)) //Devant
@@ -74,28 +86,35 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             obstacleOnLeft = false;
         }
+    }
 
-
+    public void CheckForPlayer()
+    {
+        #region Debug
+        Debug.DrawRay(transform.position + Vector3.up, transform.right * 20, Color.blue);
+        Debug.DrawRay(transform.position + Vector3.up, -transform.right * 20, Color.blue);
+        #endregion
 
 
         if (Physics.Raycast(transform.position + Vector3.up * 20f, transform.right, out hit, 1.5f, playerMask)) //Côté droit
         {
-
+            playerOnRight = true;
         }
         else
         {
-
+            playerOnRight = false;
         }
 
         if (Physics.Raycast(transform.position + Vector3.up * 20f, -transform.right, out hit, 1.5f, playerMask)) //Côté gauche
         {
-
+            playerOnLeft = true;
         }
         else
         {
-
+            playerOnLeft = false;
         }
     }
+
     public void Movement()
     {
         if(obstacleAhead == true)   //L'ennemi fait face à un obstacle
