@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class TerrainManager : MonoBehaviour
 {
     public static TerrainManager TMInstance;
@@ -17,6 +18,7 @@ public class TerrainManager : MonoBehaviour
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
     Boost boostRef;
+    
 
     private void Awake()
     {
@@ -73,6 +75,7 @@ public class TerrainManager : MonoBehaviour
 
     public void Boost(float duration)
     {
+        boostRef.boostCharges -= 1;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
         Invoke("EndBoost", duration);
@@ -82,6 +85,15 @@ public class TerrainManager : MonoBehaviour
     {
         scrollSpeed = baseScrollspeed;
         boostRef.isBoosting = false;
+        boostRef.isCoolingDown = true;
+        Invoke("BoostCooldown", boostRef.boostCooldown);
+    }
+
+    void BoostCooldown()
+    {
+        
+        boostRef.boostCharges += 1;
+        boostRef.isCoolingDown = false;
     }
 
 
