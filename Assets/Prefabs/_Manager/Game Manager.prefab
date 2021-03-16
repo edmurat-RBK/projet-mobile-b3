@@ -67,7 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d8d7b16c3e74e4f89e25e8f858e1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCounter: 0
+  playerIsAlive: 0
+  maxPlayerLife: 10
+  playerLife: 10
+  lifeDecreaseSpeed: 1
+  decreaseMultiplicator: 0
 --- !u!114 &5488301228241700821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ae5f607669c2c4783bc0da5059868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinCounter: 0
 --- !u!114 &2539019664075447828
 MonoBehaviour:
   m_ObjectHideFlags: 0
