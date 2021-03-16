@@ -9,7 +9,7 @@ public class ObstacleDamage: MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log($"Obstacle Collide with {other.gameObject.name}");
-            PlayerLife.playerLifeInstance.playerLife -= 1;
+            GameManager.Instance.playerManager.playerLife -= 1;
         }
     }
 }

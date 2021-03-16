@@ -11,6 +11,6 @@ public class EnnemiDeadZone : MonoBehaviour
 {
     private void Start()
     {
-        EnnemiManager.EMInstance.deadZone = this.transform;
+        GameManager.Instance.ennemiManager.deadZone = this.transform;
     }
 }

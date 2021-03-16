@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            PlayerManager.PMInstance.coinCounter += coinValue;
+            GameManager.Instance.economicManager.coinCounter += coinValue;
             Destroy(gameObject);
         }
     }

@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public bool move;
-    bool movePrio;
+    public bool movePrio;
+    bool inertia;
     public Vector3 direction;
     public Vector3 direction2;
     Rigidbody rb;
@@ -38,17 +39,18 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 position)
     {
+        Debug.Log("0");
         if (position == Vector2.zero)
         {
             position.x = Screen.width / 2;
         }
         move = !move;
-        if (position.x <= Screen.width / 4)
+        if (position.x <= Screen.width / 3)
         {
             
             direction.x = -1;
         }
-        else if (position.x > (Screen.width / 4) * 3)
+        else if (position.x > (Screen.width / 3) * 2)
         {
             direction.x = 1;
             
@@ -62,12 +64,12 @@ public class PlayerController : MonoBehaviour
     private void MovePrio(Vector2 position)
     {
         movePrio = !movePrio;
-        if (position.x <= Screen.width / 4)
+        if (position.x <= Screen.width /3)
         {
             
             direction2.x = -1;
         }
-        else if (position.x > (Screen.width / 4) * 3)
+        else if (position.x > (Screen.width /3) * 2)
         {
             direction2.x = 1;
             
@@ -109,27 +111,33 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
-        if (move && !movePrio)
+        if (move && !movePrio || inertia)
         {
-            /*transform.position += direction * speed * Time.deltaTime; //déplace le joueur selon le vecteur et la vitesse */
+            if(move)
+            {
+                inertia = true;
+            }
+            if(inertia && !move)
+            {
+                Invoke("Inertia", inertiaTiming);
+            }
+                
+            transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime); //déplace le joueur selon le vecteur et la vitesse */
             
-            rb.velocity = direction*speed*Time.deltaTime; //fait bouger le vaisseau dans la bonne direction
+            //rb.velocity = direction*speed*Time.deltaTime *100; //fait bouger le vaisseau dans la bonne direction
             
         }
         else if (movePrio)
         {
-            rb.velocity = direction2*speed*Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime);
         }
-        else
-        {
-            Invoke("Inertia", inertiaTiming);
-        }
+        
         
     }
 
     void Inertia() // pour ismuler de l'inertie
     {
-        rb.velocity = Vector3.zero;
+        inertia = false;
     }
 
 }

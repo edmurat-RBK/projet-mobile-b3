@@ -25,6 +25,6 @@ public class HighScore : MonoBehaviour
 
         highScoreText.text = displayedScore.ToString(); 
 
-        highScore = highScore + (TerrainManager.TMInstance.scrollSpeed / TerrainManager.TMInstance.baseScrollspeed) * Time.deltaTime * multiplier;
+        highScore = highScore + (GameManager.Instance.terrainManager.scrollSpeed / GameManager.Instance.terrainManager.baseScrollspeed) * Time.deltaTime * multiplier;
     }
 }

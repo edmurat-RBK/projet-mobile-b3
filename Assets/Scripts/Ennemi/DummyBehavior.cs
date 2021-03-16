@@ -11,14 +11,16 @@ public class DummyBehavior : GlobalEnnemiBehavior
 
     private void Start()
     {
-        EnnemiManager.EMInstance.ennemiList.Add(this.gameObject);
+        GameManager.Instance.ennemiManager.ennemiList.Add(this.gameObject);
     }
     private void Update()
     {
-        MoveBack();
+        CheckDirection();
+        Movement();
+        MoveBack(false);
 
 
-        if(ennemiLife <= 0 || transform.position.z < EnnemiManager.EMInstance.deadZone.position.z)
+        if(ennemiLife <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
         {
             Death();
         }
