@@ -61,7 +61,6 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, 50f, obstacleMask)) //Devant
         {
-            Debug.Log("MOVE sale chien");
             obstacleAhead = true;
         }
         else
@@ -96,8 +95,9 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         #endregion
 
 
-        if (Physics.Raycast(transform.position + Vector3.up * 20f, transform.right, out hit, 1.5f, playerMask)) //Côté droit
+        if (Physics.Raycast(transform.position, transform.right, out hit, 20f, playerMask)) //Côté droit
         {
+            Debug.Log("Player on right !");
             playerOnRight = true;
         }
         else
@@ -105,8 +105,9 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             playerOnRight = false;
         }
 
-        if (Physics.Raycast(transform.position + Vector3.up * 20f, -transform.right, out hit, 1.5f, playerMask)) //Côté gauche
+        if (Physics.Raycast(transform.position, -transform.right, out hit, 20f, playerMask)) //Côté gauche
         {
+            Debug.Log("Player on left !");
             playerOnLeft = true;
         }
         else

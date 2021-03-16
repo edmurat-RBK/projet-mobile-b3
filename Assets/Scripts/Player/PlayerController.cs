@@ -39,7 +39,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 position)
     {
-        Debug.Log("0");
         if (position == Vector2.zero)
         {
             position.x = Screen.width / 2;

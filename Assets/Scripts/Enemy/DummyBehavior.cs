@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class DummyBehavior : GlobalEnnemiBehavior
 {
-
-
-
-
-
     private void Start()
     {
         GameManager.Instance.ennemiManager.ennemiList.Add(this.gameObject);
