@@ -18,6 +18,7 @@ public class TerrainManager : MonoBehaviour
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
     Boost boostRef;
+    Coroutine Cd = null;
     
 
     private void Awake()
@@ -43,6 +44,8 @@ public class TerrainManager : MonoBehaviour
         {
             AddTerrain(new Vector3(0, 0, terrainLenght*i));
         }
+
+        Cd = StartCoroutine(BoostCooldown(boostRef.boostCooldown));
     }
 
     private void Update()
@@ -54,6 +57,11 @@ public class TerrainManager : MonoBehaviour
         catch
         {
             // Keep going
+        }
+
+        if (boostRef.isBoosting)
+        {
+            StopCoroutine(Cd);
         }
     }
 
@@ -78,22 +86,33 @@ public class TerrainManager : MonoBehaviour
         boostRef.boostCharges -= 1;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
-        Invoke("EndBoost", duration);
+        StartCoroutine(EndBoost(duration));
     }
     
-    void EndBoost()
+    IEnumerator EndBoost(float duration)
     {
+        yield return new WaitForSeconds(duration);
         scrollSpeed = baseScrollspeed;
         boostRef.isBoosting = false;
         boostRef.isCoolingDown = true;
-        Invoke("BoostCooldown", boostRef.boostCooldown);
+        StartCoroutine(BoostCooldown(boostRef.boostCooldown));
     }
 
-    void BoostCooldown()
+    IEnumerator BoostCooldown(float duration)
     {
+        boostRef.Running = true;
+        yield return new WaitForSeconds(duration);
+        boostRef.Running = false;
+        if (!boostRef.isBoosting)
+        {
+            if(boostRef.boostCharges<boostRef.maxBoostCharges)
+            {
+                boostRef.boostCharges += 1;
+            }
+            
+            boostRef.isCoolingDown = false;
+        }
         
-        boostRef.boostCharges += 1;
-        boostRef.isCoolingDown = false;
     }
 
 
