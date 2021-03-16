@@ -250,11 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8221debc86914c438cb0c6d487200c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerIsAlive: 0
-  maxPlayerLife: 100
-  playerLife: 100
-  lifeDecreaseSpeed: 1
-  decreaseMultiplicator: 1
 --- !u!114 &8662309422103473598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -346,6 +341,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boostDuration: 2
+  boostCooldown: 3
   SwipeLength: 200
   clickDown: 0
   callOnce: 1
