@@ -11,7 +11,8 @@ using UnityEngine;
 public class BumperBehavior : GlobalEnnemiBehavior
 {
     bool isBumping = false;
-    bool canBump = true;
+    bool canBump = false;
+    bool firstBump = true;
 
 
 
@@ -33,16 +34,10 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
         CheckDirection();
         CheckForPlayer();
-        
 
 
-        if(playerOnLeft || playerOnRight)
-        {
-            if (!isBumping && canBump)
-            {
-                StartCoroutine(BumpPlayer());
-            }
-        }
+
+        BumperAttack();
 
         
 
@@ -50,6 +45,21 @@ public class BumperBehavior : GlobalEnnemiBehavior
         if (ennemiLife <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
         {
             Death();
+        }
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (isBumping)
+            {
+                StopCoroutine(BumpPlayer());
+                Debug.Log("BOUM");
+                isBumping = false;
+                StartCoroutine(BumpCoolDown());
+            }
         }
     }
 
@@ -62,7 +72,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
         isBumping = false;
         StartCoroutine(BumpCoolDown());
     }
-    IEnumerator BumpCoolDown()
+    public IEnumerator BumpCoolDown()
     {
         canBump = false;
         yield return new WaitForSeconds(GameManager.Instance.ennemiManager.bumperAttackCoolDown);
@@ -70,6 +80,23 @@ public class BumperBehavior : GlobalEnnemiBehavior
     }
 
 
+    void BumperAttack()
+    {
+        if (playerOnLeft || playerOnRight)
+        {
+            if (firstBump == true)
+            {
+                Debug.Log("Ok, pret a attaquer");
+                StartCoroutine(BumpCoolDown());
+                firstBump = false;
+            }
+            if (!isBumping && canBump && firstBump == false)
+            {
+                Debug.Log("J'attaque !");
+                StartCoroutine(BumpPlayer());
+            }
+        }
+    }
     void BumpMovement()
     {
         if (playerOnLeft == true)
