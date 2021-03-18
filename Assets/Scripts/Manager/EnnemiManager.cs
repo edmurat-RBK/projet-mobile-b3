@@ -6,4 +6,12 @@ public class EnnemiManager : MonoBehaviour
 {
     public Transform deadZone;
     public List<GameObject> ennemiList = new List<GameObject>();
+
+
+    [Space(10)]
+    [Header("Bumper")]
+
+    public float bumperAttackSpeed;
+    public float bumperAttackDuration;
+    public float bumperAttackCoolDown;
 }

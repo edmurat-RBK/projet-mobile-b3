@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//Fonctions de base de l'ennemi
+/// <summary>
+/// Matis Duperray
+/// Fonctions de bases des ennemis
+/// </summary>
 public class GlobalEnnemiBehavior : MonoBehaviour
 {
     public int ennemiLife;
@@ -22,8 +25,8 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     bool obstacleOnRight = false;
     bool obstacleOnLeft = false;
 
-    bool playerOnRight = false;
-    bool playerOnLeft = false;
+    public bool playerOnRight = false;
+    public bool playerOnLeft = false;
 
 
 
