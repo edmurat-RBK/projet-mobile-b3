@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+/// <summary>
+/// Matis Duperray
+/// Comportement propre à l'ennemi "Dummy"
+/// </summary>
 public class DummyBehavior : GlobalEnnemiBehavior
 {
     private void Start()

@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//Fonctions de base de l'ennemi
+/// <summary>
+/// Matis Duperray
+/// Fonctions de bases des ennemis
+/// </summary>
 public class GlobalEnnemiBehavior : MonoBehaviour
 {
     public int ennemiLife;
@@ -22,8 +25,8 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     bool obstacleOnRight = false;
     bool obstacleOnLeft = false;
 
-    bool playerOnRight = false;
-    bool playerOnLeft = false;
+    public bool playerOnRight = false;
+    public bool playerOnLeft = false;
 
 
 
@@ -40,6 +43,10 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             if(playerOnLeft == false && playerOnRight == false)
             {
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), 0f);
             }
         }
 
@@ -90,8 +97,8 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public void CheckForPlayer()
     {
         #region Debug
-        Debug.DrawRay(transform.position + Vector3.up, transform.right * 20, Color.blue);
-        Debug.DrawRay(transform.position + Vector3.up, -transform.right * 20, Color.blue);
+        Debug.DrawRay(transform.position, transform.right * 20, Color.blue);
+        Debug.DrawRay(transform.position, -transform.right * 20, Color.blue);
         #endregion
 
 
