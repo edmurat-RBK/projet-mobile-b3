@@ -18,7 +18,7 @@ public class TerrainManager : MonoBehaviour
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
     Boost boostRef;
-    Coroutine Cd = null;
+    
     
 
     private void Awake()
@@ -45,7 +45,7 @@ public class TerrainManager : MonoBehaviour
             AddTerrain(new Vector3(0, 0, terrainLenght*i));
         }
 
-        Cd = StartCoroutine(BoostCooldown(boostRef.boostCooldown));
+        
     }
 
     private void Update()
@@ -59,10 +59,7 @@ public class TerrainManager : MonoBehaviour
             // Keep going
         }
 
-        if (boostRef.isBoosting)
-        {
-            StopCoroutine(Cd);
-        }
+        
     }
 
     private void MoveAllTerrains()
@@ -83,36 +80,38 @@ public class TerrainManager : MonoBehaviour
 
     public void Boost(float duration)
     {
-        boostRef.boostCharges -= 1;
+        
+        boostRef.currentValue = boostRef.slider.value;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
+        boostRef.isCoolingDown = false;
+        
+        StopAllCoroutines();
         StartCoroutine(EndBoost(duration));
     }
     
     IEnumerator EndBoost(float duration)
     {
         yield return new WaitForSeconds(duration);
+        boostRef.boostCharges -= 1;
         scrollSpeed = baseScrollspeed;
         boostRef.isBoosting = false;
-        boostRef.isCoolingDown = true;
+        
         StartCoroutine(BoostCooldown(boostRef.boostCooldown));
     }
 
     IEnumerator BoostCooldown(float duration)
     {
-        boostRef.Running = true;
+        boostRef.isCoolingDown = true;
         yield return new WaitForSeconds(duration);
-        boostRef.Running = false;
-        if (!boostRef.isBoosting)
-        {
-            if(boostRef.boostCharges<boostRef.maxBoostCharges)
+        if(boostRef.boostCharges<boostRef.maxBoostCharges)
             {
                 boostRef.boostCharges += 1;
             }
             
             boostRef.isCoolingDown = false;
-        }
         
+        StartCoroutine(BoostCooldown(boostRef.boostCooldown));
     }
 
 

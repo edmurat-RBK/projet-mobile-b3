@@ -29,10 +29,13 @@ public class Boost : MonoBehaviour
     public Slider slider;
     public int boostCharges;
     public int maxBoostCharges;
+    public float currentValue;
     
     void Start() 
     {
         boostCharges = maxBoostCharges;
+        slider.maxValue = maxBoostCharges;
+        slider.value = slider.maxValue;
     }
     
 
@@ -122,11 +125,11 @@ public class Boost : MonoBehaviour
 
         if (isBoosting)
         {
-            slider.value -= (1+(slider.value - boostCharges))/boostDuration * Time.deltaTime;
+            slider.value -= (1+(currentValue-boostCharges))/boostDuration * Time.deltaTime; 
             
         }
 
-        if (isCoolingDown && !isBoosting || boostCharges<maxBoostCharges)
+        if (isCoolingDown && boostCharges<maxBoostCharges)
         {
             slider.value += 1/boostCooldown * Time.deltaTime;
         }
