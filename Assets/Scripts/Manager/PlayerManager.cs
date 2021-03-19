@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GameObject player;
+
     public bool playerIsAlive;
 
     public float maxPlayerLife = 10f;

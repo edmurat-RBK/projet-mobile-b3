@@ -19,6 +19,8 @@ public class BumperBehavior : GlobalEnnemiBehavior
     private void Start()
     {
         GameManager.Instance.ennemiManager.ennemiList.Add(this.gameObject);
+
+        StartCoroutine(RandomiseDirection());
     }
     private void Update()
     {
@@ -34,10 +36,11 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
         CheckDirection();
         CheckForPlayer();
+        CheckBehind();
 
 
 
-        BumperAttack();
+        //BumperAttack();
 
         
 

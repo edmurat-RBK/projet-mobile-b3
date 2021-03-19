@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GameManager.Instance.playerManager.player = this.gameObject;
     }
     //public void OnMove(InputValue value) //recupère le vecteur qui correspond à la direction donnée
     //{

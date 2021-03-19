@@ -11,6 +11,8 @@ public class EnnemiManager : MonoBehaviour
     [Space(10)]
     [Header("Bumper")]
 
+    public float arrestSideOfPlayerDuration;
+
     public float bumperAttackSpeed;
     public float bumperAttackDuration;
     public float bumperAttackCoolDown;

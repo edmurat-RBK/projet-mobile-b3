@@ -14,6 +14,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     public LayerMask obstacleMask;
     public LayerMask playerMask;
+    public LayerMask somethingBehindMask;
 
 
     public float speedMultiplicator = 1f;
@@ -24,15 +25,20 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     bool obstacleAhead = false;
     bool obstacleOnRight = false;
     bool obstacleOnLeft = false;
+    bool somethingBehind = false;
 
     public bool playerOnRight = false;
     public bool playerOnLeft = false;
+    public bool isLeaving = false;
+
+    bool isOnSideCoroutine = false;
+
+    Vector3 directionToMoveOn = Vector3.right;
 
 
 
 
-
-    public void MoveBack(bool stopAtPlayerPos)
+    public void MoveBack(bool stopAtPlayerPos) //Move vers l'arrière, jusqu'à ce qu'il atteigne la position du player. Des lors, il se stop.
     {
         if(stopAtPlayerPos == false)
         {
@@ -40,23 +46,57 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         }
         else if(stopAtPlayerPos == true)
         {
-            if(playerOnLeft == false && playerOnRight == false)
+            if(transform.position.z > GameManager.Instance.playerManager.player.transform.position.z - 6)
             {
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), 0f);
+                if(!isLeaving)
+                {
+                    if (!isOnSideCoroutine && !isLeaving)
+                    {
+                        StartCoroutine(waitSideOfPlayer());
+                    }
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position, 0f);
+                }
+                else
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                }
             }
         }
 
     }
-
-    public void Death()
+    public void Movement()
     {
-        GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
-        Destroy(gameObject);
+        if(obstacleAhead == true || somethingBehind == true)   //L'ennemi fait face à un obstacle
+        {
+            if(!obstacleOnRight && !obstacleOnLeft) //La voie est dégagée des deux côtés
+            {
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (directionToMoveOn), 8f*Time.deltaTime);
+            }
+            else if(obstacleOnLeft && !obstacleOnRight) //La voie est dégagée sur la droite, mais pas sur la gauche
+            {
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 8f * Time.deltaTime);   //Mouvement droite
+            }
+            else if(obstacleOnRight && !obstacleOnLeft) //La voie est dégagée sur la gauche, mais pas sur la droite
+            {
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 8f * Time.deltaTime);    //Mouvement gauche
+            }
+        }
+        
+        else if(obstacleOnRight && !obstacleOnLeft)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 8f * Time.deltaTime);
+        }
+
+        else if(obstacleOnLeft && !obstacleOnRight)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 8f * Time.deltaTime);
+        }
     }
+
 
     public void CheckDirection()
     {
@@ -92,8 +132,8 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             obstacleOnLeft = false;
         }
-    }
 
+    }
     public void CheckForPlayer()
     {
         #region Debug
@@ -122,33 +162,61 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             playerOnLeft = false;
         }
     }
-
-    public void Movement()
+    public void CheckBehind()
     {
-        if(obstacleAhead == true)   //L'ennemi fait face à un obstacle
-        {
-            if(!obstacleOnRight && !obstacleOnLeft) //La voie est dégagée des deux côtés
-            {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 10f*Time.deltaTime);
-            }
-            else if(obstacleOnLeft && !obstacleOnRight) //La voie est dégagée sur la droite, mais pas sur la gauche
-            {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 10f * Time.deltaTime);   //Mouvement droite
-            }
-            else if(obstacleOnRight && !obstacleOnLeft) //La voie est dégagée sur la gauche, mais pas sur la droite
-            {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 10f * Time.deltaTime);    //Mouvement gauche
-            }
-        }
-        
-        else if(obstacleOnRight && !obstacleOnLeft)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 10f * Time.deltaTime);
-        }
+        #region Debug
+        Debug.DrawRay(transform.position + Vector3.right, -transform.forward * 5, Color.green);
+        Debug.DrawRay(transform.position, -transform.forward * 5, Color.green);
+        Debug.DrawRay(transform.position - Vector3.right, -transform.forward * 5, Color.green);
+        #endregion
 
-        else if(obstacleOnLeft && !obstacleOnRight)
+        if (Physics.Raycast(transform.position + Vector3.right, -transform.forward, out hit, 5f, somethingBehindMask) || Physics.Raycast(transform.position - Vector3.right, -transform.forward, out hit, 5f, somethingBehindMask) || Physics.Raycast(transform.position, -transform.forward, out hit, 5f, somethingBehindMask))
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 10f * Time.deltaTime);
+            somethingBehind = true;
+        }
+        else
+        {
+            somethingBehind = false;
+        }
+    }
+
+    public void Death()
+    {
+        GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
+        Destroy(gameObject);
+    }
+
+
+
+
+    IEnumerator waitSideOfPlayer()
+    {
+        isOnSideCoroutine = true;
+        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.arrestSideOfPlayerDuration);
+        isLeaving = true;
+    }
+    public IEnumerator RandomiseDirection()
+    {
+        directionToMoveOn = GiveNewMovementDirection();
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(RandomiseDirection());
+    }
+
+    Vector3 GiveNewMovementDirection()
+    {
+        int randomN = Random.Range(1, 3);
+
+        if(randomN == 1)
+        {
+            return Vector3.right;
+        }
+        else if(randomN == 2)
+        {
+            return Vector3.left;
+        }
+        else
+        {
+            return Vector3.zero;
         }
     }
 }
