@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     [Range (0,1)]
     public float inertiaTiming;
 
+
+    bool isBumped = false;
+
     private void OnEnable()
     {
         InputManager.OnStartTouch1 += Move;
@@ -29,10 +32,13 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        InputManager.OnStartTouch1 -= Move;
-        InputManager.OnEndTouch1 -= Move;
-        InputManager.OnStartTouch2 -= MovePrio;
-        InputManager.OnEndTouch2 -= MovePrio;
+        if(!isBumped)
+        {
+            InputManager.OnStartTouch1 -= Move;
+            InputManager.OnEndTouch1 -= Move;
+            InputManager.OnStartTouch2 -= MovePrio;
+            InputManager.OnEndTouch2 -= MovePrio;
+        }
     }
 
 
@@ -132,12 +138,26 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime);
         }
         
-        
+        if(isBumped)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
+        }
     }
 
     void Inertia() // pour ismuler de l'inertie
     {
         inertia = false;
+    }
+
+
+
+    public IEnumerator playerBumped(Vector3 _direction)
+    {
+        direction = _direction;
+        isBumped = true;
+        yield return new WaitForSeconds(0.5f);
+        isBumped = false;
+        direction = Vector3.zero;
     }
 
 }

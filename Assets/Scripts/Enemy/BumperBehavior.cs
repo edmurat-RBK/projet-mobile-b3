@@ -40,7 +40,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
 
 
-        //BumperAttack();
+        BumperAttack();
 
         
 
@@ -60,6 +60,17 @@ public class BumperBehavior : GlobalEnnemiBehavior
             {
                 StopCoroutine(BumpPlayer());
                 Debug.Log("BOUM");
+
+                if(playerOnLeft == true)
+                {
+                    StartCoroutine(GameManager.Instance.playerManager.player.GetComponent<PlayerController>().playerBumped(Vector3.left));
+                }
+                else if(playerOnRight == true)
+                {
+                    StartCoroutine(GameManager.Instance.playerManager.player.GetComponent<PlayerController>().playerBumped(Vector3.right));
+                }
+
+                
                 isBumping = false;
                 StartCoroutine(BumpCoolDown());
             }

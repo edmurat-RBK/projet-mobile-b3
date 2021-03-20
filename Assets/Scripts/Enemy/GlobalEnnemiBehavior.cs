@@ -31,6 +31,9 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public bool playerOnLeft = false;
     public bool isLeaving = false;
 
+    bool playerCloseOnRight = false;
+    bool playerCloseOnLeft = false;
+
     bool isOnSideCoroutine = false;
 
     Vector3 directionToMoveOn = Vector3.right;
@@ -72,15 +75,15 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     {
         if(obstacleAhead == true || somethingBehind == true)   //L'ennemi fait face à un obstacle
         {
-            if(!obstacleOnRight && !obstacleOnLeft) //La voie est dégagée des deux côtés
+            if(!obstacleOnRight && !obstacleOnLeft && !playerCloseOnRight && !playerCloseOnLeft) //La voie est dégagée des deux côtés
             {
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + (directionToMoveOn), 8f*Time.deltaTime);
             }
-            else if(obstacleOnLeft && !obstacleOnRight) //La voie est dégagée sur la droite, mais pas sur la gauche
+            else if((obstacleOnLeft || playerCloseOnLeft) && (!obstacleOnRight || !playerCloseOnRight)) //La voie est dégagée sur la droite, mais pas sur la gauche
             {
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 8f * Time.deltaTime);   //Mouvement droite
             }
-            else if(obstacleOnRight && !obstacleOnLeft) //La voie est dégagée sur la gauche, mais pas sur la droite
+            else if((obstacleOnRight || playerCloseOnRight) && (!obstacleOnLeft || !playerCloseOnLeft)) //La voie est dégagée sur la gauche, mais pas sur la droite
             {
                 transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 8f * Time.deltaTime);    //Mouvement gauche
             }
@@ -161,6 +164,27 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             playerOnLeft = false;
         }
+
+
+
+        Transform playerTransform = GameManager.Instance.playerManager.player.transform;
+        if(playerOnLeft && transform.position.x <= playerTransform.position.x+5)
+        {
+            playerCloseOnLeft = true;
+        }
+        else
+        {
+            playerCloseOnLeft = false;
+        }
+
+        if(playerOnRight && transform.position.x >= playerTransform.position.x - 5)
+        {
+            playerCloseOnRight = true;
+        }
+        else
+        {
+            playerCloseOnRight = false;
+        }
     }
     public void CheckBehind()
     {
@@ -180,6 +204,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         }
     }
 
+
     public void Death()
     {
         GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
@@ -189,17 +214,17 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
 
 
-    IEnumerator waitSideOfPlayer()
-    {
-        isOnSideCoroutine = true;
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.arrestSideOfPlayerDuration);
-        isLeaving = true;
-    }
     public IEnumerator RandomiseDirection()
     {
         directionToMoveOn = GiveNewMovementDirection();
         yield return new WaitForSeconds(5f);
         StartCoroutine(RandomiseDirection());
+    }
+    IEnumerator waitSideOfPlayer()
+    {
+        isOnSideCoroutine = true;
+        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.arrestSideOfPlayerDuration);
+        isLeaving = true;
     }
 
     Vector3 GiveNewMovementDirection()
