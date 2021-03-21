@@ -18,36 +18,39 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
     private void Start()
     {
-        GameManager.Instance.ennemiManager.ennemiList.Add(this.gameObject);
-
+        life = GameManager.Instance.ennemiManager.bumperLife;
         StartCoroutine(RandomiseDirection());
     }
     private void Update()
     {
-        if (isBumping)
+        if(isAlive)
         {
-            BumpMovement();
+            if (isBumping)
+            {
+                BumpMovement();
+            }
+            else
+            {
+                Movement();
+                MoveBack(true);
+            }
+
+            CheckDirection();
+            CheckForPlayer();
+            CheckBehind();
+
+
+
+            BumperAttack();
         }
-        else
-        {
-            Movement();
-            MoveBack(true);
-        }
-
-        CheckDirection();
-        CheckForPlayer();
-        CheckBehind();
-
-
-
-        BumperAttack();
+        
 
         
 
 
-        if (ennemiLife <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if (life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
         {
-            Death();
+            Death(GameManager.Instance.otherWorldManager.bumpedStored);
         }
     }
 
@@ -122,5 +125,20 @@ public class BumperBehavior : GlobalEnnemiBehavior
             transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.right, GameManager.Instance.ennemiManager.bumperAttackSpeed * Time.deltaTime);
         }
         
+    }
+
+
+
+
+
+    void ResetEnemy()
+    {
+        GlobalReset();
+
+        life = GameManager.Instance.ennemiManager.bumperLife;
+
+        isBumping = false;
+        canBump = false;
+        firstBump = true;
     }
 }

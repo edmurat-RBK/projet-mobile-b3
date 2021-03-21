@@ -45,4 +45,5 @@ public class GameManager : MonoBehaviour
     public WaveManager waveManager;
     public TerrainManager terrainManager;
     public InputManager inputManager;
+    public OtherWorldManager otherWorldManager;
 }

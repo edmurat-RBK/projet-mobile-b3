@@ -727,6 +727,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &532913276073706023
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 358600158855246665, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3445043543547434844, guid: 38b8b2ee4ec641e4a9e2c9053b20584d,
+        type: 3}
+      propertyPath: m_Name
+      value: THE OTHER WORLD
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 38b8b2ee4ec641e4a9e2c9053b20584d, type: 3}
 --- !u!1001 &6083765253531162004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -736,30 +805,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
-      propertyPath: bumperAttackSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: bumperAttackCoolDown
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: bumperAttackDuration
+      propertyPath: dummyLife
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
-      propertyPath: arrestSideOfPlayerDuration
-      value: 5
+      propertyPath: bumperLife
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: dummyPrefab
-      value: 
-      objectReference: {fileID: 8111954649272938020, guid: 724692c61b8555847a66ac9026a36356,
-        type: 3}
     - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: spawnPointList.Array.data[0]

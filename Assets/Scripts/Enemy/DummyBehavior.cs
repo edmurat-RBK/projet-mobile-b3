@@ -12,18 +12,40 @@ public class DummyBehavior : GlobalEnnemiBehavior
 {
     private void Start()
     {
-        GameManager.Instance.ennemiManager.ennemiList.Add(this.gameObject);
+        life = GameManager.Instance.ennemiManager.dummyLife;
+        StartCoroutine(RandomiseDirection());
     }
     private void Update()
     {
-        CheckDirection();
-        Movement();
-        MoveBack(false);
-
-
-        if(ennemiLife <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if(isAlive)
         {
-            Death();
+            Movement();
+            MoveBack(false);
+
+
+            CheckDirection();
+            CheckForPlayer();
+            CheckBehind();
         }
+
+        
+
+
+        if(life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        {
+            ResetEnemy();
+            Death(GameManager.Instance.otherWorldManager.dummyStored);
+        }
+    }
+
+
+
+
+
+    void ResetEnemy()
+    {
+        GlobalReset();
+
+        life = GameManager.Instance.ennemiManager.dummyLife;
     }
 }

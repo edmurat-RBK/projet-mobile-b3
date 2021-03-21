@@ -20,7 +20,7 @@ public class Attaque : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ennemy") && boostRef.isBoosting)
         {
-            collision.gameObject.GetComponent<GlobalEnnemiBehavior>().Death();
+            collision.gameObject.GetComponent<GlobalEnnemiBehavior>().life --;
             Debug.Log("KABOOOOOM");
         }
     }

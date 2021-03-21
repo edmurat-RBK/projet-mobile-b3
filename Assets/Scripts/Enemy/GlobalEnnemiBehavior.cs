@@ -9,7 +9,8 @@ using UnityEngine;
 /// </summary>
 public class GlobalEnnemiBehavior : MonoBehaviour
 {
-    public int ennemiLife;
+    public int life;
+
     public bool isAlive = true;
 
     public LayerMask obstacleMask;
@@ -71,7 +72,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         }
 
     }
-    public void Movement()
+    public void Movement() //Permet aux ennemis d'esquiver les rochers, les ennemis et le joueurs
     {
         if(obstacleAhead == true || somethingBehind == true)   //L'ennemi fait face à un obstacle
         {
@@ -101,7 +102,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     }
 
 
-    public void CheckDirection()
+    public void CheckDirection() //Vérfie les obstacles devant l'ennemi
     {
         #region Debug
         Debug.DrawRay(transform.position, transform.forward * 50f, Color.red);
@@ -137,7 +138,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         }
 
     }
-    public void CheckForPlayer()
+    public void CheckForPlayer() //Vérifie la position du joueur sur les côté de l'ennemi
     {
         #region Debug
         Debug.DrawRay(transform.position, transform.right * 20, Color.blue);
@@ -186,7 +187,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             playerCloseOnRight = false;
         }
     }
-    public void CheckBehind()
+    public void CheckBehind() //Vérifie ce qui se trouve derrière l'ennemi
     {
         #region Debug
         Debug.DrawRay(transform.position + Vector3.right, -transform.forward * 5, Color.green);
@@ -205,29 +206,50 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     }
 
 
-    public void Death()
+    public void Death(List<GameObject> list) //Remet le joueur sur l'emplacement de stockage
     {
         GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
-        Destroy(gameObject);
+        this.transform.position = GameManager.Instance.otherWorldManager.otherWorld.position;
+        isAlive = false;
+        list.Add(this.gameObject);
     }
+    public void GlobalReset() //Rétablie toute les valeurs communes à tout les ennemis à leur valeur de base
+    {
+        transform.position = Vector3.zero;
+        obstacleAhead = false;
+        obstacleOnRight = false;
+        obstacleOnLeft = false;
+        somethingBehind = false;
+
+        playerOnRight = false;
+        playerOnLeft = false;
+        isLeaving = false;
+
+        playerCloseOnRight = false;
+        playerCloseOnLeft = false;
+
+        isOnSideCoroutine = false;
+
+        directionToMoveOn = Vector3.right;
+}
 
 
 
 
-    public IEnumerator RandomiseDirection()
+    public IEnumerator RandomiseDirection() //Change la direction que l'ennemi utilise pour esquiver un obstacle
     {
         directionToMoveOn = GiveNewMovementDirection();
         yield return new WaitForSeconds(5f);
         StartCoroutine(RandomiseDirection());
     }
-    IEnumerator waitSideOfPlayer()
+    IEnumerator waitSideOfPlayer() //Stop l'ennemi pendant un temps donné lorsqu'il arrive au niveau du joueur
     {
         isOnSideCoroutine = true;
         yield return new WaitForSeconds(GameManager.Instance.ennemiManager.arrestSideOfPlayerDuration);
         isLeaving = true;
     }
 
-    Vector3 GiveNewMovementDirection()
+    Vector3 GiveNewMovementDirection() //Gère la fréquence à laquelle la direction d'esquive change
     {
         int randomN = Random.Range(1, 3);
 
