@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 /// <summary>
 /// Lucas DEUTSCHMANN
 /// Player Controller
@@ -11,6 +12,7 @@ using UnityEngine.InputSystem;
 public class Boost : MonoBehaviour
 {
     public float boostDuration;
+    public float boostCooldown;
     public int SwipeLength;
     public bool clickDown;
     public bool callOnce = true;
@@ -21,6 +23,13 @@ public class Boost : MonoBehaviour
     public Vector2 secondPos2;
     [HideInInspector]
     public bool isBoosting;
+    [HideInInspector]
+    public bool isCoolingDown;
+    public Slider slider;
+    public int boostCharges;
+    public int maxBoostCharges;
+    
+    
 
     private void OnEnable()
     {
@@ -68,25 +77,7 @@ public class Boost : MonoBehaviour
             Invoke("ResetPos2", .5f);
         }
     }
-    //public void OnBoost()
-    //{
-    //    bool callOnce;
-    //    callOnce = true;
 
-    //    if (!clickDown && callOnce)
-    //    {
-    //        firstPos = Mouse.current.position.ReadValue();
-    //        callOnce = false;
-    //    }
-    //    if (clickDown && callOnce)
-    //    {
-    //        secondPos = Mouse.current.position.ReadValue();
-    //        callOnce = false;
-    //        Invoke("ResetPos", .5f);
-    //    }
-    //    clickDown = !clickDown;
-
-    //}
     void ResetPos()
     {
         firstPos = Vector2.zero;
@@ -101,27 +92,37 @@ public class Boost : MonoBehaviour
     }
     private void Update()
     {
-        if (firstPos != Vector2.zero && secondPos != Vector2.zero)
+        if (boostCharges > 0)
         {
-            if (secondPos.y > firstPos.y + SwipeLength)
+           if (firstPos != Vector2.zero && secondPos != Vector2.zero)
             {
-                TerrainManager.TMInstance.Boost(boostDuration);
+                if (secondPos.y > firstPos.y + SwipeLength  && !isCoolingDown && !isBoosting)
+                {
+                    TerrainManager.TMInstance.Boost(boostDuration);
                 
-                ResetPos();
-                
-
+                    ResetPos();
+                }
             }
+            if (firstPos2 != Vector2.zero && secondPos2 != Vector2.zero)
+            {
+                if (secondPos2.y > firstPos2.y + SwipeLength && !isCoolingDown && !isBoosting)
+                {
+                    TerrainManager.TMInstance.Boost(boostDuration);
+                
+                    ResetPos2();
+                }
+            } 
         }
-        if (firstPos2 != Vector2.zero && secondPos2 != Vector2.zero)
-        {
-            if (secondPos2.y > firstPos2.y + SwipeLength)
-            {
-                TerrainManager.TMInstance.Boost(boostDuration);
-                
-                ResetPos2();
-                
+        
 
-            }
+        if (isBoosting)
+        {
+            slider.value -= 1/boostDuration * Time.deltaTime;
+        }
+
+        if (isCoolingDown)
+        {
+            slider.value += 1/boostCooldown * Time.deltaTime;
         }
     }
 }
