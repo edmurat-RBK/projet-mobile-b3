@@ -13,34 +13,9 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
-    #region Variables
-    public bool playerIsAlive;
-
-
-
-    public float maxPlayerLife = 10f;
-    public float playerLife = 10f;
-
-    public float lifeDecreaseSpeed = 1f;
-    public float decreaseMultiplicator = 0f;
-    public static PlayerLife playerLifeInstance;
-    #endregion
-
-    private void Awake()
-    {
-        if (playerLifeInstance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            playerLifeInstance = this;
-        }
-    }
-
     void Start()
     {
-        playerIsAlive = true;
+        GameManager.Instance.playerManager.playerIsAlive = true;
     }
 
     void Update()
@@ -48,7 +23,7 @@ public class PlayerLife : MonoBehaviour
         LifeDecreaseOverTime();
 
 
-        if (playerLife <= 0 && playerIsAlive)
+        if (GameManager.Instance.playerManager.playerLife <= 0 && GameManager.Instance.playerManager.playerIsAlive)
         {
             PlayerDeath();
         }
@@ -58,15 +33,15 @@ public class PlayerLife : MonoBehaviour
     #region Fonctions
     void LifeDecreaseOverTime()
     {
-        if(playerIsAlive)
+        if(GameManager.Instance.playerManager.playerIsAlive)
         {
-            playerLife -= (lifeDecreaseSpeed * decreaseMultiplicator * Time.deltaTime);
+            GameManager.Instance.playerManager.playerLife -= (GameManager.Instance.playerManager.lifeDecreaseSpeed * GameManager.Instance.playerManager.decreaseMultiplicator * Time.deltaTime);
         }
     }
 
     void PlayerDeath()
     {
-        playerIsAlive = false;
+        GameManager.Instance.playerManager.playerIsAlive = false;
         Debug.Log("Player is Dead");
     }
     #endregion
