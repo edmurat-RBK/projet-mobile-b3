@@ -39,8 +39,10 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     Vector3 directionToMoveOn = Vector3.right;
 
-
-
+    internal void Death()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void MoveBack(bool stopAtPlayerPos) //Move vers l'arrière, jusqu'à ce qu'il atteigne la position du player. Des lors, il se stop.
     {
