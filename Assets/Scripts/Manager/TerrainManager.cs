@@ -75,6 +75,8 @@ public class TerrainManager : MonoBehaviour
 
     public void Boost(float duration)
     {
+        GameManager.Instance.playerManager.playerIsBoosting = true;
+
         boostRef.boostCharges -= 1;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
@@ -83,6 +85,8 @@ public class TerrainManager : MonoBehaviour
     
     void EndBoost()
     {
+        GameManager.Instance.playerManager.playerIsBoosting = false;
+
         scrollSpeed = baseScrollspeed;
         boostRef.isBoosting = false;
         boostRef.isCoolingDown = true;

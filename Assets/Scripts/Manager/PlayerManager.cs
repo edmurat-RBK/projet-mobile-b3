@@ -7,10 +7,44 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
 
     public bool playerIsAlive;
+    public bool playerIsBoosting = false;
 
     public float maxPlayerLife = 10f;
     public float playerLife = 10f;
 
     public float lifeDecreaseSpeed = 1f;
     public float decreaseMultiplicator = 0f;
+
+
+
+
+
+
+    [Space(30)]
+    [Header("Upgrades")]
+    [Space(5)]
+
+    public int lifeUpgrade;
+    public int boostCoolDownUpgrade;
+    public int boostDamages;
+
+
+
+
+
+    private void Start()
+    {
+        InitValues();
+    }
+
+
+
+
+
+    void InitValues()
+    {
+        lifeUpgrade = 1;
+        boostCoolDownUpgrade = 1;
+        boostDamages = 1;
+    }
 }
