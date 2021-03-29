@@ -27,7 +27,7 @@ public class Boost : MonoBehaviour
     public bool isCoolingDown;
     public Slider slider;
     public int boostCharges;
-    public int maxBoostCharges;
+    public int maxBoostCharges = 3;
     
     
 
@@ -124,5 +124,8 @@ public class Boost : MonoBehaviour
         {
             slider.value += 1/boostCooldown * Time.deltaTime;
         }
+    }
+    private void Start() {
+        boostCharges = maxBoostCharges;
     }
 }

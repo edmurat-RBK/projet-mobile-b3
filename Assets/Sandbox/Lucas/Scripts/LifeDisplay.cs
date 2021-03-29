@@ -10,12 +10,13 @@ public class LifeDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHp = (int)GameManager.Instance.playerManager.playerLife;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerHp = (int)GameManager.Instance.playerManager.playerLife;
         playerLife.text = playerHp.ToString();
     }
 }

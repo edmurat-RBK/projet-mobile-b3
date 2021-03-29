@@ -75,6 +75,7 @@ public class TerrainManager : MonoBehaviour
 
     public void Boost(float duration)
     {
+        Debug.Log("boost");
         boostRef.boostCharges -= 1;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
