@@ -24,5 +24,13 @@ public class OtherWorld : MonoBehaviour
             GameManager.Instance.otherWorldManager.bumpedStored.Add(Bumper);
             Bumper.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
+
+        index = GameManager.Instance.otherWorldManager.minerInstanciate;
+        for (int i = 0; i < index; i++)
+        {
+            GameObject Miner = Instantiate(GameManager.Instance.otherWorldManager.minerPrefab, transform.position, transform.rotation);
+            GameManager.Instance.otherWorldManager.minerStored.Add(Miner);
+            Miner.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+        }
     }
 }

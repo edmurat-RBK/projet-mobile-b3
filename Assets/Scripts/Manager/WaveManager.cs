@@ -34,14 +34,25 @@ public class WaveManager : MonoBehaviour
 
             for (int i = 0; i < (maxEnnemiInLevel - GameManager.Instance.ennemiManager.ennemiList.Count); i++)
             {
-                int index = Random.Range(1, 3);
-                if(index == 1)
+                int index = Random.Range(1, 4);
+
+                switch(index)
                 {
-                    SpawnDummy();
-                }
-                else
-                {
-                    SpawnBumper();
+                    case (1):
+                        SpawnDummy();
+                        break;
+
+                    case (2):
+                        SpawnBumper();
+                        break;
+
+                    case (3):
+                        SpawnMiner();
+                        break;
+
+                    default:
+                        SpawnBumper();
+                        break;
                 }
             }
         }
@@ -77,6 +88,22 @@ public class WaveManager : MonoBehaviour
             GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.bumpedStored[0]);
             GameManager.Instance.otherWorldManager.bumpedStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
             GameManager.Instance.otherWorldManager.bumpedStored.RemoveAt(0);
+            //...on fait spawn un ennemi qui se range tout seul dans la List.
+
+            StartCoroutine(SpawnCoolDown());
+        }
+    }
+    void SpawnMiner()
+    {
+        int index = Random.Range(0, spawnPointList.Count);//On tire un point de spawn random
+
+
+        if (canSpawn)
+        {
+            GameManager.Instance.otherWorldManager.minerStored[0].transform.position = spawnPointList[index].transform.position;
+            GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.minerStored[0]);
+            GameManager.Instance.otherWorldManager.minerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
+            GameManager.Instance.otherWorldManager.minerStored.RemoveAt(0);
             //...on fait spawn un ennemi qui se range tout seul dans la List.
 
             StartCoroutine(SpawnCoolDown());

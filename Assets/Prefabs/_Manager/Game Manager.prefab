@@ -71,10 +71,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerIsAlive: 0
+  playerIsBoosting: 0
   maxPlayerLife: 10
   playerLife: 10
   lifeDecreaseSpeed: 1
   decreaseMultiplicator: 0
+  lifeUpgrade: 0
+  boostCoolDownUpgrade: 0
+  boostDamages: 0
 --- !u!114 &5488301228241700821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ae5f607669c2c4783bc0da5059868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCounter: 0
+  coinCounter: 12
 --- !u!114 &2539019664075447828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,10 +106,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadZone: {fileID: 0}
   ennemiList: []
+  dummyLife: 1
+  bumperLife: 1
   arrestSideOfPlayerDuration: 5
   bumperAttackSpeed: 15
   bumperAttackDuration: 1
   bumperAttackCoolDown: 5
+  minerLife: 1
+  minerArrestSideOfPlayerDuration: 0
+  stopDuration: 10
+  minerDropRate: 2
+  xPosForDrop: 20
 --- !u!114 &5565625447880629598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +135,6 @@ MonoBehaviour:
   - {fileID: 0}
   maxEnnemiInLevel: 5
   timeBetweenSpawn: 1
-  dummyPrefab: {fileID: 8111954649272938020, guid: 724692c61b8555847a66ac9026a36356,
-    type: 3}
 --- !u!114 &754426304512798546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,10 +180,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dummyInstanciate: 5
   bumperInstanciate: 5
+  minerInstanciate: 5
   otherWorld: {fileID: 0}
   dummyStored: []
   bumpedStored: []
+  minerStored: []
   dummyPrefab: {fileID: 2311446640046295926, guid: 9143055a76444944abceb231235709f9,
     type: 3}
   bumperPrefab: {fileID: 8111954649272938020, guid: 724692c61b8555847a66ac9026a36356,
+    type: 3}
+  minerPrefab: {fileID: 6331849488179574979, guid: 5d34668f76742624fbeb116fd878bbbe,
     type: 3}
