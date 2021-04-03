@@ -42,6 +42,7 @@ public class PlayerLife : MonoBehaviour
     void PlayerDeath()
     {
         GameManager.Instance.playerManager.playerIsAlive = false;
+        DataManager.DMInstance.Save(GameManager.Instance.highScore.displayedScore,GameManager.Instance.economicManager.coinCounter);
         Debug.Log("Player is Dead");
     }
     #endregion
