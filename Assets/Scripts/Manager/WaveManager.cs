@@ -34,7 +34,7 @@ public class WaveManager : MonoBehaviour
 
             for (int i = 0; i < (maxEnnemiInLevel - GameManager.Instance.ennemiManager.ennemiList.Count); i++)
             {
-                int index = Random.Range(1, 4);
+                int index = Random.Range(1, 5);
 
                 switch(index)
                 {
@@ -48,6 +48,10 @@ public class WaveManager : MonoBehaviour
 
                     case (3):
                         SpawnMiner();
+                        break;
+
+                    case (4):
+                        SpawnGolder();
                         break;
 
                     default:
@@ -104,6 +108,22 @@ public class WaveManager : MonoBehaviour
             GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.minerStored[0]);
             GameManager.Instance.otherWorldManager.minerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
             GameManager.Instance.otherWorldManager.minerStored.RemoveAt(0);
+            //...on fait spawn un ennemi qui se range tout seul dans la List.
+
+            StartCoroutine(SpawnCoolDown());
+        }
+    }
+    void SpawnGolder()
+    {
+        int index = Random.Range(0, spawnPointList.Count);//On tire un point de spawn random
+
+
+        if (canSpawn)
+        {
+            GameManager.Instance.otherWorldManager.golderStored[0].transform.position = spawnPointList[index].transform.position;
+            GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.golderStored[0]);
+            GameManager.Instance.otherWorldManager.golderStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
+            GameManager.Instance.otherWorldManager.golderStored.RemoveAt(0);
             //...on fait spawn un ennemi qui se range tout seul dans la List.
 
             StartCoroutine(SpawnCoolDown());

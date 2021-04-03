@@ -44,4 +44,15 @@ public class EnnemiManager : MonoBehaviour
     public float minerDropRate;
     public float xPosForDrop;
     #endregion
+
+    [Space(20)]
+
+    #region Golder
+    [Header("Golder")]
+
+    public int golderLife;
+    [Space(5)]
+    public float golderDropRate;
+    public float gloderStayDuration;
+    #endregion
 }

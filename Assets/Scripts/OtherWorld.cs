@@ -32,5 +32,13 @@ public class OtherWorld : MonoBehaviour
             GameManager.Instance.otherWorldManager.minerStored.Add(Miner);
             Miner.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
+
+        index = GameManager.Instance.otherWorldManager.golderInstanciate;
+        for (int i = 0; i < index; i++)
+        {
+            GameObject Golder = Instantiate(GameManager.Instance.otherWorldManager.golderPrefab, transform.position, transform.rotation);
+            GameManager.Instance.otherWorldManager.golderStored.Add(Golder);
+            Golder.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+        }
     }
 }
