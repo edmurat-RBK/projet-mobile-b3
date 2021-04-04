@@ -117,6 +117,13 @@ MonoBehaviour:
   stopDuration: 10
   minerDropRate: 2
   xPosForDrop: 20
+  golderLife: 1
+  golderDropRate: 2
+  gloderStayDuration: 10
+  flamerLife: 1
+  flamerAttackDuration: 10
+  flamerWaitSideOfPlayer: 0
+  xPosForFire: 15
 --- !u!114 &5565625447880629598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,13 +188,21 @@ MonoBehaviour:
   dummyInstanciate: 5
   bumperInstanciate: 5
   minerInstanciate: 5
+  golderInstanciate: 5
+  flamerInstanciate: 5
   otherWorld: {fileID: 0}
   dummyStored: []
   bumpedStored: []
   minerStored: []
+  golderStored: []
+  flamerStored: []
   dummyPrefab: {fileID: 2311446640046295926, guid: 9143055a76444944abceb231235709f9,
     type: 3}
   bumperPrefab: {fileID: 8111954649272938020, guid: 724692c61b8555847a66ac9026a36356,
     type: 3}
   minerPrefab: {fileID: 6331849488179574979, guid: 5d34668f76742624fbeb116fd878bbbe,
+    type: 3}
+  golderPrefab: {fileID: 7372733718108820251, guid: ab9aab8279b42ec46846c79d3c99dfb4,
+    type: 3}
+  flamerPrefab: {fileID: 3927815152867202777, guid: 53a8e246d251baa4488f6a3cb4c1ec0c,
     type: 3}

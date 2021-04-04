@@ -55,4 +55,17 @@ public class EnnemiManager : MonoBehaviour
     public float golderDropRate;
     public float gloderStayDuration;
     #endregion
+
+    [Space(20)]
+
+    #region Flamer
+    [Header("Flamer")]
+
+    public int flamerLife;
+    [Space(5)]
+    public float flamerAttackDuration;
+    public float flamerWaitSideOfPlayer;
+    [Space(5)]
+    public float xPosForFire;
+    #endregion
 }

@@ -40,5 +40,13 @@ public class OtherWorld : MonoBehaviour
             GameManager.Instance.otherWorldManager.golderStored.Add(Golder);
             Golder.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
+
+        index = GameManager.Instance.otherWorldManager.flamerInstanciate;
+        for (int i = 0; i < index; i++)
+        {
+            GameObject Flamer = Instantiate(GameManager.Instance.otherWorldManager.flamerPrefab, transform.position, transform.rotation);
+            GameManager.Instance.otherWorldManager.flamerStored.Add(Flamer);
+            Flamer.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+        }
     }
 }
