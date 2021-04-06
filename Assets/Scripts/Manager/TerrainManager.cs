@@ -7,19 +7,8 @@ using UnityEngine;
 
 public class TerrainManager : MonoBehaviour
 {
+    #region Singleton
     public static TerrainManager TMInstance;
-    public List<TerrainObject> terrainPool;
-    public float terrainLenght;
-    public float scrollSpeed;
-    public float boostSpeed;
-    [HideInInspector]
-    public float baseScrollspeed;
-    public int terrainCount;
-    private Queue<GameObject> terrainQueue;
-    private GameObject worldParentObject;
-    Boost boostRef;
-    
-
     private void Awake()
     {
         if (TMInstance != null)
@@ -30,18 +19,29 @@ public class TerrainManager : MonoBehaviour
         {
             TMInstance = this;
         }
-        terrainQueue = new Queue<GameObject>();
-        
     }
+    #endregion
+
+    public List<TerrainObject> terrainPool;
+    public float terrainLenght;
+    public float scrollSpeed;
+    public float boostSpeed;
+    [HideInInspector]
+    public float baseScrollspeed;
+    public int terrainCount;
+    private Queue<GameObject> terrainQueue;
+    Boost boostRef;
+    
+
 
     private void Start()
     {
-        worldParentObject = GameObject.Find("----- WORLD -----");
+        terrainQueue = new Queue<GameObject>();
         boostRef = FindObjectOfType<Boost>();
         baseScrollspeed = scrollSpeed;
         for(int i = 0; i<terrainCount; i++)
         {
-            AddTerrain(new Vector3(0, 0, terrainLenght*i));
+            AddTerrain("LD_Alpha01", new Vector3(0, 0, terrainLenght*i));
         }
     }
 
@@ -65,10 +65,10 @@ public class TerrainManager : MonoBehaviour
             
             if(go.transform.position.z < -terrainLenght)
             {
-                RemoveTerrain();
+                terrainQueue.Dequeue();
                 GameObject[] gameObjectArray = terrainQueue.ToArray();
                 Vector3 newPosition = gameObjectArray[gameObjectArray.Length-1].transform.position;
-                AddTerrain(new Vector3(0, 0, newPosition.z + terrainLenght));
+                AddTerrain("LD_Alpha01", new Vector3(0, 0, newPosition.z + terrainLenght));
             }
         }
     }
@@ -96,16 +96,9 @@ public class TerrainManager : MonoBehaviour
         boostRef.isCoolingDown = false;
     }
 
-
-    private void AddTerrain(Vector3 position)
+    private void AddTerrain(string tag, Vector3 position)
     {
-        GameObject newInstance = Instantiate(terrainPool[Random.Range(0, terrainPool.Count)].terrainObject, position, Quaternion.identity,worldParentObject.transform);
+        GameObject newInstance = ObjectPooler.Instance.SpawnFromPool(tag, position, Quaternion.identity);
         terrainQueue.Enqueue(newInstance);
-    }
-
-    private void RemoveTerrain()
-    {
-        GameObject removedInstance = terrainQueue.Dequeue();
-        Destroy(removedInstance);
     }
 }
