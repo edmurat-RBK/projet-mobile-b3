@@ -45,6 +45,7 @@ public class ObjectPooler : MonoBehaviour
         public string tag;
         public GameObject prefab;
         public int size;
+        public Transform parentInInspector;
     }
 
     public Dictionary<string, Queue<GameObject>> poolDictionary;
@@ -60,7 +61,7 @@ public class ObjectPooler : MonoBehaviour
 
             for(int i = 0; i<pool.size; i++)
             {
-                GameObject inst = Instantiate(pool.prefab);
+                GameObject inst = Instantiate(pool.prefab,new Vector3(1000,0,1000),Quaternion.identity, pool.parentInInspector);
                 inst.SetActive(false);
                 objectPool.Enqueue(inst);
             }

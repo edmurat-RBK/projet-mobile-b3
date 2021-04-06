@@ -30,7 +30,6 @@ public class TerrainManager : MonoBehaviour
     public float baseScrollspeed;
     public int terrainCount;
     private Queue<GameObject> terrainQueue;
-    private GameObject worldParentObject;
     Boost boostRef;
     
 
@@ -38,7 +37,6 @@ public class TerrainManager : MonoBehaviour
     private void Start()
     {
         terrainQueue = new Queue<GameObject>();
-        worldParentObject = GameObject.Find("----- WORLD -----");
         boostRef = FindObjectOfType<Boost>();
         baseScrollspeed = scrollSpeed;
         for(int i = 0; i<terrainCount; i++)
