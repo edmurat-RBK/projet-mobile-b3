@@ -50,6 +50,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
         if (life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
         {
+            ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored);
         }
     }

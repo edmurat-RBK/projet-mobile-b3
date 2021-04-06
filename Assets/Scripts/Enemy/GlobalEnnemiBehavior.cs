@@ -48,13 +48,28 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     {
         if(stopAtPlayerPos == false)
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/speedMultiplicator * Time.deltaTime);
+            if(GameManager.Instance.playerManager.playerIsBoosting)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/2f * Time.deltaTime);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+            }
+            
         }
         else if(stopAtPlayerPos == true)
         {
             if(transform.position.z > GameManager.Instance.playerManager.player.transform.position.z - 6)
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                if (GameManager.Instance.playerManager.playerIsBoosting)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / 2f * Time.deltaTime);
+                }
+                else
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                }
             }
             else
             {
