@@ -9,6 +9,17 @@ public class TerrainManager : MonoBehaviour
 {
     #region Singleton
     public static TerrainManager TMInstance;
+    public List<TerrainObject> terrainPool;
+    public float terrainLenght;
+    public float scrollSpeed;
+    public float boostSpeed;
+    [HideInInspector]
+    public float baseScrollspeed;
+    public int terrainCount;
+    private Queue<GameObject> terrainQueue;
+    private GameObject worldParentObject;
+    Boost boostRef;
+    
     private void Awake()
     {
         if (TMInstance != null)
@@ -43,6 +54,8 @@ public class TerrainManager : MonoBehaviour
         {
             AddTerrain("LD_Alpha01", new Vector3(0, 0, terrainLenght*i));
         }
+
+        
     }
 
     private void Update()
@@ -55,6 +68,8 @@ public class TerrainManager : MonoBehaviour
         {
             // Keep going
         }
+
+        
     }
 
     private void MoveAllTerrains()
@@ -75,25 +90,38 @@ public class TerrainManager : MonoBehaviour
 
     public void Boost(float duration)
     {
+        Debug.Log("boost");
         boostRef.boostCharges -= 1;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
-        Invoke("EndBoost", duration);
+        boostRef.isCoolingDown = false;
+        
+        StopAllCoroutines();
+        StartCoroutine(EndBoost(duration));
     }
     
-    void EndBoost()
+    IEnumerator EndBoost(float duration)
     {
+        yield return new WaitForSeconds(duration);
+        boostRef.boostCharges -= 1;
         scrollSpeed = baseScrollspeed;
         boostRef.isBoosting = false;
-        boostRef.isCoolingDown = true;
-        Invoke("BoostCooldown", boostRef.boostCooldown);
+        
+        StartCoroutine(BoostCooldown(boostRef.boostCooldown));
     }
 
-    void BoostCooldown()
+    IEnumerator BoostCooldown(float duration)
     {
+        boostRef.isCoolingDown = true;
+        yield return new WaitForSeconds(duration);
+        if(boostRef.boostCharges<boostRef.maxBoostCharges)
+            {
+                boostRef.boostCharges += 1;
+            }
+            
+            boostRef.isCoolingDown = false;
         
-        boostRef.boostCharges += 1;
-        boostRef.isCoolingDown = false;
+        StartCoroutine(BoostCooldown(boostRef.boostCooldown));
     }
 
     private void AddTerrain(string tag, Vector3 position)

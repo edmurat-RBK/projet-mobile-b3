@@ -32,12 +32,12 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        if(!isBumped)
-        {
-            InputManager.OnStartTouch1 -= Move;
-            InputManager.OnEndTouch1 -= Move;
-            InputManager.OnStartTouch2 -= MovePrio;
-            InputManager.OnEndTouch2 -= MovePrio;
+        if(!isBumped)
+        {
+            InputManager.OnStartTouch1 -= Move;
+            InputManager.OnEndTouch1 -= Move;
+            InputManager.OnStartTouch2 -= MovePrio;
+            InputManager.OnEndTouch2 -= MovePrio;
         }
     }
 
@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 position)
     {
+        
         if (position == Vector2.zero)
         {
             position.x = Screen.width / 2;
@@ -138,9 +139,9 @@ public class PlayerController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime);
         }
         
-        if(isBumped)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
+        if(isBumped)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
         }
     }
 
@@ -151,13 +152,13 @@ public class PlayerController : MonoBehaviour
 
 
 
-    public IEnumerator playerBumped(Vector3 _direction)
-    {
-        direction = _direction;
-        isBumped = true;
-        yield return new WaitForSeconds(0.5f);
-        isBumped = false;
-        direction = Vector3.zero;
+    public IEnumerator playerBumped(Vector3 _direction)
+    {
+        direction = _direction;
+        isBumped = true;
+        yield return new WaitForSeconds(0.5f);
+        isBumped = false;
+        direction = Vector3.zero;
     }
 
 }

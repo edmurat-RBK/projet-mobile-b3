@@ -17,18 +17,26 @@ public class Boost : MonoBehaviour
     public bool clickDown;
     public bool callOnce = true;
     public bool callOnce2 = true;
-    public Vector2 firstPos;
-    public Vector2 secondPos;
-    public Vector2 firstPos2;
-    public Vector2 secondPos2;
+    Vector2 firstPos;
+    Vector2 secondPos;
+    Vector2 firstPos2;
+    Vector2 secondPos2;
     [HideInInspector]
     public bool isBoosting;
-    [HideInInspector]
+    // [HideInInspector]
     public bool isCoolingDown;
+    public bool Running;
     public Slider slider;
     public int boostCharges;
     public int maxBoostCharges;
+    public float currentValue;
     
+    void Start() 
+    {
+        boostCharges = maxBoostCharges;
+        slider.maxValue = maxBoostCharges;
+        slider.value = slider.maxValue;
+    }
     
 
     private void OnEnable()
@@ -96,7 +104,7 @@ public class Boost : MonoBehaviour
         {
            if (firstPos != Vector2.zero && secondPos != Vector2.zero)
             {
-                if (secondPos.y > firstPos.y + SwipeLength  && !isCoolingDown && !isBoosting)
+                if (secondPos.y > firstPos.y + SwipeLength && !isBoosting)
                 {
                     TerrainManager.TMInstance.Boost(boostDuration);
                 
@@ -105,7 +113,7 @@ public class Boost : MonoBehaviour
             }
             if (firstPos2 != Vector2.zero && secondPos2 != Vector2.zero)
             {
-                if (secondPos2.y > firstPos2.y + SwipeLength && !isCoolingDown && !isBoosting)
+                if (secondPos2.y > firstPos2.y + SwipeLength && !isBoosting)
                 {
                     TerrainManager.TMInstance.Boost(boostDuration);
                 
@@ -117,12 +125,16 @@ public class Boost : MonoBehaviour
 
         if (isBoosting)
         {
-            slider.value -= 1/boostDuration * Time.deltaTime;
+            slider.value -= (1+(currentValue-boostCharges))/boostDuration * Time.deltaTime; 
+            
         }
 
-        if (isCoolingDown)
+        if (isCoolingDown && boostCharges<maxBoostCharges)
         {
             slider.value += 1/boostCooldown * Time.deltaTime;
         }
+    }
+    private void Start() {
+        boostCharges = maxBoostCharges;
     }
 }
