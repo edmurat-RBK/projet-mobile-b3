@@ -8,7 +8,7 @@ public class HighScore : MonoBehaviour
     
     public Text highScoreText;
     float highScore;
-    int displayedScore;
+    public int displayedScore;
     [HideInInspector]
     public float multiplier;
 
