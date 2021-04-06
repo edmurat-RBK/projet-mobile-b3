@@ -32,19 +32,7 @@ public class TerrainManager : MonoBehaviour
         }
     }
     #endregion
-
-    public List<TerrainObject> terrainPool;
-    public float terrainLenght;
-    public float scrollSpeed;
-    public float boostSpeed;
-    [HideInInspector]
-    public float baseScrollspeed;
-    public int terrainCount;
-    private Queue<GameObject> terrainQueue;
-    Boost boostRef;
     
-
-
     private void Start()
     {
         terrainQueue = new Queue<GameObject>();
