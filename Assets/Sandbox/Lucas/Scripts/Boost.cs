@@ -134,4 +134,7 @@ public class Boost : MonoBehaviour
             slider.value += 1/boostCooldown * Time.deltaTime;
         }
     }
+    private void Start() {
+        boostCharges = maxBoostCharges;
+    }
 }

@@ -80,8 +80,8 @@ public class TerrainManager : MonoBehaviour
 
     public void Boost(float duration)
     {
-        
-        boostRef.currentValue = boostRef.slider.value;
+        Debug.Log("boost");
+        boostRef.boostCharges -= 1;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
         boostRef.isCoolingDown = false;
