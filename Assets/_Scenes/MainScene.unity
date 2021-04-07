@@ -578,6 +578,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7695616608007525149, guid: f27be8b1fa998da4ebe5076bdefad089,
         type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -7695616608007525149, guid: f27be8b1fa998da4ebe5076bdefad089,
+        type: 3}
       propertyPath: boostCharges
       value: 3
       objectReference: {fileID: 0}
@@ -1900,3 +1905,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 
+--- !u!114 &6083765253531162016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083765253531162005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18252b80b6652104ca1c048f52180035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfQuests: 3
+  enemiesDestroyed: 0
+  coinsPickedUp: 0
+  obstaclesDestroyed: 0
+  totalScore: 0
+  currentQuests: 
