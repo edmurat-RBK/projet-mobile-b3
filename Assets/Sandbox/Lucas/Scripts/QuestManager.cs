@@ -15,7 +15,8 @@ public class QuestManager : MonoBehaviour
         GetScore
     }
     
-    QuestsType[] quests;
+    List<QuestsType> quests = new List<QuestsType>();
+    
     public int enemiesDestroyed;
     public int coinsPickedUp;
     public int obstaclesDestroyed;
@@ -25,27 +26,25 @@ public class QuestManager : MonoBehaviour
 
     private void Start() 
     {
-        quests = new QuestsType[numberOfQuests];
         SelectNextQuest();
     }
 
     void SelectNextQuest()
     {
         int enumCount = Enum.GetNames(typeof(QuestsType)).Length;
-        for (int i = 0; i < quests.Length; i++)
-        {
-            
+        for (int i = 0; i < numberOfQuests; i++)
+        {   
             int rnd = UnityEngine.Random.Range(0,enumCount);
-            quests[i] = (QuestsType)rnd;
-            if (i!=0)
-            {
-                if (quests[i] == quests[i-1] )
-                {
-                    i --;
-                }
-            }
             
-            Debug.Log(quests[i]);
+            if (quests.Contains((QuestsType)rnd))
+            {
+                i--;
+            }
+            else
+            {
+                quests.Add((QuestsType)rnd);
+                Debug.Log(quests[i]);
+            }
         }
     }
 }
