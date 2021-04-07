@@ -165,7 +165,6 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.right, out hit, 20f, playerMask)) //Côté droit
         {
-            Debug.Log("Player on right !");
             playerOnRight = true;
         }
         else
@@ -175,7 +174,6 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
         if (Physics.Raycast(transform.position, -transform.right, out hit, 20f, playerMask)) //Côté gauche
         {
-            Debug.Log("Player on left !");
             playerOnLeft = true;
         }
         else

@@ -61,8 +61,6 @@ public class GolderBehavior : GlobalEnnemiBehavior
         {
             hasStartDroping = true;
         }
-        Debug.Log("DROP COIN");
-
 
 
 
