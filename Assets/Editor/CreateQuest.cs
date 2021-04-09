@@ -14,6 +14,7 @@ public class CreateQuest : EditorWindow
     int coinsToPickup = 0;
     bool reachScore = false;
     int scoreToReach = 0;
+    int reward = 5;
 
     [MenuItem("Tools/QuestMaker")]
     public static void ShowWindow()
@@ -31,11 +32,19 @@ public class CreateQuest : EditorWindow
         {
            objectsToDestroy = EditorGUILayout.IntField("Objects To Destroy",objectsToDestroy);
         }
+        else
+        {
+            objectsToDestroy = 0;
+        }
 
         killEnemies = EditorGUILayout.Toggle("Kill Enemies", killEnemies);
         if (killEnemies)
         {
            enemiesToKill = EditorGUILayout.IntField("Enemies To Kill",enemiesToKill);
+        }
+        else
+        {
+            enemiesToKill = 0;
         }
 
         pickupCoins = EditorGUILayout.Toggle("Pick Up Coins", pickupCoins);
@@ -43,12 +52,21 @@ public class CreateQuest : EditorWindow
         {
            coinsToPickup = EditorGUILayout.IntField("Coins To Pick Up",coinsToPickup);
         }
+        else
+        {
+            coinsToPickup = 0;
+        }
 
         reachScore = EditorGUILayout.Toggle("Reach Score", reachScore);
         if (reachScore)
         {
            scoreToReach = EditorGUILayout.IntField("Score To Reach",scoreToReach);
         }
+        else
+        {
+            scoreToReach = 0;
+        }
+        reward = EditorGUILayout.IntField("Reward",reward);
 
         if (!string.IsNullOrWhiteSpace(questName) && GUILayout.Button("Create Quest"))
         {
@@ -67,14 +85,11 @@ public class CreateQuest : EditorWindow
         string path = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(questFolder, $"{questName}.asset"));
         
         quest.questname = questName;
-        quest.destroyObjects = destroyObjects;
         quest.objectsToDestroy = objectsToDestroy;
-        quest.killEnemies = killEnemies;
         quest.enemiesToKill = enemiesToKill;
-        quest.pickupCoins = pickupCoins;
         quest.coinsToPickup = coinsToPickup;
-        quest.reachScore = reachScore;
         quest.scoreToReach = scoreToReach;
+        quest.reward = reward;
 
         AssetDatabase.CreateAsset(quest,path);
         AssetDatabase.SaveAssets();

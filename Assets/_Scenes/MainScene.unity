@@ -1918,8 +1918,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfQuests: 3
-  enemiesDestroyed: 0
-  coinsPickedUp: 0
-  obstaclesDestroyed: 0
-  totalScore: 0
-  currentQuests: 
+  questsList:
+  - {fileID: 11400000, guid: d67a7a1f2ffdf0f4b968b88d47dd77f9, type: 2}
+  - {fileID: 11400000, guid: 52704a3d3c727dd409bc5047fdbf6468, type: 2}
+  - {fileID: 11400000, guid: eb8abc357a093cf48bf757d00002a5e7, type: 2}
+  quests: []
+  obstaclesDestroyed: 
+  enemiesDestroyed: 
+  coinsPickedUp: 
+  totalScore: 
