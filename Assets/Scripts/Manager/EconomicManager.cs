@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EconomicManager : MonoBehaviour
 {
+    public bool multiplyCoins;
+    public float coinsMultiplier = 2f;
     public int coinCounter = 0;
     public int coinVioletCounter = 0;
 }
