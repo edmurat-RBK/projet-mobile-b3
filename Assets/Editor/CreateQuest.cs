@@ -15,6 +15,7 @@ public class CreateQuest : EditorWindow
     bool reachScore = false;
     int scoreToReach = 0;
     int reward = 5;
+    string description = "";
 
     [MenuItem("Tools/QuestMaker")]
     public static void ShowWindow()
@@ -67,7 +68,7 @@ public class CreateQuest : EditorWindow
             scoreToReach = 0;
         }
         reward = EditorGUILayout.IntField("Reward",reward);
-
+        description = EditorGUILayout.TextField("Description",description);
         if (!string.IsNullOrWhiteSpace(questName) && GUILayout.Button("Create Quest"))
         {
             QuestCreation();
@@ -90,7 +91,7 @@ public class CreateQuest : EditorWindow
         quest.coinsToPickup = coinsToPickup;
         quest.scoreToReach = scoreToReach;
         quest.reward = reward;
-
+        quest.description = description;
         AssetDatabase.CreateAsset(quest,path);
         AssetDatabase.SaveAssets();
         EditorUtility.FocusProjectWindow();

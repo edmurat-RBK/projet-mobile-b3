@@ -10,5 +10,6 @@ public class Quests : ScriptableObject
     public int coinsToPickup;
     public int scoreToReach;
     public int reward;
+    public string description;
 }
     
