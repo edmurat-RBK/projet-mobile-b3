@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class ObjectPooler : MonoBehaviour
 {
     #region Singleton

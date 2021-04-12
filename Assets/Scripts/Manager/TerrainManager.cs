@@ -116,7 +116,9 @@ public class TerrainManager : MonoBehaviour
 
     private void AddTerrain(string tag, Vector3 position)
     {
+        
         GameObject newInstance = ObjectPooler.Instance.SpawnFromPool(tag, position, Quaternion.identity);
+        Debug.Log(tag + position);
         terrainQueue.Enqueue(newInstance);
     }
 }
