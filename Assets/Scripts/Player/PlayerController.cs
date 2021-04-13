@@ -142,15 +142,15 @@ public class PlayerController : MonoBehaviour
             //rb.velocity = direction*speed*Time.deltaTime *100; //fait bouger le vaisseau dans la bonne direction
             
         }
-        if (!move)
-        {
-            direction.x = 0;
-        }
         else if (movePrio)
         {
             transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime);
         }
-        
+        if (!move)
+        {
+            direction.x = 0;
+            direction2.x = 0;
+        }
         if(isBumped)
         {
 
