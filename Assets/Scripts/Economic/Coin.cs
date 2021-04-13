@@ -27,7 +27,15 @@ public class Coin : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            GameManager.Instance.economicManager.coinCounter += coinValue;
+            if (GameManager.Instance.economicManager.multiplyCoins)
+            {
+                GameManager.Instance.economicManager.coinCounter += (int)(coinValue * GameManager.Instance.economicManager.coinsMultiplier);
+            }
+            else
+            {
+                GameManager.Instance.economicManager.coinCounter += coinValue;
+            }
+            
             Destroy(gameObject);
         }
     }
