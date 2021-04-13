@@ -8,7 +8,15 @@ public class ObstacleDamage: MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            GameManager.Instance.playerManager.playerLife -= 1;
+            if (GameManager.Instance.playerManager.shield <=0)
+            {
+                GameManager.Instance.playerManager.playerLife -= 1;
+            }
+            else
+            {
+                GameManager.Instance.playerManager.shield -= 1;
+            }
+            
         }
     }
 }
