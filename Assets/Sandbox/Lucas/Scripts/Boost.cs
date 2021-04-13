@@ -100,6 +100,7 @@ public class Boost : MonoBehaviour
     }
     private void Update()
     {
+        GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetBool("isBoosting",isBoosting);
         if (boostCharges > 0)
         {
            if (firstPos != Vector2.zero && secondPos != Vector2.zero)
@@ -128,6 +129,7 @@ public class Boost : MonoBehaviour
             slider.value -= (1+(currentValue-boostCharges))/boostDuration * Time.deltaTime; 
             
         }
+        
 
         if (isCoolingDown && boostCharges<maxBoostCharges)
         {
