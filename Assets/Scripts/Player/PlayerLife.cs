@@ -48,6 +48,7 @@ public class PlayerLife : MonoBehaviour
     {
         if (!GameManager.Instance.playerManager.revive)
         {
+            GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             GameManager.Instance.playerManager.playerIsAlive = false;
             DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             Debug.Log("Player is Dead");

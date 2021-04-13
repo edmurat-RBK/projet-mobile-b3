@@ -1,5 +1,127 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &917004801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 917004803}
+  - component: {fileID: 917004802}
+  - component: {fileID: 8570393376654829991}
+  - component: {fileID: 1433030893965287897}
+  - component: {fileID: 4174063166837625181}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &917004803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917004801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7900983418033125458}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917004802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917004801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd696d127444374288d27e18aecc5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitializationSettings: {fileID: 11400000, guid: ad70bd95ac87e2d40958ecb9ec020e0c,
+    type: 2}
+  basePath: 
+  language: 
+  defaultPoolSize: 0
+  lowerPoolSize: 0
+  streamingPoolSize: 0
+  memoryCutoffThreshold: 0
+  monitorPoolSize: 0
+  monitorQueuePoolSize: 0
+  callbackManagerBufferSize: 0
+  spatialAudioPoolSize: 0
+  maxSoundPropagationDepth: 0
+  engineLogging: 0
+--- !u!114 &8570393376654829991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917004801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73701d496cd856a4eaf70aaf0d413d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 705e92e0da8ff174c89f9d6459f111c7,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &1433030893965287897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917004801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73701d496cd856a4eaf70aaf0d413d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 91b4d1a137a8a5449b25cc71319fe91a,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &4174063166837625181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917004801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206230a07a650e14a833bd1a9a8dd52e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7900983418033125461
 GameObject:
   m_ObjectHideFlags: 0
@@ -17,6 +139,9 @@ GameObject:
   - component: {fileID: 754426304512798546}
   - component: {fileID: 3036606408512657502}
   - component: {fileID: 2851211019028878643}
+  - component: {fileID: 6083765253531162006}
+  - component: {fileID: 6083765253531162007}
+  - component: {fileID: 6083765253531162016}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -34,7 +159,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 917004803}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -57,6 +183,8 @@ MonoBehaviour:
   terrainManager: {fileID: 754426304512798546}
   inputManager: {fileID: 3036606408512657502}
   otherWorldManager: {fileID: 2851211019028878643}
+  highScoreManager: {fileID: 0}
+  questManager: {fileID: 0}
 --- !u!114 &7698680784825049045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,10 +198,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  revive: 0
   playerIsAlive: 0
   playerIsBoosting: 0
+  refilableShield: 0
+  rechargeShield: 0
+  maxShield: 10
+  shield: 0
   maxPlayerLife: 10
   playerLife: 10
+  maxFuelIncrease: 10
+  shieldRechargeRate: 1
   lifeDecreaseSpeed: 1
   decreaseMultiplicator: 0
   lifeUpgrade: 0
@@ -91,7 +226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ae5f607669c2c4783bc0da5059868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  multiplyCoins: 0
+  coinsMultiplier: 2
   coinCounter: 12
+  coinVioletCounter: 0
 --- !u!114 &2539019664075447828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,3 +344,53 @@ MonoBehaviour:
     type: 3}
   flamerPrefab: {fileID: 3927815152867202777, guid: 53a8e246d251baa4488f6a3cb4c1ec0c,
     type: 3}
+--- !u!114 &6083765253531162006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900983418033125461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca16a7c104155fe4480951d836052c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScoreText: {fileID: 0}
+  displayedScore: 0
+  multiplier: 0
+--- !u!114 &6083765253531162007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900983418033125461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d913dab60182c458e4708807c2811d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  path: 
+--- !u!114 &6083765253531162016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7900983418033125461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18252b80b6652104ca1c048f52180035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfQuests: 3
+  questsList:
+  - {fileID: 11400000, guid: d67a7a1f2ffdf0f4b968b88d47dd77f9, type: 2}
+  - {fileID: 11400000, guid: 52704a3d3c727dd409bc5047fdbf6468, type: 2}
+  - {fileID: 11400000, guid: eb8abc357a093cf48bf757d00002a5e7, type: 2}
+  quests: []
+  obstaclesDestroyed: 
+  enemiesDestroyed: 
+  coinsPickedUp: 
+  totalScore: 
