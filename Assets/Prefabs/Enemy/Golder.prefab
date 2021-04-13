@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2232301866228387360}
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 7372733718108820324}
   m_RootOrder: 0
@@ -78,7 +78,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2232301866228387360}
-  m_Mesh: {fileID: -805285358474833246, guid: e037e834da5da4b4196046cb00b2b06c, type: 3}
+  m_Mesh: {fileID: 1418472334128844506, guid: bf47cb002acbdc84183961d61459e687, type: 3}
 --- !u!1 &7372733718108820251
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,5 +236,5 @@ MonoBehaviour:
   playerOnRight: 0
   playerOnLeft: 0
   isLeaving: 0
-  coinPrefab: {fileID: 8246342584011639494, guid: beb3364cd08c23045a5eff727e97cd9a,
+  coinPrefab: {fileID: 5194095353695761455, guid: b46f393c5c9970447a3ceaac2cedbade,
     type: 3}
