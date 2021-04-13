@@ -6,7 +6,7 @@ public class PlayerManager : MonoBehaviour
 {
     public GameObject player;
 
-
+    
     public bool revive;
     public bool playerIsAlive;
     public bool playerIsBoosting = false;
