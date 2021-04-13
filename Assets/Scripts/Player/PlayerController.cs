@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
         if (!move)
         {
             direction.x = 0;
+            direction2.x = 0;
         }
         if(isBumped)
         {
