@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28462005, g: 0.37120837, b: 0.4988044, a: 1}
+  m_IndirectSpecularColor: {r: 0.2846214, g: 0.37120992, b: 0.498806, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -656,7 +656,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1050496105, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
 --- !u!4 &436394632 stripped
 Transform:
@@ -1334,6 +1335,48 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474416420}
   m_CullTransparentMesh: 0
+--- !u!1 &1620668658 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1050496104, guid: f27be8b1fa998da4ebe5076bdefad089,
+    type: 3}
+  m_PrefabInstance: {fileID: 253849638}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1620668660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620668658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2102c4acb52a075409e3cfcbd231ff64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &1620668661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620668658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a19b4212f2395b498d4f3d7aa76b248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &1764412130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,30 +1813,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1900229921}
     m_Modifications:
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
+    - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
-      propertyPath: dummyPrefab
+      propertyPath: runMusic.WwiseObjectReference
       value: 
-      objectReference: {fileID: 2311446640046295926, guid: 9143055a76444944abceb231235709f9,
-        type: 3}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: minerPrefab
-      value: 
-      objectReference: {fileID: 6331849488179574979, guid: 5d34668f76742624fbeb116fd878bbbe,
-        type: 3}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: bumperPrefab
-      value: 
-      objectReference: {fileID: 8111954649272938020, guid: 724692c61b8555847a66ac9026a36356,
-        type: 3}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: golderPrefab
-      value: 
-      objectReference: {fileID: 7372733718108820251, guid: ab9aab8279b42ec46846c79d3c99dfb4,
-        type: 3}
+      objectReference: {fileID: 11400000, guid: 933ce855b2dcbab41820f0b5a9eebf5d,
+        type: 2}
     - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: spawnPointList.Array.data[0]
@@ -1809,6 +1834,11 @@ PrefabInstance:
       propertyPath: spawnPointList.Array.data[2]
       value: 
       objectReference: {fileID: 723948818}
+    - target: {fileID: 6083765253531162006, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: highScoreText
+      value: 
+      objectReference: {fileID: 801716147}
     - target: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1871,59 +1901,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
---- !u!1 &6083765253531162005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7900983418033125461, guid: 25134542b13beb04dbf8684efa4e454d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6083765253531162004}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6083765253531162006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083765253531162005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca16a7c104155fe4480951d836052c9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highScoreText: {fileID: 801716147}
-  displayedScore: 0
-  multiplier: 0
---- !u!114 &6083765253531162007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083765253531162005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20d913dab60182c458e4708807c2811d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: 
---- !u!114 &6083765253531162016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083765253531162005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18252b80b6652104ca1c048f52180035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfQuests: 3
-  questsList:
-  - {fileID: 11400000, guid: d67a7a1f2ffdf0f4b968b88d47dd77f9, type: 2}
-  - {fileID: 11400000, guid: 52704a3d3c727dd409bc5047fdbf6468, type: 2}
-  - {fileID: 11400000, guid: eb8abc357a093cf48bf757d00002a5e7, type: 2}
-  quests: []
-  obstaclesDestroyed: 
-  enemiesDestroyed: 
-  coinsPickedUp: 
-  totalScore: 
