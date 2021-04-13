@@ -100,6 +100,7 @@ public class Boost : MonoBehaviour
     }
     private void Update()
     {
+        
         if (boostCharges > 0)
         {
            if (firstPos != Vector2.zero && secondPos != Vector2.zero)
@@ -121,13 +122,19 @@ public class Boost : MonoBehaviour
                 }
             } 
         }
-        
+        currentValue = slider.value;
+        //si l'anim se finit, isboosting  = false
+        if (GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.GetCurrentAnimatorStateInfo(0).IsName("Anim_Player_Boost")&& GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        {
+            GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetBool("isBoosting", false);
+        }
 
         if (isBoosting)
         {
             slider.value -= (1+(currentValue-boostCharges))/boostDuration * Time.deltaTime; 
             
         }
+        
 
         if (isCoolingDown && boostCharges<maxBoostCharges)
         {
