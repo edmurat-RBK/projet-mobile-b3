@@ -46,5 +46,6 @@ public class GameManager : MonoBehaviour
     public TerrainManager terrainManager;
     public InputManager inputManager;
     public OtherWorldManager otherWorldManager;
-    public HighScore highScore;
+    public HighScore highScoreManager;
+    public QuestManager questManager;
 }
