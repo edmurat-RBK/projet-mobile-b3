@@ -46,15 +46,10 @@ public class PlayerLife : MonoBehaviour
 
     void PlayerDeath()
     {
-<<<<<<< HEAD
-        GameManager.Instance.playerManager.playerIsAlive = false;
-        DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
-        Debug.Log("Player is Dead");
-=======
         if (!GameManager.Instance.playerManager.revive)
         {
             GameManager.Instance.playerManager.playerIsAlive = false;
-            DataManager.DMInstance.Save(GameManager.Instance.highScore.displayedScore,GameManager.Instance.economicManager.coinCounter);
+            DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             Debug.Log("Player is Dead");
         }
         else
@@ -74,7 +69,6 @@ public class PlayerLife : MonoBehaviour
         {
             GameManager.Instance.playerManager.rechargeShield = false;
         }
->>>>>>> shopElements
     }
     #endregion
 }
