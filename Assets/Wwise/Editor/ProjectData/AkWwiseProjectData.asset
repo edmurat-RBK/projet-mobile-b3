@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
-    m_lastTime: -8585832951011904893
+    m_lastTime: -8585832863841348626
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -96,6 +96,20 @@ MonoBehaviour:
         ObjectType: 7
         guid: 7192b60eea276341a3b042c583bc321a
       Path: SoundBanks\Default Work Unit\Musics
+    - name: Sound_Effects
+      guid: 26d378385f502d40b29801f938e30c8a
+      id: 1761240301
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 7909a726763e0249bffba91b747454e4
+      - ElementName: Sound_Effects
+        ObjectType: 7
+        guid: 26d378385f502d40b29801f938e30c8a
+      Path: SoundBanks\Default Work Unit\Sound_Effects
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -137,6 +151,87 @@ MonoBehaviour:
         ObjectType: 3
         guid: cfc61d8dda781a46b46205222ac42d11
       Path: Events\Musics\RunMusic
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\Sound Effects.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Sound Effects
+      ObjectType: 12
+      guid: 221ca76d6353764d9597894fb3c7932c
+    ParentPath: Events\Sound Effects
+    guid: 221ca76d6353764d9597894fb3c7932c
+    GuidInternal: 
+    m_lastTime: -8585832864302507903
+    List:
+    - name: Ennemis
+      guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      id: 1507798120
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      Path: Events\Sound Effects\Ennemis
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player
+      guid: 7a5dabc902fc9f498343ed5765b24f3f
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Player
+        ObjectType: 4
+        guid: 7a5dabc902fc9f498343ed5765b24f3f
+      Path: Events\Sound Effects\Player
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI
+      guid: bcab7ce93246cd4088942dd4c219b307
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      Path: Events\Sound Effects\UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: World
+      guid: 7b9440d1ab67434e9a90104c62ab2f69
+      id: 2609808943
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: World
+        ObjectType: 4
+        guid: 7b9440d1ab67434e9a90104c62ab2f69
+      Path: Events\Sound Effects\World
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -197,7 +292,7 @@ MonoBehaviour:
     m_lastTime: -8585833021727411252
     List: []
   ExpandedFileSystemItemIds: 1000000011000000
-  ExpandedWaapiItemIds: 06000000080000000d000000
+  ExpandedWaapiItemIds: 0500000006000000080000000d000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0
