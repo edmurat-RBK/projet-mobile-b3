@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     [Range (0,1)]
     public float inertiaTiming;
+    
 
 
     bool isBumped = false;

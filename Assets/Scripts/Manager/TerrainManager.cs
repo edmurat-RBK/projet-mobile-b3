@@ -118,7 +118,7 @@ public class TerrainManager : MonoBehaviour
     {
         
         GameObject newInstance = ObjectPooler.Instance.SpawnFromPool(tag, position, Quaternion.identity);
-        Debug.Log(tag + position);
+
         terrainQueue.Enqueue(newInstance);
     }
 }

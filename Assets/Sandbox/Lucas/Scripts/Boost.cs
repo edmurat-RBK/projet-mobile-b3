@@ -30,7 +30,8 @@ public class Boost : MonoBehaviour
     public int boostCharges;
     public int maxBoostCharges;
     public float currentValue;
-    
+    public GameObject FXVitesse;
+
     void Start() 
     {
         boostCharges = maxBoostCharges;
@@ -68,6 +69,7 @@ public class Boost : MonoBehaviour
             secondPos = position;
             callOnce = !callOnce;
             Invoke("ResetPos", .5f);
+            
         }
     }
     void useBoost2(Vector2 position)
@@ -83,6 +85,7 @@ public class Boost : MonoBehaviour
             secondPos2 = position;
             callOnce2 = !callOnce2;
             Invoke("ResetPos2", .5f);
+            
         }
     }
 
@@ -131,8 +134,8 @@ public class Boost : MonoBehaviour
 
         if (isBoosting)
         {
-            slider.value -= (1+(currentValue-boostCharges))/boostDuration * Time.deltaTime; 
-            
+            slider.value -= (1+(currentValue-boostCharges))/boostDuration * Time.deltaTime;
+            FXVitesse.SetActive(true);
         }
         
 

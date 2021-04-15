@@ -912,98 +912,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537772197}
   m_CullTransparentMesh: 0
---- !u!1 &604639837
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 604639838}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &604639838
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604639837}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 619054666}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &619054665 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7900983418033125461, guid: 25134542b13beb04dbf8684efa4e454d,
-    type: 3}
-  m_PrefabInstance: {fileID: 1436408444}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &619054666 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
     type: 3}
   m_PrefabInstance: {fileID: 1436408444}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &619054667
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619054665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18252b80b6652104ca1c048f52180035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfQuests: 3
-  questsList:
-  - {fileID: 11400000, guid: d67a7a1f2ffdf0f4b968b88d47dd77f9, type: 2}
-  - {fileID: 11400000, guid: 52704a3d3c727dd409bc5047fdbf6468, type: 2}
-  - {fileID: 11400000, guid: eb8abc357a093cf48bf757d00002a5e7, type: 2}
-  quests: []
-  obstaclesDestroyed: 
-  enemiesDestroyed: 
-  coinsPickedUp: 
-  totalScore: 
---- !u!114 &619054668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619054665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20d913dab60182c458e4708807c2811d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: 
---- !u!114 &619054669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619054665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca16a7c104155fe4480951d836052c9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highScoreText: {fileID: 2000233322}
-  displayedScore: 0
-  multiplier: 0
 --- !u!1 &718494864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,46 +2388,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1524754705}
     m_Modifications:
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.data[0]
+    - target: {fileID: 619054669, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
+      propertyPath: highScoreText
       value: 
-      objectReference: {fileID: 11400000, guid: 226aefcc1bd41aa49a422c6634b2e235,
-        type: 2}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: golderDropRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: dummyPrefab
-      value: 
-      objectReference: {fileID: 2311446640046295926, guid: 9143055a76444944abceb231235709f9,
-        type: 3}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: minerPrefab
-      value: 
-      objectReference: {fileID: 6331849488179574979, guid: 5d34668f76742624fbeb116fd878bbbe,
-        type: 3}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: bumperPrefab
-      value: 
-      objectReference: {fileID: 8111954649272938020, guid: 724692c61b8555847a66ac9026a36356,
-        type: 3}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: golderPrefab
-      value: 
-      objectReference: {fileID: 7372733718108820251, guid: ab9aab8279b42ec46846c79d3c99dfb4,
-        type: 3}
-    - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: maxEnnemiInLevel
-      value: 8
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2000233322}
     - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: spawnPointList.Array.data[0]
