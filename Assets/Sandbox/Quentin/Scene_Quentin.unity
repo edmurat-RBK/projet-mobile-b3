@@ -6577,15 +6577,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2485404124772839875, guid: 4cd4e21e710df3a4bbc6dff3b31a339f,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1226180117}
     - target: {fileID: 2485404124772839932, guid: 4cd4e21e710df3a4bbc6dff3b31a339f,
         type: 3}
       propertyPath: m_Name
       value: UI_InGame
-      objectReference: {fileID: 0}
-    - target: {fileID: 2485404124772839932, guid: 4cd4e21e710df3a4bbc6dff3b31a339f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd4e21e710df3a4bbc6dff3b31a339f, type: 3}
@@ -6600,6 +6600,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI_MainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7705564357802167397, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7705564357802167401, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
         type: 3}
