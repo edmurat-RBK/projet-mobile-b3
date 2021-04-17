@@ -18,7 +18,6 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         GameManager.Instance.playerManager.playerIsAlive = true;
-
     }
 
     void Update()
@@ -35,6 +34,19 @@ public class PlayerLife : MonoBehaviour
         {
             PlayerDeath();
         }
+    }
+
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if(other.tag == ("Mine"))
+        {
+            GameManager.Instance.playerManager.playerLife -= GameManager.Instance.ennemiManager.mineDamage;
+        }
+
     }
 
 

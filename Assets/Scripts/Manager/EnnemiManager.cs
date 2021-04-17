@@ -43,6 +43,8 @@ public class EnnemiManager : MonoBehaviour
     [Space(5)]
     public float minerDropRate;
     public float xPosForDrop;
+    [Space(5)]
+    public int mineDamage;
     #endregion
 
     [Space(20)]
