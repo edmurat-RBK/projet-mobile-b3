@@ -30,14 +30,16 @@ public class Boost : MonoBehaviour
     public int boostCharges;
     public int maxBoostCharges;
     public float currentValue;
-    
-    void Start() 
+    public GameObject FXBoost;
+    public GameObject FXVitesse;
+
+    void Start()
     {
         boostCharges = maxBoostCharges;
         slider.maxValue = maxBoostCharges;
         slider.value = slider.maxValue;
     }
-    
+
 
     private void OnEnable()
     {
@@ -57,7 +59,7 @@ public class Boost : MonoBehaviour
 
     void useBoost(Vector2 position)
     {
-        
+
         if (callOnce)
         {
             firstPos = position;
@@ -68,11 +70,12 @@ public class Boost : MonoBehaviour
             secondPos = position;
             callOnce = !callOnce;
             Invoke("ResetPos", .5f);
+
         }
     }
     void useBoost2(Vector2 position)
     {
-        
+
         if (callOnce2)
         {
             firstPos2 = position;
@@ -83,6 +86,7 @@ public class Boost : MonoBehaviour
             secondPos2 = position;
             callOnce2 = !callOnce2;
             Invoke("ResetPos2", .5f);
+
         }
     }
 
@@ -90,25 +94,25 @@ public class Boost : MonoBehaviour
     {
         firstPos = Vector2.zero;
         secondPos = Vector2.zero;
-        
+
     }
     void ResetPos2()
     {
         firstPos2 = Vector2.zero;
         secondPos2 = Vector2.zero;
-        
+
     }
     private void Update()
     {
-        
+
         if (boostCharges > 0)
         {
-           if (firstPos != Vector2.zero && secondPos != Vector2.zero)
+            if (firstPos != Vector2.zero && secondPos != Vector2.zero)
             {
                 if (secondPos.y > firstPos.y + SwipeLength && !isBoosting)
                 {
                     TerrainManager.TMInstance.Boost(boostDuration);
-                
+
                     ResetPos();
                 }
             }
@@ -117,10 +121,10 @@ public class Boost : MonoBehaviour
                 if (secondPos2.y > firstPos2.y + SwipeLength && !isBoosting)
                 {
                     TerrainManager.TMInstance.Boost(boostDuration);
-                
+
                     ResetPos2();
                 }
-            } 
+            }
         }
         currentValue = slider.value;
         //si l'anim se finit, isboosting  = false
@@ -131,14 +135,20 @@ public class Boost : MonoBehaviour
 
         if (isBoosting)
         {
-            slider.value -= (1+(currentValue-boostCharges))/boostDuration * Time.deltaTime; 
-            
+            FXBoost.SetActive(true);
+            FXVitesse.SetActive(false);
+            slider.value -= (1 + (currentValue - boostCharges)) / boostDuration * Time.deltaTime;
         }
-        
-
-        if (isCoolingDown && boostCharges<maxBoostCharges)
+        else
         {
-            slider.value += 1/boostCooldown * Time.deltaTime;
+            FXBoost.SetActive(false);
+            FXVitesse.SetActive(true);
+        }
+
+
+        if (isCoolingDown && boostCharges < maxBoostCharges)
+        {
+            slider.value += 1 / boostCooldown * Time.deltaTime;
         }
     }
 }

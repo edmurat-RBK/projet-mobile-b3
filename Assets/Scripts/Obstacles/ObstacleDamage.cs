@@ -8,7 +8,12 @@ public class ObstacleDamage: MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            if (GameManager.Instance.playerManager.shield <=0)
+            if ((GameManager.Instance.playerManager.player.GetComponent<Boost>().isBoosting))
+            {
+                GameManager.Instance.playerManager.playerLife += 0;
+            }
+
+            else if (GameManager.Instance.playerManager.shield <= 0)
             {
                 GameManager.Instance.playerManager.playerLife -= 1;
             }

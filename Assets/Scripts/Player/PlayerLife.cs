@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -13,9 +14,11 @@ using UnityEngine;
 
 public class PlayerLife : MonoBehaviour
 {
+    public GameObject explosionFX;
     void Start()
     {
         GameManager.Instance.playerManager.playerIsAlive = true;
+
     }
 
     void Update()
@@ -48,10 +51,12 @@ public class PlayerLife : MonoBehaviour
     {
         if (!GameManager.Instance.playerManager.revive)
         {
+            explosionFX.SetActive(true);
             GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             GameManager.Instance.playerManager.playerIsAlive = false;
             DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             Debug.Log("Player is Dead");
+
         }
         else
         {
