@@ -6,11 +6,9 @@ public class Shop : MonoBehaviour
 {
     public void UpgradeLife(int price)
     {
-        Debug.Log("Bidule");
 
         if (GameManager.Instance.economicManager.coinCounter >= price)
         {
-            Debug.Log("lalalalalalala");
             GameManager.Instance.playerManager.lifeUpgrade++;
             GameManager.Instance.economicManager.coinCounter -= price;
         }
