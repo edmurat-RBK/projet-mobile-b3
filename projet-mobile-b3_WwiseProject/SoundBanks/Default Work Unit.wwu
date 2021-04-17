@@ -16,7 +16,9 @@
 					<GameSyncExclusionList/>
 				</SoundBank>
 				<SoundBank Name="Sound_Effects" ID="{3878D326-505F-402D-B298-01F938E30C8A}">
-					<ObjectInclusionList/>
+					<ObjectInclusionList>
+						<ObjectRef Name="Player_Motor" ID="{33DED8D7-CF6F-4668-AAAD-DD57D78AE470}" WorkUnitID="{6DA71C22-5363-4D76-9597-894FB3C7932C}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>

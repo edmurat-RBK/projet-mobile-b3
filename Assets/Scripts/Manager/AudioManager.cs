@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Musics")]
-    [Space(10)]
+    [Header("SFX")]
+    #region Player
+    public AK.Wwise.Event playerMotorAudio;
+    #endregion
 
+
+
+    //---------------------------------------------------
+    [Header("Musics")]
     public AK.Wwise.Event runMusic;
+
+
+
+    //---------------------------------------------------
+    [Header("Game Sync")]
+    public int motorVar;
+    public AK.Wwise.RTPC motorVarRTPC;
+
+    
+
+    
 
 
 
@@ -16,5 +33,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         runMusic.Post(gameObject);
+        playerMotorAudio.Post(gameObject);
     }
 }

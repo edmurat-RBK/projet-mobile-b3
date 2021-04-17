@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5155179720576799039}
   - component: {fileID: 3565381931710306971}
   - component: {fileID: 6082611184284553957}
+  - component: {fileID: 4818654934018890556}
   - component: {fileID: 9108425730500944481}
   m_Layer: 0
   m_Name: AudioManager
@@ -83,6 +84,31 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &4818654934018890556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155179720576799037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73701d496cd856a4eaf70aaf0d413d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1ea6303c42907fe439fb85934c4e258a,
+      type: 2}
+  decodeBank: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!114 &9108425730500944481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,8 +121,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206230a07a650e14a833bd1a9a8dd52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMotorAudio:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ce30817f4d7dcdd4f924b273be8e92f1,
+      type: 2}
   runMusic:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 933ce855b2dcbab41820f0b5a9eebf5d,
       type: 2}
+  motorVar: 0
+  motorVarRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
