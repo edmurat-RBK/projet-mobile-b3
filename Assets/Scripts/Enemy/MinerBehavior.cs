@@ -23,24 +23,16 @@ public class MinerBehavior : GlobalEnnemiBehavior
             Vector3 playerPos = GameManager.Instance.playerManager.player.transform.position;
             float xDrop = GameManager.Instance.ennemiManager.xPosForDrop;
 
-            if (transform.position.z >= (playerPos.z + xDrop - 0.5) && transform.position.z <= (playerPos.z + xDrop + 0.5) && !hasFinishAttack)
+            if (transform.position.z <= (playerPos.z + xDrop) && !hasFinishAttack)
             {
                 if(readyToMining == false)
                 {
                     StartCoroutine(attackDuration());
                 }
-
-                if (readyToMining && GameManager.Instance.playerManager.playerIsBoosting)
-                {
-                    MoveBack(false);
-                }
-                    
-            }
-            else
-            {
-                MoveBack(true);
             }
 
+
+            MoveBack(true);
 
             Movement();
             CheckDirection();
@@ -76,7 +68,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
         yield return new WaitForSeconds(GameManager.Instance.ennemiManager.minerDropRate);
 
         float index = Random.Range(-5, 5);
-        Vector3 spawnPos = new Vector3(transform.position.x + index, transform.position.y, transform.position.z);
+        Vector3 spawnPos = new Vector3(transform.position.x + index, transform.position.y +1, transform.position.z);
         Instantiate(minePrefab, spawnPos, transform.rotation);
 
         if(hasFinishAttack == false)
