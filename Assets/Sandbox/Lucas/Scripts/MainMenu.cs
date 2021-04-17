@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenuButtons;
+    [Header("Shop Buttons")]
     public GameObject shopButtons;
+    [Header("Option Buttons")]
     public GameObject optionButtons;
 
     public void ChangeScene(int index)
