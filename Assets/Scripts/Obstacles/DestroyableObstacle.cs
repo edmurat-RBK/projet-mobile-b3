@@ -10,7 +10,6 @@ public class DestroyableObstacle : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Log("aieaieaie");
             Destroy(gameObject);
             GameObject fx = Instantiate(FxDestructionObstacles, transform.position, transform.rotation);
             GameObject fxdeux = Instantiate(FxSmokeObstacle, transform.position, transform.rotation);

@@ -11,12 +11,12 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3690994985">
+		<SoundBank Id="1355168291" Language="SFX" Hash="1126317633">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="404330416">
+		<SoundBank Id="1730564753" Language="SFX" Hash="3494869663">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
@@ -111,10 +111,23 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="3994079143">
+		<SoundBank Id="1761240301" Language="SFX" Hash="3936829626">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3300087192" Name="Player_Motor" ObjectPath="\Events\Sound Effects\Player\Player_Motor" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="605095972" Language="SFX">
+							<ShortName>PlayerTurbine.wav</ShortName>
+							<Path>SFX\PlayerTurbine_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="2892789523" Name="motorVariation" ObjectPath="\Game Parameters\Player\motorVariation"/>
+			</GameParameters>
 		</SoundBank>
 		<SoundBank Id="3161908922" Language="SFX" Hash="1077138683">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>

@@ -8,6 +8,19 @@
 						<Property Name="Color" Type="int16" Value="2"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
+					<ChildrenList>
+						<Event Name="Player_Motor" ID="{33DED8D7-CF6F-4668-AAAD-DD57D78AE470}">
+							<ChildrenList>
+								<Action Name="" ID="{B4F56FD5-EFBB-4F06-9ABE-5127A210A736}" ShortID="822380025">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Player_Turbine" ID="{B34D0487-1402-4704-A5F0-99D9D71ECC65}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
 				</Folder>
 				<Folder Name="Ennemis" ID="{7B4AEC9F-67E1-422E-BBB5-19779A0C2EF0}" ShortID="735299312">
 					<PropertyList>

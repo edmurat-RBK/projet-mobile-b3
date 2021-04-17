@@ -291,36 +291,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6083765253531162004}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &564389153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 564389155}
-  m_Layer: 0
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &564389155
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564389153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &570928496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1580,7 +1550,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209353119
 GameObject:
@@ -2071,7 +2041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 917004803, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
@@ -2084,6 +2054,12 @@ PrefabInstance:
       propertyPath: runMusic.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 933ce855b2dcbab41820f0b5a9eebf5d,
+        type: 2}
+    - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: playerMotorAudio.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: ce30817f4d7dcdd4f924b273be8e92f1,
         type: 2}
     - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
