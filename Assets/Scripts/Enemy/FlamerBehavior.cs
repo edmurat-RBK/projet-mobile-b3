@@ -29,6 +29,11 @@ public class FlamerBehavior : GlobalEnnemiBehavior
                 {
                     StartCoroutine(attackDuration());
                 }
+
+                if (readyToFlaming && GameManager.Instance.playerManager.playerIsBoosting)
+                {
+                    MoveBack(false);
+                }
             }
             else
             {
