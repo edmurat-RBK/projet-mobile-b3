@@ -60,7 +60,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         }
         else if(stopAtPlayerPos == true)
         {
-            if(transform.position.z > GameManager.Instance.playerManager.player.transform.position.z - 6)
+            if(transform.position.z > GameManager.Instance.playerManager.player.transform.position.z)
             {
                 if (GameManager.Instance.playerManager.playerIsBoosting)
                 {
