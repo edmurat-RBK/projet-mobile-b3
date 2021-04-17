@@ -50,7 +50,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             if(GameManager.Instance.playerManager.playerIsBoosting)
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/2f * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/ (speedMultiplicator/5) * Time.deltaTime);
             }
             else
             {
@@ -64,7 +64,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             {
                 if (GameManager.Instance.playerManager.playerIsBoosting)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / 2f * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / (speedMultiplicator / 5) * Time.deltaTime);
                 }
                 else
                 {
