@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    public GameObject Quests;
 
     public void Resume ()
     {
@@ -17,5 +18,16 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void QuestsDisplay()
+    {
+        Quests.SetActive(true);
+        pauseMenuUI.SetActive(false);
+    }
+    public void CloseQuestsDisplay()
+    {
+        Quests.SetActive(false);
+        pauseMenuUI.SetActive(true);
     }
 }

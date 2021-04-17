@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.1125538, y: 0.50988984, z: 0.7731472}
+  m_Center: {x: -0.009081483, y: 0.0049449205, z: -0.01349318}
 --- !u!114 &3927815152867202725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c5ef0fb830e0ee448756ac9eb08674f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 1
   isAlive: 1
   obstacleMask:
     serializedVersion: 2
@@ -153,7 +153,7 @@ MonoBehaviour:
   somethingBehindMask:
     serializedVersion: 2
     m_Bits: 1280
-  speedMultiplicator: 30
+  speedMultiplicator: 50
   playerOnRight: 0
   playerOnLeft: 0
   isLeaving: 0
@@ -184,13 +184,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5632292205543295970}
-  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalRotation: {x: 0, y: 0.70710677, z: 0.70710677, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 250, y: 250, z: 250}
   m_Children: []
   m_Father: {fileID: 3927815152867202726}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 90}
 --- !u!23 &7396767828449148483
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f5de926f3c401954998df86765e61e67, type: 2}
+  - {fileID: 2100000, guid: 9212f196ca240b64b8f598810483fea6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

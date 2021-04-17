@@ -29,14 +29,20 @@ public class MinerBehavior : GlobalEnnemiBehavior
                 {
                     StartCoroutine(attackDuration());
                 }
+
+                if (readyToMining && GameManager.Instance.playerManager.playerIsBoosting)
+                {
+                    MoveBack(false);
+                }
                     
             }
             else
             {
-                Movement();
                 MoveBack(true);
             }
 
+
+            Movement();
             CheckDirection();
             CheckForPlayer();
             CheckBehind();

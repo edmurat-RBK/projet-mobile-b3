@@ -48,7 +48,6 @@ public class QuestManager : MonoBehaviour
             {
                 if (enemiesDestroyed[i]>=quests[i].enemiesToKill && coinsPickedUp[i]>= quests[i].coinsToPickup && obstaclesDestroyed[i] >= quests[i].objectsToDestroy && totalScore[i] >= quests[i].scoreToReach)
                 {
-                    
                     QuestCompleted(quests[i],i);
                 }
             } 

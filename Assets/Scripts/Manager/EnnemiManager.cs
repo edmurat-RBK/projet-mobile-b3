@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnnemiManager : MonoBehaviour
 {
+    public GameObject deathFX;
     public Transform deadZone;
     public List<GameObject> ennemiList = new List<GameObject>();
 
