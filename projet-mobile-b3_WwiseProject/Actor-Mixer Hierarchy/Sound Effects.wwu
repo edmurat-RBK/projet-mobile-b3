@@ -8,6 +8,84 @@
 						<Property Name="Color" Type="int16" Value="2"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
+					<ChildrenList>
+						<Sound Name="Player_Turbine" ID="{B34D0487-1402-4704-A5F0-99D9D71ECC65}" ShortID="998719038">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<RTPCList>
+										<RTPC Name="" ID="{A946C830-85C3-4A02-946D-52297B0B9A8A}" ShortID="724769010">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="motorVariation" ID="{62AF9B02-42EE-4B65-85B0-AAD4B6985B75}" WorkUnitID="{CAEB585D-7A69-4BA3-9EB5-2C1FEF219A5F}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{5D43B673-A796-4863-A78D-6726F2F8CFFA}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>20</XPos>
+														<YPos>400</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>60</XPos>
+														<YPos>726</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>850</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="PlayerTurbine" ID="{F1108F90-14A2-4CA3-B244-4D2155AC6AA6}">
+									<Language>SFX</Language>
+									<AudioFile>PlayerTurbine.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="605095972"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="PlayerTurbine" ID="{F1108F90-14A2-4CA3-B244-4D2155AC6AA6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</Folder>
 				<Folder Name="Ennemis" ID="{5421B2C1-CB0F-4DC9-AF80-A4EEFF1030CA}" ShortID="608124778">
 					<PropertyList>

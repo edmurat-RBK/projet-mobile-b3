@@ -13,8 +13,14 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAYER_MOTOR = 3300087192U;
         static const AkUniqueID RUNMUSIC = 3738991497U;
     } // namespace EVENTS
+
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID MOTORVARIATION = 2892789523U;
+    } // namespace GAME_PARAMETERS
 
     namespace BANKS
     {
