@@ -33,4 +33,9 @@ public class Shop : MonoBehaviour
             GameManager.Instance.economicManager.coinCounter -= price;
         }
     }
+
+    public void CloseShop() { 
+        ShopManager.Instance.shopActive = false;
+        ShopManager.Instance.shopUI.SetActive(false);
+    }
 }

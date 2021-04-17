@@ -126,6 +126,10 @@ public class PlayerController : MonoBehaviour
     
     private void Update()
     {
+        if(ShopManager.Instance.shopActive) {
+            return;
+        }
+
         animator.SetFloat("HorizontalSpeed",direction.x);
         if (move && !movePrio || inertia)
         {
@@ -181,6 +185,13 @@ public class PlayerController : MonoBehaviour
 
         direction = Vector3.zero;
 
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.name == "Shop Trigger") {
+            ShopManager.Instance.shopActive = true;
+            ShopManager.Instance.shopUI.SetActive(true);
+        }
     }
 
 }
