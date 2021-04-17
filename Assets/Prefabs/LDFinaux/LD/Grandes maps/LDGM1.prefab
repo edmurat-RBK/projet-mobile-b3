@@ -82,6 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791640951d14482419be593cb5c438a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FxDestructionObstacles: {fileID: 0}
+  FxSmokeObstacle: {fileID: 0}
 --- !u!114 &9164917718728792947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,13 +888,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3848839288347796134}
-  m_LocalRotation: {x: -0.6052061, y: -0.10942719, z: -0.7792698, w: -0.12037447}
-  m_LocalPosition: {x: 211.2, y: 48.692818, z: -282.76895}
+  m_LocalRotation: {x: -0.7111191, y: -0.12562141, z: -0.68399227, w: -0.1033612}
+  m_LocalPosition: {x: 227.5, y: 48.692818, z: -282.76895}
   m_LocalScale: {x: 47.9936, y: 31.9776, z: 75.87974}
   m_Children: []
   m_Father: {fileID: 7093036920681175331}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -1.424, y: 75.902, z: -198.67299}
+  m_LocalEulerAnglesHint: {x: -1.424, y: 92.462006, z: -198.67299}
 --- !u!33 &3809638088215139591
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1349,6 +1351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791640951d14482419be593cb5c438a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FxDestructionObstacles: {fileID: 0}
+  FxSmokeObstacle: {fileID: 0}
 --- !u!114 &8384312600917345066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2110,6 +2114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791640951d14482419be593cb5c438a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FxDestructionObstacles: {fileID: 0}
+  FxSmokeObstacle: {fileID: 0}
 --- !u!1 &6938623859616533949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2596,6 +2602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 791640951d14482419be593cb5c438a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FxDestructionObstacles: {fileID: 0}
+  FxSmokeObstacle: {fileID: 0}
 --- !u!1 &7744653055092462749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,7 +3118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7246107912265439956
 Transform:
   m_ObjectHideFlags: 0
@@ -3492,6 +3500,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Little_Rock_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1557007d44efcae4ba2009ea9738363a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1557007d44efcae4ba2009ea9738363a, type: 3}
 --- !u!4 &443374032540584933 stripped
@@ -3511,6 +3524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Invisible wall grande map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969675821314176289, guid: b1bdd43b4a1f2ee438b7550343d7fcb2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8168578516614333825, guid: b1bdd43b4a1f2ee438b7550343d7fcb2,
         type: 3}
@@ -4775,7 +4793,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 64a38eb9ff3e930418d1a233a3bc5ec2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.126178
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64a38eb9ff3e930418d1a233a3bc5ec2,
         type: 3}
@@ -4821,6 +4839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cactus_A2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64a38eb9ff3e930418d1a233a3bc5ec2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a38eb9ff3e930418d1a233a3bc5ec2, type: 3}
@@ -6513,6 +6536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Little_Cactus_A (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15d55ecfd33b36442be323fb786193fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d55ecfd33b36442be323fb786193fb, type: 3}
 --- !u!4 &1425810331908966977 stripped
@@ -6541,7 +6569,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 64a38eb9ff3e930418d1a233a3bc5ec2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.126178
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 64a38eb9ff3e930418d1a233a3bc5ec2,
         type: 3}
@@ -6597,6 +6625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cactus_A2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 64a38eb9ff3e930418d1a233a3bc5ec2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64a38eb9ff3e930418d1a233a3bc5ec2, type: 3}
@@ -6852,6 +6885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bones_Cage_A (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a1b8235d94b82f418651e8a84d8376a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a1b8235d94b82f418651e8a84d8376a, type: 3}
@@ -8838,6 +8876,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cactus_A1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89ed56b478d7ec14aa7f43808ff6719d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ed56b478d7ec14aa7f43808ff6719d, type: 3}
 --- !u!4 &3362046286440761727 stripped
@@ -9422,6 +9465,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BIG_ship_fracture
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b0b995cd9945e947af773418733501b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b0b995cd9945e947af773418733501b, type: 3}
@@ -11264,6 +11312,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cactus_A1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89ed56b478d7ec14aa7f43808ff6719d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ed56b478d7ec14aa7f43808ff6719d, type: 3}
 --- !u!4 &4189854730909089655 stripped
@@ -12224,6 +12277,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Little_Bones_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ddfe3f81104f1c459b743634506923e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ddfe3f81104f1c459b743634506923e, type: 3}
 --- !u!4 &4907474402192875107 stripped
@@ -13089,6 +13147,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cactus_A1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89ed56b478d7ec14aa7f43808ff6719d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ed56b478d7ec14aa7f43808ff6719d, type: 3}
 --- !u!4 &5676475139578280021 stripped
@@ -13163,6 +13226,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Space_ship_crashed_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9554717011595094c98c16a338df3e51,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9554717011595094c98c16a338df3e51, type: 3}
@@ -13478,6 +13546,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cactus_A1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89ed56b478d7ec14aa7f43808ff6719d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ed56b478d7ec14aa7f43808ff6719d, type: 3}
@@ -14595,6 +14668,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rock1_A
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 629ddb3a43ef1ea4f99d8bcf52bd8b24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 629ddb3a43ef1ea4f99d8bcf52bd8b24, type: 3}
 --- !u!4 &6218489521248358599 stripped
@@ -14924,6 +15002,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cactus_A1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89ed56b478d7ec14aa7f43808ff6719d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ed56b478d7ec14aa7f43808ff6719d, type: 3}
@@ -15795,6 +15878,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Little_Cactus_A (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15d55ecfd33b36442be323fb786193fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d55ecfd33b36442be323fb786193fb, type: 3}
 --- !u!4 &6442229904358574478 stripped
@@ -16320,6 +16408,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleTree_A (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84c97161e82cc97449354fd8c1954b22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c97161e82cc97449354fd8c1954b22, type: 3}
 --- !u!4 &7168379121601665997 stripped
@@ -16560,6 +16653,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: medium_ship_fracture
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e0dc61b4a61a72a42befdcb2d639d529,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0dc61b4a61a72a42befdcb2d639d529, type: 3}
 --- !u!4 &7054827345717705616 stripped
@@ -16655,6 +16753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ObstacleTree_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84c97161e82cc97449354fd8c1954b22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c97161e82cc97449354fd8c1954b22, type: 3}
@@ -18096,6 +18199,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleTree_A (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84c97161e82cc97449354fd8c1954b22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84c97161e82cc97449354fd8c1954b22, type: 3}
 --- !u!4 &8467557542834516806 stripped
@@ -18606,6 +18714,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: cactus_A1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 89ed56b478d7ec14aa7f43808ff6719d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89ed56b478d7ec14aa7f43808ff6719d, type: 3}
 --- !u!4 &8283166003411793770 stripped
@@ -19085,6 +19198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Little_Cactus_A (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15d55ecfd33b36442be323fb786193fb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15d55ecfd33b36442be323fb786193fb, type: 3}
