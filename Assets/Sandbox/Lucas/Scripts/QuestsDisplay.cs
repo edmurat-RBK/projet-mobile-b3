@@ -30,34 +30,35 @@ public class QuestsDisplay : MonoBehaviour
             
         }
         
-        for (var i = 0; i < GameManager.Instance.questManager.numberOfQuests-1; i++)
+        for (var i = 0; i < GameManager.Instance.questManager.numberOfQuests; i++)
         {
             
             questNames[i].text = GameManager.Instance.questManager.quests[i].questname;
             for (var j = 0; j < questsProgression[i].Count; j++)
             {
-                questsProgression[i][j].enabled = false;
+                questsProgression[i][j].gameObject.SetActive(false);
             }
+            
             if (GameManager.Instance.questManager.quests[i].objectsToDestroy>0)
             {
-                questsProgression[i][1].enabled = true;
-                questsProgression[i][1].value = GameManager.Instance.questManager.quests[i].objectsToDestroy/GameManager.Instance.questManager.obstaclesDestroyed[i];
+                questsProgression[i][0].gameObject.SetActive(true);
+                questsProgression[i][1].value = GameManager.Instance.questManager.obstaclesDestroyed[i]/GameManager.Instance.questManager.quests[i].objectsToDestroy;
             }
             if (GameManager.Instance.questManager.quests[i].enemiesToKill>0)
             {
-                questsProgression[i][2].enabled = true;
-                questsProgression[i][1].value = GameManager.Instance.questManager.quests[i].enemiesToKill/GameManager.Instance.questManager.enemiesDestroyed[i];  
+                questsProgression[i][1].gameObject.SetActive(true);
+                questsProgression[i][1].value = GameManager.Instance.questManager.enemiesDestroyed[i]/GameManager.Instance.questManager.quests[i].enemiesToKill;  
             }
             if (GameManager.Instance.questManager.quests[i].coinsToPickup>0)
             {
-                questsProgression[i][3].enabled = true;
-                questsProgression[i][1].value = GameManager.Instance.questManager.quests[i].coinsToPickup/GameManager.Instance.questManager.coinsPickedUp[i];
+                questsProgression[i][2].gameObject.SetActive(true);
+                questsProgression[i][1].value = GameManager.Instance.questManager.coinsPickedUp[i]/GameManager.Instance.questManager.quests[i].coinsToPickup;
             }
             if (GameManager.Instance.questManager.quests[i].scoreToReach>0)
             {
-                questsProgression[i][4].enabled = true;
-                questsProgression[i][1].value = GameManager.Instance.questManager.quests[i].scoreToReach/GameManager.Instance.questManager.totalScore[i];
-            }
+                questsProgression[i][3].gameObject.SetActive(true);
+                questsProgression[i][1].value = GameManager.Instance.questManager.totalScore[i]/GameManager.Instance.questManager.quests[i].scoreToReach;
+            } 
         }
     }
 
