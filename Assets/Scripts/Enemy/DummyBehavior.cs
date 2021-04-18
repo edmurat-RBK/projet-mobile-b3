@@ -10,11 +10,12 @@ using UnityEngine;
 /// </summary>
 public class DummyBehavior : GlobalEnnemiBehavior
 {
-    EnnemiManager ennemiManager;
 
     private void Start()
     {
         ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.dummyLife;
         StartCoroutine(RandomiseDirection());
 

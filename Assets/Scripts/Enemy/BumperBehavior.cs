@@ -14,13 +14,13 @@ public class BumperBehavior : GlobalEnnemiBehavior
     bool canBump = false;
     bool firstBump = true;
 
-    EnnemiManager ennemiManager;
-
 
 
     private void Start()
     {
         ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.bumperLife;
         StartCoroutine(RandomiseDirection());
     }

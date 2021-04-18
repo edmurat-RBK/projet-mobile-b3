@@ -7,11 +7,12 @@ public class GolderBehavior : GlobalEnnemiBehavior
     public GameObject coinPrefab;
     bool hasStartDroping = false;
     bool acceleration = false;
-    private EnnemiManager ennemiManager;
 
     private void Start()
     {
         ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.dummyLife;
         StartCoroutine(RandomiseDirection());
     }

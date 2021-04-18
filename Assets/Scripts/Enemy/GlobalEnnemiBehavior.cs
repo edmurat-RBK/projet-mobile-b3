@@ -39,6 +39,12 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     Vector3 directionToMoveOn = Vector3.right;
 
+    public PlayerManager playerManager;
+    public EnnemiManager ennemiManager;
+    public TerrainManager terrainManager;
+
+
+
     internal void Death()
     {
         throw new System.NotImplementedException();
@@ -48,27 +54,27 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     {
         if(stopAtPlayerPos == false)
         {
-            if(GameManager.Instance.playerManager.playerIsBoosting)
+            if(playerManager.playerIsBoosting)
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/ (speedMultiplicator/5) * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed/ (speedMultiplicator/5) * Time.deltaTime);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
             }
             
         }
         else if(stopAtPlayerPos == true)
         {
-            if(transform.position.z > GameManager.Instance.playerManager.player.transform.position.z)
+            if(transform.position.z > playerManager.player.transform.position.z)
             {
-                if (GameManager.Instance.playerManager.playerIsBoosting)
+                if (playerManager.playerIsBoosting)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / (speedMultiplicator / 5) * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / (speedMultiplicator / 5) * Time.deltaTime);
                 }
                 else
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
                 }
             }
             else
@@ -83,7 +89,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
                 }
                 else
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
                 }
             }
         }
@@ -183,7 +189,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
 
 
-        Transform playerTransform = GameManager.Instance.playerManager.player.transform;
+        Transform playerTransform = playerManager.player.transform;
         if(playerOnLeft && transform.position.x <= playerTransform.position.x+5)
         {
             playerCloseOnLeft = true;
@@ -223,13 +229,13 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     public void Death(List<GameObject> list, int lifeBonus) //Remet le joueur sur l'emplacement de stockage
     {
-        if(GameManager.Instance.playerManager.playerLife > GameManager.Instance.playerManager.maxPlayerLife - lifeBonus)
+        if(playerManager.playerLife > playerManager.maxPlayerLife - lifeBonus)
         {
-            GameManager.Instance.playerManager.playerLife = GameManager.Instance.playerManager.maxPlayerLife;
+            playerManager.playerLife = playerManager.maxPlayerLife;
         }
         else
         {
-            GameManager.Instance.playerManager.playerLife += lifeBonus;
+            playerManager.playerLife += lifeBonus;
         }
 
 
@@ -237,7 +243,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     }
     public void Teleport(List<GameObject> list)
     {
-        GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
+        ennemiManager.ennemiList.Remove(this.gameObject);
         this.transform.position = GameManager.Instance.otherWorldManager.otherWorld.position;
         isAlive = false;
         list.Add(this.gameObject);
