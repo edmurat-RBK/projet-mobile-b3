@@ -16,6 +16,7 @@ public class EnnemiManager : MonoBehaviour
     [Header("Dummy")]
 
     public int dummyLife;
+    public int dummyLoot;
     #endregion
 
     [Space(20)]
@@ -24,6 +25,7 @@ public class EnnemiManager : MonoBehaviour
     [Header("Bumper")]
 
     public int bumperLife;
+    public int bumperLoot;
     [Space(5)]
     public float arrestSideOfPlayerDuration;
     [Space(5)]
@@ -38,6 +40,7 @@ public class EnnemiManager : MonoBehaviour
     [Header("Miner")]
 
     public int minerLife;
+    public int minerLoot;
     [Space(5)]
     public float minerArrestSideOfPlayerDuration;
     public float stopDuration;
@@ -54,6 +57,7 @@ public class EnnemiManager : MonoBehaviour
     [Header("Golder")]
 
     public int golderLife;
+    public int golderLoot;
     [Space(5)]
     public float golderDropRate;
     public float gloderStayDuration;
@@ -65,6 +69,7 @@ public class EnnemiManager : MonoBehaviour
     [Header("Flamer")]
 
     public int flamerLife;
+    public int flamerLoot;
     [Space(5)]
     public float flamerAttackDuration;
     public float flamerWaitSideOfPlayer;

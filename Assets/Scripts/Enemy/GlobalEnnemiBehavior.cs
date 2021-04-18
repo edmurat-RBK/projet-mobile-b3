@@ -221,7 +221,24 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     }
 
 
-    public void Death(List<GameObject> list) //Remet le joueur sur l'emplacement de stockage
+    public void Death(List<GameObject> list, int lifeBonus) //Remet le joueur sur l'emplacement de stockage
+    {
+        if(GameManager.Instance.playerManager.playerLife > GameManager.Instance.playerManager.maxPlayerLife - lifeBonus)
+        {
+            GameManager.Instance.playerManager.playerLife = GameManager.Instance.playerManager.maxPlayerLife;
+        }
+        else
+        {
+            GameManager.Instance.playerManager.playerLife += lifeBonus;
+        }
+        
+
+        GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
+        this.transform.position = GameManager.Instance.otherWorldManager.otherWorld.position;
+        isAlive = false;
+        list.Add(this.gameObject);
+    }
+    public void Teleport(List<GameObject> list)
     {
         GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
         this.transform.position = GameManager.Instance.otherWorldManager.otherWorld.position;

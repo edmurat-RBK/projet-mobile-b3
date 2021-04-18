@@ -48,7 +48,12 @@ public class MinerBehavior : GlobalEnnemiBehavior
         {
             Instantiate(GameManager.Instance.ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.bumpedStored);
+            Death(GameManager.Instance.otherWorldManager.bumpedStored, GameManager.Instance.ennemiManager.minerLoot);
+        }
+        if (transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        {
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
         }
     }
 
