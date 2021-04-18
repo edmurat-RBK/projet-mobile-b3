@@ -4,48 +4,54 @@ using UnityEngine;
 
 public class OtherWorld : MonoBehaviour
 {
+    private OtherWorldManager otherWorldManager;
+
+    private void Awake() {
+        otherWorldManager = GameManager.Instance.otherWorldManager;
+    }
+
     private void Start()
     {
-        GameManager.Instance.otherWorldManager.otherWorld = this.transform;
+        otherWorldManager.otherWorld = this.transform;
 
 
-        int index = GameManager.Instance.otherWorldManager.dummyInstanciate;
+        int index = otherWorldManager.dummyInstanciate;
         for (int i = 0; i < index; i++)
         {
-            GameObject Dummy = Instantiate(GameManager.Instance.otherWorldManager.dummyPrefab, transform.position, transform.rotation);
-            GameManager.Instance.otherWorldManager.dummyStored.Add(Dummy);
+            GameObject Dummy = Instantiate(otherWorldManager.dummyPrefab, transform.position, transform.rotation);
+            otherWorldManager.dummyStored.Add(Dummy);
             Dummy.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
 
-        index = GameManager.Instance.otherWorldManager.bumperInstanciate;
+        index = otherWorldManager.bumperInstanciate;
         for (int i = 0; i < index; i++)
         {
-            GameObject Bumper = Instantiate(GameManager.Instance.otherWorldManager.bumperPrefab, transform.position, transform.rotation);
-            GameManager.Instance.otherWorldManager.bumpedStored.Add(Bumper);
+            GameObject Bumper = Instantiate(otherWorldManager.bumperPrefab, transform.position, transform.rotation);
+            otherWorldManager.bumpedStored.Add(Bumper);
             Bumper.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
 
-        index = GameManager.Instance.otherWorldManager.minerInstanciate;
+        index = otherWorldManager.minerInstanciate;
         for (int i = 0; i < index; i++)
         {
-            GameObject Miner = Instantiate(GameManager.Instance.otherWorldManager.minerPrefab, transform.position, transform.rotation);
-            GameManager.Instance.otherWorldManager.minerStored.Add(Miner);
+            GameObject Miner = Instantiate(otherWorldManager.minerPrefab, transform.position, transform.rotation);
+            otherWorldManager.minerStored.Add(Miner);
             Miner.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
 
-        index = GameManager.Instance.otherWorldManager.golderInstanciate;
+        index = otherWorldManager.golderInstanciate;
         for (int i = 0; i < index; i++)
         {
-            GameObject Golder = Instantiate(GameManager.Instance.otherWorldManager.golderPrefab, transform.position, transform.rotation);
-            GameManager.Instance.otherWorldManager.golderStored.Add(Golder);
+            GameObject Golder = Instantiate(otherWorldManager.golderPrefab, transform.position, transform.rotation);
+            otherWorldManager.golderStored.Add(Golder);
             Golder.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
 
-        index = GameManager.Instance.otherWorldManager.flamerInstanciate;
+        index = otherWorldManager.flamerInstanciate;
         for (int i = 0; i < index; i++)
         {
-            GameObject Flamer = Instantiate(GameManager.Instance.otherWorldManager.flamerPrefab, transform.position, transform.rotation);
-            GameManager.Instance.otherWorldManager.flamerStored.Add(Flamer);
+            GameObject Flamer = Instantiate(otherWorldManager.flamerPrefab, transform.position, transform.rotation);
+            otherWorldManager.flamerStored.Add(Flamer);
             Flamer.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
         }
     }
