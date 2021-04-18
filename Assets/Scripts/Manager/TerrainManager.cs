@@ -40,7 +40,12 @@ public class TerrainManager : MonoBehaviour
         baseScrollspeed = scrollSpeed;
         for(int i = 0; i<terrainCount; i++)
         {
-            AddTerrain("LD_Alpha01", new Vector3(0, 0, terrainLenght*i));
+            if(i==0) {
+                AddTerrain("LD_Start", new Vector3(0, 0, terrainLenght*i));
+            }
+            else {
+                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)], new Vector3(0, 0, terrainLenght*i));
+            }
         }
 
         
@@ -71,7 +76,7 @@ public class TerrainManager : MonoBehaviour
                 terrainQueue.Dequeue();
                 GameObject[] gameObjectArray = terrainQueue.ToArray();
                 Vector3 newPosition = gameObjectArray[gameObjectArray.Length-1].transform.position;
-                AddTerrain("LD_Alpha01", new Vector3(0, 0, newPosition.z + terrainLenght));
+                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)], new Vector3(0, 0, terrainLenght*i));
             }
         }
     }
