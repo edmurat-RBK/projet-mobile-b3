@@ -23,7 +23,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     {
         if (isAlive)
         {
-            Vector3 playerPos = GameManager.Instance.playerManager.player.transform.position;
+            Vector3 playerPos = playerManager.player.transform.position;
             float xDrop = ennemiManager.xPosForFire;
 
             if (transform.position.z >= (playerPos.z + xDrop - 0.5) && transform.position.z <= (playerPos.z + xDrop + 0.5) && !hasFinishAttack)
@@ -33,7 +33,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
                     StartCoroutine(attackDuration());
                 }
 
-                if (readyToFlaming && GameManager.Instance.playerManager.playerIsBoosting)
+                if (readyToFlaming && playerManager.playerIsBoosting)
                 {
                     MoveBack(false);
                 }
@@ -76,7 +76,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     {
         readyToFlaming = true;
 
-        GameObject fireTail = Instantiate(fireTailPrefab, transform.position, transform.rotation);
+        GameObject fireTail = Instantiate(fireTailPrefab, transform.position, transform.rotation, transform);
         fireTail.transform.position = new Vector3(fireTail.transform.position.x, fireTail.transform.position.y, transform.position.z - (fireTail.transform.localScale.z / 2));
 
         yield return new WaitForSeconds(ennemiManager.flamerAttackDuration);
