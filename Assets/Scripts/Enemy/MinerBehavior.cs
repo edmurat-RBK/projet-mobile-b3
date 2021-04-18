@@ -8,11 +8,13 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
     bool readyToMining = false;
     bool hasFinishAttack = false;
+    private EnnemiManager ennemiManager;
 
 
     private void Start()
     {
-        life = GameManager.Instance.ennemiManager.minerLife;
+        ennemiManager = GameManager.Instance.ennemiManager;
+        life = ennemiManager.minerLife;
         StartCoroutine(RandomiseDirection());
     }
 
@@ -21,7 +23,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
         if (isAlive)
         {
             Vector3 playerPos = GameManager.Instance.playerManager.player.transform.position;
-            float xDrop = GameManager.Instance.ennemiManager.xPosForDrop;
+            float xDrop = ennemiManager.xPosForDrop;
 
             if (transform.position.z <= (playerPos.z + xDrop) && !hasFinishAttack)
             {
@@ -44,13 +46,13 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
 
 
-        if (life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if (life <= 0 || transform.position.z < ennemiManager.deadZone.position.z)
         {
-            Instantiate(GameManager.Instance.ennemiManager.deathFX, transform.position, Quaternion.identity);
+            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.bumpedStored, GameManager.Instance.ennemiManager.minerLoot);
+            Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.minerLoot);
         }
-        if (transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if (transform.position.z < ennemiManager.deadZone.position.z)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
@@ -65,13 +67,13 @@ public class MinerBehavior : GlobalEnnemiBehavior
     {
         readyToMining = true;
         StartCoroutine(setMineOnTheWay());
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.stopDuration);
+        yield return new WaitForSeconds(ennemiManager.stopDuration);
         readyToMining = false;
         hasFinishAttack = true;
     }
     IEnumerator setMineOnTheWay()
     {
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.minerDropRate);
+        yield return new WaitForSeconds(ennemiManager.minerDropRate);
 
         float index = Random.Range(-5, 5);
         Vector3 spawnPos = new Vector3(transform.position.x + index, transform.position.y +1, transform.position.z);
@@ -89,7 +91,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
     {
         GlobalReset();
 
-        life = GameManager.Instance.ennemiManager.minerLife;
+        life = ennemiManager.minerLife;
 
         readyToMining = false;
         hasFinishAttack = false;
