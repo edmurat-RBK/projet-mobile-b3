@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -945,18 +945,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e799451dc12584459dceca1a4b12058, type: 3}
---- !u!114 &918953968 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6083765253531162016, guid: 25134542b13beb04dbf8684efa4e454d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6083765253531162004}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570109464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18252b80b6652104ca1c048f52180035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1056744043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6032632008437083755, guid: 71bc0bee1a2067a40bc0aaeb1b03109c,
@@ -1650,6 +1638,11 @@ PrefabInstance:
       propertyPath: highScoreText
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6083765253531162016, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: playerLife
@@ -1734,11 +1727,12 @@ PrefabInstance:
         type: 3}
       propertyPath: questManager
       value: 
-      objectReference: {fileID: 918953968}
+      objectReference: {fileID: 0}
     - target: {fileID: 7900983418033125461, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6083765253531162016, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
