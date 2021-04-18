@@ -44,7 +44,7 @@ public class TerrainManager : MonoBehaviour
                 AddTerrain("LD_Start", new Vector3(0, 0, terrainLenght*i));
             }
             else {
-                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)], new Vector3(0, 0, terrainLenght*i));
+                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)].tag, new Vector3(0, 0, terrainLenght*i));
             }
         }
 
