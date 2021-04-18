@@ -14,11 +14,13 @@ public class BumperBehavior : GlobalEnnemiBehavior
     bool canBump = false;
     bool firstBump = true;
 
+    EnnemiManager ennemiManager;
+
 
 
     private void Start()
     {
-        life = GameManager.Instance.ennemiManager.bumperLife;
+        life = ennemiManager.bumperLife;
         StartCoroutine(RandomiseDirection());
     }
     private void Update()
@@ -50,11 +52,11 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(GameManager.Instance.ennemiManager.deathFX, transform.position, Quaternion.identity);
+            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.bumpedStored, GameManager.Instance.ennemiManager.bumperLoot);
+            Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.bumperLoot);
         }
-        if(transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if(transform.position.z < ennemiManager.deadZone.position.z)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
@@ -92,14 +94,14 @@ public class BumperBehavior : GlobalEnnemiBehavior
     IEnumerator BumpPlayer()
     {
         isBumping = true;
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.bumperAttackDuration);
+        yield return new WaitForSeconds(GennemiManager.bumperAttackDuration);
         isBumping = false;
         StartCoroutine(BumpCoolDown());
     }
     public IEnumerator BumpCoolDown()
     {
         canBump = false;
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.bumperAttackCoolDown);
+        yield return new WaitForSeconds(ennemiManager.bumperAttackCoolDown);
         canBump = true;
     }
 
@@ -125,11 +127,11 @@ public class BumperBehavior : GlobalEnnemiBehavior
     {
         if (playerOnLeft == true)
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.left, GameManager.Instance.ennemiManager.bumperAttackSpeed*Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.left, ennemiManager.bumperAttackSpeed*Time.deltaTime);
         }
         else if(playerOnRight == true)
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.right, GameManager.Instance.ennemiManager.bumperAttackSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + Vector3.right, ennemiManager.bumperAttackSpeed * Time.deltaTime);
         }
         
     }
@@ -142,7 +144,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
     {
         GlobalReset();
 
-        life = GameManager.Instance.ennemiManager.bumperLife;
+        life = ennemiManager.bumperLife;
 
         isBumping = false;
         canBump = false;
