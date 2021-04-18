@@ -7,10 +7,12 @@ public class GolderBehavior : GlobalEnnemiBehavior
     public GameObject coinPrefab;
     bool hasStartDroping = false;
     bool acceleration = false;
+    private EnnemiManager ennemiManager;
 
     private void Start()
     {
-        life = GameManager.Instance.ennemiManager.dummyLife;
+        ennemiManager = GameManager.Instance.ennemiManager;
+        life = ennemiManager.dummyLife;
         StartCoroutine(RandomiseDirection());
     }
 
@@ -48,11 +50,11 @@ public class GolderBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(GameManager.Instance.ennemiManager.deathFX, transform.position, Quaternion.identity);
+            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.golderStored, GameManager.Instance.ennemiManager.golderLoot);
+            Death(GameManager.Instance.otherWorldManager.golderStored, ennemiManager.golderLoot);
         }
-        if(transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if(transform.position.z < ennemiManager.deadZone.position.z)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.golderStored);
@@ -80,7 +82,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
         }
 
 
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.golderDropRate);
+        yield return new WaitForSeconds(ennemiManager.golderDropRate);
 
         if (!acceleration)
         {
@@ -89,7 +91,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
     }
     IEnumerator stayBeforeLeave()
     {
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.gloderStayDuration);
+        yield return new WaitForSeconds(ennemiManager.gloderStayDuration);
         acceleration = true;
         yield return new WaitForSeconds(3);
 
@@ -102,7 +104,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
     {
         GlobalReset();
 
-        life = GameManager.Instance.ennemiManager.golderLife;
+        life = ennemiManager.golderLife;
         hasStartDroping = false;
         acceleration = false;
     }
