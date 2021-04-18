@@ -108,7 +108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4612186025800820481
 Transform:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ Transform:
   - {fileID: 8003764688804127757}
   - {fileID: 3621499499699493437}
   m_Father: {fileID: 6976027324735992597}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &266227329751592022
 GameObject:
@@ -394,7 +394,7 @@ Transform:
   - {fileID: 4927437431985901344}
   - {fileID: 6327743588283066289}
   m_Father: {fileID: 6976027324735992597}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &879025308457126851
 GameObject:
@@ -938,8 +938,8 @@ Transform:
   - {fileID: 6422783593391402290}
   - {fileID: 561967581846792993}
   - {fileID: 7303104722008775785}
-  - {fileID: 4612186025800820481}
   - {fileID: 4873604315974249175}
+  - {fileID: 4612186025800820481}
   - {fileID: 6473625999733723919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1312,6 +1312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocher1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806244964737319443, guid: 00fd894acc493704c931e457b5aaa187,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd894acc493704c931e457b5aaa187, type: 3}
@@ -2212,6 +2217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocher1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806244964737319443, guid: 00fd894acc493704c931e457b5aaa187,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd894acc493704c931e457b5aaa187, type: 3}
@@ -5093,6 +5103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocher1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8806244964737319443, guid: 00fd894acc493704c931e457b5aaa187,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd894acc493704c931e457b5aaa187, type: 3}
 --- !u!4 &2539342188025098859 stripped
@@ -5382,6 +5397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocher2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259060278714198000, guid: be46a0a2ecdf99d4b8123cfc293380ad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1887786747713043786, guid: be46a0a2ecdf99d4b8123cfc293380ad,
         type: 3}
@@ -6268,6 +6288,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocher1
       objectReference: {fileID: 0}
+    - target: {fileID: 8806244964737319443, guid: 00fd894acc493704c931e457b5aaa187,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00fd894acc493704c931e457b5aaa187, type: 3}
 --- !u!4 &2203815500894790961 stripped
@@ -6377,6 +6402,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocher2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259060278714198000, guid: be46a0a2ecdf99d4b8123cfc293380ad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1887786747713043786, guid: be46a0a2ecdf99d4b8123cfc293380ad,
         type: 3}
@@ -6827,6 +6857,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Rocher2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259060278714198000, guid: be46a0a2ecdf99d4b8123cfc293380ad,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1887786747713043786, guid: be46a0a2ecdf99d4b8123cfc293380ad,
         type: 3}

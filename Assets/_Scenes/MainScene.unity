@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -183,45 +183,41 @@ PrefabInstance:
       propertyPath: maxBoostCharges
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 253849640, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
-      propertyPath: m_Constraints
-      value: 124
-      objectReference: {fileID: 0}
     - target: {fileID: 1050496106, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: field of view
-      value: 45
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.8
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.00000028048703
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000014862683
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99439937
+      value: -0.99682677
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.10568779
+      value: 0.07960191
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 12.134001
+      value: 9.1310005
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180.00002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1919022455670182191, guid: f27be8b1fa998da4ebe5076bdefad089,
         type: 3}
@@ -320,7 +316,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 124
   m_CollisionDetection: 0
 --- !u!1 &383319931 stripped
 GameObject:
@@ -1418,6 +1414,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7484492073753172762, guid: 9e799451dc12584459dceca1a4b12058,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7486032367837998739, guid: 9e799451dc12584459dceca1a4b12058,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1570,6 +1571,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e799451dc12584459dceca1a4b12058, type: 3}
+--- !u!1 &801716147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8548158112382583201, guid: 9e799451dc12584459dceca1a4b12058,
+    type: 3}
+  m_PrefabInstance: {fileID: 801716146}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &802178899 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6776943751986145728, guid: 9e799451dc12584459dceca1a4b12058,
@@ -1915,7 +1922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shopActive: 0
-  shopUI: {fileID: 0}
+  shopUI: {fileID: 801716147}
 --- !u!1 &1764412130
 GameObject:
   m_ObjectHideFlags: 0
@@ -2254,6 +2261,12 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
+      propertyPath: deathFX
+      value: 
+      objectReference: {fileID: 5478630844220448020, guid: 42d727761cd7dc64c9f6ebe2413b9ce9,
+        type: 3}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
       propertyPath: mineDamage
       value: 10
       objectReference: {fileID: 0}
@@ -2303,6 +2316,16 @@ PrefabInstance:
         type: 3}
       propertyPath: maxPlayerLife
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: lifeDecreaseSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: decreaseMultiplicator
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
