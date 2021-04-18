@@ -10,10 +10,14 @@ using UnityEngine;
 /// </summary>
 public class DummyBehavior : GlobalEnnemiBehavior
 {
+    EnnemiManager ennemiManager;
+
     private void Start()
     {
-        life = GameManager.Instance.ennemiManager.dummyLife;
+        life = ennemiManager.dummyLife;
         StartCoroutine(RandomiseDirection());
+
+        
     }
     private void Update()
     {
@@ -33,11 +37,11 @@ public class DummyBehavior : GlobalEnnemiBehavior
 
         if(life <= 0)
         {
-            Instantiate(GameManager.Instance.ennemiManager.deathFX,transform.position,Quaternion.identity);
+            Instantiate(ennemiManager.deathFX,transform.position,Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.dummyStored, GameManager.Instance.ennemiManager.dummyLoot);
+            Death(GameManager.Instance.otherWorldManager.dummyStored, ennemiManager.dummyLoot);
         }
-        if(transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if(transform.position.z < ennemiManager.deadZone.position.z)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.dummyStored);
@@ -52,6 +56,6 @@ public class DummyBehavior : GlobalEnnemiBehavior
     {
         GlobalReset();
 
-        life = GameManager.Instance.ennemiManager.dummyLife;
+        life = ennemiManager.dummyLife;
     }
 }
