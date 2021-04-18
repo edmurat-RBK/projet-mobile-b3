@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8330049283916255358}
   - component: {fileID: 6451548536592177607}
   - component: {fileID: 8593698669603687774}
-  - component: {fileID: 100538065274897820}
   m_Layer: 0
   m_Name: Sol
   m_TagString: Untagged
@@ -80,20 +79,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &100538065274897820
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474528115524354048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &531053792921096009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mur gauche
+      objectReference: {fileID: 0}
+    - target: {fileID: 7353984626220423594, guid: a5593b67932f518439083c926bbaa3ee,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5593b67932f518439083c926bbaa3ee, type: 3}
@@ -3357,6 +3347,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mur droit
+      objectReference: {fileID: 0}
+    - target: {fileID: 6494520077078008051, guid: cd801b46357cbe54785804716e285d0b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd801b46357cbe54785804716e285d0b, type: 3}
