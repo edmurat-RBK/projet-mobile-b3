@@ -76,8 +76,11 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     {
         readyToFlaming = true;
 
-        GameObject fireTail = Instantiate(fireTailPrefab, transform.position, transform.rotation, transform);
-        fireTail.transform.position = new Vector3(fireTail.transform.position.x, fireTail.transform.position.y, transform.position.z - (fireTail.transform.localScale.z / 2));
+        Vector3 position = transform.position;
+        position.z -= 60;
+
+
+        GameObject fireTail = Instantiate(fireTailPrefab, position, transform.rotation, transform);
 
         yield return new WaitForSeconds(ennemiManager.flamerAttackDuration);
         Destroy(fireTail);
