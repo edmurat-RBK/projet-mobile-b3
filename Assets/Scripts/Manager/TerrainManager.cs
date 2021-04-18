@@ -76,7 +76,7 @@ public class TerrainManager : MonoBehaviour
                 terrainQueue.Dequeue();
                 GameObject[] gameObjectArray = terrainQueue.ToArray();
                 Vector3 newPosition = gameObjectArray[gameObjectArray.Length-1].transform.position;
-                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)], new Vector3(0, 0, terrainLenght*i));
+                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)], new Vector3(0, 0, newPosition.z + terrainLenght));
             }
         }
     }
