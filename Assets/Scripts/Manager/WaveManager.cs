@@ -17,9 +17,14 @@ public class WaveManager : MonoBehaviour
 
     private bool canSpawn = true;
 
+    EnnemiManager ennemiManager;
+    OtherWorldManager otherWorldManager;
 
-
-
+    private void Start()
+    {
+        ennemiManager = GameManager.Instance.ennemiManager;
+        otherWorldManager = GameManager.Instance.otherWorldManager;
+    }
     private void Update()
     {
         CreateNewWave();
@@ -29,10 +34,10 @@ public class WaveManager : MonoBehaviour
     void CreateNewWave()
     {
 
-        if (GameManager.Instance.ennemiManager.ennemiList.Count < maxEnnemiInLevel)//Tant que la liste d'ennemi active n'est pas pleine...
+        if (ennemiManager.ennemiList.Count < maxEnnemiInLevel)//Tant que la liste d'ennemi active n'est pas pleine...
         {
 
-            for (int i = 0; i < (maxEnnemiInLevel - GameManager.Instance.ennemiManager.ennemiList.Count); i++)
+            for (int i = 0; i < (maxEnnemiInLevel - ennemiManager.ennemiList.Count); i++)
             {
                 int index = Random.Range(1, 6);
 
@@ -76,12 +81,12 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-            GameManager.Instance.otherWorldManager.dummyStored[0].SetActive(true);
+            otherWorldManager.dummyStored[0].SetActive(true);
 
-            GameManager.Instance.otherWorldManager.dummyStored[0].transform.position = spawnPointList[index].transform.position;
-            GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.dummyStored[0]);
-            GameManager.Instance.otherWorldManager.dummyStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
-            GameManager.Instance.otherWorldManager.dummyStored.RemoveAt(0);
+            otherWorldManager.dummyStored[0].transform.position = spawnPointList[index].transform.position;
+            ennemiManager.ennemiList.Add(otherWorldManager.dummyStored[0]);
+            otherWorldManager.dummyStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
+            otherWorldManager.dummyStored.RemoveAt(0);
             //...on fait spawn un ennemi qui se range tout seul dans la List.
 
             StartCoroutine(SpawnCoolDown());
@@ -94,12 +99,12 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-            GameManager.Instance.otherWorldManager.bumpedStored[0].SetActive(true);
+            otherWorldManager.bumpedStored[0].SetActive(true);
 
-            GameManager.Instance.otherWorldManager.bumpedStored[0].transform.position = spawnPointList[index].transform.position;
-            GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.bumpedStored[0]);
-            GameManager.Instance.otherWorldManager.bumpedStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
-            GameManager.Instance.otherWorldManager.bumpedStored.RemoveAt(0);
+            otherWorldManager.bumpedStored[0].transform.position = spawnPointList[index].transform.position;
+            ennemiManager.ennemiList.Add(otherWorldManager.bumpedStored[0]);
+            otherWorldManager.bumpedStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
+            otherWorldManager.bumpedStored.RemoveAt(0);
             //...on fait spawn un ennemi qui se range tout seul dans la List.
 
             StartCoroutine(SpawnCoolDown());
@@ -112,12 +117,12 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-            GameManager.Instance.otherWorldManager.minerStored[0].SetActive(true);
+            otherWorldManager.minerStored[0].SetActive(true);
 
-            GameManager.Instance.otherWorldManager.minerStored[0].transform.position = spawnPointList[index].transform.position;
-            GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.minerStored[0]);
-            GameManager.Instance.otherWorldManager.minerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
-            GameManager.Instance.otherWorldManager.minerStored.RemoveAt(0);
+            otherWorldManager.minerStored[0].transform.position = spawnPointList[index].transform.position;
+            ennemiManager.ennemiList.Add(otherWorldManager.minerStored[0]);
+            otherWorldManager.minerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
+            otherWorldManager.minerStored.RemoveAt(0);
             //...on fait spawn un ennemi qui se range tout seul dans la List.
 
             StartCoroutine(SpawnCoolDown());
@@ -130,12 +135,12 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-            GameManager.Instance.otherWorldManager.golderStored[0].SetActive(true);
+            otherWorldManager.golderStored[0].SetActive(true);
 
-            GameManager.Instance.otherWorldManager.golderStored[0].transform.position = spawnPointList[index].transform.position;
-            GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.golderStored[0]);
-            GameManager.Instance.otherWorldManager.golderStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
-            GameManager.Instance.otherWorldManager.golderStored.RemoveAt(0);
+            otherWorldManager.golderStored[0].transform.position = spawnPointList[index].transform.position;
+            ennemiManager.ennemiList.Add(otherWorldManager.golderStored[0]);
+            otherWorldManager.golderStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
+            otherWorldManager.golderStored.RemoveAt(0);
             //...on fait spawn un ennemi qui se range tout seul dans la List.
 
             StartCoroutine(SpawnCoolDown());
@@ -149,12 +154,12 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
-            GameManager.Instance.otherWorldManager.flamerStored[0].SetActive(true);
+            otherWorldManager.flamerStored[0].SetActive(true);
 
-            GameManager.Instance.otherWorldManager.flamerStored[0].transform.position = spawnPointList[index].transform.position;
-            GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.flamerStored[0]);
-            GameManager.Instance.otherWorldManager.flamerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
-            GameManager.Instance.otherWorldManager.flamerStored.RemoveAt(0);
+            otherWorldManager.flamerStored[0].transform.position = spawnPointList[index].transform.position;
+            ennemiManager.ennemiList.Add(otherWorldManager.flamerStored[0]);
+            otherWorldManager.flamerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
+            otherWorldManager.flamerStored.RemoveAt(0);
             //...on fait spawn un ennemi qui se range tout seul dans la List.
 
             StartCoroutine(SpawnCoolDown());
