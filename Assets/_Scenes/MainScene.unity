@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2265,6 +2265,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5478630844220448020, guid: 42d727761cd7dc64c9f6ebe2413b9ce9,
         type: 3}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: dummyLoot
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: minerLoot
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: bumperLoot
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: flamerLife
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: flamerLoot
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: golderLife
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: golderLoot
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: mineDamage

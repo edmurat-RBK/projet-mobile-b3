@@ -46,11 +46,16 @@ public class GolderBehavior : GlobalEnnemiBehavior
 
 
 
-        if (life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if (life <= 0)
         {
             Instantiate(GameManager.Instance.ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.golderStored);
+            Death(GameManager.Instance.otherWorldManager.golderStored, GameManager.Instance.ennemiManager.golderLoot);
+        }
+        if(transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        {
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.golderStored);
         }
     }
 
@@ -89,7 +94,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
         yield return new WaitForSeconds(3);
 
         ResetEnemy();
-        Death(GameManager.Instance.otherWorldManager.golderStored);
+        Teleport(GameManager.Instance.otherWorldManager.golderStored);
     }
 
 

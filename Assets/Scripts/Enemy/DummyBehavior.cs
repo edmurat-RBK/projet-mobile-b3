@@ -31,11 +31,16 @@ public class DummyBehavior : GlobalEnnemiBehavior
         
 
 
-        if(life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if(life <= 0)
         {
             Instantiate(GameManager.Instance.ennemiManager.deathFX,transform.position,Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.dummyStored);
+            Death(GameManager.Instance.otherWorldManager.dummyStored, GameManager.Instance.ennemiManager.dummyLoot);
+        }
+        if(transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        {
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.dummyStored);
         }
     }
 
