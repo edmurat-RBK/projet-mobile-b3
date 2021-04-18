@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2225,6 +2225,31 @@ PrefabInstance:
         type: 3}
       propertyPath: xPosForDrop
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: dummyInstanciate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: minerInstanciate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: bumperInstanciate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: flamerInstanciate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: golderInstanciate
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}

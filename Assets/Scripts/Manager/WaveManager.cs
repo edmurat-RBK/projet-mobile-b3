@@ -59,7 +59,7 @@ public class WaveManager : MonoBehaviour
                         break;
 
                     default:
-                        SpawnBumper();
+                        SpawnDummy();
                         break;
                 }
             }
@@ -76,6 +76,8 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
+            GameManager.Instance.otherWorldManager.dummyStored[0].SetActive(true);
+
             GameManager.Instance.otherWorldManager.dummyStored[0].transform.position = spawnPointList[index].transform.position;
             GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.dummyStored[0]);
             GameManager.Instance.otherWorldManager.dummyStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
@@ -92,6 +94,8 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
+            GameManager.Instance.otherWorldManager.bumpedStored[0].SetActive(true);
+
             GameManager.Instance.otherWorldManager.bumpedStored[0].transform.position = spawnPointList[index].transform.position;
             GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.bumpedStored[0]);
             GameManager.Instance.otherWorldManager.bumpedStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
@@ -108,6 +112,8 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
+            GameManager.Instance.otherWorldManager.minerStored[0].SetActive(true);
+
             GameManager.Instance.otherWorldManager.minerStored[0].transform.position = spawnPointList[index].transform.position;
             GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.minerStored[0]);
             GameManager.Instance.otherWorldManager.minerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
@@ -124,6 +130,8 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
+            GameManager.Instance.otherWorldManager.golderStored[0].SetActive(true);
+
             GameManager.Instance.otherWorldManager.golderStored[0].transform.position = spawnPointList[index].transform.position;
             GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.golderStored[0]);
             GameManager.Instance.otherWorldManager.golderStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
@@ -141,6 +149,8 @@ public class WaveManager : MonoBehaviour
 
         if (canSpawn)
         {
+            GameManager.Instance.otherWorldManager.flamerStored[0].SetActive(true);
+
             GameManager.Instance.otherWorldManager.flamerStored[0].transform.position = spawnPointList[index].transform.position;
             GameManager.Instance.ennemiManager.ennemiList.Add(GameManager.Instance.otherWorldManager.flamerStored[0]);
             GameManager.Instance.otherWorldManager.flamerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;

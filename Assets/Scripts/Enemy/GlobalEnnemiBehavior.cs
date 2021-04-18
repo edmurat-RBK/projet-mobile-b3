@@ -231,12 +231,9 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             GameManager.Instance.playerManager.playerLife += lifeBonus;
         }
-        
 
-        GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
-        this.transform.position = GameManager.Instance.otherWorldManager.otherWorld.position;
-        isAlive = false;
-        list.Add(this.gameObject);
+
+        Teleport(list);
     }
     public void Teleport(List<GameObject> list)
     {
@@ -244,6 +241,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         this.transform.position = GameManager.Instance.otherWorldManager.otherWorld.position;
         isAlive = false;
         list.Add(this.gameObject);
+        gameObject.SetActive(false);
     }
     public void GlobalReset() //Rétablie toute les valeurs communes à tout les ennemis à leur valeur de base
     {
