@@ -21,6 +21,8 @@ public class OtherWorld : MonoBehaviour
             GameObject Dummy = Instantiate(otherWorldManager.dummyPrefab, transform.position, transform.rotation);
             otherWorldManager.dummyStored.Add(Dummy);
             Dummy.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+
+            Dummy.SetActive(false);
         }
 
         index = otherWorldManager.bumperInstanciate;
@@ -29,6 +31,8 @@ public class OtherWorld : MonoBehaviour
             GameObject Bumper = Instantiate(otherWorldManager.bumperPrefab, transform.position, transform.rotation);
             otherWorldManager.bumpedStored.Add(Bumper);
             Bumper.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+
+            Bumper.SetActive(false);
         }
 
         index = otherWorldManager.minerInstanciate;
@@ -37,6 +41,8 @@ public class OtherWorld : MonoBehaviour
             GameObject Miner = Instantiate(otherWorldManager.minerPrefab, transform.position, transform.rotation);
             otherWorldManager.minerStored.Add(Miner);
             Miner.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+
+            Miner.SetActive(false);
         }
 
         index = otherWorldManager.golderInstanciate;
@@ -45,6 +51,8 @@ public class OtherWorld : MonoBehaviour
             GameObject Golder = Instantiate(otherWorldManager.golderPrefab, transform.position, transform.rotation);
             otherWorldManager.golderStored.Add(Golder);
             Golder.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+
+            Golder.SetActive(false);
         }
 
         index = otherWorldManager.flamerInstanciate;
@@ -53,6 +61,8 @@ public class OtherWorld : MonoBehaviour
             GameObject Flamer = Instantiate(otherWorldManager.flamerPrefab, transform.position, transform.rotation);
             otherWorldManager.flamerStored.Add(Flamer);
             Flamer.GetComponent<GlobalEnnemiBehavior>().isAlive = false;
+
+            Flamer.SetActive(false);
         }
     }
 }

@@ -8,12 +8,12 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
     bool readyToMining = false;
     bool hasFinishAttack = false;
-    private EnnemiManager ennemiManager;
-
 
     private void Start()
     {
         ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.minerLife;
         StartCoroutine(RandomiseDirection());
     }
@@ -54,6 +54,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
         }
         if (transform.position.z < ennemiManager.deadZone.position.z)
         {
+            Debug.Log("Miner Out");
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
         }

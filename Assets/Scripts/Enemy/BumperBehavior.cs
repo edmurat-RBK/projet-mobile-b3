@@ -14,12 +14,13 @@ public class BumperBehavior : GlobalEnnemiBehavior
     bool canBump = false;
     bool firstBump = true;
 
-    EnnemiManager ennemiManager;
-
 
 
     private void Start()
     {
+        ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.bumperLife;
         StartCoroutine(RandomiseDirection());
     }
@@ -58,6 +59,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
         }
         if(transform.position.z < ennemiManager.deadZone.position.z)
         {
+            Debug.Log("Bumper Out");
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
         }

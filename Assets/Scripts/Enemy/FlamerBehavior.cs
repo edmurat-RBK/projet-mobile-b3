@@ -8,12 +8,13 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
     bool readyToFlaming = false;
     bool hasFinishAttack = false;
-    private EnnemiManager ennemiManager;
 
 
     private void Start()
     {
         ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.flamerLife;
         StartCoroutine(RandomiseDirection());
     }
@@ -59,7 +60,8 @@ public class FlamerBehavior : GlobalEnnemiBehavior
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.flamerLoot);
         }
         if(transform.position.z < ennemiManager.deadZone.position.z)
-        { 
+        {
+            Debug.Log("Flamer Out");
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.flamerStored);
         }
