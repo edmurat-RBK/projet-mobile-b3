@@ -94,7 +94,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
     IEnumerator BumpPlayer()
     {
         isBumping = true;
-        yield return new WaitForSeconds(GennemiManager.bumperAttackDuration);
+        yield return new WaitForSeconds(ennemiManager.bumperAttackDuration);
         isBumping = false;
         StartCoroutine(BumpCoolDown());
     }
