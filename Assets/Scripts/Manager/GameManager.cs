@@ -48,4 +48,5 @@ public class GameManager : MonoBehaviour
     public OtherWorldManager otherWorldManager;
     public HighScore highScoreManager;
     public QuestManager questManager;
+    public ShopManager shopManager;
 }
