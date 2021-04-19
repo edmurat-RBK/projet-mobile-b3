@@ -71,7 +71,6 @@ public class PlayerLife : MonoBehaviour
 
     IEnumerator PlayerDeath()
     {
-        Debug.Log("Death");
 
         if (!playerManager.revive)
         {
