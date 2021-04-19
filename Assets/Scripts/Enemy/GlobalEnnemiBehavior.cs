@@ -101,15 +101,15 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             if(!obstacleOnRight && !obstacleOnLeft && !playerCloseOnRight && !playerCloseOnLeft) //La voie est dégagée des deux côtés
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (directionToMoveOn), 8f*Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (directionToMoveOn), 20f*Time.deltaTime);
             }
             else if((obstacleOnLeft || playerCloseOnLeft) && (!obstacleOnRight || !playerCloseOnRight)) //La voie est dégagée sur la droite, mais pas sur la gauche
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 8f * Time.deltaTime);   //Mouvement droite
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 20f * Time.deltaTime);   //Mouvement droite
             }
             else if((obstacleOnRight || playerCloseOnRight) && (!obstacleOnLeft || !playerCloseOnLeft)) //La voie est dégagée sur la gauche, mais pas sur la droite
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 8f * Time.deltaTime);    //Mouvement gauche
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 20f * Time.deltaTime);    //Mouvement gauche
             }
         }
         
@@ -128,12 +128,12 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public void CheckDirection() //Vérfie les obstacles devant l'ennemi
     {
         #region Debug
-        Debug.DrawRay(transform.position, transform.forward * 50f, Color.red);
-        Debug.DrawRay(transform.position, (transform.forward + transform.right / 3) * 20, Color.red);
-        Debug.DrawRay(transform.position, (transform.forward - transform.right / 3) * 20, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * 200f, Color.red);
+        Debug.DrawRay(transform.position, (transform.forward + transform.right / 3) * 80, Color.red);
+        Debug.DrawRay(transform.position, (transform.forward - transform.right / 3) * 80, Color.red);
         #endregion
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 50f, obstacleMask)) //Devant
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 200f, obstacleMask)) //Devant
         {
             obstacleAhead = true;
         }
@@ -142,7 +142,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             obstacleAhead = false;
         }
 
-        if(Physics.Raycast(transform.position, (transform.forward + transform.right)/3, out hit, 20f, obstacleMask)) //Diagonal Droite
+        if(Physics.Raycast(transform.position, (transform.forward + transform.right)/3, out hit, 80f, obstacleMask)) //Diagonal Droite
         {
             obstacleOnRight = true;
         }
@@ -151,7 +151,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             obstacleOnRight = false;
         }
 
-        if (Physics.Raycast(transform.position, (transform.forward - transform.right)/3, out hit, 20f, obstacleMask)) //Diagonal Gauche
+        if (Physics.Raycast(transform.position, (transform.forward - transform.right)/3, out hit, 80f, obstacleMask)) //Diagonal Gauche
         {
             obstacleOnLeft = true;
         }
@@ -275,7 +275,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public IEnumerator RandomiseDirection() //Change la direction que l'ennemi utilise pour esquiver un obstacle
     {
         directionToMoveOn = GiveNewMovementDirection();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
         StartCoroutine(RandomiseDirection());
     }
     IEnumerator waitSideOfPlayer() //Stop l'ennemi pendant un temps donné lorsqu'il arrive au niveau du joueur

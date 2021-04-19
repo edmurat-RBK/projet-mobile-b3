@@ -33,11 +33,16 @@ public class Boost : MonoBehaviour
     public GameObject FXBoost;
     public GameObject FXVitesse;
 
+
+    
+
     void Start()
     {
         boostCharges = maxBoostCharges;
         slider.maxValue = maxBoostCharges;
         slider.value = slider.maxValue;
+
+        
     }
 
 
