@@ -20,10 +20,21 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     [Range (0,1)]
     public float inertiaTiming;
+
+
+    PlayerManager playerManager;
+
+
+    [Header("Audio")]
+    AudioManager audioManager;
+    AK.Wwise.RTPC localMotorRTCP;
+    int motorVar = 0;
     
 
 
     bool isBumped = false;
+
+
 
     private void OnEnable()
     {
@@ -97,6 +108,11 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         GameManager.Instance.playerManager.player = this.gameObject;
+
+        playerManager = GameManager.Instance.playerManager;
+
+        audioManager = AudioManager.AMInstance;
+        localMotorRTCP = audioManager.motorVarRTPC;
     }
     //public void OnMove(InputValue value) //recupère le vecteur qui correspond à la direction donnée
     //{
@@ -143,18 +159,47 @@ public class PlayerController : MonoBehaviour
             }
                 
             transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime); //déplace le joueur selon le vecteur et la vitesse */
-            
+
+            if (motorVar <= 20)
+            {
+                if (playerManager.playerIsBoosting == false)
+                {
+                    motorVar += 2;
+                    localMotorRTCP.SetGlobalValue(motorVar);
+                }
+            }
+
+
             //rb.velocity = direction*speed*Time.deltaTime *100; //fait bouger le vaisseau dans la bonne direction
-            
+
         }
         else if (movePrio)
         {
             transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime);
+
+            if (motorVar <= 20)
+            {
+                if (playerManager.playerIsBoosting == false)
+                {
+                    motorVar += 2;
+                    localMotorRTCP.SetGlobalValue(motorVar);
+                }
+
+            }
         }
         if (!move)
         {
             direction.x = 0;
             direction2.x = 0;
+
+            if (motorVar > 0)
+            {
+                if(playerManager.playerIsBoosting == false)
+                {
+                    motorVar = 0;
+                    localMotorRTCP.SetGlobalValue(0);
+                }
+            }
         }
         if(isBumped)
         {
