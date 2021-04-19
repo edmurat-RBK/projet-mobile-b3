@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -41,7 +42,7 @@ public class PlayerLife : MonoBehaviour
 
         if (playerManager.playerLife <= 0 && playerManager.playerIsAlive)
         {
-            PlayerDeath();
+            StartCoroutine(PlayerDeath());
         }
     }
 
@@ -68,22 +69,28 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    void PlayerDeath()
+    IEnumerator PlayerDeath()
     {
+        Debug.Log("Death");
+
         if (!playerManager.revive)
         {
             explosionFX.SetActive(true);
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             playerManager.playerIsAlive = false;
-            DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
+            //DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
+            GameManager.Instance.terrainManager.scrollSpeed = 0;
 
+            yield return new WaitForSeconds(2f);
 
-
+            SceneManager.LoadScene("Menu Start");
         }
         else
         {
+            yield return 0;
             playerManager.revive = false;
         }
+
         
     }
 
