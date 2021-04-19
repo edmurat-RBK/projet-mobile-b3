@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 
 public class QuestManager : MonoBehaviour
@@ -28,7 +30,13 @@ public class QuestManager : MonoBehaviour
     public int[] totalScore;
     
     
-    
+    private void Awake() {
+        if (FindObjectOfType<GameManager>())
+        {
+            GameManager.Instance.questManager = this;
+        }
+        GameObject.DontDestroyOnLoad(this.gameObject);
+    }
 
     private void Start() 
     {

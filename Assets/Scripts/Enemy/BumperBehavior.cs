@@ -77,11 +77,11 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
                 if(playerOnLeft == true)
                 {
-                    StartCoroutine(GameManager.Instance.playerManager.player.GetComponent<PlayerController>().playerBumped(Vector3.left));
+                    StartCoroutine(playerManager.player.GetComponent<PlayerController>().playerBumped(Vector3.left));
                 }
                 else if(playerOnRight == true)
                 {
-                    StartCoroutine(GameManager.Instance.playerManager.player.GetComponent<PlayerController>().playerBumped(Vector3.right));
+                    StartCoroutine(playerManager.player.GetComponent<PlayerController>().playerBumped(Vector3.right));
                 }
 
                 

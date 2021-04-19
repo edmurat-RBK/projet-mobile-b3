@@ -41,7 +41,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.forward * 100), GameManager.Instance.terrainManager.scrollSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.forward * 100), terrainManager.scrollSpeed * Time.deltaTime);
             }
 
         }

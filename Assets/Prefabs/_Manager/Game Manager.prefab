@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 3036606408512657502}
   - component: {fileID: 2851211019028878643}
   - component: {fileID: 6083765253531162007}
-  - component: {fileID: 6083765253531162016}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -62,6 +61,7 @@ MonoBehaviour:
   otherWorldManager: {fileID: 2851211019028878643}
   highScoreManager: {fileID: 0}
   questManager: {fileID: 0}
+  shopManager: {fileID: 0}
 --- !u!114 &7698680784825049045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplyCoins: 0
+  boostDuration: 10
   coinsMultiplier: 2
   coinCounter: 12
   coinVioletCounter: 0
@@ -119,23 +120,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1591680aa4dde3745a395c6103e34e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathFX: {fileID: 0}
   deadZone: {fileID: 0}
   ennemiList: []
   dummyLife: 1
+  dummyLoot: 0
   bumperLife: 1
+  bumperLoot: 0
   arrestSideOfPlayerDuration: 5
   bumperAttackSpeed: 15
   bumperAttackDuration: 1
   bumperAttackCoolDown: 5
   minerLife: 1
+  minerLoot: 0
   minerArrestSideOfPlayerDuration: 0
   stopDuration: 10
   minerDropRate: 2
   xPosForDrop: 20
+  mineDamage: 0
   golderLife: 1
+  golderLoot: 0
   golderDropRate: 5
   gloderStayDuration: 10
   flamerLife: 1
+  flamerLoot: 0
   flamerAttackDuration: 10
   flamerWaitSideOfPlayer: 0
   xPosForFire: 15
@@ -234,28 +242,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   path: 
---- !u!114 &6083765253531162016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7900983418033125461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18252b80b6652104ca1c048f52180035, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfQuests: 3
-  questsList:
-  - {fileID: 11400000, guid: d67a7a1f2ffdf0f4b968b88d47dd77f9, type: 2}
-  - {fileID: 11400000, guid: 52704a3d3c727dd409bc5047fdbf6468, type: 2}
-  - {fileID: 11400000, guid: eb8abc357a093cf48bf757d00002a5e7, type: 2}
-  quests: []
-  obstaclesDestroyed: 
-  enemiesDestroyed: 
-  coinsPickedUp: 
-  totalScore: 
 --- !u!1001 &5155179719681864508
 PrefabInstance:
   m_ObjectHideFlags: 0

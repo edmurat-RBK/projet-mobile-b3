@@ -22,7 +22,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
     {
         if (isAlive)
         {
-            Vector3 playerPos = GameManager.Instance.playerManager.player.transform.position;
+            Vector3 playerPos = playerManager.player.transform.position;
             float xDrop = ennemiManager.xPosForDrop;
 
             if (transform.position.z <= (playerPos.z + xDrop) && !hasFinishAttack)
