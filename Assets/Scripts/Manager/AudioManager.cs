@@ -48,4 +48,14 @@ public class AudioManager : MonoBehaviour
         runMusic.Post(gameObject);
         playerMotorAudio.Post(gameObject);
     }
+
+
+
+
+
+    public void StopAllAudio()
+    {
+        runMusic.Stop(gameObject);
+        playerMotorAudio.Stop(gameObject);
+    }
 }
