@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -451,7 +451,7 @@ PrefabInstance:
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
       propertyPath: poolList.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
@@ -480,6 +480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
+      propertyPath: poolList.Array.data[5].tag
+      value: LDM6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
       propertyPath: poolList.Array.data[0].size
       value: 1
       objectReference: {fileID: 0}
@@ -501,6 +506,11 @@ PrefabInstance:
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
       propertyPath: poolList.Array.data[4].size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[5].size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
@@ -535,6 +545,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
+      propertyPath: poolList.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 7121814921926412919, guid: 0606143d547047c4bb8d1be3bf3d97c7,
+        type: 3}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
       propertyPath: poolList.Array.data[0].parentInInspector
       value: 
       objectReference: {fileID: 1209353120}
@@ -556,6 +572,11 @@ PrefabInstance:
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
       propertyPath: poolList.Array.data[4].parentInInspector
+      value: 
+      objectReference: {fileID: 1209353120}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[5].parentInInspector
       value: 
       objectReference: {fileID: 1209353120}
     m_RemovedComponents: []
@@ -1482,7 +1503,7 @@ PrefabInstance:
     - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: terrainPool.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
@@ -1518,7 +1539,7 @@ PrefabInstance:
         type: 3}
       propertyPath: terrainPool.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 226aefcc1bd41aa49a422c6634b2e235,
+      objectReference: {fileID: 11400000, guid: 9a9c34621bf0df64fad590ee4434b34d,
         type: 2}
     - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
@@ -1638,20 +1659,15 @@ PrefabInstance:
       propertyPath: highScoreText
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 6083765253531162016, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: playerLife
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: maxPlayerLife
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
@@ -1661,7 +1677,7 @@ PrefabInstance:
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: decreaseMultiplicator
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
@@ -1733,6 +1749,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6083765253531162016, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}

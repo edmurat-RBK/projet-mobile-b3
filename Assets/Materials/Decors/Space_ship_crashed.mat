@@ -8,18 +8,22 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Space_ship_crashed
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 8ceaa12c0748c20478212f06747c4773,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - MainTex_:
+        m_Texture: {fileID: 2800000, guid: 74add14015f8b7341a6cc6555a2002d8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: 74add14015f8b7341a6cc6555a2002d8, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -49,6 +53,12 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Boolean_AC0FC645: 0
+    - Vector1_1AA49D0F: 0
+    - Vector1_421922E0: 0.63
+    - Vector1_D933615F: 0.5
+    - Vector1_E476C1E1: 0.655
+    - Vector1_F2F81344: 0
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -71,6 +81,9 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_BBD6B416: {r: 1, g: 0.9576704, b: 0.7688679, a: 0}
+    - Color_C7CE8949: {r: 0.16981125, g: 0.046813533, b: 0.02162691, a: 0}
+    - Vector3_862CABF4: {r: 0, g: -1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
