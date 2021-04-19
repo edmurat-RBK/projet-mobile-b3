@@ -77,6 +77,8 @@ public class PlayerLife : MonoBehaviour
             playerManager.playerIsAlive = false;
             DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
 
+
+
         }
         else
         {

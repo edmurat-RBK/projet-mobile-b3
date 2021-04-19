@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -193,11 +193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.49
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.17
+      value: 12.1
       objectReference: {fileID: 0}
     - target: {fileID: 1050496107, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
       propertyPath: m_LocalRotation.w
@@ -297,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8662309422103473598, guid: f27be8b1fa998da4ebe5076bdefad089,
+        type: 3}
+      propertyPath: speed
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
@@ -703,7 +708,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723948817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 2, z: 40}
+  m_LocalPosition: {x: 10, y: 2, z: 70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1384882620}
@@ -733,7 +738,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 748425325}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 40}
+  m_LocalPosition: {x: 0, y: 2, z: 70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1384882620}
@@ -1224,7 +1229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764412130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 2, z: 40}
+  m_LocalPosition: {x: -10, y: 2, z: 70}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1384882620}
@@ -1497,6 +1502,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
+      propertyPath: boostSpeed
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: scrollSpeed
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
       propertyPath: terrainLenght
       value: 300
       objectReference: {fileID: 0}
@@ -1590,7 +1605,17 @@ PrefabInstance:
     - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: xPosForDrop
-      value: 30
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: xPosForFire
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: arrestSideOfPlayerDuration
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
@@ -1662,12 +1687,12 @@ PrefabInstance:
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: playerLife
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: maxPlayerLife
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
@@ -1677,7 +1702,7 @@ PrefabInstance:
     - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: decreaseMultiplicator
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
