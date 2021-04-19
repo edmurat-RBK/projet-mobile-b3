@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -456,7 +456,7 @@ PrefabInstance:
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
       propertyPath: poolList.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
@@ -490,6 +490,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
+      propertyPath: poolList.Array.data[6].tag
+      value: LD_Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
       propertyPath: poolList.Array.data[0].size
       value: 1
       objectReference: {fileID: 0}
@@ -517,6 +522,11 @@ PrefabInstance:
         type: 3}
       propertyPath: poolList.Array.data[5].size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[6].size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
@@ -556,6 +566,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
+      propertyPath: poolList.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 4842793809849122161, guid: b974fa1924c0da345a69608307c4fa00,
+        type: 3}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
       propertyPath: poolList.Array.data[0].parentInInspector
       value: 
       objectReference: {fileID: 1209353120}
@@ -582,6 +598,11 @@ PrefabInstance:
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
       propertyPath: poolList.Array.data[5].parentInInspector
+      value: 
+      objectReference: {fileID: 1209353120}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[6].parentInInspector
       value: 
       objectReference: {fileID: 1209353120}
     m_RemovedComponents: []
@@ -1877,8 +1898,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
+      propertyPath: shopTerrain
+      value: 
+      objectReference: {fileID: 11400000, guid: 39ee3e49cdc496f45a1aebe6a171f75a,
+        type: 2}
+    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
       propertyPath: terrainLenght
       value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: distanceVariation
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: distanceBewteenShop
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
