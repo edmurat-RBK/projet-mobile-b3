@@ -32,6 +32,7 @@ public class PlayerLife : MonoBehaviour
 
     void Update()
     {
+        
         LifeDecreaseOverTime();
 
         RefillShield();
@@ -79,7 +80,9 @@ public class PlayerLife : MonoBehaviour
             playerManager.playerIsAlive = false;
             //DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             GameManager.Instance.terrainManager.scrollSpeed = 0;
-
+            
+            
+            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter);
             yield return new WaitForSeconds(2f);
 
             AudioManager.AMInstance.StopAllAudio();

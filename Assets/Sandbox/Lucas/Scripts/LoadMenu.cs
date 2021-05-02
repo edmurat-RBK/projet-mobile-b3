@@ -20,9 +20,10 @@ public class LoadMenu : MonoBehaviour
     void LoadValues()
     {
         Datas data = DataManager.DMInstance.Load();
-
+        Debug.Log(data);
         if (data != null)
         {
+            
             coins = data.coinsCollected;
             highscore = data.highscore;
         }
