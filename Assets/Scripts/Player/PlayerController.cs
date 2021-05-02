@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     bool inertia;
     public Vector3 direction;
     public Vector3 direction2;
+    Quaternion target;
     Rigidbody rb;
     [Range (0,1)]
     public float inertiaTiming;
+    public float rotateSpeed;
 
 
     PlayerManager playerManager;
@@ -145,7 +147,7 @@ public class PlayerController : MonoBehaviour
         if(ShopManager.Instance.shopActive) {
             return;
         }
-
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,target,rotateSpeed*Time.deltaTime);
         animator.SetFloat("HorizontalSpeed",direction.x);
         if (move && !movePrio || inertia)
         {
@@ -157,7 +159,24 @@ public class PlayerController : MonoBehaviour
             {
                 Invoke("Inertia", inertiaTiming);
             }
+            switch (direction.x)
+            {
+                case 1:
+                target = Quaternion.Euler(new Vector3(0,180, -25));
                 
+                    break;
+                case -1:
+                target = Quaternion.Euler(new Vector3(0,180, 25));
+                
+                    break;
+                case 0:
+                target = Quaternion.Euler(new Vector3(0,180, 0));
+                
+                    break;
+                default:
+                    break;
+            }
+            
             transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime); //déplace le joueur selon le vecteur et la vitesse */
 
             if (motorVar <= 20)
