@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
-    m_lastTime: -8585828460876090800
+    m_lastTime: -8585813950500533745
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -165,7 +165,7 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
-    m_lastTime: -8585813971060797672
+    m_lastTime: -8585813950500413847
     List:
     - name: CoinCollect
       guid: 861ff544f04f2a448edc57340a015bd4
@@ -238,6 +238,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: d7d8de336fcf6846aaaddd57d78ae470
       Path: Events\Sound Effects\Player\Player_Motor
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: RockDestruction
+      guid: 8eb21bf8a60b584a9ae8dcb658690045
+      id: 3234943846
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: World
+        ObjectType: 4
+        guid: 7b9440d1ab67434e9a90104c62ab2f69
+      - ElementName: RockDestruction
+        ObjectType: 3
+        guid: 8eb21bf8a60b584a9ae8dcb658690045
+      Path: Events\Sound Effects\World\RockDestruction
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

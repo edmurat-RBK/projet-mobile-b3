@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     #endregion
     #region World
     public AK.Wwise.Event coinCollectAudio;
+    public AK.Wwise.Event rockDestructionAudio;
     #endregion
 
 

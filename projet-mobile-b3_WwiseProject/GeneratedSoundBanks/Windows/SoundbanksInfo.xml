@@ -111,7 +111,7 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="2298388732">
+		<SoundBank Id="1761240301" Language="SFX" Hash="2613983771">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
@@ -129,6 +129,34 @@
 						<File Id="605095972" Language="SFX">
 							<ShortName>PlayerTurbine.wav</ShortName>
 							<Path>SFX\PlayerTurbine_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3234943846" Name="RockDestruction" ObjectPath="\Events\Sound Effects\World\RockDestruction" DurationType="OneShot" DurationMin="0.707548" DurationMax="1.355350">
+					<IncludedMemoryFiles>
+						<File Id="107025989" Language="SFX">
+							<ShortName>Rock_Fall2.wav</ShortName>
+							<Path>SFX\Rock_Fall2_10C4C929.wem</Path>
+						</File>
+						<File Id="193529997" Language="SFX">
+							<ShortName>Rock_Impact2.wav</ShortName>
+							<Path>SFX\Rock_Impact2_10C4C929.wem</Path>
+						</File>
+						<File Id="387377204" Language="SFX">
+							<ShortName>Rock_Fall1.wav</ShortName>
+							<Path>SFX\Rock_Fall1_10C4C929.wem</Path>
+						</File>
+						<File Id="440179120" Language="SFX">
+							<ShortName>Rock_Fall3.wav</ShortName>
+							<Path>SFX\Rock_Fall3_10C4C929.wem</Path>
+						</File>
+						<File Id="750670951" Language="SFX">
+							<ShortName>Rock_Impact3.wav</ShortName>
+							<Path>SFX\Rock_Impact3_10C4C929.wem</Path>
+						</File>
+						<File Id="908448583" Language="SFX">
+							<ShortName>Rock_Impact.wav</ShortName>
+							<Path>SFX\Rock_Impact_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

@@ -45,6 +45,27 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="RockDestruction" ID="{F81BB28E-0BA6-4A58-9AE8-DCB658690045}">
+							<ChildrenList>
+								<Action Name="" ID="{F54A759C-DD71-40EF-B6B1-40BA0AD9DEBA}" ShortID="975764206">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Rock_Impact" ID="{71785DFC-298C-447F-8216-FCF8CDB5C73D}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{7A84A427-A607-48B7-A685-D27CDCEB70FA}" ShortID="201526908">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Rock_Fall" ID="{7E1A8F5C-5198-4710-AD86-F87C6F3029CB}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{E97CABBC-4632-40CD-8894-2DD4C219B307}" ShortID="170525831">

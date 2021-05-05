@@ -34,7 +34,7 @@ public class Coin : MonoBehaviour
         {
             if (gameManager.economicManager.multiplyCoins)
             {
-                gameManager.economicManager.coinCounter += (int)(coinValue * GameManager.Instance.economicManager.coinsMultiplier);
+                gameManager.economicManager.coinCounter += (int)(coinValue * gameManager.economicManager.coinsMultiplier);
             }
             else
             {
