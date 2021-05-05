@@ -11,11 +11,14 @@ public class AudioManager : MonoBehaviour
     #region Player
     public AK.Wwise.Event playerMotorAudio;
     #endregion
+    #region World
+    public AK.Wwise.Event coinCollectAudio;
+    #endregion
 
 
 
     //---------------------------------------------------
-        [Header("Musics")]
+    [Header("Musics")]
     public AK.Wwise.Event runMusic;
 
 

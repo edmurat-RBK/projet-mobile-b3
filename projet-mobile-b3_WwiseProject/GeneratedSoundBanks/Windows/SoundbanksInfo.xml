@@ -111,11 +111,19 @@
 				</Event>
 			</IncludedEvents>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="3936829626">
+		<SoundBank Id="1761240301" Language="SFX" Hash="2298388732">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
 			<IncludedEvents>
+				<Event Id="815433836" Name="CoinCollect" ObjectPath="\Events\Sound Effects\World\CoinCollect" DurationType="OneShot" DurationMin="1.038812" DurationMax="1.038812">
+					<IncludedMemoryFiles>
+						<File Id="547354128" Language="SFX">
+							<ShortName>Coin_Collect.wav</ShortName>
+							<Path>SFX\Coin_Collect_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3300087192" Name="Player_Motor" ObjectPath="\Events\Sound Effects\Player\Player_Motor" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="605095972" Language="SFX">

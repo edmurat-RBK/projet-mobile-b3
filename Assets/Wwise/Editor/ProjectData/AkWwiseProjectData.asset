@@ -165,8 +165,28 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
-    m_lastTime: -8585828460877317517
+    m_lastTime: -8585813971060797672
     List:
+    - name: CoinCollect
+      guid: 861ff544f04f2a448edc57340a015bd4
+      id: 815433836
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: World
+        ObjectType: 4
+        guid: 7b9440d1ab67434e9a90104c62ab2f69
+      - ElementName: CoinCollect
+        ObjectType: 3
+        guid: 861ff544f04f2a448edc57340a015bd4
+      Path: Events\Sound Effects\World\CoinCollect
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Ennemis
       guid: 9fec4a7be1672e42bbb519779a0c2ef0
       id: 1507798120
@@ -339,7 +359,7 @@ MonoBehaviour:
     m_lastTime: -8585828630789469809
     List: []
   ExpandedFileSystemItemIds: 11000000
-  ExpandedWaapiItemIds: 0b0000000d0000001c000000
+  ExpandedWaapiItemIds: 05000000090000000b0000000d0000001c000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0

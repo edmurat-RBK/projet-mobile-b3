@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2055,6 +2055,12 @@ PrefabInstance:
       propertyPath: motorVarRTPC.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 5c1b52c4f8e4b224e92286cbc8387ac6,
+        type: 2}
+    - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
+        type: 3}
+      propertyPath: coinCollectAudio.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b9fe11338ef23c4c86f42a0f8c13349,
         type: 2}
     - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}

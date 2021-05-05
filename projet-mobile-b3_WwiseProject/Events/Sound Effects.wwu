@@ -33,6 +33,19 @@
 						<Property Name="Color" Type="int16" Value="4"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
+					<ChildrenList>
+						<Event Name="CoinCollect" ID="{44F51F86-4FF0-442A-8EDC-57340A015BD4}">
+							<ChildrenList>
+								<Action Name="" ID="{7053BE7E-F389-4E82-AC3F-47EA486FC3C4}" ShortID="1009897320">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Coin_Collect" ID="{80C153BB-A2F8-4994-892C-211E99B0AB70}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{E97CABBC-4632-40CD-8894-2DD4C219B307}" ShortID="170525831">
 					<PropertyList>
