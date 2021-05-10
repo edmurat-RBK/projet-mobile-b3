@@ -19,6 +19,24 @@ namespace AK
         static const AkUniqueID RUNMUSIC = 3738991497U;
     } // namespace EVENTS
 
+    namespace STATES
+    {
+        namespace GAMESTATE
+        {
+            static const AkUniqueID GROUP = 4091656514U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID PAUSE = 3092587493U;
+                static const AkUniqueID RUN = 712161704U;
+                static const AkUniqueID SHOP = 251412225U;
+            } // namespace STATE
+        } // namespace GAMESTATE
+
+    } // namespace STATES
+
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID MOTORVARIATION = 2892789523U;
