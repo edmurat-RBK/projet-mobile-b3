@@ -17,6 +17,7 @@ public class DataManager : MonoBehaviour
     {
         DMInstance = this;
         SetPath();
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void SetPath()

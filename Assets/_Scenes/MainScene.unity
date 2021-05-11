@@ -303,6 +303,11 @@ PrefabInstance:
       propertyPath: speed
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 8662309422103473598, guid: f27be8b1fa998da4ebe5076bdefad089,
+        type: 3}
+      propertyPath: rotateSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
 --- !u!1 &253849639 stripped
@@ -2188,5 +2193,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6083765253531162007, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
