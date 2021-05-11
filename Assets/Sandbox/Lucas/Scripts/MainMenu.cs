@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(index);
 
         AudioManager.AMInstance.UIStartAudio.Post(gameObject);
+        AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
     }
 
     public void OpenShop()

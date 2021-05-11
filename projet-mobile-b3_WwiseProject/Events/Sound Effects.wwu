@@ -174,6 +174,20 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="UI_RETURNMENU" ID="{B0F462B9-3103-4EA5-936C-21372E7363B2}">
+							<ChildrenList>
+								<Action Name="" ID="{558F9024-CB20-4A37-B84B-A2D8B9731AA8}" ShortID="52352386">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Menu" ID="{9891C8E1-BA74-4874-937B-3A8F56703507}" WorkUnitID="{D40B13CF-7BE0-46EC-AD1A-D45CD2ABCFE6}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

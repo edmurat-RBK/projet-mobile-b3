@@ -21,7 +21,9 @@ namespace AK
         static const AkUniqueID UI_CLOSE = 2519197294U;
         static const AkUniqueID UI_IMPOSSIBLE = 4114843917U;
         static const AkUniqueID UI_PAUSE = 2792155208U;
+        static const AkUniqueID UI_RETURNMENU = 1715088773U;
         static const AkUniqueID UI_SELECT = 2774129122U;
+        static const AkUniqueID UI_START = 1219048826U;
         static const AkUniqueID UI_UNPAUSE = 183167143U;
     } // namespace EVENTS
 

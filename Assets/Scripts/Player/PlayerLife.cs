@@ -77,6 +77,7 @@ public class PlayerLife : MonoBehaviour
         {
             explosionFX.SetActive(true);
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
+            AudioManager.AMInstance.explosionAudio.Post(gameObject);
             playerManager.playerIsAlive = false;
             //DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             GameManager.Instance.terrainManager.scrollSpeed = 0;
@@ -85,7 +86,10 @@ public class PlayerLife : MonoBehaviour
             DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter);
             yield return new WaitForSeconds(2f);
 
+            
             AudioManager.AMInstance.StopAllAudio();
+            AudioManager.AMInstance.UIReturnMenuAudio.Post(gameObject);
+            AudioManager.AMInstance.runMusic.Post(gameObject);
             SceneManager.LoadScene("Menu Start");
         }
         else

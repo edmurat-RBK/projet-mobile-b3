@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event UIPauseAudio;
     public AK.Wwise.Event UIUnpauseAudio;
     public AK.Wwise.Event UIStartAudio;
+    public AK.Wwise.Event UIReturnMenuAudio;
     #endregion
 
 
@@ -59,12 +60,9 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        runMusic.Post(gameObject);
-        playerMotorAudio.Post(gameObject);
+        UIReturnMenuAudio.Post(gameObject);
+        runMusic.Post(gameObject);     
     }
-
-
-
 
 
     public void StopAllAudio()
