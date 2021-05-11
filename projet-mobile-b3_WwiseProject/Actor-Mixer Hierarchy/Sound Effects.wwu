@@ -59,7 +59,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>5</Value>
+										<Value>3</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -83,6 +83,148 @@
 							<ObjectLists/>
 							<ActiveSourceList>
 								<ActiveSource Name="PlayerTurbine" ID="{F1108F90-14A2-4CA3-B244-4D2155AC6AA6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Engine_Boost" ID="{37912EF2-E802-4135-8E4C-E84C72396402}" ShortID="737751124">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>500</Value>
+									</ValueList>
+									<RTPCList>
+										<RTPC Name="" ID="{FDE19E8A-D41D-4CB3-B54C-A1524AF48222}" ShortID="1027416937">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="boostEvolution" ID="{65D42C53-EFF7-4C82-A44C-B52F6461126B}" WorkUnitID="{CAEB585D-7A69-4BA3-9EB5-2C1FEF219A5F}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{57B59649-704A-4F13-BF4E-6334242A1C99}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>2000</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Engine_Boost" ID="{0126336B-6D8B-46C5-A0DB-22A5D4AC8724}">
+									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="5.39716553287982"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>Engine_Boost.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="470228999"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Engine_Boost" ID="{0126336B-6D8B-46C5-A0DB-22A5D4AC8724}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Engine_Idle" ID="{C53FEF38-A12C-4C7F-94A4-0B04C84342E1}" ShortID="361302099">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>1000</Value>
+									</ValueList>
+									<RTPCList>
+										<RTPC Name="" ID="{7A03B57E-30F6-4C10-A160-A02710119298}" ShortID="909033816">
+											<ReferenceList>
+												<Reference Name="ControlInput">
+													<ObjectRef Name="motorVariation" ID="{62AF9B02-42EE-4B65-85B0-AAD4B6985B75}" WorkUnitID="{CAEB585D-7A69-4BA3-9EB5-2C1FEF219A5F}"/>
+												</Reference>
+											</ReferenceList>
+											<Curve Name="" ID="{10381D3D-6103-4C53-9486-18B2DBE58A74}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>20</XPos>
+														<YPos>400</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>60</XPos>
+														<YPos>726</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>850</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</RTPC>
+									</RTPCList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Engine_Idle" ID="{04D6BB29-1F6F-4B43-91F7-FC43EF3B9D31}">
+									<Language>SFX</Language>
+									<AudioFile>Engine_Idle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="972513170"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Engine_Idle" ID="{04D6BB29-1F6F-4B43-91F7-FC43EF3B9D31}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
@@ -496,6 +638,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Explosion_2" ID="{1A1C56A8-C640-49BB-9EF1-3C5D5A8F6288}" ShortID="410675483">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
@@ -516,6 +665,89 @@
 									<ObjectLists/>
 									<ActiveSourceList>
 										<ActiveSource Name="Explosion_2" ID="{9639D340-E6E3-4A40-8A6D-A42151941704}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Explosion_Breakable" ID="{BD4F6577-11A4-45E0-9DC1-E847873E8BF9}" ShortID="772508807">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>57</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>350</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Explosion_1" ID="{B7B2559E-FAF7-4F76-9060-391791FD9037}" ShortID="301234062">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Explosion_1" ID="{F00E2FFB-FD07-41B0-9D24-40ABE3FFD36B}">
+											<Language>SFX</Language>
+											<AudioFile>Explosion_1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="385060310"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Explosion_1" ID="{F00E2FFB-FD07-41B0-9D24-40ABE3FFD36B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Explosion_2" ID="{E88A9380-E1FF-425B-8F07-E0CB002EFC60}" ShortID="413051426">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Explosion_2" ID="{756E784A-18EF-4724-9B91-8F0C64377549}">
+											<Language>SFX</Language>
+											<AudioFile>Explosion_2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="110223632"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Explosion_2" ID="{756E784A-18EF-4724-9B91-8F0C64377549}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

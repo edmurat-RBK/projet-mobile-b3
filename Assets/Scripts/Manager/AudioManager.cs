@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
         [Header("SFX")]
     #region Player
     public AK.Wwise.Event playerMotorAudio;
+    public AK.Wwise.Event playerBoostAudio;
     #endregion
     #region World
     public AK.Wwise.Event coinCollectAudio;
@@ -38,6 +39,7 @@ public class AudioManager : MonoBehaviour
         [Header("Game Sync")]
     //Variable "motorVar" dans PlayerController
     public AK.Wwise.RTPC motorVarRTPC;
+    public AK.Wwise.RTPC boostEvolutionRTPC;
 
 
 

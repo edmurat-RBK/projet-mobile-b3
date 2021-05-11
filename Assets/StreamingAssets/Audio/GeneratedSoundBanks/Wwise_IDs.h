@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BOOST = 2389703494U;
         static const AkUniqueID COINCOLLECT = 815433836U;
         static const AkUniqueID EXPLOSION = 13776098U;
         static const AkUniqueID PLAYER_MOTOR = 3300087192U;
@@ -47,6 +48,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BOOSTEVOLUTION = 2272887157U;
         static const AkUniqueID MOTORVARIATION = 2892789523U;
     } // namespace GAME_PARAMETERS
 

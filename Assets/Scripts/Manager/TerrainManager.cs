@@ -25,10 +25,12 @@ public class TerrainManager : MonoBehaviour
     Boost boostRef;
 
     PlayerManager playerManager;
+    AudioManager audioManager;
 
     [Header("Audio")]
     AK.Wwise.RTPC localMotorRTCP;
     int motorVar = 0;
+    int audioBoostIndex = 0;
     
     
     private void Awake()
@@ -67,6 +69,7 @@ public class TerrainManager : MonoBehaviour
         }
 
         playerManager = GameManager.Instance.playerManager;
+        audioManager = AudioManager.AMInstance;
 
         localMotorRTCP = AudioManager.AMInstance.motorVarRTPC;
     }
@@ -82,6 +85,20 @@ public class TerrainManager : MonoBehaviour
         catch
         {
             // Keep going
+        }
+
+        if(playerManager.playerIsBoosting == true)
+        {
+           audioBoostIndex += 1;
+            audioManager.boostEvolutionRTPC.SetGlobalValue(audioBoostIndex);
+        }
+        else
+        {
+            audioManager.boostEvolutionRTPC.SetGlobalValue(0);
+            if (audioBoostIndex < 0)
+            {
+                audioBoostIndex -= 1;
+            }
         }
 
         
@@ -124,7 +141,7 @@ public class TerrainManager : MonoBehaviour
         motorVar += 100;
         localMotorRTCP.SetGlobalValue(motorVar);
 
-
+        audioManager.playerBoostAudio.Post(gameObject);
         StopAllCoroutines();
         StartCoroutine(EndBoost(duration));
     }
@@ -136,7 +153,6 @@ public class TerrainManager : MonoBehaviour
         GameManager.Instance.playerManager.playerIsBoosting = false;
         scrollSpeed = baseScrollspeed;
         boostRef.isBoosting = false;
-        
         StartCoroutine(BoostCooldown(boostRef.boostCooldown));
     }
 

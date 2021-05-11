@@ -11,7 +11,7 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="4123034761">
+		<SoundBank Id="1355168291" Language="SFX" Hash="686088257">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -87,11 +87,12 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="791104563">
+		<SoundBank Id="1761240301" Language="SFX" Hash="1587055649">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2389703494" Name="Boost" ObjectPath="\Events\Sound Effects\Player\Boost" DurationType="OneShot" DurationMin="4.043305" DurationMax="4.043305"/>
 				<Event Id="815433836" Name="CoinCollect" ObjectPath="\Events\Sound Effects\World\CoinCollect" DurationType="OneShot" DurationMin="1.038812" DurationMax="1.038812">
 					<IncludedMemoryFiles>
 						<File Id="547354128" Language="SFX">
@@ -100,12 +101,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="13776098" Name="Explosion" ObjectPath="\Events\Sound Effects\World\Explosion" DurationType="OneShot" DurationMin="1.374059" DurationMax="1.717188">
+				<Event Id="13776098" Name="Explosion" ObjectPath="\Events\Sound Effects\World\Explosion" DurationType="OneShot" DurationMin="1.374059" DurationMax="1.374059">
 					<IncludedMemoryFiles>
-						<File Id="110223632" Language="SFX">
-							<ShortName>Explosion_2.wav</ShortName>
-							<Path>SFX\Explosion_2_10C4C929.wem</Path>
-						</File>
 						<File Id="385060310" Language="SFX">
 							<ShortName>Explosion_1.wav</ShortName>
 							<Path>SFX\Explosion_1_10C4C929.wem</Path>
@@ -118,9 +115,13 @@
 							<ShortName>PlayerTurbine.wav</ShortName>
 							<Path>SFX\PlayerTurbine_D79FB2B7.wem</Path>
 						</File>
+						<File Id="972513170" Language="SFX">
+							<ShortName>Engine_Idle.wav</ShortName>
+							<Path>SFX\Engine_Idle_D79FB2B7.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3234943846" Name="RockDestruction" ObjectPath="\Events\Sound Effects\World\RockDestruction" DurationType="OneShot" DurationMin="0.707548" DurationMax="1.355350">
+				<Event Id="3234943846" Name="RockDestruction" ObjectPath="\Events\Sound Effects\World\RockDestruction" DurationType="OneShot" DurationMin="1.122548" DurationMax="1.355350">
 					<IncludedMemoryFiles>
 						<File Id="107025989" Language="SFX">
 							<ShortName>Rock_Fall2.wav</ShortName>
@@ -129,6 +130,10 @@
 						<File Id="193529997" Language="SFX">
 							<ShortName>Rock_Impact2.wav</ShortName>
 							<Path>SFX\Rock_Impact2_10C4C929.wem</Path>
+						</File>
+						<File Id="385060310" Language="SFX">
+							<ShortName>Explosion_1.wav</ShortName>
+							<Path>SFX\Explosion_1_10C4C929.wem</Path>
 						</File>
 						<File Id="387377204" Language="SFX">
 							<ShortName>Rock_Fall1.wav</ShortName>
@@ -205,7 +210,14 @@
 					</ActionSetState>
 				</Event>
 			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="470228999" Language="SFX">
+					<ShortName>Engine_Boost.wav</ShortName>
+					<Path>SFX\Engine_Boost_7E8B5FA3.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
 			<GameParameters>
+				<GameParameter Id="2272887157" Name="boostEvolution" ObjectPath="\Game Parameters\Player\boostEvolution"/>
 				<GameParameter Id="2892789523" Name="motorVariation" ObjectPath="\Game Parameters\Player\motorVariation"/>
 			</GameParameters>
 			<StateGroups>

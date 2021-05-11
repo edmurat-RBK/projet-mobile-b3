@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
-    m_lastTime: -8585808760408725183
+    m_lastTime: -8585808691415475314
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -165,8 +165,28 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
-    m_lastTime: -8585808748992314028
+    m_lastTime: -8585808681786585874
     List:
+    - name: Boost
+      guid: 6de88b076ff5aa4f90711f2c6b91d127
+      id: 2389703494
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Player
+        ObjectType: 4
+        guid: 7a5dabc902fc9f498343ed5765b24f3f
+      - ElementName: Boost
+        ObjectType: 3
+        guid: 6de88b076ff5aa4f90711f2c6b91d127
+      Path: Events\Sound Effects\Player\Boost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: CoinCollect
       guid: 861ff544f04f2a448edc57340a015bd4
       id: 815433836
@@ -480,8 +500,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Player
     guid: 5d58ebca697aa34b9eb52c1fef219a5f
     GuidInternal: 
-    m_lastTime: -8585816207399851858
+    m_lastTime: -8585808703140815293
     List:
+    - name: boostEvolution
+      guid: 532cd465f7ef824ca44cb52f6461126b
+      id: 2272887157
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Player
+        ObjectType: 12
+        guid: 5d58ebca697aa34b9eb52c1fef219a5f
+      - ElementName: boostEvolution
+        ObjectType: 13
+        guid: 532cd465f7ef824ca44cb52f6461126b
+      Path: Game Parameters\Player\boostEvolution
     - name: motorVariation
       guid: 029baf62ee42654b85b0aad4b6985b75
       id: 2892789523
@@ -650,7 +684,7 @@ MonoBehaviour:
     m_lastTime: -8585827873131052027
     List: []
   ExpandedFileSystemItemIds: 11000000
-  ExpandedWaapiItemIds: 05000000090000000c0000001c000000
+  ExpandedWaapiItemIds: 05000000090000000b0000000c0000001b0000001c0000001d000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
