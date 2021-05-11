@@ -13,13 +13,15 @@ GameObject:
   - component: {fileID: 1050496108}
   - component: {fileID: 383319933}
   - component: {fileID: 383319934}
+  - component: {fileID: 8838348247173481416}
+  - component: {fileID: 4814331813090048365}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1050496107
 Transform:
   m_ObjectHideFlags: 0
@@ -27,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050496104}
-  m_LocalRotation: {x: -0, y: -0.99682677, z: 0.07960191, w: 0}
-  m_LocalPosition: {x: 0, y: 5, z: 14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.99718827, z: -0.07493698, w: -0}
+  m_LocalPosition: {x: 0, y: 5, z: 12.1}
+  m_LocalScale: {x: 1, y: 1, z: 261}
   m_Children: []
   m_Father: {fileID: 8662309422103473568}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 9.1310005, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.595, y: 180.00002, z: 0}
 --- !u!20 &1050496106
 Camera:
   m_ObjectHideFlags: 0
@@ -59,7 +61,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 45
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -123,6 +125,42 @@ MonoBehaviour:
   isDefaultListener: 1
   listenerId: 0
 --- !u!114 &383319934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050496104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a19b4212f2395b498d4f3d7aa76b248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &8838348247173481416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050496104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2102c4acb52a075409e3cfcbd231ff64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &4814331813090048365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63824,6 +63862,7 @@ GameObject:
   - component: {fileID: 8662309422103473598}
   - component: {fileID: -7695616608007525149}
   - component: {fileID: 3305028626235436058}
+  - component: {fileID: 253849640}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -63862,8 +63901,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0473628, y: 1.8578053, z: 4.481658}
-  m_Center: {x: -0.007750988, y: 1.0008614, z: -0.2930187}
+  m_Size: {x: 2.0473628, y: 2.3455825, z: 4.481658}
+  m_Center: {x: -0.007750988, y: 0.7569728, z: -0.29301882}
 --- !u!65 &4474707283961446052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -63999,12 +64038,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4268356042530295565}
-  speed: 20
+  speed: 40
   move: 0
   movePrio: 0
   direction: {x: 0, y: 0, z: 0}
   direction2: {x: 0, y: 0, z: 0}
   inertiaTiming: 0.1
+  rotateSpeed: 10
 --- !u!114 &-7695616608007525149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64017,8 +64057,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19aa0bbf8c454384ea341565c98fb5d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boostDuration: 2
-  boostCooldown: 3
+  boostDuration: 1
+  boostCooldown: 2
   SwipeLength: 200
   clickDown: 0
   callOnce: 1
@@ -64027,8 +64067,8 @@ MonoBehaviour:
   isCoolingDown: 0
   Running: 0
   slider: {fileID: 0}
-  boostCharges: 3
-  maxBoostCharges: 3
+  boostCharges: 1
+  maxBoostCharges: 1
   currentValue: 0
   FXBoost: {fileID: 2181204020579932651}
   FXVitesse: {fileID: 845867336969673916}
@@ -64044,6 +64084,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1067203df3526b41bb0d70e285f1d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &253849640
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8662309422103473596}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 124
+  m_CollisionDetection: 0
 --- !u!1 &8677861531307501185
 GameObject:
   m_ObjectHideFlags: 0
