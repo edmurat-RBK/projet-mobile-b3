@@ -55,13 +55,11 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.flamerLoot);
         }
         if(transform.position.z < ennemiManager.deadZone.position.z)
         {
-            Debug.Log("Flamer Out");
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.flamerStored);
         }

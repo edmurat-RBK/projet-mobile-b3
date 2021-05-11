@@ -48,7 +48,6 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
         if (life <= 0 || transform.position.z < ennemiManager.deadZone.position.z)
         {
-            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.minerLoot);
         }

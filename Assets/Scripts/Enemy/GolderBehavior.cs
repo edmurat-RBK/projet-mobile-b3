@@ -51,7 +51,6 @@ public class GolderBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.golderStored, ennemiManager.golderLoot);
         }
