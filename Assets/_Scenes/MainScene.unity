@@ -785,6 +785,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 928297015, guid: 9e799451dc12584459dceca1a4b12058, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 76210153877949370, guid: 9e799451dc12584459dceca1a4b12058,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1570,32 +1574,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1570109464 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7900983418033125461, guid: 25134542b13beb04dbf8684efa4e454d,
-    type: 3}
-  m_PrefabInstance: {fileID: 6083765253531162004}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1570109476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570109464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 448a8b174a2eda74eb24d440c6812d0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopActive: 0
-  shopUI: {fileID: 569777997}
-  refillPrice: 5
-  increaseFuelPrice: 5
-  extraLifePrice: 5
-  refillShieldPrice: 5
-  refillableShieldPrice: 5
-  CoinsMultiplierPrice: 5
 --- !u!1 &1764412130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,206 +1861,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1900229921}
     m_Modifications:
-    - target: {fileID: 604639838, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 917004803, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: boostSpeed
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: scrollSpeed
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: shopTerrain
+    - target: {fileID: 1570109476, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
+      propertyPath: shopUI
       value: 
-      objectReference: {fileID: 11400000, guid: 39ee3e49cdc496f45a1aebe6a171f75a,
-        type: 2}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainLenght
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: distanceVariation
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: distanceBewteenShop
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4f48075bbe4bec442bcf06ca6d279f14,
-        type: 2}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 01fc7061277c2614fad14a1f40b9cbb5,
-        type: 2}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: f0b43d9f3d66d414f905930fb5ce3d5b,
-        type: 2}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: ff4234d74fbe68f4b933fd5be89e0872,
-        type: 2}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 573620fa2ce6bd243aa3599d4bcc61f5,
-        type: 2}
-    - target: {fileID: 754426304512798546, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: terrainPool.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 9a9c34621bf0df64fad590ee4434b34d,
-        type: 2}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: deathFX
-      value: 
-      objectReference: {fileID: 5478630844220448020, guid: 42d727761cd7dc64c9f6ebe2413b9ce9,
-        type: 3}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: dummyLoot
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: minerLoot
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: bumperLoot
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: flamerLife
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: flamerLoot
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: golderLife
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: golderLoot
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: mineDamage
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: xPosForDrop
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: xPosForFire
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 2539019664075447828, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: arrestSideOfPlayerDuration
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: dummyInstanciate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: minerInstanciate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: bumperInstanciate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: flamerInstanciate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851211019028878643, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: golderInstanciate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: runMusic.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 933ce855b2dcbab41820f0b5a9eebf5d,
-        type: 2}
-    - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: motorVarRTPC.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 5c1b52c4f8e4b224e92286cbc8387ac6,
-        type: 2}
-    - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: coinCollectAudio.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 7b9fe11338ef23c4c86f42a0f8c13349,
-        type: 2}
-    - target: {fileID: 4174063166837625181, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: playerMotorAudio.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: ce30817f4d7dcdd4f924b273be8e92f1,
-        type: 2}
-    - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: maxEnnemiInLevel
-      value: 5
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 569777997}
     - target: {fileID: 5565625447880629598, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: spawnPointList.Array.data[0]
@@ -2098,31 +1880,6 @@ PrefabInstance:
       propertyPath: spawnPointList.Array.data[2]
       value: 
       objectReference: {fileID: 723948818}
-    - target: {fileID: 6083765253531162006, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: highScoreText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: playerLife
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: maxPlayerLife
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: lifeDecreaseSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7698680784825049045, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: decreaseMultiplicator
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: m_RootOrder
@@ -2178,21 +1935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7900983418033125459, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: shopManager
-      value: 
-      objectReference: {fileID: 1570109476}
-    - target: {fileID: 7900983418033125459, guid: 25134542b13beb04dbf8684efa4e454d,
-        type: 3}
-      propertyPath: questManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7900983418033125461, guid: 25134542b13beb04dbf8684efa4e454d,
         type: 3}
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6083765253531162007, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25134542b13beb04dbf8684efa4e454d, type: 3}

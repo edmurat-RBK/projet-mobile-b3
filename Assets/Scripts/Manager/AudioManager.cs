@@ -14,6 +14,15 @@ public class AudioManager : MonoBehaviour
     #region World
     public AK.Wwise.Event coinCollectAudio;
     public AK.Wwise.Event rockDestructionAudio;
+    public AK.Wwise.Event explosionAudio;
+    #endregion
+    #region UI
+    public AK.Wwise.Event UISelectAudio;
+    public AK.Wwise.Event UICloseAudio;
+    public AK.Wwise.Event UIImpossibleAudio;
+    public AK.Wwise.Event UIPauseAudio;
+    public AK.Wwise.Event UIUnpauseAudio;
+    public AK.Wwise.Event UIStartAudio;
     #endregion
 
 
@@ -43,6 +52,7 @@ public class AudioManager : MonoBehaviour
         else
         {
             AudioManager.AMInstance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 

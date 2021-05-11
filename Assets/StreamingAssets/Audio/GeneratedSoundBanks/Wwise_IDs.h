@@ -14,9 +14,15 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID COINCOLLECT = 815433836U;
+        static const AkUniqueID EXPLOSION = 13776098U;
         static const AkUniqueID PLAYER_MOTOR = 3300087192U;
         static const AkUniqueID ROCKDESTRUCTION = 3234943846U;
         static const AkUniqueID RUNMUSIC = 3738991497U;
+        static const AkUniqueID UI_CLOSE = 2519197294U;
+        static const AkUniqueID UI_IMPOSSIBLE = 4114843917U;
+        static const AkUniqueID UI_PAUSE = 2792155208U;
+        static const AkUniqueID UI_SELECT = 2774129122U;
+        static const AkUniqueID UI_UNPAUSE = 183167143U;
     } // namespace EVENTS
 
     namespace STATES

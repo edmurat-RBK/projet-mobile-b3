@@ -82,7 +82,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="2613983771">
+		<SoundBank Id="1761240301" Language="SFX" Hash="756821586">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
@@ -92,6 +92,18 @@
 						<File Id="547354128" Language="SFX">
 							<ShortName>Coin_Collect.wav</ShortName>
 							<Path>SFX\Coin_Collect_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="13776098" Name="Explosion" ObjectPath="\Events\Sound Effects\World\Explosion" DurationType="OneShot" DurationMin="1.374059" DurationMax="1.717188">
+					<IncludedMemoryFiles>
+						<File Id="110223632" Language="SFX">
+							<ShortName>Explosion_2.wav</ShortName>
+							<Path>SFX\Explosion_2_10C4C929.wem</Path>
+						</File>
+						<File Id="385060310" Language="SFX">
+							<ShortName>Explosion_1.wav</ShortName>
+							<Path>SFX\Explosion_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -131,10 +143,64 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2519197294" Name="UI_CLOSE" ObjectPath="\Events\Sound Effects\UI\UI_CLOSE" DurationType="OneShot" DurationMin="0.370317" DurationMax="0.370317">
+					<IncludedMemoryFiles>
+						<File Id="691501124" Language="SFX">
+							<ShortName>UI_Close.wav</ShortName>
+							<Path>SFX\UI_Close_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4114843917" Name="UI_IMPOSSIBLE" ObjectPath="\Events\Sound Effects\UI\UI_IMPOSSIBLE" DurationType="OneShot" DurationMin="1.971156" DurationMax="1.971156">
+					<IncludedMemoryFiles>
+						<File Id="447228387" Language="SFX">
+							<ShortName>UI_Impossible.wav</ShortName>
+							<Path>SFX\UI_Impossible_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2792155208" Name="UI_PAUSE" ObjectPath="\Events\Sound Effects\UI\UI_PAUSE" DurationType="OneShot" DurationMin="1.750000" DurationMax="1.750000">
+					<IncludedMemoryFiles>
+						<File Id="8130865" Language="SFX">
+							<ShortName>UI_PauseOpen.wav</ShortName>
+							<Path>SFX\UI_PauseOpen_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="3092587493" Name="Pause" ObjectPath="\States\Musics\GameState\Pause"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2774129122" Name="UI_SELECT" ObjectPath="\Events\Sound Effects\UI\UI_SELECT" DurationType="OneShot" DurationMin="0.505034" DurationMax="0.505034">
+					<IncludedMemoryFiles>
+						<File Id="517632830" Language="SFX">
+							<ShortName>UI_Select.wav</ShortName>
+							<Path>SFX\UI_Select_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="183167143" Name="UI_UNPAUSE" ObjectPath="\Events\Sound Effects\UI\UI_UNPAUSE" DurationType="OneShot" DurationMin="0.370317" DurationMax="0.370317">
+					<IncludedMemoryFiles>
+						<File Id="691501124" Language="SFX">
+							<ShortName>UI_Close.wav</ShortName>
+							<Path>SFX\UI_Close_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="712161704" Name="Run" ObjectPath="\States\Musics\GameState\Run"/>
+					</ActionSetState>
+				</Event>
 			</IncludedEvents>
 			<GameParameters>
 				<GameParameter Id="2892789523" Name="motorVariation" ObjectPath="\Game Parameters\Player\motorVariation"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="712161704" Name="Run" ObjectPath="\States\Musics\GameState\Run">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="3092587493" Name="Pause" ObjectPath="\States\Musics\GameState\Pause">
+					<States/>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 		<SoundBank Id="3161908922" Language="SFX" Hash="1077138683">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
