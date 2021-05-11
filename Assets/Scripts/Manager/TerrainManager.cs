@@ -75,7 +75,9 @@ public class TerrainManager : MonoBehaviour
     {
         try
         {
-            MoveAllTerrains();
+            if(!ShopManager.Instance.shopActive) {
+                MoveAllTerrains();
+            }
         }
         catch
         {
@@ -93,7 +95,8 @@ public class TerrainManager : MonoBehaviour
             
             if(go.transform.position.z < -terrainLenght)
             {
-                terrainQueue.Dequeue();
+                GameObject dequeuedInstance = terrainQueue.Dequeue();
+                dequeuedInstance.SetActive(false);
                 GameObject[] gameObjectArray = terrainQueue.ToArray();
                 Vector3 newPosition = gameObjectArray[gameObjectArray.Length-1].transform.position;
                 if(nextShop <= 0) {
@@ -156,5 +159,6 @@ public class TerrainManager : MonoBehaviour
         
         GameObject newInstance = ObjectPooler.Instance.SpawnFromPool(tag, position, Quaternion.identity);
         terrainQueue.Enqueue(newInstance);
+        newInstance.SetActive(true);
     }
 }
