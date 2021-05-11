@@ -15,8 +15,16 @@ public class DataManager : MonoBehaviour
 
     public void Awake()
     {
-        DMInstance = this;
+        if(DMInstance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DMInstance = this;
+        }
         SetPath();
+        
         DontDestroyOnLoad(this.gameObject);
     }
 
