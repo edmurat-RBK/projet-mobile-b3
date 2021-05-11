@@ -12,7 +12,10 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
     private void Start()
     {
-        life = GameManager.Instance.ennemiManager.flamerLife;
+        ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
+        life = ennemiManager.flamerLife;
         StartCoroutine(RandomiseDirection());
     }
 
@@ -20,8 +23,8 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     {
         if (isAlive)
         {
-            Vector3 playerPos = GameManager.Instance.playerManager.player.transform.position;
-            float xDrop = GameManager.Instance.ennemiManager.xPosForFire;
+            Vector3 playerPos = playerManager.player.transform.position;
+            float xDrop = ennemiManager.xPosForFire;
 
             if (transform.position.z >= (playerPos.z + xDrop - 0.5) && transform.position.z <= (playerPos.z + xDrop + 0.5) && !hasFinishAttack)
             {
@@ -30,7 +33,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
                     StartCoroutine(attackDuration());
                 }
 
-                if (readyToFlaming && GameManager.Instance.playerManager.playerIsBoosting)
+                if (readyToFlaming && playerManager.playerIsBoosting)
                 {
                     MoveBack(false);
                 }
@@ -50,11 +53,19 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
 
 
-        if (life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if (life <= 0)
         {
+            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.bumpedStored);
+            Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.flamerLoot);
         }
+        if(transform.position.z < ennemiManager.deadZone.position.z)
+        {
+            Debug.Log("Flamer Out");
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.flamerStored);
+        }
+
     }
 
 
@@ -65,10 +76,13 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     {
         readyToFlaming = true;
 
-        GameObject fireTail = Instantiate(fireTailPrefab, transform.position, transform.rotation);
-        fireTail.transform.position = new Vector3(fireTail.transform.position.x, fireTail.transform.position.y, transform.position.z - (fireTail.transform.localScale.z / 2));
+        Vector3 position = transform.position;
+        position.z -= 60;
 
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.flamerAttackDuration);
+
+        GameObject fireTail = Instantiate(fireTailPrefab, position, transform.rotation, transform);
+
+        yield return new WaitForSeconds(ennemiManager.flamerAttackDuration);
         Destroy(fireTail);
 
         readyToFlaming = false;
@@ -81,7 +95,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     {
         GlobalReset();
 
-        life = GameManager.Instance.ennemiManager.minerLife;
+        life = ennemiManager.minerLife;
 
         readyToFlaming = false;
         hasFinishAttack = false;

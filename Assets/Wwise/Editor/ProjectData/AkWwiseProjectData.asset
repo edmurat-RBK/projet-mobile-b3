@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: b7095d6a8b932c47bdb6e4609b156902
     GuidInternal: 
-    m_lastTime: -8585830087149270336
+    m_lastTime: -8585828630789459813
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 6c7124b5a8c0054ca611b2c54e21e826
     GuidInternal: 
-    m_lastTime: -8585830087152652723
+    m_lastTime: -8585828630797448899
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
-    m_lastTime: -8585828649819311781
+    m_lastTime: -8585813950500533745
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -122,7 +122,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a75bfadaa5343f429799382ff0f5a445
     GuidInternal: 
-    m_lastTime: -8585830087154574097
+    m_lastTime: -8585828630801906342
     List: []
   - PhysicalPath: Events\Musics.wwu
     PathAndIcons:
@@ -135,7 +135,7 @@ MonoBehaviour:
     ParentPath: Events\Musics
     guid: 5b362b246325d943b9ff3ea4024e7a29
     GuidInternal: 
-    m_lastTime: -8585830087154574097
+    m_lastTime: -8585828630801896345
     List:
     - name: RunMusic
       guid: cfc61d8dda781a46b46205222ac42d11
@@ -165,8 +165,28 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
-    m_lastTime: -8585828649820561386
+    m_lastTime: -8585813950500413847
     List:
+    - name: CoinCollect
+      guid: 861ff544f04f2a448edc57340a015bd4
+      id: 815433836
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: World
+        ObjectType: 4
+        guid: 7b9440d1ab67434e9a90104c62ab2f69
+      - ElementName: CoinCollect
+        ObjectType: 3
+        guid: 861ff544f04f2a448edc57340a015bd4
+      Path: Events\Sound Effects\World\CoinCollect
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Ennemis
       guid: 9fec4a7be1672e42bbb519779a0c2ef0
       id: 1507798120
@@ -221,6 +241,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: RockDestruction
+      guid: 8eb21bf8a60b584a9ae8dcb658690045
+      id: 3234943846
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: World
+        ObjectType: 4
+        guid: 7b9440d1ab67434e9a90104c62ab2f69
+      - ElementName: RockDestruction
+        ObjectType: 3
+        guid: 8eb21bf8a60b584a9ae8dcb658690045
+      Path: Events\Sound Effects\World\RockDestruction
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: UI
       guid: bcab7ce93246cd4088942dd4c219b307
       id: 1551306167
@@ -267,7 +307,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 98e096e8da5fa445b7d67115f7899ec2
     GuidInternal: 
-    m_lastTime: -8585830087154554082
+    m_lastTime: -8585827716633761462
     List: []
   - PhysicalPath: Game Parameters\Player.wwu
     PathAndIcons:
@@ -280,7 +320,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Player
     guid: 5d58ebca697aa34b9eb52c1fef219a5f
     GuidInternal: 
-    m_lastTime: -8585828649820561386
+    m_lastTime: -8585827716633821399
     List:
     - name: motorVariation
       guid: 029baf62ee42654b85b0aad4b6985b75
@@ -308,7 +348,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 7f7b1851f58b0941ac7622c621c69a5f
     GuidInternal: 
-    m_lastTime: -8585830087149300200
+    m_lastTime: -8585827716771070916
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -322,7 +362,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: d59897e4436a764485d83a57db130195
     GuidInternal: 
-    m_lastTime: -8585830087149290344
+    m_lastTime: -8585828630789479622
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -336,11 +376,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 718c157531ccc84fbaf6db01b97c8225
     GuidInternal: 
-    m_lastTime: -8585830087149280334
+    m_lastTime: -8585828630789469809
     List: []
-  ExpandedFileSystemItemIds: 1000000011000000
-  ExpandedWaapiItemIds: 080000000b0000000d00000011000000
-  AutoSyncSelection: 0
+  ExpandedFileSystemItemIds: 11000000
+  ExpandedWaapiItemIds: 05000000090000000b0000000d0000001c000000
+  AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0
   CurrentPluginConfig: 

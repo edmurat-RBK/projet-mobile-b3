@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("SFX")]
+    public static AudioManager AMInstance;
+
+
+        [Header("SFX")]
     #region Player
     public AK.Wwise.Event playerMotorAudio;
+    #endregion
+    #region World
+    public AK.Wwise.Event coinCollectAudio;
+    public AK.Wwise.Event rockDestructionAudio;
     #endregion
 
 
@@ -18,21 +25,41 @@ public class AudioManager : MonoBehaviour
 
 
     //---------------------------------------------------
-    [Header("Game Sync")]
-    public int motorVar;
+        [Header("Game Sync")]
+    //Variable "motorVar" dans PlayerController
     public AK.Wwise.RTPC motorVarRTPC;
 
-    
-
-    
 
 
 
+
+
+    private void Awake()
+    {
+        if(AudioManager.AMInstance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            AudioManager.AMInstance = this;
+        }
+    }
 
 
     private void Start()
     {
         runMusic.Post(gameObject);
         playerMotorAudio.Post(gameObject);
+    }
+
+
+
+
+
+    public void StopAllAudio()
+    {
+        runMusic.Stop(gameObject);
+        playerMotorAudio.Stop(gameObject);
     }
 }

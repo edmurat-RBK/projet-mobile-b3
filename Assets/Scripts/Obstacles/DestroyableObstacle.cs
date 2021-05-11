@@ -10,6 +10,7 @@ public class DestroyableObstacle : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            AudioManager.AMInstance.rockDestructionAudio.Post(gameObject);
             Destroy(gameObject);
             GameObject fx = Instantiate(FxDestructionObstacles, transform.position, transform.rotation);
             GameObject fxdeux = Instantiate(FxSmokeObstacle, transform.position, transform.rotation);

@@ -7,7 +7,12 @@ public class Coin : MonoBehaviour
     public int coinValue = 1;
     public bool coinNeedToMove;
 
+    GameManager gameManager;
 
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     private void Update()
     {
@@ -16,7 +21,7 @@ public class Coin : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed * Time.deltaTime);
         }
 
-        if (transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if (transform.position.z < gameManager.ennemiManager.deadZone.position.z)
         {
             Destroy(gameObject);
         }
@@ -27,15 +32,16 @@ public class Coin : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            if (GameManager.Instance.economicManager.multiplyCoins)
+            if (gameManager.economicManager.multiplyCoins)
             {
-                GameManager.Instance.economicManager.coinCounter += (int)(coinValue * GameManager.Instance.economicManager.coinsMultiplier);
+                gameManager.economicManager.coinCounter += (int)(coinValue * gameManager.economicManager.coinsMultiplier);
             }
             else
             {
-                GameManager.Instance.economicManager.coinCounter += coinValue;
+                gameManager.economicManager.coinCounter += coinValue;
             }
-            
+
+            AudioManager.AMInstance.coinCollectAudio.Post(gameObject);
             Destroy(gameObject);
         }
     }

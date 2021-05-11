@@ -42,6 +42,13 @@ public class ShopManager : MonoBehaviour
     public bool shopActive = false;
     public GameObject shopUI;
 
+    public int refillPrice = 5;
+    public int increaseFuelPrice = 5;
+    public int extraLifePrice = 5;
+    public int refillShieldPrice = 5;
+    public int refillableShieldPrice = 5;
+    public int CoinsMultiplierPrice = 5;
+
     private void Start() {
         shopUI.SetActive(false);
     }

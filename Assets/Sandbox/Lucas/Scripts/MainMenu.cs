@@ -10,6 +10,8 @@ public class MainMenu : MonoBehaviour
     public GameObject shopButtons;
     [Header("Option Buttons")]
     public GameObject optionButtons;
+    [Header("Quests Buttons")]
+    public GameObject questsButtons;
 
     public void ChangeScene(int index)
     {
@@ -34,6 +36,16 @@ public class MainMenu : MonoBehaviour
     public void CloseOptions()
     {
         optionButtons.SetActive(false);
+        mainMenuButtons.SetActive(true);
+    }
+    public void OpenQuests()
+    {
+        questsButtons.SetActive(true);
+        mainMenuButtons.SetActive(false);
+    }
+    public void CloseQuests()
+    {
+        questsButtons.SetActive(false);
         mainMenuButtons.SetActive(true);
     }
 }

@@ -38,6 +38,9 @@ public class GameManager : MonoBehaviour
     }
     private static GameManager _instance = null;
     #endregion
+    private void Awake() {
+        questManager = FindObjectOfType<QuestManager>();
+    }
 
     public PlayerManager playerManager;
     public EconomicManager economicManager;
@@ -48,4 +51,5 @@ public class GameManager : MonoBehaviour
     public OtherWorldManager otherWorldManager;
     public HighScore highScoreManager;
     public QuestManager questManager;
+    public ShopManager shopManager;
 }

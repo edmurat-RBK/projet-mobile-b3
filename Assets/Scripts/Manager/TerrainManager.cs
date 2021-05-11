@@ -10,6 +10,10 @@ public class TerrainManager : MonoBehaviour
     #region Singleton
     public static TerrainManager TMInstance;
     public List<TerrainObject> terrainPool;
+    public TerrainObject shopTerrain;
+    public int distanceBewteenShop;
+    private int nextShop;
+    public int distanceVariation;
     public float terrainLenght;
     public float scrollSpeed;
     public float boostSpeed;
@@ -19,6 +23,13 @@ public class TerrainManager : MonoBehaviour
     private Queue<GameObject> terrainQueue;
     private GameObject worldParentObject;
     Boost boostRef;
+
+    PlayerManager playerManager;
+
+    [Header("Audio")]
+    AK.Wwise.RTPC localMotorRTCP;
+    int motorVar = 0;
+    
     
     private void Awake()
     {
@@ -38,17 +49,26 @@ public class TerrainManager : MonoBehaviour
         terrainQueue = new Queue<GameObject>();
         boostRef = FindObjectOfType<Boost>();
         baseScrollspeed = scrollSpeed;
+        nextShop = distanceBewteenShop + Random.Range(-distanceVariation,distanceVariation);
         for(int i = 0; i<terrainCount; i++)
         {
             if(i==0) {
                 AddTerrain("LD_Start", new Vector3(0, 0, terrainLenght*i));
             }
-            else {
-                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)], new Vector3(0, 0, terrainLenght*i));
+            else if(nextShop <= 0) {
+                AddTerrain(shopTerrain.tag, new Vector3(0, 0, terrainLenght*i));
+                nextShop = distanceBewteenShop + Random.Range(-distanceVariation,distanceVariation);
             }
+            else {
+                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)].tag, new Vector3(0, 0, terrainLenght*i));
+            }
+
+            nextShop--;
         }
 
-        
+        playerManager = GameManager.Instance.playerManager;
+
+        localMotorRTCP = AudioManager.AMInstance.motorVarRTPC;
     }
 
     private void Update()
@@ -76,20 +96,32 @@ public class TerrainManager : MonoBehaviour
                 terrainQueue.Dequeue();
                 GameObject[] gameObjectArray = terrainQueue.ToArray();
                 Vector3 newPosition = gameObjectArray[gameObjectArray.Length-1].transform.position;
-                AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)], new Vector3(0, 0, terrainLenght*i));
+                if(nextShop <= 0) {
+                    AddTerrain(shopTerrain.tag, new Vector3(0, 0, newPosition.z + terrainLenght));
+                    nextShop = distanceBewteenShop + Random.Range(-distanceVariation,distanceVariation);
+                }
+                else {
+                    AddTerrain(terrainPool[Random.Range(1,terrainPool.Count)].tag, new Vector3(0, 0, newPosition.z + terrainLenght));
+                    nextShop--;
+                }
+
             }
         }
     }
 
     public void Boost(float duration)
     {
-        GameManager.Instance.playerManager.playerIsBoosting = true;
-        GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isBoosting");
+        playerManager.playerIsBoosting = true;
+        playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isBoosting");
         boostRef.boostCharges -= 1;
         scrollSpeed = boostSpeed;
         boostRef.isBoosting = true;
         boostRef.isCoolingDown = false;
-        
+
+        motorVar += 100;
+        localMotorRTCP.SetGlobalValue(motorVar);
+
+
         StopAllCoroutines();
         StartCoroutine(EndBoost(duration));
     }

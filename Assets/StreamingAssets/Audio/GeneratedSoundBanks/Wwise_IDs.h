@@ -13,9 +13,29 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID COINCOLLECT = 815433836U;
         static const AkUniqueID PLAYER_MOTOR = 3300087192U;
+        static const AkUniqueID ROCKDESTRUCTION = 3234943846U;
         static const AkUniqueID RUNMUSIC = 3738991497U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace GAMESTATE
+        {
+            static const AkUniqueID GROUP = 4091656514U;
+
+            namespace STATE
+            {
+                static const AkUniqueID MENU = 2607556080U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID PAUSE = 3092587493U;
+                static const AkUniqueID RUN = 712161704U;
+                static const AkUniqueID SHOP = 251412225U;
+            } // namespace STATE
+        } // namespace GAMESTATE
+
+    } // namespace STATES
 
     namespace GAME_PARAMETERS
     {

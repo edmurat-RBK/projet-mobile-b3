@@ -10,7 +10,10 @@ public class GolderBehavior : GlobalEnnemiBehavior
 
     private void Start()
     {
-        life = GameManager.Instance.ennemiManager.dummyLife;
+        ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
+        life = ennemiManager.dummyLife;
         StartCoroutine(RandomiseDirection());
     }
 
@@ -38,7 +41,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.forward * 100), GameManager.Instance.terrainManager.scrollSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.forward * 100), terrainManager.scrollSpeed * Time.deltaTime);
             }
 
         }
@@ -46,10 +49,17 @@ public class GolderBehavior : GlobalEnnemiBehavior
 
 
 
-        if (life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if (life <= 0)
         {
+            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.golderStored);
+            Death(GameManager.Instance.otherWorldManager.golderStored, ennemiManager.golderLoot);
+        }
+        if(transform.position.z < ennemiManager.deadZone.position.z)
+        {
+            Debug.Log("Golder Out");
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.golderStored);
         }
     }
 
@@ -74,7 +84,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
         }
 
 
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.golderDropRate);
+        yield return new WaitForSeconds(ennemiManager.golderDropRate);
 
         if (!acceleration)
         {
@@ -83,12 +93,12 @@ public class GolderBehavior : GlobalEnnemiBehavior
     }
     IEnumerator stayBeforeLeave()
     {
-        yield return new WaitForSeconds(GameManager.Instance.ennemiManager.gloderStayDuration);
+        yield return new WaitForSeconds(ennemiManager.gloderStayDuration);
         acceleration = true;
         yield return new WaitForSeconds(3);
 
         ResetEnemy();
-        Death(GameManager.Instance.otherWorldManager.golderStored);
+        Teleport(GameManager.Instance.otherWorldManager.golderStored);
     }
 
 
@@ -96,7 +106,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
     {
         GlobalReset();
 
-        life = GameManager.Instance.ennemiManager.golderLife;
+        life = ennemiManager.golderLife;
         hasStartDroping = false;
         acceleration = false;
     }

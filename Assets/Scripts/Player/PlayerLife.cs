@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -15,9 +16,18 @@ using UnityEngine.UI;
 public class PlayerLife : MonoBehaviour
 {
     public GameObject explosionFX;
+
+    private PlayerManager playerManager;
+    private EnnemiManager ennemiManager;
+
+    private void Awake() {
+        playerManager = GameManager.Instance.playerManager;
+        ennemiManager = GameManager.Instance.ennemiManager;
+    }
+
     void Start()
     {
-        GameManager.Instance.playerManager.playerIsAlive = true;
+        playerManager.playerIsAlive = true;
     }
 
     void Update()
@@ -25,14 +35,14 @@ public class PlayerLife : MonoBehaviour
         LifeDecreaseOverTime();
 
         RefillShield();
-        if (GameManager.Instance.playerManager.refilableShield && GameManager.Instance.playerManager.shield == 0)
+        if (playerManager.refilableShield && playerManager.shield == 0)
         {
-            GameManager.Instance.playerManager.rechargeShield = true;
+            playerManager.rechargeShield = true;
         }
 
-        if (GameManager.Instance.playerManager.playerLife <= 0 && GameManager.Instance.playerManager.playerIsAlive)
+        if (playerManager.playerLife <= 0 && playerManager.playerIsAlive)
         {
-            PlayerDeath();
+            StartCoroutine(PlayerDeath());
         }
     }
 
@@ -44,7 +54,7 @@ public class PlayerLife : MonoBehaviour
 
         if(other.tag == ("Mine"))
         {
-            GameManager.Instance.playerManager.playerLife -= GameManager.Instance.ennemiManager.mineDamage;
+            playerManager.playerLife -= ennemiManager.mineDamage;
         }
 
     }
@@ -53,39 +63,46 @@ public class PlayerLife : MonoBehaviour
     #region Fonctions
     void LifeDecreaseOverTime()
     {
-        if(GameManager.Instance.playerManager.playerIsAlive)
+        if(playerManager.playerIsAlive)
         {
-            GameManager.Instance.playerManager.playerLife -= (GameManager.Instance.playerManager.lifeDecreaseSpeed * GameManager.Instance.playerManager.decreaseMultiplicator * Time.deltaTime);
+            playerManager.playerLife -= (playerManager.lifeDecreaseSpeed * playerManager.decreaseMultiplicator * Time.deltaTime);
         }
     }
 
-    void PlayerDeath()
+    IEnumerator PlayerDeath()
     {
-        if (!GameManager.Instance.playerManager.revive)
+
+        if (!playerManager.revive)
         {
             explosionFX.SetActive(true);
-            GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
-            GameManager.Instance.playerManager.playerIsAlive = false;
-            DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
-            Debug.Log("Player is Dead");
+            playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
+            playerManager.playerIsAlive = false;
+            //DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
+            GameManager.Instance.terrainManager.scrollSpeed = 0;
 
+            yield return new WaitForSeconds(2f);
+
+            AudioManager.AMInstance.StopAllAudio();
+            SceneManager.LoadScene("Menu Start");
         }
         else
         {
-            GameManager.Instance.playerManager.revive = false;
+            yield return 0;
+            playerManager.revive = false;
         }
+
         
     }
 
     void RefillShield()
     {
-        if(GameManager.Instance.playerManager.shield < GameManager.Instance.playerManager.maxShield && GameManager.Instance.playerManager.rechargeShield)
+        if(playerManager.shield < playerManager.maxShield && playerManager.rechargeShield)
         {
-            GameManager.Instance.playerManager.shield += (GameManager.Instance.playerManager.shieldRechargeRate * Time.deltaTime);
+            playerManager.shield += (playerManager.shieldRechargeRate * Time.deltaTime);
         }
-        else if (GameManager.Instance.playerManager.shield == GameManager.Instance.playerManager.maxShield)
+        else if (playerManager.shield == playerManager.maxShield)
         {
-            GameManager.Instance.playerManager.rechargeShield = false;
+            playerManager.rechargeShield = false;
         }
     }
     #endregion

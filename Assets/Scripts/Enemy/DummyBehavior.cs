@@ -10,10 +10,16 @@ using UnityEngine;
 /// </summary>
 public class DummyBehavior : GlobalEnnemiBehavior
 {
+
     private void Start()
     {
-        life = GameManager.Instance.ennemiManager.dummyLife;
+        ennemiManager = GameManager.Instance.ennemiManager;
+        playerManager = GameManager.Instance.playerManager;
+        terrainManager = GameManager.Instance.terrainManager;
+        life = ennemiManager.dummyLife;
         StartCoroutine(RandomiseDirection());
+
+        
     }
     private void Update()
     {
@@ -31,11 +37,17 @@ public class DummyBehavior : GlobalEnnemiBehavior
         
 
 
-        if(life <= 0 || transform.position.z < GameManager.Instance.ennemiManager.deadZone.position.z)
+        if(life <= 0)
         {
-            Instantiate(GameManager.Instance.ennemiManager.deathFX,transform.position,Quaternion.identity);
+            Instantiate(ennemiManager.deathFX,transform.position,Quaternion.identity);
             ResetEnemy();
-            Death(GameManager.Instance.otherWorldManager.dummyStored);
+            Death(GameManager.Instance.otherWorldManager.dummyStored, ennemiManager.dummyLoot);
+        }
+        if(transform.position.z < ennemiManager.deadZone.position.z)
+        {
+            Debug.Log("Dummy Out");
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.dummyStored);
         }
     }
 
@@ -47,6 +59,6 @@ public class DummyBehavior : GlobalEnnemiBehavior
     {
         GlobalReset();
 
-        life = GameManager.Instance.ennemiManager.dummyLife;
+        life = ennemiManager.dummyLife;
     }
 }

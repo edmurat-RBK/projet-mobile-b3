@@ -39,6 +39,12 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     Vector3 directionToMoveOn = Vector3.right;
 
+    public PlayerManager playerManager;
+    public EnnemiManager ennemiManager;
+    public TerrainManager terrainManager;
+
+
+
     internal void Death()
     {
         throw new System.NotImplementedException();
@@ -48,27 +54,27 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     {
         if(stopAtPlayerPos == false)
         {
-            if(GameManager.Instance.playerManager.playerIsBoosting)
+            if(playerManager.playerIsBoosting)
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed/ (speedMultiplicator/5) * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed/ (speedMultiplicator/5) * Time.deltaTime);
             }
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
             }
             
         }
         else if(stopAtPlayerPos == true)
         {
-            if(transform.position.z > GameManager.Instance.playerManager.player.transform.position.z)
+            if(transform.position.z > playerManager.player.transform.position.z)
             {
-                if (GameManager.Instance.playerManager.playerIsBoosting)
+                if (playerManager.playerIsBoosting)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / (speedMultiplicator / 5) * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / (speedMultiplicator / 5) * Time.deltaTime);
                 }
                 else
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
                 }
             }
             else
@@ -83,7 +89,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
                 }
                 else
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
+                    transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), terrainManager.scrollSpeed / speedMultiplicator * Time.deltaTime);
                 }
             }
         }
@@ -95,15 +101,15 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             if(!obstacleOnRight && !obstacleOnLeft && !playerCloseOnRight && !playerCloseOnLeft) //La voie est dégagée des deux côtés
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (directionToMoveOn), 8f*Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (directionToMoveOn), 20f*Time.deltaTime);
             }
             else if((obstacleOnLeft || playerCloseOnLeft) && (!obstacleOnRight || !playerCloseOnRight)) //La voie est dégagée sur la droite, mais pas sur la gauche
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 8f * Time.deltaTime);   //Mouvement droite
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.right), 20f * Time.deltaTime);   //Mouvement droite
             }
             else if((obstacleOnRight || playerCloseOnRight) && (!obstacleOnLeft || !playerCloseOnLeft)) //La voie est dégagée sur la gauche, mais pas sur la droite
             {
-                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 8f * Time.deltaTime);    //Mouvement gauche
+                transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.left), 20f * Time.deltaTime);    //Mouvement gauche
             }
         }
         
@@ -122,12 +128,12 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public void CheckDirection() //Vérfie les obstacles devant l'ennemi
     {
         #region Debug
-        Debug.DrawRay(transform.position, transform.forward * 50f, Color.red);
-        Debug.DrawRay(transform.position, (transform.forward + transform.right / 3) * 20, Color.red);
-        Debug.DrawRay(transform.position, (transform.forward - transform.right / 3) * 20, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * 200f, Color.red);
+        Debug.DrawRay(transform.position, (transform.forward + transform.right / 3) * 80, Color.red);
+        Debug.DrawRay(transform.position, (transform.forward - transform.right / 3) * 80, Color.red);
         #endregion
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 50f, obstacleMask)) //Devant
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 200f, obstacleMask)) //Devant
         {
             obstacleAhead = true;
         }
@@ -136,7 +142,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             obstacleAhead = false;
         }
 
-        if(Physics.Raycast(transform.position, (transform.forward + transform.right)/3, out hit, 20f, obstacleMask)) //Diagonal Droite
+        if(Physics.Raycast(transform.position, (transform.forward + transform.right)/3, out hit, 80f, obstacleMask)) //Diagonal Droite
         {
             obstacleOnRight = true;
         }
@@ -145,7 +151,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             obstacleOnRight = false;
         }
 
-        if (Physics.Raycast(transform.position, (transform.forward - transform.right)/3, out hit, 20f, obstacleMask)) //Diagonal Gauche
+        if (Physics.Raycast(transform.position, (transform.forward - transform.right)/3, out hit, 80f, obstacleMask)) //Diagonal Gauche
         {
             obstacleOnLeft = true;
         }
@@ -183,7 +189,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
 
 
-        Transform playerTransform = GameManager.Instance.playerManager.player.transform;
+        Transform playerTransform = playerManager.player.transform;
         if(playerOnLeft && transform.position.x <= playerTransform.position.x+5)
         {
             playerCloseOnLeft = true;
@@ -221,12 +227,27 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     }
 
 
-    public void Death(List<GameObject> list) //Remet le joueur sur l'emplacement de stockage
+    public void Death(List<GameObject> list, int lifeBonus) //Remet le joueur sur l'emplacement de stockage
     {
-        GameManager.Instance.ennemiManager.ennemiList.Remove(this.gameObject);
+        if(playerManager.playerLife > playerManager.maxPlayerLife - lifeBonus)
+        {
+            playerManager.playerLife = playerManager.maxPlayerLife;
+        }
+        else
+        {
+            playerManager.playerLife += lifeBonus;
+        }
+
+
+        Teleport(list);
+    }
+    public void Teleport(List<GameObject> list)
+    {
+        ennemiManager.ennemiList.Remove(this.gameObject);
         this.transform.position = GameManager.Instance.otherWorldManager.otherWorld.position;
         isAlive = false;
         list.Add(this.gameObject);
+        gameObject.SetActive(false);
     }
     public void GlobalReset() //Rétablie toute les valeurs communes à tout les ennemis à leur valeur de base
     {
@@ -254,7 +275,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public IEnumerator RandomiseDirection() //Change la direction que l'ennemi utilise pour esquiver un obstacle
     {
         directionToMoveOn = GiveNewMovementDirection();
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(15f);
         StartCoroutine(RandomiseDirection());
     }
     IEnumerator waitSideOfPlayer() //Stop l'ennemi pendant un temps donné lorsqu'il arrive au niveau du joueur
