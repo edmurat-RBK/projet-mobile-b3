@@ -237,8 +237,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             playerManager.playerLife += lifeBonus;
         }
-
-
+        Handheld.Vibrate();
         Teleport(list);
     }
     public void Teleport(List<GameObject> list)
