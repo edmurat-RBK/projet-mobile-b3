@@ -248,6 +248,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         isAlive = false;
         list.Add(this.gameObject);
         gameObject.SetActive(false);
+        AudioManager.AMInstance.enemyMotorAudio.Stop(gameObject);
     }
     public void GlobalReset() //Rétablie toute les valeurs communes à tout les ennemis à leur valeur de base
     {

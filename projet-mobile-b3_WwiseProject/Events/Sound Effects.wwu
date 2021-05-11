@@ -45,6 +45,26 @@
 						<Property Name="Color" Type="int16" Value="10"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
+					<ChildrenList>
+						<Event Name="EnemyMotor" ID="{620C9443-3764-4D9C-A4F0-CD03BA2A08AA}">
+							<ChildrenList>
+								<Action Name="" ID="{CD6F3121-229E-41B1-BC63-6090A101E28F}" ShortID="901728050">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Enemy_Turbine" ID="{2EED1E40-C2D4-47B7-A0BA-A34ADE2D9CC0}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1ED2EB02-0CE4-46EF-81F2-81E3620B4704}" ShortID="467034275">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Engine_Idle_Enemy" ID="{59C497C0-E412-42FC-92FC-B6BAF0710929}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
 				</Folder>
 				<Folder Name="World" ID="{D140947B-67AB-4E43-9A90-104C62AB2F69}" ShortID="1047336946">
 					<PropertyList>

@@ -15,6 +15,7 @@ namespace AK
     {
         static const AkUniqueID BOOST = 2389703494U;
         static const AkUniqueID COINCOLLECT = 815433836U;
+        static const AkUniqueID ENEMYMOTOR = 2746534638U;
         static const AkUniqueID EXPLOSION = 13776098U;
         static const AkUniqueID PLAYER_MOTOR = 3300087192U;
         static const AkUniqueID ROCKDESTRUCTION = 3234943846U;

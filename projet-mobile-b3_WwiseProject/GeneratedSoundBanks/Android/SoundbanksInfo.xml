@@ -87,7 +87,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="1587055649">
+		<SoundBank Id="1761240301" Language="SFX" Hash="1723220435">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
@@ -98,6 +98,18 @@
 						<File Id="547354128" Language="SFX">
 							<ShortName>Coin_Collect.wav</ShortName>
 							<Path>SFX\Coin_Collect_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2746534638" Name="EnemyMotor" ObjectPath="\Events\Sound Effects\Ennemis\EnemyMotor" MaxAttenuation="100.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="605095972" Language="SFX">
+							<ShortName>PlayerTurbine.wav</ShortName>
+							<Path>SFX\PlayerTurbine_D79FB2B7.wem</Path>
+						</File>
+						<File Id="972513170" Language="SFX">
+							<ShortName>Engine_Idle.wav</ShortName>
+							<Path>SFX\Engine_Idle_D79FB2B7.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

@@ -82,6 +82,7 @@ public class WaveManager : MonoBehaviour
         if (canSpawn)
         {
             otherWorldManager.dummyStored[0].SetActive(true);
+            AudioManager.AMInstance.enemyMotorAudio.Post(otherWorldManager.dummyStored[0].gameObject);
 
             otherWorldManager.dummyStored[0].transform.position = spawnPointList[index].transform.position;
             ennemiManager.ennemiList.Add(otherWorldManager.dummyStored[0]);
@@ -100,6 +101,7 @@ public class WaveManager : MonoBehaviour
         if (canSpawn)
         {
             otherWorldManager.bumpedStored[0].SetActive(true);
+            AudioManager.AMInstance.enemyMotorAudio.Post(otherWorldManager.bumpedStored[0].gameObject);
 
             otherWorldManager.bumpedStored[0].transform.position = spawnPointList[index].transform.position;
             ennemiManager.ennemiList.Add(otherWorldManager.bumpedStored[0]);
@@ -118,6 +120,7 @@ public class WaveManager : MonoBehaviour
         if (canSpawn)
         {
             otherWorldManager.minerStored[0].SetActive(true);
+            AudioManager.AMInstance.enemyMotorAudio.Post(otherWorldManager.minerStored[0].gameObject);
 
             otherWorldManager.minerStored[0].transform.position = spawnPointList[index].transform.position;
             ennemiManager.ennemiList.Add(otherWorldManager.minerStored[0]);
@@ -136,6 +139,7 @@ public class WaveManager : MonoBehaviour
         if (canSpawn)
         {
             otherWorldManager.golderStored[0].SetActive(true);
+            AudioManager.AMInstance.enemyMotorAudio.Post(otherWorldManager.golderStored[0].gameObject);
 
             otherWorldManager.golderStored[0].transform.position = spawnPointList[index].transform.position;
             ennemiManager.ennemiList.Add(otherWorldManager.golderStored[0]);
@@ -155,6 +159,7 @@ public class WaveManager : MonoBehaviour
         if (canSpawn)
         {
             otherWorldManager.flamerStored[0].SetActive(true);
+            AudioManager.AMInstance.enemyMotorAudio.Post(otherWorldManager.flamerStored[0].gameObject);
 
             otherWorldManager.flamerStored[0].transform.position = spawnPointList[index].transform.position;
             ennemiManager.ennemiList.Add(otherWorldManager.flamerStored[0]);

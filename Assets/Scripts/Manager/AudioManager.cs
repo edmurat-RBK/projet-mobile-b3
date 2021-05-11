@@ -26,6 +26,9 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event UIStartAudio;
     public AK.Wwise.Event UIReturnMenuAudio;
     #endregion
+    #region Enemy
+    public AK.Wwise.Event enemyMotorAudio;
+    #endregion
 
 
 
