@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
-    m_lastTime: -8585808668185235580
+    m_lastTime: -8585802586978342771
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -165,7 +165,7 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
-    m_lastTime: -8585808673528640368
+    m_lastTime: -8585802586978232874
     List:
     - name: Boost
       guid: 6de88b076ff5aa4f90711f2c6b91d127
@@ -184,6 +184,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: 6de88b076ff5aa4f90711f2c6b91d127
       Path: Events\Sound Effects\Player\Boost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Coin_Drop
+      guid: b9a2e24c688bc0468e06450fb5e7a2ed
+      id: 2129359562
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Coin_Drop
+        ObjectType: 3
+        guid: b9a2e24c688bc0468e06450fb5e7a2ed
+      Path: Events\Sound Effects\Ennemis\Coin_Drop
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -261,6 +281,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: ce33e71cc2642d478a8a8d4a5239cf32
       Path: Events\Sound Effects\World\Explosion
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Miner_Blast
+      guid: 89c5efb027e5754694e069577b4b071b
+      id: 3763606037
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Miner_Blast
+        ObjectType: 3
+        guid: 89c5efb027e5754694e069577b4b071b
+      Path: Events\Sound Effects\Ennemis\Miner_Blast
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -704,7 +744,7 @@ MonoBehaviour:
     m_lastTime: -8585827873131052027
     List: []
   ExpandedFileSystemItemIds: 11000000
-  ExpandedWaapiItemIds: 05000000090000000a0000000b0000000c0000001b0000001c0000001d000000
+  ExpandedWaapiItemIds: 0100000005000000090000001b0000001c0000001d000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
   currentDataSource: 0

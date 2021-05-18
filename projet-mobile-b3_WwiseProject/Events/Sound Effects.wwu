@@ -64,6 +64,42 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Miner_Blast" ID="{B0EFC589-E527-4675-94E0-69577B4B071B}">
+							<ChildrenList>
+								<Action Name="" ID="{F65D8B63-99C2-41CD-8406-AC725D675D55}" ShortID="545528159">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Canon-Fire" ID="{E7AE3269-ED9D-401C-BC69-E147A91EFD28}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3E8450DB-F6E6-4611-9A92-5585B78742D6}" ShortID="258679047">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Drop" ID="{EEEFED8F-8813-4CA2-957A-AA7597FCA556}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Coin_Drop" ID="{4CE2A2B9-8B68-46C0-8E06-450FB5E7A2ED}">
+							<ChildrenList>
+								<Action Name="" ID="{C02C73DB-2EC5-4C4D-A1EC-692546901979}" ShortID="738999362">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Drop_Gold" ID="{645AC282-1F88-414A-9AA5-BAEC27520FF9}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{FC7795B2-C66B-4F43-B228-A9C5BAC3840D}" ShortID="956070870">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Coin_Shining" ID="{85D00C67-981C-482C-8BE1-93F4A982DABD}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="World" ID="{D140947B-67AB-4E43-9A90-104C62AB2F69}" ShortID="1047336946">

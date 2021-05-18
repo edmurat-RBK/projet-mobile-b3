@@ -77,6 +77,8 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
         float index = Random.Range(-5, 5);
         Vector3 spawnPos = new Vector3(transform.position.x + index, transform.position.y +1, transform.position.z);
+
+        AudioManager.AMInstance.minerBlastAudio.Post(gameObject);
         Instantiate(minePrefab, spawnPos, transform.rotation);
 
         if(hasFinishAttack == false)

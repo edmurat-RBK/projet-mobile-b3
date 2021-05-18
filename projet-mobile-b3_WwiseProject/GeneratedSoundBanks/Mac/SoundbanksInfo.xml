@@ -87,12 +87,31 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="1723220435">
+		<SoundBank Id="1761240301" Language="SFX" Hash="3606445142">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
 			<IncludedEvents>
-				<Event Id="2389703494" Name="Boost" ObjectPath="\Events\Sound Effects\Player\Boost" DurationType="OneShot" DurationMin="4.043305" DurationMax="4.043305"/>
+				<Event Id="2389703494" Name="Boost" ObjectPath="\Events\Sound Effects\Player\Boost" DurationType="OneShot" DurationMin="4.043305" DurationMax="4.043305">
+					<IncludedMemoryFiles>
+						<File Id="470228999" Language="SFX">
+							<ShortName>Engine_Boost.wav</ShortName>
+							<Path>SFX\Engine_Boost_4DAA267E.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2129359562" Name="Coin_Drop" ObjectPath="\Events\Sound Effects\Ennemis\Coin_Drop" DurationType="OneShot" DurationMin="0.526610" DurationMax="0.557924">
+					<IncludedMemoryFiles>
+						<File Id="60063612" Language="SFX">
+							<ShortName>Coin_Shining.wav</ShortName>
+							<Path>SFX\Coin_Shining_DABFFEE5.wem</Path>
+						</File>
+						<File Id="314532891" Language="SFX">
+							<ShortName>Drop.wav</ShortName>
+							<Path>SFX\Drop_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="815433836" Name="CoinCollect" ObjectPath="\Events\Sound Effects\World\CoinCollect" DurationType="OneShot" DurationMin="1.038812" DurationMax="1.038812">
 					<IncludedMemoryFiles>
 						<File Id="547354128" Language="SFX">
@@ -118,6 +137,18 @@
 						<File Id="385060310" Language="SFX">
 							<ShortName>Explosion_1.wav</ShortName>
 							<Path>SFX\Explosion_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3763606037" Name="Miner_Blast" ObjectPath="\Events\Sound Effects\Ennemis\Miner_Blast" DurationType="OneShot" DurationMin="0.459138" DurationMax="0.459138">
+					<IncludedMemoryFiles>
+						<File Id="15742071" Language="SFX">
+							<ShortName>Canon-Fire.wav</ShortName>
+							<Path>SFX\Canon-Fire_CAA7AABE.wem</Path>
+						</File>
+						<File Id="314532891" Language="SFX">
+							<ShortName>Drop.wav</ShortName>
+							<Path>SFX\Drop_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -222,12 +253,6 @@
 					</ActionSetState>
 				</Event>
 			</IncludedEvents>
-			<IncludedMemoryFiles>
-				<File Id="470228999" Language="SFX">
-					<ShortName>Engine_Boost.wav</ShortName>
-					<Path>SFX\Engine_Boost_7E8B5FA3.wem</Path>
-				</File>
-			</IncludedMemoryFiles>
 			<GameParameters>
 				<GameParameter Id="2272887157" Name="boostEvolution" ObjectPath="\Game Parameters\Player\boostEvolution"/>
 				<GameParameter Id="2892789523" Name="motorVariation" ObjectPath="\Game Parameters\Player\motorVariation"/>

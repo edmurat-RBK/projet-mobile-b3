@@ -28,6 +28,8 @@ public class AudioManager : MonoBehaviour
     #endregion
     #region Enemy
     public AK.Wwise.Event enemyMotorAudio;
+    public AK.Wwise.Event minerBlastAudio;
+    public AK.Wwise.Event coinDropAudio;
     #endregion
 
 
