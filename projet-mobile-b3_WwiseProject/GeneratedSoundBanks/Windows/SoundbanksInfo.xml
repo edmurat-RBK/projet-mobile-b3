@@ -87,7 +87,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="3606445142">
+		<SoundBank Id="1761240301" Language="SFX" Hash="1867792690">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
@@ -104,7 +104,7 @@
 					<IncludedMemoryFiles>
 						<File Id="60063612" Language="SFX">
 							<ShortName>Coin_Shining.wav</ShortName>
-							<Path>SFX\Coin_Shining_DABFFEE5.wem</Path>
+							<Path>SFX\Coin_Shining_39919C71.wem</Path>
 						</File>
 						<File Id="314532891" Language="SFX">
 							<ShortName>Drop.wav</ShortName>
@@ -140,11 +140,31 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2000348857" Name="Flamethrower_End" ObjectPath="\Events\Sound Effects\Ennemis\Flamethrower_End" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.788594" DurationMax="0.788594">
+					<IncludedMemoryFiles>
+						<File Id="112384568" Language="SFX">
+							<ShortName>Flammer_End.wav</ShortName>
+							<Path>SFX\Flammer_End_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3711179226" Name="Flamethrower_Start" ObjectPath="\Events\Sound Effects\Ennemis\Flamethrower_Start" MaxAttenuation="100.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="376630224" Language="SFX">
+							<ShortName>Flammer_Start.wav</ShortName>
+							<Path>SFX\Flammer_Start_10C4C929.wem</Path>
+						</File>
+						<File Id="545536128" Language="SFX">
+							<ShortName>Flammer_Idle.wav</ShortName>
+							<Path>SFX\Flammer_Idle_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="3763606037" Name="Miner_Blast" ObjectPath="\Events\Sound Effects\Ennemis\Miner_Blast" DurationType="OneShot" DurationMin="0.459138" DurationMax="0.459138">
 					<IncludedMemoryFiles>
 						<File Id="15742071" Language="SFX">
 							<ShortName>Canon-Fire.wav</ShortName>
-							<Path>SFX\Canon-Fire_CAA7AABE.wem</Path>
+							<Path>SFX\Canon-Fire_363E600E.wem</Path>
 						</File>
 						<File Id="314532891" Language="SFX">
 							<ShortName>Drop.wav</ShortName>

@@ -100,6 +100,45 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Flamethrower_Start" ID="{59272013-DE87-487A-A8E4-DC3A272B2C75}">
+							<ChildrenList>
+								<Action Name="" ID="{414153B9-2BB6-4D5F-B0CE-22F45BB90B14}" ShortID="242511420">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Flammer_Start" ID="{D2A7567D-524C-4B05-A8DF-B0C4752D260C}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{77BB425A-20AE-4DD4-834F-CA35BEEB0E8F}" ShortID="434530282">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Flammer_Idle" ID="{590A625E-D6F0-490A-A4E7-0FB916DB0C13}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Flamethrower_End" ID="{BAACA83C-5EEC-4AE9-9CB7-C53FD0D671A8}">
+							<ChildrenList>
+								<Action Name="" ID="{A00E2C7E-A479-4FBF-A380-1FBEC7CF0AD9}" ShortID="266838694">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Flammer_Idle" ID="{590A625E-D6F0-490A-A4E7-0FB916DB0C13}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{4AFD4282-5EEB-44EA-A176-A3A1B4A64D5B}" ShortID="395218757">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Flammer_End" ID="{470FAD20-1F93-49DA-BE97-D17D411BAF73}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="World" ID="{D140947B-67AB-4E43-9A90-104C62AB2F69}" ShortID="1047336946">

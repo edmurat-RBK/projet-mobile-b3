@@ -480,6 +480,94 @@
 								<ActiveSource Name="Drop" ID="{8908B31C-5AFD-48DC-BCF5-04CC9A15AB09}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="Flammer_End" ID="{470FAD20-1F93-49DA-BE97-D17D411BAF73}" ShortID="55521867">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="EnemyMotor" ID="{76849D2B-BEDA-4668-9EDC-D08948A98844}" WorkUnitID="{B830A408-1A61-4BD6-BA20-BCD7332B9831}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flammer_End" ID="{1D5D5F83-D68E-4CC5-A989-A9B4E6FC81E2}">
+									<Language>SFX</Language>
+									<AudioFile>Flammer_End.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="112384568"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Flammer_End" ID="{1D5D5F83-D68E-4CC5-A989-A9B4E6FC81E2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flammer_Idle" ID="{590A625E-D6F0-490A-A4E7-0FB916DB0C13}" ShortID="262423042">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="EnemyMotor" ID="{76849D2B-BEDA-4668-9EDC-D08948A98844}" WorkUnitID="{B830A408-1A61-4BD6-BA20-BCD7332B9831}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flammer_Idle" ID="{8C97F970-5505-4876-96DF-7CCBDA48F7F6}">
+									<Language>SFX</Language>
+									<AudioFile>Flammer_Idle.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="545536128"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Flammer_Idle" ID="{8C97F970-5505-4876-96DF-7CCBDA48F7F6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flammer_Start" ID="{D2A7567D-524C-4B05-A8DF-B0C4752D260C}" ShortID="374199064">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="2"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="EnemyMotor" ID="{76849D2B-BEDA-4668-9EDC-D08948A98844}" WorkUnitID="{B830A408-1A61-4BD6-BA20-BCD7332B9831}"/>
+								</Reference>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{8D0C8B29-27BA-44BE-905F-E64101A2B983}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B524716C-C0A8-4C05-A611-B2C54E21E826}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flammer_Start" ID="{0A3ACE68-43C6-453D-A781-4C8EC3B20E35}">
+									<Language>SFX</Language>
+									<AudioFile>Flammer_Start.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="376630224"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Flammer_Start" ID="{0A3ACE68-43C6-453D-A781-4C8EC3B20E35}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="UI" ID="{EE08ACC5-E3FF-4243-912F-A04CA6EA18E7}" ShortID="960157762">

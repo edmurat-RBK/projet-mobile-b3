@@ -18,6 +18,8 @@ namespace AK
         static const AkUniqueID COINCOLLECT = 815433836U;
         static const AkUniqueID ENEMYMOTOR = 2746534638U;
         static const AkUniqueID EXPLOSION = 13776098U;
+        static const AkUniqueID FLAMETHROWER_END = 2000348857U;
+        static const AkUniqueID FLAMETHROWER_START = 3711179226U;
         static const AkUniqueID MINER_BLAST = 3763606037U;
         static const AkUniqueID PLAYER_MOTOR = 3300087192U;
         static const AkUniqueID ROCKDESTRUCTION = 3234943846U;
