@@ -34,6 +34,15 @@ public class QuestManager : MonoBehaviour
         if (FindObjectOfType<GameManager>())
         {
             GameManager.Instance.questManager = this;
+            
+        }
+        QuestManager[] questManager = FindObjectsOfType<QuestManager>();
+        foreach (var item in questManager)
+        {
+            if (item != this)
+            {
+                Destroy(item.gameObject);
+            }
         }
         GameObject.DontDestroyOnLoad(this.gameObject);
     }

@@ -73,11 +73,12 @@ public class PlayerLife : MonoBehaviour
     IEnumerator PlayerDeath()
     {
 
-        if (!playerManager.revive)
+        if (!playerManager.revive || playerManager.revive && playerManager.numberOfRevives ==0)
         {
             explosionFX.SetActive(true);
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             playerManager.playerIsAlive = false;
+            playerManager.revive = false;
             //DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             GameManager.Instance.terrainManager.scrollSpeed = 0;
             
@@ -88,11 +89,13 @@ public class PlayerLife : MonoBehaviour
             AudioManager.AMInstance.StopAllAudio();
             SceneManager.LoadScene("Menu Start");
         }
-        else
+        else if (playerManager.revive && playerManager.numberOfRevives >1)
         {
             yield return 0;
-            playerManager.revive = false;
+            playerManager.numberOfRevives -=1;
+            playerManager.playerLife = playerManager.maxPlayerLife;
         }
+        
 
         
     }
