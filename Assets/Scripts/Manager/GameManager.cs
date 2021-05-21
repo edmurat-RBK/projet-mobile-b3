@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     #endregion
     private void Awake() {
         questManager = FindObjectOfType<QuestManager>();
-        GameObject.DontDestroyOnLoad(this.gameObject);
+        
     }
 
     public PlayerManager playerManager;

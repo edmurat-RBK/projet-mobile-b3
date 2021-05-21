@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class SHopMacro : MonoBehaviour
 {
-    public ShopManager shopManager;
-    public EconomicManager economicManager;
-    public PlayerManager playerManager;
+    public LoadMenu loadMenu;
+    public DataManager dataManager;
+    
 
+    public int multiplier;
     public int multiplierPrice = 5;
     public int multiplierPriceIncrement = 5;
+    public int coinsMulti;
     public int doubleCoinsPrice = 5;
     public int doubleCoinsPriceIncrement = 5;
+    public int extraLives;
     public int extraLifePrice = 5;
     public int extraLifePriceIncrement = 5;
+    public int maxLife;
     public int maxLifePrice = 5;
     public int maxLifePriceIncrement = 5;
 
@@ -25,9 +29,9 @@ public class SHopMacro : MonoBehaviour
     public Text maxLifeText;
 
     private void Start() {
-        shopManager = GameManager.Instance.shopManager;
-        economicManager = GameManager.Instance.economicManager;
-        playerManager = GameManager.Instance.playerManager;
+        loadMenu = FindObjectOfType<LoadMenu>();
+        dataManager = FindObjectOfType<DataManager>();
+        
         UpdatePrices();
     }
 
@@ -44,10 +48,12 @@ public class SHopMacro : MonoBehaviour
 
     public void Multiplier()
     {
-        if (economicManager.coinVioletCounter > multiplierPrice)
+        
+        if (loadMenu.purpleCoins > multiplierPrice)
         {
-            GameManager.Instance.highScoreManager.multiplier += 1;
-            economicManager.coinVioletCounter -= multiplierPrice;
+            Debug.Log(this);
+            multiplier += 1;
+            loadMenu.purpleCoins -= multiplierPrice;
             multiplierPrice += multiplierPriceIncrement;
             
         }
@@ -56,29 +62,23 @@ public class SHopMacro : MonoBehaviour
 
     public void DoubleCoins()
     {
-        if (economicManager.coinVioletCounter > doubleCoinsPrice)
+        if (loadMenu.purpleCoins > doubleCoinsPrice)
         {
+            Debug.Log("hahah    ");
             doubleCoinsPrice += doubleCoinsPriceIncrement;
-            economicManager.coinVioletCounter -= doubleCoinsPrice;
-            GameManager.Instance.economicManager.coinsMultiplier = 2;
+            loadMenu.purpleCoins -= doubleCoinsPrice;
+            coinsMulti += 2;
         }
 
     }
 
     public void ExtraLife()
     {
-        if (economicManager.coinVioletCounter > extraLifePrice)
+        if (loadMenu.purpleCoins > extraLifePrice)
         {
-            if (GameManager.Instance.playerManager.revive)
-            {
-                GameManager.Instance.playerManager.numberOfRevives += 1;
-            }
-            else
-            {
-                GameManager.Instance.playerManager.revive = true;
-                GameManager.Instance.playerManager.numberOfRevives += 1;
-            }
-            economicManager.coinVioletCounter -= extraLifePrice;
+            Debug.Log("hahah    ");
+            extraLives += 1;
+            loadMenu.purpleCoins -= extraLifePrice;
             extraLifePrice += extraLifePriceIncrement;
         }
 
@@ -86,10 +86,11 @@ public class SHopMacro : MonoBehaviour
 
     public void MaxLife()
     {
-        if (economicManager.coinVioletCounter > maxLifePrice)
+        if (loadMenu.purpleCoins > maxLifePrice)
         {
-            GameManager.Instance.playerManager.maxPlayerLife += GameManager.Instance.playerManager.maxFuelIncrease;
-            economicManager.coinVioletCounter -= maxLifePrice;
+            Debug.Log("hahah    ");
+            maxLife += 10;
+            loadMenu.purpleCoins -= maxLifePrice;
             maxLifePrice += maxLifePriceIncrement;
         }
         

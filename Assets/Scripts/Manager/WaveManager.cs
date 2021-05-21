@@ -9,7 +9,8 @@ using UnityEngine;
 /// </summary>
 public class WaveManager : MonoBehaviour
 {
-    public List<Transform> spawnPointList = new List<Transform>();
+    public List<Vector3> spawnPointList = new List<Vector3>();
+
 
     public int maxEnnemiInLevel;
     public float timeBetweenSpawn = 1f;
@@ -24,6 +25,11 @@ public class WaveManager : MonoBehaviour
     {
         ennemiManager = GameManager.Instance.ennemiManager;
         otherWorldManager = GameManager.Instance.otherWorldManager;
+
+
+        spawnPointList.Add(new Vector3(-10, 2, 70));
+        spawnPointList.Add(new Vector3(0, 2, 70));
+        spawnPointList.Add(new Vector3(10, 2, 70));
     }
     private void Update()
     {
@@ -83,7 +89,7 @@ public class WaveManager : MonoBehaviour
         {
             otherWorldManager.dummyStored[0].SetActive(true);
 
-            otherWorldManager.dummyStored[0].transform.position = spawnPointList[index].transform.position;
+            otherWorldManager.dummyStored[0].transform.position = spawnPointList[index];
             ennemiManager.ennemiList.Add(otherWorldManager.dummyStored[0]);
             otherWorldManager.dummyStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
             otherWorldManager.dummyStored.RemoveAt(0);
@@ -101,7 +107,7 @@ public class WaveManager : MonoBehaviour
         {
             otherWorldManager.bumpedStored[0].SetActive(true);
 
-            otherWorldManager.bumpedStored[0].transform.position = spawnPointList[index].transform.position;
+            otherWorldManager.bumpedStored[0].transform.position = spawnPointList[index];
             ennemiManager.ennemiList.Add(otherWorldManager.bumpedStored[0]);
             otherWorldManager.bumpedStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
             otherWorldManager.bumpedStored.RemoveAt(0);
@@ -119,7 +125,7 @@ public class WaveManager : MonoBehaviour
         {
             otherWorldManager.minerStored[0].SetActive(true);
 
-            otherWorldManager.minerStored[0].transform.position = spawnPointList[index].transform.position;
+            otherWorldManager.minerStored[0].transform.position = spawnPointList[index];
             ennemiManager.ennemiList.Add(otherWorldManager.minerStored[0]);
             otherWorldManager.minerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
             otherWorldManager.minerStored.RemoveAt(0);
@@ -137,7 +143,7 @@ public class WaveManager : MonoBehaviour
         {
             otherWorldManager.golderStored[0].SetActive(true);
 
-            otherWorldManager.golderStored[0].transform.position = spawnPointList[index].transform.position;
+            otherWorldManager.golderStored[0].transform.position = spawnPointList[index];
             ennemiManager.ennemiList.Add(otherWorldManager.golderStored[0]);
             otherWorldManager.golderStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
             otherWorldManager.golderStored.RemoveAt(0);
@@ -156,7 +162,7 @@ public class WaveManager : MonoBehaviour
         {
             otherWorldManager.flamerStored[0].SetActive(true);
 
-            otherWorldManager.flamerStored[0].transform.position = spawnPointList[index].transform.position;
+            otherWorldManager.flamerStored[0].transform.position = spawnPointList[index];
             ennemiManager.ennemiList.Add(otherWorldManager.flamerStored[0]);
             otherWorldManager.flamerStored[0].GetComponent<GlobalEnnemiBehavior>().isAlive = true;
             otherWorldManager.flamerStored.RemoveAt(0);

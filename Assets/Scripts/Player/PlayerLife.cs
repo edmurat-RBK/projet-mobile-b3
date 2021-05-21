@@ -83,7 +83,7 @@ public class PlayerLife : MonoBehaviour
             GameManager.Instance.terrainManager.scrollSpeed = 0;
             
             
-            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter);
+            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
             yield return new WaitForSeconds(2f);
 
             AudioManager.AMInstance.StopAllAudio();

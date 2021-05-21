@@ -8,8 +8,10 @@ public class LoadMenu : MonoBehaviour
 {
     public Text highscoreText;
     public Text coinsText;
+    public Text purpleCoinsText;
     public int highscore;
     public int coins;
+    public int purpleCoins;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,13 +34,14 @@ public class LoadMenu : MonoBehaviour
 
     void SaveValues()
     {
-        DataManager.DMInstance.Save(highscore,coins);
+        DataManager.DMInstance.Save(highscore,coins,purpleCoins);
     }
 
     void DisplayValues()
     {
         highscoreText.text = "Hiscore: " + highscore.ToString();
         coinsText.text = "Coins: " + coins.ToString();
+        purpleCoinsText.text = "Purple Coins: " + purpleCoins.ToString();
     }
     private void Update() {
         if (Keyboard.current.sKey.wasPressedThisFrame)
