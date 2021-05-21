@@ -79,9 +79,11 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
 
         GameObject fireTail = Instantiate(fireTailPrefab, position, transform.rotation, transform);
+        AudioManager.AMInstance.flamerStartAudio.Post(gameObject);
 
         yield return new WaitForSeconds(ennemiManager.flamerAttackDuration);
         Destroy(fireTail);
+        AudioManager.AMInstance.flamerEndAudio.Post(gameObject);
 
         readyToFlaming = false;
         hasFinishAttack = true;

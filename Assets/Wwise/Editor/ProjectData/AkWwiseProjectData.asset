@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
-    m_lastTime: -8585802586978342771
+    m_lastTime: -8585801733849333108
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -165,7 +165,7 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
-    m_lastTime: -8585802586978232874
+    m_lastTime: -8585801734338918840
     List:
     - name: Boost
       guid: 6de88b076ff5aa4f90711f2c6b91d127
@@ -281,6 +281,46 @@ MonoBehaviour:
         ObjectType: 3
         guid: ce33e71cc2642d478a8a8d4a5239cf32
       Path: Events\Sound Effects\World\Explosion
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Flamethrower_End
+      guid: 3ca8acbaec5ee94a9cb7c53fd0d671a8
+      id: 2000348857
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Flamethrower_End
+        ObjectType: 3
+        guid: 3ca8acbaec5ee94a9cb7c53fd0d671a8
+      Path: Events\Sound Effects\Ennemis\Flamethrower_End
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Flamethrower_Start
+      guid: 1320275987de7a48a8e4dc3a272b2c75
+      id: 3711179226
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Flamethrower_Start
+        ObjectType: 3
+        guid: 1320275987de7a48a8e4dc3a272b2c75
+      Path: Events\Sound Effects\Ennemis\Flamethrower_Start
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -744,8 +784,8 @@ MonoBehaviour:
     m_lastTime: -8585827873131052027
     List: []
   ExpandedFileSystemItemIds: 11000000
-  ExpandedWaapiItemIds: 0100000005000000090000001b0000001c0000001d000000
+  ExpandedWaapiItemIds: 01000000020000000500000006000000090000001b0000001d000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 

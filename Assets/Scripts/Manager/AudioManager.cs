@@ -30,6 +30,9 @@ public class AudioManager : MonoBehaviour
     public AK.Wwise.Event enemyMotorAudio;
     public AK.Wwise.Event minerBlastAudio;
     public AK.Wwise.Event coinDropAudio;
+
+    public AK.Wwise.Event flamerStartAudio;
+    public AK.Wwise.Event flamerEndAudio;
     #endregion
 
 
