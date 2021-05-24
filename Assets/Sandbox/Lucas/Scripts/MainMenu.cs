@@ -13,16 +13,16 @@ public class MainMenu : MonoBehaviour
     [Header("Quests Buttons")]
     public GameObject questsButtons;
 
-    SHopMacro shopMacro;
+    public ShopMacro1 shopMacro;
     
     private void Start() {
-        shopMacro = FindObjectOfType<SHopMacro>();
+        
     }
 
     public void ChangeScene(int index)
     {
-        DataManager.DMInstance.ShopSave(shopMacro.multiplier,shopMacro.coinsMulti,shopMacro.extraLives,shopMacro.maxLife);
-        SceneManager.LoadScene(index);
+        DataManager.DMInstance.ShopSave(shopMacro.multiplier,shopMacro.coinsMulti,shopMacro.extraLives,shopMacro.maxLife,index);
+        //SceneManager.LoadScene(index);
     }
 
     public void OpenShop()

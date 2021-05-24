@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Xml.Serialization;
 using System.IO;
 using System.Text;
+using UnityEngine.SceneManagement;
 
 [XmlRoot("Data")]
 public class DataManager : MonoBehaviour
@@ -42,13 +43,16 @@ public class DataManager : MonoBehaviour
         Datas data = new Datas { highscore = highscore,coinsCollected = coins};
 
         serializer.Serialize(streamWriter, data);
+        streamWriter.Close();
     }
-    public void ShopSave(int scoreMulti,int coinsMulti,int extraLives,int maxLife)
+    public void ShopSave(int scoreMulti,int coinsMulti,int extraLives,int maxLife,int index)
     {
         StreamWriter streamWriter = new StreamWriter(path2, false);
         ShopData data = new ShopData { scoreMulti = scoreMulti,coinsMulti = coinsMulti,extraLives=extraLives,maxLife=maxLife};
 
         serializer2.Serialize(streamWriter, data);
+        streamWriter.Close();
+        SceneManager.LoadScene(index);
     }
 
 

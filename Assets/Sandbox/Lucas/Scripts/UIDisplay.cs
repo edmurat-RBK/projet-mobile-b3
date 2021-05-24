@@ -45,4 +45,19 @@ public class UIDisplay : MonoBehaviour
         playerCoins.text = GameManager.Instance.economicManager.coinCounter.ToString();
         #endregion
     }
+
+    void LoadValues()
+    {
+        ShopData data = DataManager.DMInstance.LoadShop();
+        
+        
+        if (data != null)
+        {
+            
+            multiplier = data.scoreMulti;
+            
+            
+        }
+        
+    }
 }

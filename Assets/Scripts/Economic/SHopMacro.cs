@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -51,11 +51,12 @@ public class SHopMacro : MonoBehaviour
         
         if (loadMenu.purpleCoins > multiplierPrice)
         {
-            Debug.Log(this);
+            Debug.Log(loadMenu.purpleCoins);
+            Debug.Log("uwu");
+            UpdatePrices();
             multiplier += 1;
             loadMenu.purpleCoins -= multiplierPrice;
             multiplierPrice += multiplierPriceIncrement;
-            
         }
 
     }
