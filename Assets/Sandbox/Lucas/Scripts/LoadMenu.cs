@@ -39,7 +39,7 @@ public class LoadMenu : MonoBehaviour
         DataManager.DMInstance.Save(highscore,coins,purpleCoins);
     }
 
-    void DisplayValues()
+    public void DisplayValues()
     {
         highscoreText.text = "Hiscore: " + highscore.ToString();
         coinsText.text = "Coins: " + coins.ToString();

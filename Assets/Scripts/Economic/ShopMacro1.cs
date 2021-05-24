@@ -44,23 +44,20 @@ public class ShopMacro1 : MonoBehaviour
         
     }
     
-    public void Test(GameObject btn)
-    {
-        
-        Debug.Log("test " + btn.name);
-    }
+    
 
     public void Multiplier()
     {
         
         if (loadMenu.purpleCoins > multiplierPrice)
         {
-            Debug.Log(loadMenu.purpleCoins);
-            Debug.Log("uwu");
-            UpdatePrices();
+            
+            
             multiplier += 1;
             loadMenu.purpleCoins -= multiplierPrice;
             multiplierPrice += multiplierPriceIncrement;
+            UpdatePrices();
+            loadMenu.DisplayValues();
         }
 
     }
@@ -69,10 +66,13 @@ public class ShopMacro1 : MonoBehaviour
     {
         if (loadMenu.purpleCoins > doubleCoinsPrice)
         {
+            
             Debug.Log("hahah    ");
-            doubleCoinsPrice += doubleCoinsPriceIncrement;
             loadMenu.purpleCoins -= doubleCoinsPrice;
+            doubleCoinsPrice += doubleCoinsPriceIncrement;
             coinsMulti += 2;
+            UpdatePrices();
+            loadMenu.DisplayValues();
         }
 
     }
@@ -81,10 +81,13 @@ public class ShopMacro1 : MonoBehaviour
     {
         if (loadMenu.purpleCoins > extraLifePrice)
         {
+            
             Debug.Log("hahah    ");
             extraLives += 1;
             loadMenu.purpleCoins -= extraLifePrice;
             extraLifePrice += extraLifePriceIncrement;
+            UpdatePrices();
+            loadMenu.DisplayValues();
         }
 
     }
@@ -93,10 +96,13 @@ public class ShopMacro1 : MonoBehaviour
     {
         if (loadMenu.purpleCoins > maxLifePrice)
         {
+            
             Debug.Log("hahah    ");
             maxLife += 10;
             loadMenu.purpleCoins -= maxLifePrice;
             maxLifePrice += maxLifePriceIncrement;
+            UpdatePrices();
+            loadMenu.DisplayValues();
         }
         
     }
