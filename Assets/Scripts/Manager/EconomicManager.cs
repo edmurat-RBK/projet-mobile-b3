@@ -10,22 +10,5 @@ public class EconomicManager : MonoBehaviour
     public int coinCounter = 0;
     public int coinVioletCounter = 0;
 
-    private void Start() {
-        LoadValues();
-    }
-
-    void LoadValues()
-    {
-        ShopData data = DataManager.DMInstance.LoadShop();
-        
-        
-        if (data != null)
-        {
-            
-            coinsMultiplier += data.coinsMulti;
-            
-            
-        }
-        
-    }
+    
 }

@@ -20,6 +20,7 @@ public class PlayerLife : MonoBehaviour
     private PlayerManager playerManager;
     private EnnemiManager ennemiManager;
 
+    
     private void Awake() {
         playerManager = GameManager.Instance.playerManager;
         ennemiManager = GameManager.Instance.ennemiManager;
@@ -28,6 +29,7 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         playerManager.playerIsAlive = true;
+        playerManager.playerLife = playerManager.maxPlayerLife;
     }
 
     void Update()

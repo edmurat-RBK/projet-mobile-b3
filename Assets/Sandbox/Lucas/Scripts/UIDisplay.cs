@@ -22,6 +22,7 @@ public class UIDisplay : MonoBehaviour
     void Start()
     {
         multiplier = 1;
+        LoadValues();
     }
 
     // Update is called once per frame
@@ -54,9 +55,10 @@ public class UIDisplay : MonoBehaviour
         if (data != null)
         {
             
-            multiplier = data.scoreMulti;
-            
-            
+            GameManager.Instance.playerManager.numberOfRevives += data.extraLives;
+            GameManager.Instance.playerManager.maxPlayerLife += data.maxLife;
+            GameManager.Instance.economicManager.coinsMultiplier += data.coinsMulti;
+            multiplier += data.scoreMulti;
         }
         
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -44,23 +45,11 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         InitValues();
-        LoadValues();
+        
     }
 
-    void LoadValues()
-    {
-        ShopData data = DataManager.DMInstance.LoadShop();
-        
-        
-        if (data != null)
-        {
-            
-            numberOfRevives += data.extraLives;
-            maxPlayerLife += data.maxLife;
-            
-        }
-        
-    }
+    
+    
 
 
 
