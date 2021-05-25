@@ -239,6 +239,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
         Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
         AudioManager.AMInstance.explosionAudio.Post(gameObject);
+        Handheld.Vibrate();
         Teleport(list);
     }
     public void Teleport(List<GameObject> list)
