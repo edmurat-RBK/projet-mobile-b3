@@ -21,8 +21,8 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeScene(int index)
     {
-        SceneManager.LoadScene(index);
-
+        
+        DataManager.DMInstance.ShopSave(shopMacro.multiplier,shopMacro.coinsMulti,shopMacro.extraLives,shopMacro.maxLife,index);
         AudioManager.AMInstance.UIStartAudio.Post(gameObject);
         AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
     }
