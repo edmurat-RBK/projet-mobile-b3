@@ -16,7 +16,14 @@ using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     public GameObject explosionFX;
+    public GameObject gameOver;
 
+    [HideInInspector]
+    public int enemiesDestroyed;
+    [HideInInspector]
+    public int objectsDestroyed;
+    
+    
     private PlayerManager playerManager;
     private EnnemiManager ennemiManager;
 
@@ -86,14 +93,15 @@ public class PlayerLife : MonoBehaviour
             GameManager.Instance.terrainManager.scrollSpeed = 0;
             
             
-            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
-            yield return new WaitForSeconds(2f);
-
             
+            yield return new WaitForSeconds(2f);
+            gameOver.SetActive(true);
+            gameOver.GetComponent<Gameover>().CalculateScore(enemiesDestroyed,objectsDestroyed,GameManager.Instance.economicManager.coinCounter,FindObjectOfType<UIDisplay>().displayedScore);
+            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
             AudioManager.AMInstance.StopAllAudio();
             AudioManager.AMInstance.UIReturnMenuAudio.Post(gameObject);
             AudioManager.AMInstance.runMusic.Post(gameObject);
-            SceneManager.LoadScene("Menu Start");
+            
         }
         else if (playerManager.revive && playerManager.numberOfRevives >1)
         {
@@ -104,6 +112,11 @@ public class PlayerLife : MonoBehaviour
         
 
         
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu Start");
     }
 
     void RefillShield()
