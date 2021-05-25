@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attaque : MonoBehaviour
 {
     Boost boostRef;
+    public int enemiesDestroyed;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class Attaque : MonoBehaviour
         if (collision.gameObject.CompareTag("Ennemy") && boostRef.isBoosting)
         {
             collision.gameObject.GetComponent<GlobalEnnemiBehavior>().life --;
+            GetComponent<PlayerLife>().enemiesDestroyed += 1;
             GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("Kill");
             Debug.Log("KABOOOOOM");
         }
