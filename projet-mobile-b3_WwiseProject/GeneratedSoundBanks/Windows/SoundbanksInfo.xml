@@ -16,12 +16,12 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="1951675857">
+		<SoundBank Id="1730564753" Language="SFX" Hash="3626130597">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3210650468" Name="Kill_Enemy" ObjectPath="\Events\Musics\Kill_Enemy" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+				<Event Id="2889531164" Name="KillVar" ObjectPath="\Events\Musics\KillVar" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
 					<ActionTrigger>
 						<ActionTriggerEntry Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
 					</ActionTrigger>
@@ -138,7 +138,7 @@
 				<Trigger Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
 			</Triggers>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="1308267460">
+		<SoundBank Id="1761240301" Language="SFX" Hash="1533004652">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
@@ -190,6 +190,9 @@
 							<Path>SFX\Explosion_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<ActionTrigger>
+						<ActionTriggerEntry Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+					</ActionTrigger>
 				</Event>
 				<Event Id="2000348857" Name="Flamethrower_End" ObjectPath="\Events\Sound Effects\Ennemis\Flamethrower_End" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.788594" DurationMax="0.788594">
 					<IncludedMemoryFiles>
@@ -339,6 +342,9 @@
 					<States/>
 				</StateGroup>
 			</StateGroups>
+			<Triggers>
+				<Trigger Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+			</Triggers>
 		</SoundBank>
 		<SoundBank Id="3161908922" Language="SFX" Hash="1077138683">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>

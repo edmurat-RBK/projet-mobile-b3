@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
     //---------------------------------------------------
     [Header("Musics")]
     public AK.Wwise.Event runMusic;
+    public AK.Wwise.Event killMusicVar;
 
 
 

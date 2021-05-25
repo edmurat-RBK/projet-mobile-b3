@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
-    m_lastTime: -8585796690582283818
+    m_lastTime: -8585796483362330689
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -135,8 +135,25 @@ MonoBehaviour:
     ParentPath: Events\Musics
     guid: 5b362b246325d943b9ff3ea4024e7a29
     GuidInternal: 
-    m_lastTime: -8585801963633949573
+    m_lastTime: -8585796481711729737
     List:
+    - name: KillVar
+      guid: f0893dd9907f8b48b2f7b1fdff178c89
+      id: 2889531164
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Musics
+        ObjectType: 12
+        guid: 5b362b246325d943b9ff3ea4024e7a29
+      - ElementName: KillVar
+        ObjectType: 3
+        guid: f0893dd9907f8b48b2f7b1fdff178c89
+      Path: Events\Musics\KillVar
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: RunMusic
       guid: cfc61d8dda781a46b46205222ac42d11
       id: 3738991497
@@ -165,7 +182,7 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
-    m_lastTime: -8585796531969997489
+    m_lastTime: -8585796483362670346
     List:
     - name: Boost
       guid: 6de88b076ff5aa4f90711f2c6b91d127
@@ -781,9 +798,36 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: 718c157531ccc84fbaf6db01b97c8225
     GuidInternal: 
-    m_lastTime: -8585827873131052027
+    m_lastTime: -8585796491674903483
     List: []
-  ExpandedFileSystemItemIds: 020000000600000009000000
+  - PhysicalPath: Triggers\Musics.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Musics
+      ObjectType: 12
+      guid: b431cd5c88c5cf4e94acdb452399a8f8
+    ParentPath: Triggers\Musics
+    guid: b431cd5c88c5cf4e94acdb452399a8f8
+    GuidInternal: 
+    m_lastTime: -8585796491674813672
+    List:
+    - name: Kill_Ennemy
+      guid: c805b9387f48c8478b07c412c0ead230
+      id: 2417839336
+      PathAndIcons:
+      - ElementName: Triggers
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Musics
+        ObjectType: 12
+        guid: b431cd5c88c5cf4e94acdb452399a8f8
+      - ElementName: Kill_Ennemy
+        ObjectType: 14
+        guid: c805b9387f48c8478b07c412c0ead230
+      Path: Triggers\Musics\Kill_Ennemy
+  ExpandedFileSystemItemIds: 02000000040000000600000009000000
   ExpandedWaapiItemIds: 020000000600000009000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
