@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="3666953691">
+		<SoundBank Id="1730564753" Language="SFX" Hash="2374548901">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
@@ -27,9 +27,21 @@
 							<ShortName>Pause_130Bpm_L4-P0_4-4.wav</ShortName>
 							<Path>SFX\Pause_130Bpm_L4-P0_4-4_D79FB2B7.wem</Path>
 						</File>
+						<File Id="198903378" Language="SFX">
+							<ShortName>ShopRythm_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\ShopRythm_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
 						<File Id="230009465" Language="SFX">
 							<ShortName>RunTheme_130Bpm_L4-P0_4-4.wav</ShortName>
 							<Path>SFX\RunTheme_130Bpm_L4-P0_4-4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="288734429" Language="SFX">
+							<ShortName>ShopBasses_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\ShopBasses_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
+						<File Id="434031750" Language="SFX">
+							<ShortName>ShopPiano_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\ShopPiano_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
 						</File>
 						<File Id="647055559" Language="SFX">
 							<ShortName>Shop_130Bpm_L4-P0_4-4.wav</ShortName>
@@ -59,6 +71,9 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{A24B5678-66E7-4AE2-ACC9-1F8C6EAC7F12}">
 							<Media>
+								<File Id="198903378"/>
+								<File Id="288734429"/>
+								<File Id="434031750"/>
 								<File Id="647055559"/>
 							</Media>
 						</SwitchContainer>
@@ -69,6 +84,9 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{9891C8E1-BA74-4874-937B-3A8F56703507}">
 							<Media>
+								<File Id="198903378"/>
+								<File Id="288734429"/>
+								<File Id="434031750"/>
 								<File Id="647055559"/>
 							</Media>
 						</SwitchContainer>
