@@ -14,6 +14,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Kill_Enemy" ID="{A65CC912-6138-43C0-8204-C0477D0108DA}">
+					<ChildrenList>
+						<Action Name="" ID="{FF19552F-D540-41F3-B39D-81E8AD3E3A7A}" ShortID="705706738">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="35"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Kill_Ennemy" ID="{38B905C8-487F-47C8-8B07-C412C0EAD230}" WorkUnitID="{5CCD31B4-C588-4ECF-94AC-DB452399A8F8}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

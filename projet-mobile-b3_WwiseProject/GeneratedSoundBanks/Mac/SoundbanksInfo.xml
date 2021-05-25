@@ -16,11 +16,16 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="278754639">
+		<SoundBank Id="1730564753" Language="SFX" Hash="1951675857">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3210650468" Name="Kill_Enemy" ObjectPath="\Events\Musics\Kill_Enemy" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionTrigger>
+						<ActionTriggerEntry Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+					</ActionTrigger>
+				</Event>
 				<Event Id="3738991497" Name="RunMusic" ObjectPath="\Events\Musics\RunMusic" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="18737797" Language="SFX">
@@ -54,6 +59,10 @@
 						<File Id="434031750" Language="SFX">
 							<ShortName>ShopPiano_130Bpm4-4_L8-P0.wav</ShortName>
 							<Path>SFX\ShopPiano_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
+						<File Id="512351216" Language="SFX">
+							<ShortName>Jingle_Kill.wav</ShortName>
+							<Path>SFX\Jingle_Kill_D79FB2B7.wem</Path>
 						</File>
 						<File Id="647055559" Language="SFX">
 							<ShortName>Shop_130Bpm_L4-P0_4-4.wav</ShortName>
@@ -125,8 +134,11 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<Triggers>
+				<Trigger Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+			</Triggers>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="2079655280">
+		<SoundBank Id="1761240301" Language="SFX" Hash="1308267460">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
