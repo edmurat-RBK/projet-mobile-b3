@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         UIReturnMenuAudio.Post(gameObject);
-        runMusic.Post(gameObject);     
+        runMusic.Post(gameObject);
     }
 
 

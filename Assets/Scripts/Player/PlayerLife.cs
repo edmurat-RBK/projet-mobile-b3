@@ -89,10 +89,11 @@ public class PlayerLife : MonoBehaviour
             DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
             yield return new WaitForSeconds(2f);
 
-            
-            AudioManager.AMInstance.StopAllAudio();
+
             AudioManager.AMInstance.UIReturnMenuAudio.Post(gameObject);
-            AudioManager.AMInstance.runMusic.Post(gameObject);
+            AudioManager.AMInstance.StopAllAudio();
+            Destroy(AudioManager.AMInstance.gameObject);
+            AudioManager.AMInstance = null;
             SceneManager.LoadScene("Menu Start");
         }
         else if (playerManager.revive && playerManager.numberOfRevives >1)
