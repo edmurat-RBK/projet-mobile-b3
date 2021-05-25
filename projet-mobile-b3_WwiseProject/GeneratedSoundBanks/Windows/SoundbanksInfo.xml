@@ -16,13 +16,17 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="2374548901">
+		<SoundBank Id="1730564753" Language="SFX" Hash="430487988">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
 			<IncludedEvents>
 				<Event Id="3738991497" Name="RunMusic" ObjectPath="\Events\Musics\RunMusic" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="18737797" Language="SFX">
+							<ShortName>PauseRythm_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\PauseRythm_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
 						<File Id="166207100" Language="SFX">
 							<ShortName>Pause_130Bpm_L4-P0_4-4.wav</ShortName>
 							<Path>SFX\Pause_130Bpm_L4-P0_4-4_D79FB2B7.wem</Path>
@@ -39,6 +43,10 @@
 							<ShortName>ShopBasses_130Bpm4-4_L8-P0.wav</ShortName>
 							<Path>SFX\ShopBasses_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
 						</File>
+						<File Id="421501767" Language="SFX">
+							<ShortName>PausePiano_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\PausePiano_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
 						<File Id="434031750" Language="SFX">
 							<ShortName>ShopPiano_130Bpm4-4_L8-P0.wav</ShortName>
 							<Path>SFX\ShopPiano_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
@@ -50,6 +58,10 @@
 						<File Id="680372300" Language="SFX">
 							<ShortName>RunBasses_130Bpm_L4-P0_4-4.wav</ShortName>
 							<Path>SFX\RunBasses_130Bpm_L4-P0_4-4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="825031308" Language="SFX">
+							<ShortName>PauseBasses_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\PauseBasses_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
 						</File>
 						<File Id="922840421" Language="SFX">
 							<ShortName>RunPiano_130Bpm_L4-P0_4-4.wav</ShortName>
@@ -79,7 +91,10 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{9A7237D6-D64D-4A1F-A374-10B19D5E2DBE}">
 							<Media>
+								<File Id="18737797"/>
 								<File Id="166207100"/>
+								<File Id="421501767"/>
+								<File Id="825031308"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{9891C8E1-BA74-4874-937B-3A8F56703507}">
