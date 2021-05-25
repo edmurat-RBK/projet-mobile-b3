@@ -98,6 +98,8 @@ public class PlayerLife : MonoBehaviour
             gameOver.SetActive(true);
             gameOver.GetComponent<Gameover>().CalculateScore(enemiesDestroyed,objectsDestroyed,GameManager.Instance.economicManager.coinCounter,FindObjectOfType<UIDisplay>().displayedScore);
             DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
+
+            AudioManager.AMInstance.UIReturnMenuAudio.Post(gameObject);
             AudioManager.AMInstance.StopAllAudio();
             Destroy(AudioManager.AMInstance.gameObject);
             AudioManager.AMInstance = null;
