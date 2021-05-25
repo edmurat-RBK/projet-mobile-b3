@@ -22,6 +22,7 @@ public class UIDisplay : MonoBehaviour
     void Start()
     {
         multiplier = 1;
+        LoadValues();
     }
 
     // Update is called once per frame
@@ -44,5 +45,21 @@ public class UIDisplay : MonoBehaviour
         #region Money
         playerCoins.text = GameManager.Instance.economicManager.coinCounter.ToString();
         #endregion
+    }
+
+    void LoadValues()
+    {
+        ShopData data = DataManager.DMInstance.LoadShop();
+        
+        
+        if (data != null)
+        {
+            
+            GameManager.Instance.playerManager.numberOfRevives += data.extraLives;
+            GameManager.Instance.playerManager.maxPlayerLife += data.maxLife;
+            GameManager.Instance.economicManager.coinsMultiplier += data.coinsMulti;
+            multiplier += data.scoreMulti;
+        }
+        
     }
 }

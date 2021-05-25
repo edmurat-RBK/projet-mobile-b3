@@ -20,6 +20,7 @@ public class PlayerLife : MonoBehaviour
     private PlayerManager playerManager;
     private EnnemiManager ennemiManager;
 
+    
     private void Awake() {
         playerManager = GameManager.Instance.playerManager;
         ennemiManager = GameManager.Instance.ennemiManager;
@@ -28,6 +29,7 @@ public class PlayerLife : MonoBehaviour
     void Start()
     {
         playerManager.playerIsAlive = true;
+        playerManager.playerLife = playerManager.maxPlayerLife;
     }
 
     void Update()
@@ -73,26 +75,29 @@ public class PlayerLife : MonoBehaviour
     IEnumerator PlayerDeath()
     {
 
-        if (!playerManager.revive)
+        if (!playerManager.revive || playerManager.revive && playerManager.numberOfRevives ==0)
         {
             explosionFX.SetActive(true);
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             playerManager.playerIsAlive = false;
+            playerManager.revive = false;
             //DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             GameManager.Instance.terrainManager.scrollSpeed = 0;
             
             
-            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter);
+            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
             yield return new WaitForSeconds(2f);
 
             AudioManager.AMInstance.StopAllAudio();
             SceneManager.LoadScene("Menu Start");
         }
-        else
+        else if (playerManager.revive && playerManager.numberOfRevives >1)
         {
             yield return 0;
-            playerManager.revive = false;
+            playerManager.numberOfRevives -=1;
+            playerManager.playerLife = playerManager.maxPlayerLife;
         }
+        
 
         
     }

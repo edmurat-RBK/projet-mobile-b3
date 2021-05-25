@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     [Range (0,1)]
     public float inertiaTiming;
     public float rotateSpeed;
+    [Range(0,50)]
+    public float maxRota;
 
 
     PlayerManager playerManager;
@@ -162,11 +164,11 @@ public class PlayerController : MonoBehaviour
             switch (direction.x)
             {
                 case 1:
-                target = Quaternion.Euler(new Vector3(0,180, -25));
+                target = Quaternion.Euler(new Vector3(0,180, maxRota));
                 
                     break;
                 case -1:
-                target = Quaternion.Euler(new Vector3(0,180, 25));
+                target = Quaternion.Euler(new Vector3(0,180, -maxRota));
                 
                     break;
                 case 0:

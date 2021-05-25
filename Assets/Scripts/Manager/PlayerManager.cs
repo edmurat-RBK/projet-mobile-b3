@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     
     public bool revive;
+    public int numberOfRevives;
     public bool playerIsAlive;
     public bool playerIsBoosting = false;
     public bool refilableShield;
@@ -43,9 +45,11 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         InitValues();
+        
     }
 
-
+    
+    
 
 
 

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     #endregion
     private void Awake() {
         questManager = FindObjectOfType<QuestManager>();
+        
     }
 
     public PlayerManager playerManager;
