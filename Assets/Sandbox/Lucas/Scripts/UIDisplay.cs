@@ -50,7 +50,7 @@ public class UIDisplay : MonoBehaviour
     void LoadValues()
     {
         ShopData data = DataManager.DMInstance.LoadShop();
-        
+        Debug.Log(data);
         
         if (data != null)
         {
