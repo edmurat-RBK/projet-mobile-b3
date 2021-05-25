@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject Quests;
+    
+    public void QuitToMenu()
+    {
+        SceneManager.LoadScene("Menu Start");
+    }
 
     public void Resume ()
     {
