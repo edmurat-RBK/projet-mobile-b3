@@ -49,7 +49,7 @@ public class DataManager : MonoBehaviour
     {
         StreamWriter streamWriter = new StreamWriter(path2, false);
         ShopData data = new ShopData { scoreMulti = scoreMulti,coinsMulti = coinsMulti,extraLives=extraLives,maxLife=maxLife};
-
+        Debug.Log("hoho");
         serializer2.Serialize(streamWriter, data);
         streamWriter.Close();
         SceneManager.LoadScene(index);
