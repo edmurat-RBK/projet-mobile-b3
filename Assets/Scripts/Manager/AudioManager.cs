@@ -40,6 +40,7 @@ public class AudioManager : MonoBehaviour
     //---------------------------------------------------
     [Header("Musics")]
     public AK.Wwise.Event runMusic;
+    public AK.Wwise.Event killMusicVar;
 
 
 
@@ -71,7 +72,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         UIReturnMenuAudio.Post(gameObject);
-        runMusic.Post(gameObject);     
+        runMusic.Post(gameObject);
     }
 
 

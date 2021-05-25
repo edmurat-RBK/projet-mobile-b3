@@ -237,9 +237,13 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             playerManager.playerLife += lifeBonus;
         }
 
+
         Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
+
         AudioManager.AMInstance.explosionAudio.Post(gameObject);
+        AudioManager.AMInstance.killMusicVar.Post(AudioManager.AMInstance.gameObject);
         Handheld.Vibrate();
+
         Teleport(list);
     }
     public void Teleport(List<GameObject> list)

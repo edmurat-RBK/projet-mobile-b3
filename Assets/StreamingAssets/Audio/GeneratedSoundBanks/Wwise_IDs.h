@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID EXPLOSION = 13776098U;
         static const AkUniqueID FLAMETHROWER_END = 2000348857U;
         static const AkUniqueID FLAMETHROWER_START = 3711179226U;
+        static const AkUniqueID KILLVAR = 2889531164U;
         static const AkUniqueID MINER_BLAST = 3763606037U;
         static const AkUniqueID PLAYER_MOTOR = 3300087192U;
         static const AkUniqueID ROCKDESTRUCTION = 3234943846U;
@@ -56,6 +57,11 @@ namespace AK
         static const AkUniqueID BOOSTEVOLUTION = 2272887157U;
         static const AkUniqueID MOTORVARIATION = 2892789523U;
     } // namespace GAME_PARAMETERS
+
+    namespace TRIGGERS
+    {
+        static const AkUniqueID KILL_ENNEMY = 2417839336U;
+    } // namespace TRIGGERS
 
     namespace BANKS
     {

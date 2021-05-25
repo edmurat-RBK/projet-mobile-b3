@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{640A1D8B-D439-4B51-AFDA-F8CBA7B76546}" SchemaVersion="103">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{640A1D8B-D439-4B51-AFDA-F8CBA7B76546}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{640A1D8B-D439-4B51-AFDA-F8CBA7B76546}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="Run" ID="{C207DB39-C2AB-46CE-9335-0359BCD85598}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="MUSIQUE" ID="{B46ECEB4-9EEE-467B-855E-AEC90B68B283}" WorkUnitID="{9EBEE49E-C886-4C89-AF01-E80F76877A67}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Player_Motor" ID="{33DED8D7-CF6F-4668-AAAD-DD57D78AE470}" WorkUnitID="{6DA71C22-5363-4D76-9597-894FB3C7932C}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_SELECT" ID="{1341E6D4-7942-4406-9A17-25EF386877BF}" WorkUnitID="{6DA71C22-5363-4D76-9597-894FB3C7932C}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Boost" ID="{078BE86D-F56F-4FAA-9071-1F2C6B91D127}" WorkUnitID="{6DA71C22-5363-4D76-9597-894FB3C7932C}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_IMPOSSIBLE" ID="{DADD2FC9-58B9-4AFA-90C6-1B19C3BF9215}" WorkUnitID="{6DA71C22-5363-4D76-9597-894FB3C7932C}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="UI_CLOSE" ID="{6E885F92-00AF-48AB-A5F8-DCDF90F84069}" WorkUnitID="{6DA71C22-5363-4D76-9597-894FB3C7932C}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="motorVariation" ID="{62AF9B02-42EE-4B65-85B0-AAD4B6985B75}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="boostEvolution" ID="{65D42C53-EFF7-4C82-A44C-B52F6461126B}"/>
+							<Value>0</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Run" ID="{A0C5849F-4FD3-42C6-BD4B-05160BA15BFE}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>

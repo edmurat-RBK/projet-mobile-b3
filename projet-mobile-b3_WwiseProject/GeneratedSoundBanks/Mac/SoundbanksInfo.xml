@@ -16,20 +16,53 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="3666953691">
+		<SoundBank Id="1730564753" Language="SFX" Hash="3626130597">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2889531164" Name="KillVar" ObjectPath="\Events\Musics\KillVar" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionTrigger>
+						<ActionTriggerEntry Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+					</ActionTrigger>
+				</Event>
 				<Event Id="3738991497" Name="RunMusic" ObjectPath="\Events\Musics\RunMusic" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="18737797" Language="SFX">
+							<ShortName>PauseRythm_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\PauseRythm_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
 						<File Id="166207100" Language="SFX">
 							<ShortName>Pause_130Bpm_L4-P0_4-4.wav</ShortName>
 							<Path>SFX\Pause_130Bpm_L4-P0_4-4_D79FB2B7.wem</Path>
 						</File>
+						<File Id="198903378" Language="SFX">
+							<ShortName>ShopRythm_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\ShopRythm_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
 						<File Id="230009465" Language="SFX">
 							<ShortName>RunTheme_130Bpm_L4-P0_4-4.wav</ShortName>
 							<Path>SFX\RunTheme_130Bpm_L4-P0_4-4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="288734429" Language="SFX">
+							<ShortName>ShopBasses_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\ShopBasses_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
+						<File Id="345033154" Language="SFX">
+							<ShortName>MenuMelodie_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\MenuMelodie_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
+						<File Id="421501767" Language="SFX">
+							<ShortName>PausePiano_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\PausePiano_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
+						<File Id="434031750" Language="SFX">
+							<ShortName>ShopPiano_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\ShopPiano_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
+						<File Id="512351216" Language="SFX">
+							<ShortName>Jingle_Kill.wav</ShortName>
+							<Path>SFX\Jingle_Kill_D79FB2B7.wem</Path>
 						</File>
 						<File Id="647055559" Language="SFX">
 							<ShortName>Shop_130Bpm_L4-P0_4-4.wav</ShortName>
@@ -38,6 +71,14 @@
 						<File Id="680372300" Language="SFX">
 							<ShortName>RunBasses_130Bpm_L4-P0_4-4.wav</ShortName>
 							<Path>SFX\RunBasses_130Bpm_L4-P0_4-4_D79FB2B7.wem</Path>
+						</File>
+						<File Id="762470117" Language="SFX">
+							<ShortName>MenuClean_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\MenuClean_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
+						</File>
+						<File Id="825031308" Language="SFX">
+							<ShortName>PauseBasses_130Bpm4-4_L8-P0.wav</ShortName>
+							<Path>SFX\PauseBasses_130Bpm4-4_L8-P0_D79FB2B7.wem</Path>
 						</File>
 						<File Id="922840421" Language="SFX">
 							<ShortName>RunPiano_130Bpm_L4-P0_4-4.wav</ShortName>
@@ -59,17 +100,24 @@
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{A24B5678-66E7-4AE2-ACC9-1F8C6EAC7F12}">
 							<Media>
+								<File Id="198903378"/>
+								<File Id="288734429"/>
+								<File Id="434031750"/>
 								<File Id="647055559"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{9A7237D6-D64D-4A1F-A374-10B19D5E2DBE}">
 							<Media>
+								<File Id="18737797"/>
 								<File Id="166207100"/>
+								<File Id="421501767"/>
+								<File Id="825031308"/>
 							</Media>
 						</SwitchContainer>
 						<SwitchContainer SwitchValue="{9891C8E1-BA74-4874-937B-3A8F56703507}">
 							<Media>
-								<File Id="647055559"/>
+								<File Id="345033154"/>
+								<File Id="762470117"/>
 							</Media>
 						</SwitchContainer>
 					</SwitchContainers>
@@ -86,8 +134,11 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<Triggers>
+				<Trigger Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+			</Triggers>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="1867792690">
+		<SoundBank Id="1761240301" Language="SFX" Hash="1533004652">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
@@ -139,6 +190,9 @@
 							<Path>SFX\Explosion_1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
+					<ActionTrigger>
+						<ActionTriggerEntry Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+					</ActionTrigger>
 				</Event>
 				<Event Id="2000348857" Name="Flamethrower_End" ObjectPath="\Events\Sound Effects\Ennemis\Flamethrower_End" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.788594" DurationMax="0.788594">
 					<IncludedMemoryFiles>
@@ -288,6 +342,9 @@
 					<States/>
 				</StateGroup>
 			</StateGroups>
+			<Triggers>
+				<Trigger Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
+			</Triggers>
 		</SoundBank>
 		<SoundBank Id="3161908922" Language="SFX" Hash="1077138683">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>

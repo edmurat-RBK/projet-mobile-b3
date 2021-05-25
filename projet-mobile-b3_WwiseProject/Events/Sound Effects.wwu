@@ -195,6 +195,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{110F072A-2E1C-4E3B-BDCF-9CB954C3FD2C}" ShortID="873403880">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="35"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Kill_Ennemy" ID="{38B905C8-487F-47C8-8B07-C412C0EAD230}" WorkUnitID="{5CCD31B4-C588-4ECF-94AC-DB452399A8F8}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 					</ChildrenList>
@@ -296,6 +306,12 @@
 						</Event>
 						<Event Name="UI_RETURNMENU" ID="{B0F462B9-3103-4EA5-936C-21372E7363B2}">
 							<ChildrenList>
+								<Action Name="" ID="{FD65E09D-964B-45B0-9447-9147AD80F4C7}" ShortID="12057370">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="3"/>
+									</PropertyList>
+									<ReferenceList/>
+								</Action>
 								<Action Name="" ID="{558F9024-CB20-4A37-B84B-A2D8B9731AA8}" ShortID="52352386">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
