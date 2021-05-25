@@ -51,7 +51,6 @@ public class GolderBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.golderStored, ennemiManager.golderLoot);
         }
@@ -78,6 +77,8 @@ public class GolderBehavior : GlobalEnnemiBehavior
         {
             Vector3 position = transform.position;
             position.y += 0;
+
+            AudioManager.AMInstance.coinDropAudio.Post(gameObject);
 
             GameObject coin = Instantiate(coinPrefab, position, transform.rotation);
             coin.GetComponent<Coin>().coinNeedToMove = true;

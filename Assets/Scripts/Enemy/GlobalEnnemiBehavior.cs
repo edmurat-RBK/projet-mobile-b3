@@ -44,7 +44,6 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public TerrainManager terrainManager;
 
 
-
     internal void Death()
     {
         throw new System.NotImplementedException();
@@ -238,7 +237,8 @@ public class GlobalEnnemiBehavior : MonoBehaviour
             playerManager.playerLife += lifeBonus;
         }
 
-
+        Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
+        AudioManager.AMInstance.explosionAudio.Post(gameObject);
         Teleport(list);
     }
     public void Teleport(List<GameObject> list)
@@ -248,6 +248,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         isAlive = false;
         list.Add(this.gameObject);
         gameObject.SetActive(false);
+        AudioManager.AMInstance.enemyMotorAudio.Stop(gameObject);
     }
     public void GlobalReset() //Rétablie toute les valeurs communes à tout les ennemis à leur valeur de base
     {

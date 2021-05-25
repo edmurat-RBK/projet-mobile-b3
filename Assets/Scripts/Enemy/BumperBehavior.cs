@@ -53,7 +53,6 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.bumperLoot);
         }

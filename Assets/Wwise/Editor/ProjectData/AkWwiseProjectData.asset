@@ -66,7 +66,11 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 7909a726763e0249bffba91b747454e4
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585801963627207611
+=======
+    m_lastTime: -8585801733849333108
+>>>>>>> dev-Matis
     List:
     - name: Main
       guid: fc88b592ed32cc4c87689effbc7ee197
@@ -135,7 +139,11 @@ MonoBehaviour:
     ParentPath: Events\Musics
     guid: 5b362b246325d943b9ff3ea4024e7a29
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585801963633949573
+=======
+    m_lastTime: -8585809464520739527
+>>>>>>> dev-Matis
     List:
     - name: RunMusic
       guid: cfc61d8dda781a46b46205222ac42d11
@@ -165,8 +173,52 @@ MonoBehaviour:
     ParentPath: Events\Sound Effects
     guid: 221ca76d6353764d9597894fb3c7932c
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585801963633949573
+=======
+    m_lastTime: -8585801734338918840
+>>>>>>> dev-Matis
     List:
+    - name: Boost
+      guid: 6de88b076ff5aa4f90711f2c6b91d127
+      id: 2389703494
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Player
+        ObjectType: 4
+        guid: 7a5dabc902fc9f498343ed5765b24f3f
+      - ElementName: Boost
+        ObjectType: 3
+        guid: 6de88b076ff5aa4f90711f2c6b91d127
+      Path: Events\Sound Effects\Player\Boost
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Coin_Drop
+      guid: b9a2e24c688bc0468e06450fb5e7a2ed
+      id: 2129359562
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Coin_Drop
+        ObjectType: 3
+        guid: b9a2e24c688bc0468e06450fb5e7a2ed
+      Path: Events\Sound Effects\Ennemis\Coin_Drop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: CoinCollect
       guid: 861ff544f04f2a448edc57340a015bd4
       id: 815433836
@@ -187,6 +239,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: EnemyMotor
+      guid: 43940c6264379c4da4f0cd03ba2a08aa
+      id: 2746534638
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: EnemyMotor
+        ObjectType: 3
+        guid: 43940c6264379c4da4f0cd03ba2a08aa
+      Path: Events\Sound Effects\Ennemis\EnemyMotor
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Ennemis
       guid: 9fec4a7be1672e42bbb519779a0c2ef0
       id: 1507798120
@@ -201,6 +273,86 @@ MonoBehaviour:
         ObjectType: 4
         guid: 9fec4a7be1672e42bbb519779a0c2ef0
       Path: Events\Sound Effects\Ennemis
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Explosion
+      guid: ce33e71cc2642d478a8a8d4a5239cf32
+      id: 13776098
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: World
+        ObjectType: 4
+        guid: 7b9440d1ab67434e9a90104c62ab2f69
+      - ElementName: Explosion
+        ObjectType: 3
+        guid: ce33e71cc2642d478a8a8d4a5239cf32
+      Path: Events\Sound Effects\World\Explosion
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Flamethrower_End
+      guid: 3ca8acbaec5ee94a9cb7c53fd0d671a8
+      id: 2000348857
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Flamethrower_End
+        ObjectType: 3
+        guid: 3ca8acbaec5ee94a9cb7c53fd0d671a8
+      Path: Events\Sound Effects\Ennemis\Flamethrower_End
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Flamethrower_Start
+      guid: 1320275987de7a48a8e4dc3a272b2c75
+      id: 3711179226
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Flamethrower_Start
+        ObjectType: 3
+        guid: 1320275987de7a48a8e4dc3a272b2c75
+      Path: Events\Sound Effects\Ennemis\Flamethrower_Start
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Miner_Blast
+      guid: 89c5efb027e5754694e069577b4b071b
+      id: 3763606037
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: Ennemis
+        ObjectType: 4
+        guid: 9fec4a7be1672e42bbb519779a0c2ef0
+      - ElementName: Miner_Blast
+        ObjectType: 3
+        guid: 89c5efb027e5754694e069577b4b071b
+      Path: Events\Sound Effects\Ennemis\Miner_Blast
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -278,6 +430,146 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: UI_CLOSE
+      guid: 925f886eaf00ab48a5f8dcdf90f84069
+      id: 2519197294
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      - ElementName: UI_CLOSE
+        ObjectType: 3
+        guid: 925f886eaf00ab48a5f8dcdf90f84069
+      Path: Events\Sound Effects\UI\UI_CLOSE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_IMPOSSIBLE
+      guid: c92fdddab958fa4a90c61b19c3bf9215
+      id: 4114843917
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      - ElementName: UI_IMPOSSIBLE
+        ObjectType: 3
+        guid: c92fdddab958fa4a90c61b19c3bf9215
+      Path: Events\Sound Effects\UI\UI_IMPOSSIBLE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_PAUSE
+      guid: c236b13f3401d24d8fb5612c80e8c8e0
+      id: 2792155208
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      - ElementName: UI_PAUSE
+        ObjectType: 3
+        guid: c236b13f3401d24d8fb5612c80e8c8e0
+      Path: Events\Sound Effects\UI\UI_PAUSE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_RETURNMENU
+      guid: b962f4b00331a54e936c21372e7363b2
+      id: 1715088773
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      - ElementName: UI_RETURNMENU
+        ObjectType: 3
+        guid: b962f4b00331a54e936c21372e7363b2
+      Path: Events\Sound Effects\UI\UI_RETURNMENU
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_SELECT
+      guid: d4e64113427906449a1725ef386877bf
+      id: 2774129122
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      - ElementName: UI_SELECT
+        ObjectType: 3
+        guid: d4e64113427906449a1725ef386877bf
+      Path: Events\Sound Effects\UI\UI_SELECT
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_START
+      guid: 5e5e6822860f734b8b7381d0374ce193
+      id: 1219048826
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      - ElementName: UI_START
+        ObjectType: 3
+        guid: 5e5e6822860f734b8b7381d0374ce193
+      Path: Events\Sound Effects\UI\UI_START
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: UI_UNPAUSE
+      guid: 6e2166c8aa54774e92f645ed41189bf9
+      id: 183167143
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Sound Effects
+        ObjectType: 12
+        guid: 221ca76d6353764d9597894fb3c7932c
+      - ElementName: UI
+        ObjectType: 4
+        guid: bcab7ce93246cd4088942dd4c219b307
+      - ElementName: UI_UNPAUSE
+        ObjectType: 3
+        guid: 6e2166c8aa54774e92f645ed41189bf9
+      Path: Events\Sound Effects\UI\UI_UNPAUSE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: World
       guid: 7b9440d1ab67434e9a90104c62ab2f69
       id: 2609808943
@@ -320,8 +612,26 @@ MonoBehaviour:
     ParentPath: Game Parameters\Player
     guid: 5d58ebca697aa34b9eb52c1fef219a5f
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585808868442994254
+=======
+    m_lastTime: -8585808703140815293
+>>>>>>> dev-Matis
     List:
+    - name: boostEvolution
+      guid: 532cd465f7ef824ca44cb52f6461126b
+      id: 2272887157
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Player
+        ObjectType: 12
+        guid: 5d58ebca697aa34b9eb52c1fef219a5f
+      - ElementName: boostEvolution
+        ObjectType: 13
+        guid: 532cd465f7ef824ca44cb52f6461126b
+      Path: Game Parameters\Player\boostEvolution
     - name: motorVariation
       guid: 029baf62ee42654b85b0aad4b6985b75
       id: 2892789523
@@ -361,7 +671,11 @@ MonoBehaviour:
     ParentPath: States\Musics
     guid: cf130bd4e07bec46ad1ad45cd2abcfe6
     GuidInternal: 
+<<<<<<< HEAD
     m_lastTime: -8585801963627207611
+=======
+    m_lastTime: -8585809468054361720
+>>>>>>> dev-Matis
     List:
     - name: GameState
       guid: 179c0a6c0cdffd4caec2424163d41da0
@@ -490,8 +804,8 @@ MonoBehaviour:
     m_lastTime: -8585808015306218206
     List: []
   ExpandedFileSystemItemIds: 11000000
-  ExpandedWaapiItemIds: 05000000090000000b0000000d0000001c000000
+  ExpandedWaapiItemIds: 01000000020000000500000006000000090000001b0000001d000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1
-  currentDataSource: 0
+  currentDataSource: 1
   CurrentPluginConfig: 

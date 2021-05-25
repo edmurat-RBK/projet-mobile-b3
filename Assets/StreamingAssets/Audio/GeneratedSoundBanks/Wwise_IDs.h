@@ -13,10 +13,24 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BOOST = 2389703494U;
+        static const AkUniqueID COIN_DROP = 2129359562U;
         static const AkUniqueID COINCOLLECT = 815433836U;
+        static const AkUniqueID ENEMYMOTOR = 2746534638U;
+        static const AkUniqueID EXPLOSION = 13776098U;
+        static const AkUniqueID FLAMETHROWER_END = 2000348857U;
+        static const AkUniqueID FLAMETHROWER_START = 3711179226U;
+        static const AkUniqueID MINER_BLAST = 3763606037U;
         static const AkUniqueID PLAYER_MOTOR = 3300087192U;
         static const AkUniqueID ROCKDESTRUCTION = 3234943846U;
         static const AkUniqueID RUNMUSIC = 3738991497U;
+        static const AkUniqueID UI_CLOSE = 2519197294U;
+        static const AkUniqueID UI_IMPOSSIBLE = 4114843917U;
+        static const AkUniqueID UI_PAUSE = 2792155208U;
+        static const AkUniqueID UI_RETURNMENU = 1715088773U;
+        static const AkUniqueID UI_SELECT = 2774129122U;
+        static const AkUniqueID UI_START = 1219048826U;
+        static const AkUniqueID UI_UNPAUSE = 183167143U;
     } // namespace EVENTS
 
     namespace STATES
@@ -39,6 +53,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID BOOSTEVOLUTION = 2272887157U;
         static const AkUniqueID MOTORVARIATION = 2892789523U;
     } // namespace GAME_PARAMETERS
 

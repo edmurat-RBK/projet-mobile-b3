@@ -55,13 +55,11 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.flamerLoot);
         }
         if(transform.position.z < ennemiManager.deadZone.position.z)
         {
-            Debug.Log("Flamer Out");
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.flamerStored);
         }
@@ -81,9 +79,11 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
 
         GameObject fireTail = Instantiate(fireTailPrefab, position, transform.rotation, transform);
+        AudioManager.AMInstance.flamerStartAudio.Post(gameObject);
 
         yield return new WaitForSeconds(ennemiManager.flamerAttackDuration);
         Destroy(fireTail);
+        AudioManager.AMInstance.flamerEndAudio.Post(gameObject);
 
         readyToFlaming = false;
         hasFinishAttack = true;

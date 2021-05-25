@@ -48,7 +48,6 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
         if (life <= 0 || transform.position.z < ennemiManager.deadZone.position.z)
         {
-            Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.minerLoot);
         }
@@ -78,6 +77,8 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
         float index = Random.Range(-5, 5);
         Vector3 spawnPos = new Vector3(transform.position.x + index, transform.position.y +1, transform.position.z);
+
+        AudioManager.AMInstance.minerBlastAudio.Post(gameObject);
         Instantiate(minePrefab, spawnPos, transform.rotation);
 
         if(hasFinishAttack == false)

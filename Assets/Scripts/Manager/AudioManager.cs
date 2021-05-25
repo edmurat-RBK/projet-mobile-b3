@@ -10,10 +10,29 @@ public class AudioManager : MonoBehaviour
         [Header("SFX")]
     #region Player
     public AK.Wwise.Event playerMotorAudio;
+    public AK.Wwise.Event playerBoostAudio;
     #endregion
     #region World
     public AK.Wwise.Event coinCollectAudio;
     public AK.Wwise.Event rockDestructionAudio;
+    public AK.Wwise.Event explosionAudio;
+    #endregion
+    #region UI
+    public AK.Wwise.Event UISelectAudio;
+    public AK.Wwise.Event UICloseAudio;
+    public AK.Wwise.Event UIImpossibleAudio;
+    public AK.Wwise.Event UIPauseAudio;
+    public AK.Wwise.Event UIUnpauseAudio;
+    public AK.Wwise.Event UIStartAudio;
+    public AK.Wwise.Event UIReturnMenuAudio;
+    #endregion
+    #region Enemy
+    public AK.Wwise.Event enemyMotorAudio;
+    public AK.Wwise.Event minerBlastAudio;
+    public AK.Wwise.Event coinDropAudio;
+
+    public AK.Wwise.Event flamerStartAudio;
+    public AK.Wwise.Event flamerEndAudio;
     #endregion
 
 
@@ -28,6 +47,7 @@ public class AudioManager : MonoBehaviour
         [Header("Game Sync")]
     //Variable "motorVar" dans PlayerController
     public AK.Wwise.RTPC motorVarRTPC;
+    public AK.Wwise.RTPC boostEvolutionRTPC;
 
 
 
@@ -43,18 +63,16 @@ public class AudioManager : MonoBehaviour
         else
         {
             AudioManager.AMInstance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
 
     private void Start()
     {
-        runMusic.Post(gameObject);
-        playerMotorAudio.Post(gameObject);
+        UIReturnMenuAudio.Post(gameObject);
+        runMusic.Post(gameObject);     
     }
-
-
-
 
 
     public void StopAllAudio()

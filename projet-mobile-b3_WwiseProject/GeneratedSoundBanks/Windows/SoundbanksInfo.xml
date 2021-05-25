@@ -11,12 +11,12 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="4123034761">
+		<SoundBank Id="1355168291" Language="SFX" Hash="686088257">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="3712671647">
+		<SoundBank Id="1730564753" Language="SFX" Hash="3666953691">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
@@ -67,6 +67,11 @@
 								<File Id="166207100"/>
 							</Media>
 						</SwitchContainer>
+						<SwitchContainer SwitchValue="{9891C8E1-BA74-4874-937B-3A8F56703507}">
+							<Media>
+								<File Id="647055559"/>
+							</Media>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 			</IncludedEvents>
@@ -82,16 +87,88 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="2613983771">
+		<SoundBank Id="1761240301" Language="SFX" Hash="1867792690">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
 			<IncludedEvents>
+				<Event Id="2389703494" Name="Boost" ObjectPath="\Events\Sound Effects\Player\Boost" DurationType="OneShot" DurationMin="4.043305" DurationMax="4.043305">
+					<IncludedMemoryFiles>
+						<File Id="470228999" Language="SFX">
+							<ShortName>Engine_Boost.wav</ShortName>
+							<Path>SFX\Engine_Boost_4DAA267E.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2129359562" Name="Coin_Drop" ObjectPath="\Events\Sound Effects\Ennemis\Coin_Drop" DurationType="OneShot" DurationMin="0.526610" DurationMax="0.557924">
+					<IncludedMemoryFiles>
+						<File Id="60063612" Language="SFX">
+							<ShortName>Coin_Shining.wav</ShortName>
+							<Path>SFX\Coin_Shining_39919C71.wem</Path>
+						</File>
+						<File Id="314532891" Language="SFX">
+							<ShortName>Drop.wav</ShortName>
+							<Path>SFX\Drop_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="815433836" Name="CoinCollect" ObjectPath="\Events\Sound Effects\World\CoinCollect" DurationType="OneShot" DurationMin="1.038812" DurationMax="1.038812">
 					<IncludedMemoryFiles>
 						<File Id="547354128" Language="SFX">
 							<ShortName>Coin_Collect.wav</ShortName>
 							<Path>SFX\Coin_Collect_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2746534638" Name="EnemyMotor" ObjectPath="\Events\Sound Effects\Ennemis\EnemyMotor" MaxAttenuation="100.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="605095972" Language="SFX">
+							<ShortName>PlayerTurbine.wav</ShortName>
+							<Path>SFX\PlayerTurbine_D79FB2B7.wem</Path>
+						</File>
+						<File Id="972513170" Language="SFX">
+							<ShortName>Engine_Idle.wav</ShortName>
+							<Path>SFX\Engine_Idle_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="13776098" Name="Explosion" ObjectPath="\Events\Sound Effects\World\Explosion" DurationType="OneShot" DurationMin="1.374059" DurationMax="1.374059">
+					<IncludedMemoryFiles>
+						<File Id="385060310" Language="SFX">
+							<ShortName>Explosion_1.wav</ShortName>
+							<Path>SFX\Explosion_1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2000348857" Name="Flamethrower_End" ObjectPath="\Events\Sound Effects\Ennemis\Flamethrower_End" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.788594" DurationMax="0.788594">
+					<IncludedMemoryFiles>
+						<File Id="112384568" Language="SFX">
+							<ShortName>Flammer_End.wav</ShortName>
+							<Path>SFX\Flammer_End_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3711179226" Name="Flamethrower_Start" ObjectPath="\Events\Sound Effects\Ennemis\Flamethrower_Start" MaxAttenuation="100.000000" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="376630224" Language="SFX">
+							<ShortName>Flammer_Start.wav</ShortName>
+							<Path>SFX\Flammer_Start_10C4C929.wem</Path>
+						</File>
+						<File Id="545536128" Language="SFX">
+							<ShortName>Flammer_Idle.wav</ShortName>
+							<Path>SFX\Flammer_Idle_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3763606037" Name="Miner_Blast" ObjectPath="\Events\Sound Effects\Ennemis\Miner_Blast" DurationType="OneShot" DurationMin="0.459138" DurationMax="0.459138">
+					<IncludedMemoryFiles>
+						<File Id="15742071" Language="SFX">
+							<ShortName>Canon-Fire.wav</ShortName>
+							<Path>SFX\Canon-Fire_363E600E.wem</Path>
+						</File>
+						<File Id="314532891" Language="SFX">
+							<ShortName>Drop.wav</ShortName>
+							<Path>SFX\Drop_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -101,9 +178,13 @@
 							<ShortName>PlayerTurbine.wav</ShortName>
 							<Path>SFX\PlayerTurbine_D79FB2B7.wem</Path>
 						</File>
+						<File Id="972513170" Language="SFX">
+							<ShortName>Engine_Idle.wav</ShortName>
+							<Path>SFX\Engine_Idle_D79FB2B7.wem</Path>
+						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="3234943846" Name="RockDestruction" ObjectPath="\Events\Sound Effects\World\RockDestruction" DurationType="OneShot" DurationMin="0.707548" DurationMax="1.355350">
+				<Event Id="3234943846" Name="RockDestruction" ObjectPath="\Events\Sound Effects\World\RockDestruction" DurationType="OneShot" DurationMin="1.122548" DurationMax="1.355350">
 					<IncludedMemoryFiles>
 						<File Id="107025989" Language="SFX">
 							<ShortName>Rock_Fall2.wav</ShortName>
@@ -112,6 +193,10 @@
 						<File Id="193529997" Language="SFX">
 							<ShortName>Rock_Impact2.wav</ShortName>
 							<Path>SFX\Rock_Impact2_10C4C929.wem</Path>
+						</File>
+						<File Id="385060310" Language="SFX">
+							<ShortName>Explosion_1.wav</ShortName>
+							<Path>SFX\Explosion_1_10C4C929.wem</Path>
 						</File>
 						<File Id="387377204" Language="SFX">
 							<ShortName>Rock_Fall1.wav</ShortName>
@@ -131,10 +216,78 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
+				<Event Id="2519197294" Name="UI_CLOSE" ObjectPath="\Events\Sound Effects\UI\UI_CLOSE" DurationType="OneShot" DurationMin="0.370317" DurationMax="0.370317">
+					<IncludedMemoryFiles>
+						<File Id="691501124" Language="SFX">
+							<ShortName>UI_Close.wav</ShortName>
+							<Path>SFX\UI_Close_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4114843917" Name="UI_IMPOSSIBLE" ObjectPath="\Events\Sound Effects\UI\UI_IMPOSSIBLE" DurationType="OneShot" DurationMin="1.971156" DurationMax="1.971156">
+					<IncludedMemoryFiles>
+						<File Id="447228387" Language="SFX">
+							<ShortName>UI_Impossible.wav</ShortName>
+							<Path>SFX\UI_Impossible_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2792155208" Name="UI_PAUSE" ObjectPath="\Events\Sound Effects\UI\UI_PAUSE" DurationType="OneShot" DurationMin="1.750000" DurationMax="1.750000">
+					<IncludedMemoryFiles>
+						<File Id="8130865" Language="SFX">
+							<ShortName>UI_PauseOpen.wav</ShortName>
+							<Path>SFX\UI_PauseOpen_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="3092587493" Name="Pause" ObjectPath="\States\Musics\GameState\Pause"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="1715088773" Name="UI_RETURNMENU" ObjectPath="\Events\Sound Effects\UI\UI_RETURNMENU" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="2607556080" Name="Menu" ObjectPath="\States\Musics\GameState\Menu"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="2774129122" Name="UI_SELECT" ObjectPath="\Events\Sound Effects\UI\UI_SELECT" DurationType="OneShot" DurationMin="0.505034" DurationMax="0.505034">
+					<IncludedMemoryFiles>
+						<File Id="517632830" Language="SFX">
+							<ShortName>UI_Select.wav</ShortName>
+							<Path>SFX\UI_Select_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1219048826" Name="UI_START" ObjectPath="\Events\Sound Effects\UI\UI_START" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000">
+					<ActionSetState>
+						<ActionSetStateEntry Id="712161704" Name="Run" ObjectPath="\States\Musics\GameState\Run"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="183167143" Name="UI_UNPAUSE" ObjectPath="\Events\Sound Effects\UI\UI_UNPAUSE" DurationType="OneShot" DurationMin="0.370317" DurationMax="0.370317">
+					<IncludedMemoryFiles>
+						<File Id="691501124" Language="SFX">
+							<ShortName>UI_Close.wav</ShortName>
+							<Path>SFX\UI_Close_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+					<ActionSetState>
+						<ActionSetStateEntry Id="712161704" Name="Run" ObjectPath="\States\Musics\GameState\Run"/>
+					</ActionSetState>
+				</Event>
 			</IncludedEvents>
 			<GameParameters>
+				<GameParameter Id="2272887157" Name="boostEvolution" ObjectPath="\Game Parameters\Player\boostEvolution"/>
 				<GameParameter Id="2892789523" Name="motorVariation" ObjectPath="\Game Parameters\Player\motorVariation"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="712161704" Name="Run" ObjectPath="\States\Musics\GameState\Run">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="2607556080" Name="Menu" ObjectPath="\States\Musics\GameState\Menu">
+					<States/>
+				</StateGroup>
+				<StateGroup Id="3092587493" Name="Pause" ObjectPath="\States\Musics\GameState\Pause">
+					<States/>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 		<SoundBank Id="3161908922" Language="SFX" Hash="1077138683">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>

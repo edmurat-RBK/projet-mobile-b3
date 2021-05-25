@@ -21,8 +21,10 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeScene(int index)
     {
-        DataManager.DMInstance.ShopSave(shopMacro.multiplier,shopMacro.coinsMulti,shopMacro.extraLives,shopMacro.maxLife,index);
-        //SceneManager.LoadScene(index);
+        SceneManager.LoadScene(index);
+
+        AudioManager.AMInstance.UIStartAudio.Post(gameObject);
+        AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
     }
 
     public void OpenShop()
@@ -30,30 +32,42 @@ public class MainMenu : MonoBehaviour
         Debug.Log("hahah    ");
         shopButtons.SetActive(true);
         mainMenuButtons.SetActive(false);
+
+        AudioManager.AMInstance.UISelectAudio.Post(gameObject);
     }
     public void CloseShop()
     {
         shopButtons.SetActive(false);
         mainMenuButtons.SetActive(true);
+
+        AudioManager.AMInstance.UICloseAudio.Post(gameObject);
     }
     public void OpenOtions()
     {
         optionButtons.SetActive(true);
         mainMenuButtons.SetActive(false);
+
+        AudioManager.AMInstance.UISelectAudio.Post(gameObject);
     }
     public void CloseOptions()
     {
         optionButtons.SetActive(false);
         mainMenuButtons.SetActive(true);
+
+        AudioManager.AMInstance.UICloseAudio.Post(gameObject);
     }
     public void OpenQuests()
     {
         questsButtons.SetActive(true);
         mainMenuButtons.SetActive(false);
+
+        AudioManager.AMInstance.UISelectAudio.Post(gameObject);
     }
     public void CloseQuests()
     {
         questsButtons.SetActive(false);
         mainMenuButtons.SetActive(true);
+
+        AudioManager.AMInstance.UICloseAudio.Post(gameObject);
     }
 }
