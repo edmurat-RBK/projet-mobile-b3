@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerDeadlyObstacles : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.tag == "DeadlyObstacle")
+        if (collision.gameObject.tag == "DeadlyObstacle")
         {
             if (GameManager.Instance.playerManager.shield <= 0)
             {
@@ -18,4 +18,5 @@ public class PlayerDeadlyObstacles : MonoBehaviour
             }
         }
     }
+    
 }
