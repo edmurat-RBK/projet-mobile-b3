@@ -11,6 +11,11 @@ public class PauseMenu : MonoBehaviour
     
     public void QuitToMenu()
     {
+        AudioManager.AMInstance.UIReturnMenuAudio.Post(gameObject);
+        AudioManager.AMInstance.StopAllAudio();
+        Destroy(AudioManager.AMInstance.gameObject);
+        AudioManager.AMInstance = null;
+
         SceneManager.LoadScene("Menu Start");
     }
 
