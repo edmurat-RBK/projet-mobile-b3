@@ -8,15 +8,19 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenuUI;
     public GameObject Quests;
-    
+
+
     public void QuitToMenu()
     {
+        Time.timeScale = 1f;
+
         AudioManager.AMInstance.UIReturnMenuAudio.Post(gameObject);
         AudioManager.AMInstance.StopAllAudio();
         Destroy(AudioManager.AMInstance.gameObject);
         AudioManager.AMInstance = null;
 
         SceneManager.LoadScene("Menu Start");
+            
     }
 
     public void Resume ()
