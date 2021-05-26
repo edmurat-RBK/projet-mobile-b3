@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public int coinValue = 1;
+    //public int coinValue = 1;
     public bool coinNeedToMove;
 
     GameManager gameManager;
 
     private void Start()
     {
-        gameManager = GameManager.Instance;
+       gameManager = GameManager.Instance;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class Coin : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
@@ -44,5 +44,5 @@ public class Coin : MonoBehaviour
             AudioManager.AMInstance.coinCollectAudio.Post(gameObject);
             Destroy(gameObject);
         }
-    }
+    }*/
 }
