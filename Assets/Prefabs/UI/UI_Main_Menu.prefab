@@ -192,7 +192,7 @@ RectTransform:
   m_Children:
   - {fileID: 515830425}
   m_Father: {fileID: 7705564357802167401}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -212,11 +212,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   highscoreText: {fileID: 7705564357384094176}
-  coinsText: {fileID: 515830426}
-  purpleCoinsText: {fileID: 0}
+  coinsText: {fileID: 8904341419481437250}
+  purpleCoinsText: {fileID: 1088689798}
   highscore: 0
   coins: 0
-  purpleCoins: 0
+  purpleCoins: 100
 --- !u!1 &361636788
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +573,84 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1088689796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088689797}
+  - component: {fileID: 1088689799}
+  - component: {fileID: 1088689798}
+  m_Layer: 5
+  m_Name: Purple Coins Var
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1088689797
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088689796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 381564252210519365}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -208, y: -49}
+  m_SizeDelta: {x: 550.03406, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!222 &1088689799
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088689796}
+  m_CullTransparentMesh: 0
+--- !u!114 &1088689798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088689796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 28c2135077a14334594e4ecf5cabd9c9, type: 3}
+    m_FontSize: 56
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 56
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
 --- !u!1 &1129311098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1135,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7365061846590461711}
         m_MethodName: ExtraLife
         m_Mode: 1
         m_Arguments:
@@ -1178,7 +1256,6 @@ RectTransform:
   m_Children:
   - {fileID: 7705564359223721372}
   - {fileID: 2257596059986333391}
-  - {fileID: 381564252210519365}
   - {fileID: 7705564358222622773}
   - {fileID: 7705564358835016855}
   - {fileID: 7705564358444206257}
@@ -1187,7 +1264,7 @@ RectTransform:
   - {fileID: 7705564358707272098}
   - {fileID: 7705564357519895070}
   m_Father: {fileID: 7705564357802167401}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1291,7 +1368,7 @@ RectTransform:
   - {fileID: 3928989838147390182}
   - {fileID: 7762107066083839018}
   m_Father: {fileID: 7705564357802167401}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1549,7 +1626,7 @@ RectTransform:
   m_Children:
   - {fileID: 7705564358465159634}
   m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -1767,7 +1844,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7365061846590461711}
         m_MethodName: MaxLife
         m_Mode: 1
         m_Arguments:
@@ -1813,7 +1890,7 @@ RectTransform:
   - {fileID: 1129311099}
   - {fileID: 533791932}
   m_Father: {fileID: 7705564357802167401}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1996,7 +2073,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 7705564358900222655}
+  m_TargetGraphic: {fileID: 6006150767306001461}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -2365,7 +2442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7365061846590461711}
         m_MethodName: DoubleCoins
         m_Mode: 1
         m_Arguments:
@@ -2792,7 +2869,7 @@ RectTransform:
   - {fileID: 7705564358097574422}
   - {fileID: 7705564357746424614}
   m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3204,6 +3281,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 381564252210519365}
   - {fileID: 2771174752395864885}
   - {fileID: 357636465}
   - {fileID: 5036674975311863245}
@@ -3293,7 +3371,7 @@ MonoBehaviour:
   shopButtons: {fileID: 2531906021749253931}
   optionButtons: {fileID: 3627987724933862131}
   questsButtons: {fileID: 6046074524751258402}
-  shopMacro: {fileID: 0}
+  shopMacro: {fileID: 7365061846590461711}
 --- !u!1 &7705564358097574423
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,7 +3478,7 @@ RectTransform:
   - {fileID: 7705564357628707906}
   - {fileID: 6173401098895447466}
   m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3565,7 +3643,7 @@ RectTransform:
   m_Children:
   - {fileID: 7705564358732966282}
   m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3645,7 +3723,7 @@ RectTransform:
   m_Children:
   - {fileID: 7705564357791722534}
   m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3888,7 +3966,7 @@ RectTransform:
   - {fileID: 7705564358222897430}
   - {fileID: 7705564357705582279}
   m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4000,7 +4078,7 @@ RectTransform:
   - {fileID: 7705564357709337822}
   - {fileID: 7705564358479935754}
   m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4197,9 +4275,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2771174752395864885}
-  m_RootOrder: 2
+  m_Children:
+  - {fileID: 1088689797}
+  m_Father: {fileID: 7705564357802167401}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4418,7 +4497,7 @@ PrefabInstance:
     - target: {fileID: 5441159564235891396, guid: 971d48ff8fea5f34284b2e0b19d8db01,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5441159564235891396, guid: 971d48ff8fea5f34284b2e0b19d8db01,
         type: 3}

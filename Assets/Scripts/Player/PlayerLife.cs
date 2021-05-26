@@ -103,7 +103,7 @@ public class PlayerLife : MonoBehaviour
             AudioManager.AMInstance.StopAllAudio();
             Destroy(AudioManager.AMInstance.gameObject);
             AudioManager.AMInstance = null;
-            SceneManager.LoadScene("Menu Start");
+            //SceneManager.LoadScene("Menu Start");
         }
         else if (playerManager.revive && playerManager.numberOfRevives >1)
         {
