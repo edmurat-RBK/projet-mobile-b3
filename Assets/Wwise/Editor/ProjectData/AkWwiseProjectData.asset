@@ -152,8 +152,8 @@ MonoBehaviour:
         guid: f0893dd9907f8b48b2f7b1fdff178c89
       Path: Events\Musics\KillVar
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: RunMusic
       guid: cfc61d8dda781a46b46205222ac42d11
       id: 3738991497
@@ -202,8 +202,8 @@ MonoBehaviour:
         guid: 6de88b076ff5aa4f90711f2c6b91d127
       Path: Events\Sound Effects\Player\Boost
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4043305
+      minDuration: 4043305
     - name: Coin_Drop
       guid: b9a2e24c688bc0468e06450fb5e7a2ed
       id: 2129359562
@@ -222,8 +222,8 @@ MonoBehaviour:
         guid: b9a2e24c688bc0468e06450fb5e7a2ed
       Path: Events\Sound Effects\Ennemis\Coin_Drop
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 557924
+      minDuration: 526610
     - name: CoinCollect
       guid: 861ff544f04f2a448edc57340a015bd4
       id: 815433836
@@ -242,8 +242,8 @@ MonoBehaviour:
         guid: 861ff544f04f2a448edc57340a015bd4
       Path: Events\Sound Effects\World\CoinCollect
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1038812
+      minDuration: 1038812
     - name: EnemyMotor
       guid: 43940c6264379c4da4f0cd03ba2a08aa
       id: 2746534638
@@ -261,7 +261,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 43940c6264379c4da4f0cd03ba2a08aa
       Path: Events\Sound Effects\Ennemis\EnemyMotor
-      maxAttenuation: 0
+      maxAttenuation: 100000000
       maxDuration: -1
       minDuration: -1
     - name: Ennemis
@@ -299,8 +299,8 @@ MonoBehaviour:
         guid: ce33e71cc2642d478a8a8d4a5239cf32
       Path: Events\Sound Effects\World\Explosion
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1374059
+      minDuration: 1374059
     - name: Flamethrower_End
       guid: 3ca8acbaec5ee94a9cb7c53fd0d671a8
       id: 2000348857
@@ -318,9 +318,9 @@ MonoBehaviour:
         ObjectType: 3
         guid: 3ca8acbaec5ee94a9cb7c53fd0d671a8
       Path: Events\Sound Effects\Ennemis\Flamethrower_End
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxAttenuation: 100000000
+      maxDuration: 788594
+      minDuration: 788594
     - name: Flamethrower_Start
       guid: 1320275987de7a48a8e4dc3a272b2c75
       id: 3711179226
@@ -338,7 +338,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 1320275987de7a48a8e4dc3a272b2c75
       Path: Events\Sound Effects\Ennemis\Flamethrower_Start
-      maxAttenuation: 0
+      maxAttenuation: 100000000
       maxDuration: -1
       minDuration: -1
     - name: Miner_Blast
@@ -359,8 +359,8 @@ MonoBehaviour:
         guid: 89c5efb027e5754694e069577b4b071b
       Path: Events\Sound Effects\Ennemis\Miner_Blast
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 459138
+      minDuration: 459138
     - name: Player
       guid: 7a5dabc902fc9f498343ed5765b24f3f
       id: 1069431850
@@ -416,8 +416,8 @@ MonoBehaviour:
         guid: 8eb21bf8a60b584a9ae8dcb658690045
       Path: Events\Sound Effects\World\RockDestruction
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1355350
+      minDuration: 1122548
     - name: UI
       guid: bcab7ce93246cd4088942dd4c219b307
       id: 1551306167
@@ -453,8 +453,8 @@ MonoBehaviour:
         guid: 925f886eaf00ab48a5f8dcdf90f84069
       Path: Events\Sound Effects\UI\UI_CLOSE
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 370317
+      minDuration: 370317
     - name: UI_IMPOSSIBLE
       guid: c92fdddab958fa4a90c61b19c3bf9215
       id: 4114843917
@@ -473,8 +473,8 @@ MonoBehaviour:
         guid: c92fdddab958fa4a90c61b19c3bf9215
       Path: Events\Sound Effects\UI\UI_IMPOSSIBLE
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1971156
+      minDuration: 1971156
     - name: UI_PAUSE
       guid: c236b13f3401d24d8fb5612c80e8c8e0
       id: 2792155208
@@ -493,8 +493,8 @@ MonoBehaviour:
         guid: c236b13f3401d24d8fb5612c80e8c8e0
       Path: Events\Sound Effects\UI\UI_PAUSE
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 1750000
+      minDuration: 1750000
     - name: UI_RETURNMENU
       guid: b962f4b00331a54e936c21372e7363b2
       id: 1715088773
@@ -513,8 +513,8 @@ MonoBehaviour:
         guid: b962f4b00331a54e936c21372e7363b2
       Path: Events\Sound Effects\UI\UI_RETURNMENU
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: UI_SELECT
       guid: d4e64113427906449a1725ef386877bf
       id: 2774129122
@@ -533,8 +533,8 @@ MonoBehaviour:
         guid: d4e64113427906449a1725ef386877bf
       Path: Events\Sound Effects\UI\UI_SELECT
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 505034
+      minDuration: 505034
     - name: UI_START
       guid: 5e5e6822860f734b8b7381d0374ce193
       id: 1219048826
@@ -553,8 +553,8 @@ MonoBehaviour:
         guid: 5e5e6822860f734b8b7381d0374ce193
       Path: Events\Sound Effects\UI\UI_START
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: UI_UNPAUSE
       guid: 6e2166c8aa54774e92f645ed41189bf9
       id: 183167143
@@ -573,8 +573,8 @@ MonoBehaviour:
         guid: 6e2166c8aa54774e92f645ed41189bf9
       Path: Events\Sound Effects\UI\UI_UNPAUSE
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 370317
+      minDuration: 370317
     - name: World
       guid: 7b9440d1ab67434e9a90104c62ab2f69
       id: 2609808943
@@ -617,7 +617,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Player
     guid: 5d58ebca697aa34b9eb52c1fef219a5f
     GuidInternal: 
-    m_lastTime: -8585796373615106781
+    m_lastTime: -8585795918120972173
     List:
     - name: boostEvolution
       guid: 532cd465f7ef824ca44cb52f6461126b
