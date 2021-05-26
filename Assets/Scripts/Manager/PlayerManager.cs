@@ -12,8 +12,10 @@ public class PlayerManager : MonoBehaviour
     public int numberOfRevives;
     public bool playerIsAlive;
     public bool playerIsBoosting = false;
-    public bool refilableShield;
-    public bool rechargeShield;
+    public bool shieldActive = false;
+    
+    // public bool refilableShield;
+    // public bool rechargeShield;
 
     public float maxShield = 10f;
     public float shield = 0f;
@@ -24,6 +26,7 @@ public class PlayerManager : MonoBehaviour
     public float shieldRechargeRate = 1f;
     public float lifeDecreaseSpeed = 1f;
     public float decreaseMultiplicator = 0f;
+    public float fuelMultiplier = 1f;
 
 
 

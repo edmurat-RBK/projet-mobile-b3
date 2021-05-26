@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -228,22 +228,19 @@ public class GlobalEnnemiBehavior : MonoBehaviour
 
     public void Death(List<GameObject> list, int lifeBonus) //Remet le joueur sur l'emplacement de stockage
     {
-        if(playerManager.playerLife > playerManager.maxPlayerLife - lifeBonus)
+        float multipliedLifeBonus = lifeBonus * playerManager.fuelMultiplier;
+        if(playerManager.playerLife > playerManager.maxPlayerLife - multipliedLifeBonus)
         {
             playerManager.playerLife = playerManager.maxPlayerLife;
         }
         else
         {
-            playerManager.playerLife += lifeBonus;
+            playerManager.playerLife += multipliedLifeBonus;
         }
-
-
+        
         Instantiate(ennemiManager.deathFX, transform.position, Quaternion.identity);
-
         AudioManager.AMInstance.explosionAudio.Post(gameObject);
-        AudioManager.AMInstance.killMusicVar.Post(AudioManager.AMInstance.gameObject);
         Handheld.Vibrate();
-
         Teleport(list);
     }
     public void Teleport(List<GameObject> list)
