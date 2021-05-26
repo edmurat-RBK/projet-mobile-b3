@@ -3383,6 +3383,7 @@ GameObject:
   - component: {fileID: 975344915634424640}
   - component: {fileID: 975344915634424641}
   - component: {fileID: 975344915634424642}
+  - component: {fileID: 7567373686153913928}
   m_Layer: 5
   m_Name: UI_Shop_IG
   m_TagString: Untagged
@@ -3473,6 +3474,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7567373686153913928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975344915634424643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff4125b7410ff64ca5c3a19a57fefbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  refillFuel: {fileID: 975344915290940601}
+  increaseMaxFuel: {fileID: 975344914423127603}
+  extraLife: {fileID: 975344915545897367}
+  refillShield: {fileID: 975344914807062799}
+  refillableShield: {fileID: 0}
+  coinsMultiplier: {fileID: 975344913674333509}
 --- !u!1 &975344915664282987
 GameObject:
   m_ObjectHideFlags: 0
