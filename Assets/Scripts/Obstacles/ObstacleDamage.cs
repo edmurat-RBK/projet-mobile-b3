@@ -12,7 +12,6 @@ public class ObstacleDamage: MonoBehaviour
             {
                 GameManager.Instance.playerManager.playerLife += 0;
             }
-
             else if (GameManager.Instance.playerManager.shield <= 0)
             {
                 GameManager.Instance.playerManager.playerLife -= 1;

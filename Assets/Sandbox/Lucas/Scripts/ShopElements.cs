@@ -109,11 +109,11 @@ public class ShopElements : MonoBehaviour
 
     }
 
-    public void RefillableShield()
+    public void FuelMultiplier()
     {
-        if (economicManager.coinCounter >= shopManager.fuelMultiplierPrice && !playerManager.refilableShield)
+        if (economicManager.coinCounter >= shopManager.fuelMultiplierPrice /*&& !playerManager.refilableShield*/)
         {
-            playerManager.refilableShield = true;
+            playerManager.fuelMultiplier += 1;
             fuelMultiplier.text = shopManager.fuelMultiplierPrice.ToString();
             economicManager.coinCounter -= shopManager.fuelMultiplierPrice;
             shopManager.fuelMultiplierPrice *= 2;
@@ -141,11 +141,7 @@ public class ShopElements : MonoBehaviour
         }
     }
 
-    public void FuelMultiplier()
-    {
-        //augmenter le taux du ramassage d'essence
-    }
-
+   
     IEnumerator ResetMultiplier()
     {
         yield return new WaitForSeconds(economicManager.boostDuration);
