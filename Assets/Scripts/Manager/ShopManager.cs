@@ -46,7 +46,7 @@ public class ShopManager : MonoBehaviour
     public int increaseFuelPrice = 5;
     public int extraLifePrice = 5;
     public int refillShieldPrice = 5;
-    public int refillableShieldPrice = 5;
+    public int fuelMultiplierPrice = 5;
     public int CoinsMultiplierPrice = 5;
 
     private void Start() {
