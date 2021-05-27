@@ -9,9 +9,12 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     bool readyToFlaming = false;
     bool hasFinishAttack = false;
 
+    Animator animator;
+
 
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         ennemiManager = GameManager.Instance.ennemiManager;
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
@@ -47,6 +50,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
             CheckDirection();
             CheckForPlayer();
             CheckBehind();
+            animator.SetBool("fireIsAttacking",readyToFlaming);
         }
 
 

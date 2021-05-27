@@ -13,11 +13,12 @@ public class BumperBehavior : GlobalEnnemiBehavior
     bool isBumping = false;
     bool canBump = false;
     bool firstBump = true;
-
+    Animator animator;
 
 
     private void Start()
     {
+        animator = gameObject.GetComponentInChildren<Animator>();
         ennemiManager = GameManager.Instance.ennemiManager;
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
@@ -45,6 +46,8 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
 
             BumperAttack();
+
+            animator.SetBool("bumperIsAttacking",isBumping);
         }
         
 

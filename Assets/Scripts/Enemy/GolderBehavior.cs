@@ -7,9 +7,11 @@ public class GolderBehavior : GlobalEnnemiBehavior
     public GameObject coinPrefab;
     bool hasStartDroping = false;
     bool acceleration = false;
+    Animator animator;
 
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         ennemiManager = GameManager.Instance.ennemiManager;
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
@@ -60,6 +62,8 @@ public class GolderBehavior : GlobalEnnemiBehavior
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.golderStored);
         }
+
+        animator.SetBool("coinIsDropping",hasStartDroping);
     }
 
 

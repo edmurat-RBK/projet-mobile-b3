@@ -9,8 +9,11 @@ public class MinerBehavior : GlobalEnnemiBehavior
     bool readyToMining = false;
     bool hasFinishAttack = false;
 
+    Animator animator;
+
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         ennemiManager = GameManager.Instance.ennemiManager;
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
@@ -57,6 +60,8 @@ public class MinerBehavior : GlobalEnnemiBehavior
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
         }
+
+        animator.SetBool("bomberIsAttacking",readyToMining);
     }
 
 
