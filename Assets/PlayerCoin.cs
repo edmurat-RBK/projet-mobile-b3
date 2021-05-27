@@ -26,7 +26,7 @@ public class PlayerCoin : MonoBehaviour
             }
 
             AudioManager.AMInstance.coinCollectAudio.Post(gameObject);
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

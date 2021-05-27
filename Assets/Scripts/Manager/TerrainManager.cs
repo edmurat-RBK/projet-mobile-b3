@@ -48,6 +48,11 @@ public class TerrainManager : MonoBehaviour
     
     private void Start()
     {
+        playerManager = GameManager.Instance.playerManager;
+        audioManager = AudioManager.AMInstance;
+
+
+
         terrainQueue = new Queue<GameObject>();
         boostRef = FindObjectOfType<Boost>();
         baseScrollspeed = scrollSpeed;
@@ -55,7 +60,7 @@ public class TerrainManager : MonoBehaviour
         for(int i = 0; i<terrainCount; i++)
         {
             if(i==0) {
-                AddTerrain("LD_Start", new Vector3(0, 0, terrainLenght*i));
+                AddTerrain("New_LD_Start", new Vector3(0, 0, terrainLenght*i));
             }
             else if(nextShop <= 0) {
                 AddTerrain(shopTerrain.tag, new Vector3(0, 0, terrainLenght*i));
@@ -68,8 +73,6 @@ public class TerrainManager : MonoBehaviour
             nextShop--;
         }
 
-        playerManager = GameManager.Instance.playerManager;
-        audioManager = AudioManager.AMInstance;
 
         localMotorRTCP = AudioManager.AMInstance.motorVarRTPC;
     }
@@ -86,6 +89,7 @@ public class TerrainManager : MonoBehaviour
         {
             // Keep going
         }
+
 
         if(playerManager.playerIsBoosting == true)
         {

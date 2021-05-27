@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gameover : MonoBehaviour
 {
@@ -26,5 +27,20 @@ public class Gameover : MonoBehaviour
         coinsText.text = coinsText.text + coinsPickedUp.ToString();
         scoreText.text = scoreText.text + score.ToString();
         finalScoreText.text = finalScoreText.text + finalScore.ToString();
+    }
+
+
+
+    public void QuitMenu()
+    {
+        Time.timeScale = 1f;
+        
+        AudioManager.AMInstance.UIReturnMenuAudio.Post(gameObject);
+        AudioManager.AMInstance.StopAllAudio();
+        Destroy(AudioManager.AMInstance.gameObject);
+        AudioManager.AMInstance = null;
+        Debug.Log("Vos mères les chiennes");
+
+        SceneManager.LoadScene("Menu Start");
     }
 }
