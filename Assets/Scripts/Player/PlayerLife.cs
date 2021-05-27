@@ -23,6 +23,7 @@ public class PlayerLife : MonoBehaviour
     [HideInInspector]
     public int objectsDestroyed;
     
+    float scrollSpeed;
     
     private PlayerManager playerManager;
     private EnnemiManager ennemiManager;
@@ -35,6 +36,7 @@ public class PlayerLife : MonoBehaviour
 
     void Start()
     {
+        scrollSpeed = GameManager.Instance.terrainManager.scrollSpeed;
         playerManager.playerIsAlive = true;
         playerManager.playerLife = playerManager.maxPlayerLife;
         if (playerManager.shieldActive)
@@ -98,11 +100,12 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerDeath()
+    public IEnumerator PlayerDeath()
     {
-
+        
         if (!playerManager.revive)
         {
+            
             explosionFX.SetActive(true);
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             AudioManager.AMInstance.explosionAudio.Post(gameObject);
@@ -120,9 +123,13 @@ public class PlayerLife : MonoBehaviour
         }
         else if (playerManager.revive)
         {
+            GameManager.Instance.terrainManager.scrollSpeed = scrollSpeed;
+            Debug.Log("hummmm0");
+            playerManager.playerLife = playerManager.maxPlayerLife;
             yield return 0;
             
-            playerManager.playerLife = playerManager.maxPlayerLife;
+            
+            
         }
         
 
