@@ -70,4 +70,9 @@ public class MainMenu : MonoBehaviour
 
         AudioManager.AMInstance.UICloseAudio.Post(gameObject);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
