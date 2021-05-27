@@ -40,6 +40,7 @@ public class ShopElements : MonoBehaviour
     }
     public void CloseShop()
     {
+        Time.timeScale = 1;
         shopManager.shopActive = false;
         shopManager.shopUI.SetActive(false);
     }

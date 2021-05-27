@@ -255,6 +255,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.name == "Shop Trigger") {
+            Time.timeScale = 0;
             ShopManager.Instance.shopActive = true;
             ShopManager.Instance.shopUI.SetActive(true);
         }
