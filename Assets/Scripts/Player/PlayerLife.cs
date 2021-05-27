@@ -37,6 +37,11 @@ public class PlayerLife : MonoBehaviour
     {
         playerManager.playerIsAlive = true;
         playerManager.playerLife = playerManager.maxPlayerLife;
+        if (playerManager.shieldActive)
+        {
+           playerManager.shield = playerManager.maxShield; 
+        }
+        
     }
 
     void Update()
@@ -44,11 +49,11 @@ public class PlayerLife : MonoBehaviour
         
         LifeDecreaseOverTime();
 
-        RefillShield();
-        if (playerManager.refilableShield && playerManager.shield == 0)
-        {
-            playerManager.rechargeShield = true;
-        }
+        // RefillShield();
+        // if (playerManager.refilableShield && playerManager.shield == 0)
+        // {
+        //     playerManager.rechargeShield = true;
+        // }
 
         if (playerManager.playerLife <= 0 && playerManager.playerIsAlive)
         {
@@ -64,7 +69,21 @@ public class PlayerLife : MonoBehaviour
 
         if(other.tag == ("Mine"))
         {
-            playerManager.playerLife -= ennemiManager.mineDamage;
+            if (playerManager.shieldActive && ennemiManager.mineDamage<playerManager.shield)
+            {
+                playerManager.shield -= ennemiManager.mineDamage;
+            }
+            else if (ennemiManager.mineDamage>playerManager.shield && playerManager.shieldActive)
+            {
+                playerManager.playerLife -= (ennemiManager.mineDamage - playerManager.shield);
+                playerManager.shield = 0;
+            }
+            else
+            {
+                playerManager.playerLife -= ennemiManager.mineDamage;
+            }
+
+            
         }
 
     }
@@ -121,16 +140,16 @@ public class PlayerLife : MonoBehaviour
         SceneManager.LoadScene("Menu Start");
     }
 
-    void RefillShield()
-    {
-        if(playerManager.shield < playerManager.maxShield && playerManager.rechargeShield)
-        {
-            playerManager.shield += (playerManager.shieldRechargeRate * Time.deltaTime);
-        }
-        else if (playerManager.shield == playerManager.maxShield)
-        {
-            playerManager.rechargeShield = false;
-        }
-    }
+    // void RefillShield()
+    // {
+    //     if(playerManager.shield < playerManager.maxShield && playerManager.rechargeShield)
+    //     {
+    //         playerManager.shield += (playerManager.shieldRechargeRate * Time.deltaTime);
+    //     }
+    //     else if (playerManager.shield == playerManager.maxShield)
+    //     {
+    //         playerManager.rechargeShield = false;
+    //     }
+    // }
     #endregion
 }

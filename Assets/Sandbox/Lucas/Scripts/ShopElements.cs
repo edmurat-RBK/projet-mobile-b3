@@ -13,7 +13,7 @@ public class ShopElements : MonoBehaviour
     public Text increaseMaxFuel;
     public Text extraLife;
     public Text refillShield;
-    public Text refillableShield;
+    public Text fuelMultiplier;
     public Text coinsMultiplier;
 
     private void Start()
@@ -35,7 +35,7 @@ public class ShopElements : MonoBehaviour
         increaseMaxFuel.text = shopManager.increaseFuelPrice.ToString();
         extraLife.text = shopManager.extraLifePrice.ToString();
         refillShield.text = shopManager.refillShieldPrice.ToString();
-        refillableShield.text = shopManager.refillableShieldPrice.ToString();
+        fuelMultiplier.text = shopManager.fuelMultiplierPrice.ToString();
         coinsMultiplier.text = shopManager.CoinsMultiplierPrice.ToString();
     }
     public void CloseShop()
@@ -109,14 +109,14 @@ public class ShopElements : MonoBehaviour
 
     }
 
-    public void RefillableShield()
+    public void FuelMultiplier()
     {
-        if (economicManager.coinCounter >= shopManager.refillableShieldPrice && !playerManager.refilableShield)
+        if (economicManager.coinCounter >= shopManager.fuelMultiplierPrice /*&& !playerManager.refilableShield*/)
         {
-            playerManager.refilableShield = true;
-            refillableShield.text = shopManager.refillableShieldPrice.ToString();
-            economicManager.coinCounter -= shopManager.refillableShieldPrice;
-            shopManager.refillableShieldPrice *= 2;
+            playerManager.fuelMultiplier += 1;
+            fuelMultiplier.text = shopManager.fuelMultiplierPrice.ToString();
+            economicManager.coinCounter -= shopManager.fuelMultiplierPrice;
+            shopManager.fuelMultiplierPrice *= 2;
         }
         else
         {
@@ -141,11 +141,7 @@ public class ShopElements : MonoBehaviour
         }
     }
 
-    public void FuelMultiplier()
-    {
-        //augmenter le taux du ramassage d'essence
-    }
-
+   
     IEnumerator ResetMultiplier()
     {
         yield return new WaitForSeconds(economicManager.boostDuration);
