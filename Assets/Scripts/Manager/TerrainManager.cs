@@ -59,7 +59,7 @@ public class TerrainManager : MonoBehaviour
         nextShop = distanceBewteenShop + Random.Range(-distanceVariation,distanceVariation);
         for(int i = 0; i<terrainCount; i++)
         {
-            if(i==0) {
+            if(i==0 || i==1) {
                 AddTerrain("New_LD_Start", new Vector3(0, 0, terrainLenght*i));
             }
             else if(nextShop <= 0) {
