@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     
     public bool revive;
-    public int numberOfRevives;
+    
     public bool playerIsAlive;
     public bool playerIsBoosting = false;
     public bool shieldActive = false;

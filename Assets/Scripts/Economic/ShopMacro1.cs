@@ -15,12 +15,15 @@ public class ShopMacro1 : MonoBehaviour
     public int coinsMulti;
     public int doubleCoinsPrice = 5;
     public int doubleCoinsPriceIncrement = 5;
-    public int extraLives;
+    public bool revive;
     public int extraLifePrice = 5;
-    public int extraLifePriceIncrement = 5;
+    
     public int maxLife;
     public int maxLifePrice = 5;
     public int maxLifePriceIncrement = 5;
+    public bool startShield;
+    public int startShieldPrice = 5;
+    public int startShieldPriceIncrement = 5;
 
 
     public Text multiplierText;
@@ -44,7 +47,16 @@ public class ShopMacro1 : MonoBehaviour
         
     }
     
-    
+    public void StartingShield()
+    {
+        if (loadMenu.purpleCoins > startShieldPrice && !startShield)
+        {
+            startShield = true;
+            loadMenu.purpleCoins -= startShieldPrice;
+            UpdatePrices();
+            loadMenu.DisplayValues();
+        }
+    }
 
     public void Multiplier()
     {
@@ -67,7 +79,7 @@ public class ShopMacro1 : MonoBehaviour
         if (loadMenu.purpleCoins > doubleCoinsPrice)
         {
             
-            Debug.Log("hahah    ");
+            
             loadMenu.purpleCoins -= doubleCoinsPrice;
             doubleCoinsPrice += doubleCoinsPriceIncrement;
             coinsMulti += 2;
@@ -79,13 +91,12 @@ public class ShopMacro1 : MonoBehaviour
 
     public void ExtraLife()
     {
-        if (loadMenu.purpleCoins > extraLifePrice)
+        if (loadMenu.purpleCoins > extraLifePrice && !revive)
         {
             
-            Debug.Log("hahah    ");
-            extraLives += 1;
+            revive = true;
             loadMenu.purpleCoins -= extraLifePrice;
-            extraLifePrice += extraLifePriceIncrement;
+            
             UpdatePrices();
             loadMenu.DisplayValues();
         }
@@ -97,7 +108,7 @@ public class ShopMacro1 : MonoBehaviour
         if (loadMenu.purpleCoins > maxLifePrice)
         {
             
-            Debug.Log("hahah    ");
+            
             maxLife += 10;
             loadMenu.purpleCoins -= maxLifePrice;
             maxLifePrice += maxLifePriceIncrement;

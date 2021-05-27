@@ -101,7 +101,7 @@ public class PlayerLife : MonoBehaviour
     IEnumerator PlayerDeath()
     {
 
-        if (!playerManager.revive || playerManager.revive && playerManager.numberOfRevives ==0)
+        if (!playerManager.revive)
         {
             explosionFX.SetActive(true);
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
@@ -118,10 +118,10 @@ public class PlayerLife : MonoBehaviour
             gameOver.GetComponent<Gameover>().CalculateScore(enemiesDestroyed,objectsDestroyed,GameManager.Instance.economicManager.coinCounter,FindObjectOfType<UIDisplay>().displayedScore);
             DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
         }
-        else if (playerManager.revive && playerManager.numberOfRevives >1)
+        else if (playerManager.revive)
         {
             yield return 0;
-            playerManager.numberOfRevives -=1;
+            
             playerManager.playerLife = playerManager.maxPlayerLife;
         }
         
