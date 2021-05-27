@@ -55,7 +55,8 @@ public class UIDisplay : MonoBehaviour
         if (data != null)
         {
             
-            GameManager.Instance.playerManager.numberOfRevives += data.extraLives;
+            GameManager.Instance.playerManager.revive = data.revive;
+            GameManager.Instance.playerManager.shieldActive = data.startShield;
             GameManager.Instance.playerManager.maxPlayerLife += data.maxLife;
             GameManager.Instance.economicManager.coinsMultiplier += data.coinsMulti;
             multiplier += data.scoreMulti;

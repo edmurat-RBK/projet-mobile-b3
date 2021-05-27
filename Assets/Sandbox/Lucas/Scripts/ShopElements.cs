@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,7 +40,6 @@ public class ShopElements : MonoBehaviour
     }
     public void CloseShop()
     {
-        Time.timeScale = 1;
         shopManager.shopActive = false;
         shopManager.shopUI.SetActive(false);
     }
@@ -82,7 +81,7 @@ public class ShopElements : MonoBehaviour
         if (economicManager.coinCounter >= shopManager.extraLifePrice)
         {
             playerManager.revive = true;
-            playerManager.numberOfRevives += 1;
+            
             extraLife.text = shopManager.extraLifePrice.ToString();
             economicManager.coinCounter -= shopManager.extraLifePrice;
             shopManager.extraLifePrice *= 2;
@@ -98,6 +97,7 @@ public class ShopElements : MonoBehaviour
     {
         if (economicManager.coinCounter >= shopManager.refillShieldPrice && playerManager.shield < playerManager.maxShield)
         {
+            playerManager.shieldActive = true;
             playerManager.shield = playerManager.maxShield;
             refillShield.text = shopManager.refillShieldPrice.ToString();
             economicManager.coinCounter -= shopManager.refillShieldPrice;

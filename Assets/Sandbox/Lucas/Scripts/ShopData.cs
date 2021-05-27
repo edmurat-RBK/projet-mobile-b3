@@ -5,6 +5,7 @@ public class ShopData
 {
     public int scoreMulti;
     public int coinsMulti;
-    public int extraLives;
+    public bool revive;
     public int maxLife;
+    public bool startShield;
 }
