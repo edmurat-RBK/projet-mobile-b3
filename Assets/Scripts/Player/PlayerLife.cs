@@ -117,8 +117,11 @@ public class PlayerLife : MonoBehaviour
 
         if (!playerManager.revive)
         {
-
-            explosionFX.SetActive(true);
+            if (explosionFX != null)
+            {
+                explosionFX.SetActive(true);
+            }
+            
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             AudioManager.AMInstance.explosionAudio.Post(gameObject);
             playerManager.playerIsAlive = false;
