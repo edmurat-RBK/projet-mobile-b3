@@ -65,34 +65,39 @@ public class Boost : MonoBehaviour
 
     void useBoost(Vector2 position)
     {
-
-        if (callOnce)
+        if (!GameManager.Instance.playerManager.isInMenu)
         {
-            firstPos = position;
-            callOnce = !callOnce;
-        }
-        else if (!callOnce)
-        {
-            secondPos = position;
-            callOnce = !callOnce;
-            Invoke("ResetPos", .5f);
+            if (callOnce)
+            {
+                firstPos = position;
+                callOnce = !callOnce;
+            }
+            else if (!callOnce)
+            {
+                secondPos = position;
+                callOnce = !callOnce;
+                Invoke("ResetPos", .5f);
 
+            }
         }
+
     }
     void useBoost2(Vector2 position)
     {
-
-        if (callOnce2)
+        if (!GameManager.Instance.playerManager.isInMenu)
         {
-            firstPos2 = position;
-            callOnce2 = !callOnce2;
-        }
-        else if (!callOnce2)
-        {
-            secondPos2 = position;
-            callOnce2 = !callOnce2;
-            Invoke("ResetPos2", .5f);
+            if (callOnce2)
+            {
+                firstPos2 = position;
+                callOnce2 = !callOnce2;
+            }
+            else if (!callOnce2)
+            {
+                secondPos2 = position;
+                callOnce2 = !callOnce2;
+                Invoke("ResetPos2", .5f);
 
+            }
         }
     }
 

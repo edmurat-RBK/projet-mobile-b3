@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     public GameObject player;
 
-    
+    public bool isInMenu;
     public bool revive;
     public int boostCharges;
     

@@ -117,11 +117,11 @@ public class PlayerLife : MonoBehaviour
 
         if (!playerManager.revive)
         {
-            if (explosionFX != null)
-            {
-                explosionFX.SetActive(true);
-            }
-            
+
+
+            explosionFX.SetActive(false);
+            explosionFX.SetActive(true);
+            playerManager.isInMenu = true;
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             AudioManager.AMInstance.explosionAudio.Post(gameObject);
             playerManager.playerIsAlive = false;
@@ -138,10 +138,12 @@ public class PlayerLife : MonoBehaviour
         }
         else if (playerManager.revive)
         {
+            playerManager.isInMenu = false;
             GameManager.Instance.terrainManager.scrollSpeed = scrollSpeed;
             Debug.Log("hummmm0");
             playerManager.playerIsAlive = true;
             playerManager.playerLife = playerManager.maxPlayerLife;
+            playerManager.revive = false;
             yield return 0;
 
 

@@ -19,10 +19,10 @@ public class PlayerController : MonoBehaviour
     public Vector3 direction2;
     Quaternion target;
     Rigidbody rb;
-    [Range (0,1)]
+    [Range(0, 1)]
     public float inertiaTiming;
     public float rotateSpeed;
-    [Range(0,50)]
+    [Range(0, 50)]
     public float maxRota;
 
 
@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     AudioManager audioManager;
     AK.Wwise.RTPC localMotorRTCP;
     int motorVar = 0;
-    
+
 
 
     bool isBumped = false;
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        if(!isBumped)
+        if (!isBumped)
 
         {
 
@@ -68,44 +68,50 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector2 position)
     {
-        
-        if (position == Vector2.zero)
+        if (!playerManager.isInMenu)
         {
-            position.x = Screen.width / 2;
+            if (position == Vector2.zero)
+            {
+                position.x = Screen.width / 2;
+            }
+            move = !move;
+            if (position.x <= Screen.width / 3)
+            {
+
+                direction.x = -1;
+            }
+            else if (position.x > (Screen.width / 3) * 2)
+            {
+                direction.x = 1;
+
+            }
+            else
+            {
+                direction.x = 0;
+            }
         }
-        move = !move;
-        if (position.x <= Screen.width / 3)
-        {
-            
-            direction.x = -1;
-        }
-        else if (position.x > (Screen.width / 3) * 2)
-        {
-            direction.x = 1;
-            
-        }
-        else
-        {
-            direction.x = 0;
-        }
+
     }
 
     private void MovePrio(Vector2 position)
     {
-        movePrio = !movePrio;
-        if (position.x <= Screen.width /3)
+        if (!playerManager.isInMenu)
         {
-            
-            direction2.x = -1;
-        }
-        else if (position.x > (Screen.width /3) * 2)
-        {
-            direction2.x = 1;
-            
-        }
-        else
-        {
-            direction2.x = 0;
+            movePrio = !movePrio;
+            if (position.x <= Screen.width / 3)
+            {
+
+                direction2.x = -1;
+            }
+            else if (position.x > (Screen.width / 3) * 2)
+            {
+                direction2.x = 1;
+
+            }
+            else
+            {
+                direction2.x = 0;
+            }
         }
     }
     private void Start()
@@ -122,7 +128,7 @@ public class PlayerController : MonoBehaviour
     //{
     //    move = !move;
     //    direction.x = value.Get<Vector2>().x; //prends la direction du mouvement uniquement sur les cotés
-        
+
     //}
     //public void OnMouseMove(InputValue value) //recupère le vecteur qui correspond à la direction donnée
     //{
@@ -143,43 +149,44 @@ public class PlayerController : MonoBehaviour
     //    //direction.x = value.Get<Vector2>().x;
 
     //}
-    
+
     private void Update()
     {
-        if(ShopManager.Instance.shopActive) {
+        if (ShopManager.Instance.shopActive)
+        {
             return;
         }
-        transform.rotation = Quaternion.RotateTowards(transform.rotation,target,rotateSpeed*Time.deltaTime);
-        animator.SetFloat("HorizontalSpeed",direction.x);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, target, rotateSpeed * Time.deltaTime);
+        animator.SetFloat("HorizontalSpeed", direction.x);
         if (move && !movePrio || inertia)
         {
-            if(move)
+            if (move)
             {
                 inertia = true;
             }
-            if(inertia && !move)
+            if (inertia && !move)
             {
                 Invoke("Inertia", inertiaTiming);
             }
             switch (direction.x)
             {
                 case 1:
-                target = Quaternion.Euler(new Vector3(0,180, maxRota));
-                
+                    target = Quaternion.Euler(new Vector3(0, 180, maxRota));
+
                     break;
                 case -1:
-                target = Quaternion.Euler(new Vector3(0,180, -maxRota));
-                
+                    target = Quaternion.Euler(new Vector3(0, 180, -maxRota));
+
                     break;
                 case 0:
-                target = Quaternion.Euler(new Vector3(0,180, 0));
-                
+                    target = Quaternion.Euler(new Vector3(0, 180, 0));
+
                     break;
                 default:
                     break;
             }
-            
-            transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime); //déplace le joueur selon le vecteur et la vitesse */
+
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime); //déplace le joueur selon le vecteur et la vitesse */
 
             if (motorVar <= 20)
             {
@@ -196,7 +203,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (movePrio)
         {
-            transform.position = Vector3.MoveTowards(transform.position,transform.position + direction,speed*Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
 
             if (motorVar <= 20)
             {
@@ -215,14 +222,14 @@ public class PlayerController : MonoBehaviour
 
             if (motorVar > 0)
             {
-                if(playerManager.playerIsBoosting == false)
+                if (playerManager.playerIsBoosting == false)
                 {
                     motorVar = 0;
                     localMotorRTCP.SetGlobalValue(0);
                 }
             }
         }
-        if(isBumped)
+        if (isBumped)
         {
 
             transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
@@ -253,11 +260,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.name == "Shop Trigger") {
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name == "Shop Trigger")
+        {
             Time.timeScale = 0;
             ShopManager.Instance.shopActive = true;
             ShopManager.Instance.shopUI.SetActive(true);
+            GameManager.Instance.playerManager.isInMenu = true;
+        
         }
     }
 
