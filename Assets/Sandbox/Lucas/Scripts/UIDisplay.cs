@@ -63,12 +63,12 @@ public class UIDisplay : MonoBehaviour
 
     IEnumerator StopMulti()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(30);
         multiplier = 1;
     }
     IEnumerator StopDoubleCoins()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(15);
         GameManager.Instance.economicManager.doubleCoins = false;
     }
     void LoadValues()
@@ -78,7 +78,8 @@ public class UIDisplay : MonoBehaviour
         
         if (data != null)
         {
-            GameManager.Instance.playerManager.boostUnlocked = data.unlockBoost;
+           
+            GameManager.Instance.playerManager.boostCharges += data.unlockBoost;
             GameManager.Instance.playerManager.revive = data.revive;
             GameManager.Instance.playerManager.shieldActive = data.startShield;
             GameManager.Instance.playerManager.maxPlayerLife += data.maxLife;

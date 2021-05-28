@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     public void ChangeScene(int index)
     {
         
-        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,index,shopMacro.startShield);
+        SceneManager.LoadScene(index);
         AudioManager.AMInstance.UIStartAudio.Post(gameObject);
         AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
     }
@@ -37,6 +37,8 @@ public class MainMenu : MonoBehaviour
     }
     public void CloseShop()
     {
+        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield);
+        Debug.Log(shopMacro.boostUnlocked);
         shopButtons.SetActive(false);
         mainMenuButtons.SetActive(true);
 

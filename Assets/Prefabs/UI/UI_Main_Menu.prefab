@@ -1454,6 +1454,7 @@ MonoBehaviour:
   dataManager: {fileID: 0}
   boostUnlocked: 0
   boostPrice: 5
+  boostPriceIncrement: 5
   multiplier: 0
   multiplierPrice: 5
   doubleCoins: 0
@@ -1466,6 +1467,7 @@ MonoBehaviour:
   startShield: 0
   startShieldPrice: 5
   startShieldPriceIncrement: 5
+  boostText: {fileID: 0}
   multiplierText: {fileID: 5117953420641618386}
   doubleCoinsText: {fileID: 6145916940410889229}
   extraLife: {fileID: 8149289039618446678}
@@ -1860,6 +1862,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1153313637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3431849468982658070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
+    m_PressedColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 3431849468982658068}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 830092514}
+        m_MethodName: UnlockBoost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &830092514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1875,11 +1931,12 @@ MonoBehaviour:
   loadMenu: {fileID: 0}
   dataManager: {fileID: 0}
   boostUnlocked: 0
-  boostPrice: 5
+  boostPrice: 10
+  boostPriceIncrement: 5
   multiplier: 0
-  multiplierPrice: 5
+  multiplierPrice: 25
   doubleCoins: 0
-  doubleCoinsPrice: 5
+  doubleCoinsPrice: 30
   revive: 0
   extraLifePrice: 5
   maxLife: 0
@@ -1888,6 +1945,7 @@ MonoBehaviour:
   startShield: 0
   startShieldPrice: 5
   startShieldPriceIncrement: 5
+  boostText: {fileID: 3431849469740537170}
   multiplierText: {fileID: 3431849468874786140}
   doubleCoinsText: {fileID: 3431849469584152911}
   extraLife: {fileID: 9102309166340906940}
@@ -3409,7 +3467,7 @@ MonoBehaviour:
   shopButtons: {fileID: 3431849469017083368}
   optionButtons: {fileID: 6555667019523624669}
   questsButtons: {fileID: 6046074524751258402}
-  shopMacro: {fileID: 7365061846590461711}
+  shopMacro: {fileID: 830092514}
 --- !u!1 &7705564358097574423
 GameObject:
   m_ObjectHideFlags: 0
@@ -4942,15 +5000,15 @@ PrefabInstance:
       objectReference: {fileID: 1512423534}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971d48ff8fea5f34284b2e0b19d8db01, type: 3}
---- !u!1 &6046074524751258402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6737600825423141931, guid: 971d48ff8fea5f34284b2e0b19d8db01,
-    type: 3}
-  m_PrefabInstance: {fileID: 1037865309088775945}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5036674975311863245 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5441159564235891396, guid: 971d48ff8fea5f34284b2e0b19d8db01,
+    type: 3}
+  m_PrefabInstance: {fileID: 1037865309088775945}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6046074524751258402 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6737600825423141931, guid: 971d48ff8fea5f34284b2e0b19d8db01,
     type: 3}
   m_PrefabInstance: {fileID: 1037865309088775945}
   m_PrefabAsset: {fileID: 0}
@@ -5433,6 +5491,36 @@ RectTransform:
 --- !u!114 &3431849469239890863 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4392282876086217332, guid: 324918f8550354d4b9740d3438956cce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392992077436844507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3431849468982658070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4392282876383428045, guid: 324918f8550354d4b9740d3438956cce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392992077436844507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3431849468982658068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4392282876383428047, guid: 324918f8550354d4b9740d3438956cce,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392992077436844507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3431849468982658070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3431849469740537170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4392282875596188809, guid: 324918f8550354d4b9740d3438956cce,
     type: 3}
   m_PrefabInstance: {fileID: 1392992077436844507}
   m_PrefabAsset: {fileID: 0}

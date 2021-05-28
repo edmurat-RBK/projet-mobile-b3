@@ -8,8 +8,9 @@ public class ShopMacro1 : MonoBehaviour
     public LoadMenu loadMenu;
     public DataManager dataManager;
     
-    public bool boostUnlocked;
+    public int boostUnlocked;
     public int boostPrice = 5;
+    public int boostPriceIncrement = 5;
 
     public bool multiplier;
     public int multiplierPrice = 5;
@@ -27,7 +28,7 @@ public class ShopMacro1 : MonoBehaviour
     public int startShieldPrice = 5;
     public int startShieldPriceIncrement = 5;
 
-
+    public Text boostText;
     public Text multiplierText;
     public Text doubleCoinsText;
     public Text extraLife;
@@ -42,6 +43,7 @@ public class ShopMacro1 : MonoBehaviour
 
     public void UpdatePrices()
     {
+        boostText.text = boostPrice.ToString();
         multiplierText.text = multiplierPrice.ToString();
         doubleCoinsText.text = doubleCoinsPrice.ToString();
         extraLife.text = extraLifePrice.ToString();
@@ -51,10 +53,11 @@ public class ShopMacro1 : MonoBehaviour
     
     public void UnlockBoost()
     {
-        if (loadMenu.purpleCoins > boostPrice && !boostUnlocked)
+        if (loadMenu.purpleCoins > boostPrice)
         {
-            boostUnlocked = true;
+            boostUnlocked += 1;
             loadMenu.purpleCoins -= boostPrice;
+            boostPrice += boostPriceIncrement;
             UpdatePrices();
             loadMenu.DisplayValues();
         }
@@ -75,7 +78,7 @@ public class ShopMacro1 : MonoBehaviour
     public void Multiplier()
     {
         
-        if (loadMenu.purpleCoins > multiplierPrice)
+        if (loadMenu.purpleCoins > multiplierPrice && !multiplier)
         {
             
             

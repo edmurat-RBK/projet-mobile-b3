@@ -125,6 +125,7 @@ public class PlayerLife : MonoBehaviour
         {
             GameManager.Instance.terrainManager.scrollSpeed = scrollSpeed;
             Debug.Log("hummmm0");
+            playerManager.playerIsAlive = true;
             playerManager.playerLife = playerManager.maxPlayerLife;
             yield return 0;
             

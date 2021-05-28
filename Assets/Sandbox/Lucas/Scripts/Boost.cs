@@ -38,6 +38,7 @@ public class Boost : MonoBehaviour
 
     void Start()
     {
+        maxBoostCharges += GameManager.Instance.playerManager.boostCharges;
         boostCharges = maxBoostCharges;
         slider.maxValue = maxBoostCharges;
         slider.value = slider.maxValue;
@@ -109,31 +110,30 @@ public class Boost : MonoBehaviour
     }
     private void Update()
     {
-        if (GameManager.Instance.playerManager.boostUnlocked)
+
+        if (boostCharges > 0)
         {
-            if (boostCharges > 0)
+            if (firstPos != Vector2.zero && secondPos != Vector2.zero)
             {
-                if (firstPos != Vector2.zero && secondPos != Vector2.zero)
+                if (secondPos.y > firstPos.y + SwipeLength && !isBoosting)
                 {
-                    if (secondPos.y > firstPos.y + SwipeLength && !isBoosting)
-                    {
-                        TerrainManager.TMInstance.Boost(boostDuration);
+                    TerrainManager.TMInstance.Boost(boostDuration);
 
-                        ResetPos();
-                    }
-                }
-                if (firstPos2 != Vector2.zero && secondPos2 != Vector2.zero)
-                {
-                    if (secondPos2.y > firstPos2.y + SwipeLength && !isBoosting)
-                    {
-                        TerrainManager.TMInstance.Boost(boostDuration);
-
-                        ResetPos2();
-                    }
+                    ResetPos();
                 }
             }
-            currentValue = slider.value;
+            if (firstPos2 != Vector2.zero && secondPos2 != Vector2.zero)
+            {
+                if (secondPos2.y > firstPos2.y + SwipeLength && !isBoosting)
+                {
+                    TerrainManager.TMInstance.Boost(boostDuration);
+
+                    ResetPos2();
+                }
+            }
         }
+        currentValue = slider.value;
+
 
         //si l'anim se finit, isboosting  = false
         // if (GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.GetCurrentAnimatorStateInfo(0).IsName("Anim_Player_Boost")&& GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)

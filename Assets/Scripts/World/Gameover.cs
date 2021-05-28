@@ -26,7 +26,7 @@ public class Gameover : MonoBehaviour
         // objectsDestroyedText.text = objectsDestroyedText.text + objectsDestroyed.ToString();
         // coinsText.text = coinsText.text + coinsPickedUp.ToString();
         // scoreText.text = scoreText.text + score.ToString();
-        finalScoreText.text = finalScoreText.text + finalScore.ToString();
+        finalScoreText.text = finalScore.ToString();
     }
     public void Revive()
     {
@@ -44,8 +44,8 @@ public class Gameover : MonoBehaviour
         AudioManager.AMInstance.StopAllAudio();
         Destroy(AudioManager.AMInstance.gameObject);
         AudioManager.AMInstance = null;
-        Debug.Log("Vos mères les chiennes");
-
+        
+        DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
         SceneManager.LoadScene("Menu Start");
     }
 }
