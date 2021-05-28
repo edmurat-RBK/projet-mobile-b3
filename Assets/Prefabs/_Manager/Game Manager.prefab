@@ -75,11 +75,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   revive: 0
-  numberOfRevives: 0
+  boostCharges: 0
   playerIsAlive: 0
   playerIsBoosting: 0
-  refilableShield: 0
-  rechargeShield: 0
+  shieldActive: 0
   maxShield: 10
   shield: 0
   maxPlayerLife: 100
@@ -88,6 +87,7 @@ MonoBehaviour:
   shieldRechargeRate: 1
   lifeDecreaseSpeed: 1
   decreaseMultiplicator: 2
+  fuelMultiplier: 1
   lifeUpgrade: 0
   boostCoolDownUpgrade: 0
   boostDamages: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13ae5f607669c2c4783bc0da5059868e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplyCoins: 0
+  doubleCoins: 0
   boostDuration: 10
   coinsMultiplier: 2
   coinCounter: 12
@@ -257,5 +257,5 @@ MonoBehaviour:
   increaseFuelPrice: 5
   extraLifePrice: 5
   refillShieldPrice: 5
-  refillableShieldPrice: 5
+  fuelMultiplierPrice: 5
   CoinsMultiplierPrice: 5
