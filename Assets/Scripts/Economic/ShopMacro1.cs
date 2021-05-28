@@ -29,6 +29,7 @@ public class ShopMacro1 : MonoBehaviour
     public int startShieldPriceIncrement = 5;
 
     public Text boostText;
+    public Text shieldText;
     public Text multiplierText;
     public Text doubleCoinsText;
     public Text extraLife;
@@ -44,6 +45,7 @@ public class ShopMacro1 : MonoBehaviour
     public void UpdatePrices()
     {
         boostText.text = boostPrice.ToString();
+        shieldText.text = startShieldPrice.ToString();
         multiplierText.text = multiplierPrice.ToString();
         doubleCoinsText.text = doubleCoinsPrice.ToString();
         extraLife.text = extraLifePrice.ToString();

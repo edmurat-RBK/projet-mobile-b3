@@ -27,6 +27,7 @@ public class PlayerLife : MonoBehaviour
     
     private PlayerManager playerManager;
     private EnnemiManager ennemiManager;
+    public GameObject shieldFX;
 
     
     private void Awake() {
@@ -42,6 +43,7 @@ public class PlayerLife : MonoBehaviour
         if (playerManager.shieldActive)
         {
            playerManager.shield = playerManager.maxShield; 
+           
         }
         
     }
@@ -61,6 +63,15 @@ public class PlayerLife : MonoBehaviour
         {
             StartCoroutine(PlayerDeath());
         }
+        if (playerManager.shield<=0)
+        {
+            playerManager.shieldActive = false;
+        }
+
+        if (shieldFX != null)
+           {
+               shieldFX.SetActive(playerManager.shieldActive);
+           }
     }
 
 
