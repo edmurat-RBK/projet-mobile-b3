@@ -56,6 +56,7 @@ namespace AK
     {
         static const AkUniqueID BOOSTEVOLUTION = 2272887157U;
         static const AkUniqueID MOTORVARIATION = 2892789523U;
+        static const AkUniqueID VOLUME = 2415836739U;
     } // namespace GAME_PARAMETERS
 
     namespace TRIGGERS

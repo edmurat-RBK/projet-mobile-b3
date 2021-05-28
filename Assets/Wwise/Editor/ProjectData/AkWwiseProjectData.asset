@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 6c7124b5a8c0054ca611b2c54e21e826
     GuidInternal: 
-    m_lastTime: -8585808824554973897
+    m_lastTime: -8585793951651407349
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -604,8 +604,22 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 98e096e8da5fa445b7d67115f7899ec2
     GuidInternal: 
-    m_lastTime: -8585808824556098543
-    List: []
+    m_lastTime: -8585793954835532042
+    List:
+    - name: volume
+      guid: 9f8040595c4dc14bb24d3c569b1ce685
+      id: 2415836739
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 98e096e8da5fa445b7d67115f7899ec2
+      - ElementName: volume
+        ObjectType: 13
+        guid: 9f8040595c4dc14bb24d3c569b1ce685
+      Path: Game Parameters\Default Work Unit\volume
   - PhysicalPath: Game Parameters\Player.wwu
     PathAndIcons:
     - ElementName: Game Parameters
@@ -827,7 +841,7 @@ MonoBehaviour:
         ObjectType: 14
         guid: c805b9387f48c8478b07c412c0ead230
       Path: Triggers\Musics\Kill_Ennemy
-  ExpandedFileSystemItemIds: 02000000040000000600000009000000
+  ExpandedFileSystemItemIds: 020000000400000006000000090000003300000034000000
   ExpandedWaapiItemIds: 020000000600000009000000
   AutoSyncSelection: 1
   autoPopulateEnabled: 1

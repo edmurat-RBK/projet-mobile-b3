@@ -143,6 +143,26 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1254958728512246073, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 13.544178
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254958728512246073, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 23.62379
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254958728512246073, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.2300034
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254958728512246073, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.26
+      objectReference: {fileID: 0}
     - target: {fileID: 2067765952367400014, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
         type: 3}
       propertyPath: m_Value
@@ -152,6 +172,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2067765952367400014, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
+        type: 3}
+      propertyPath: m_NumberOfSteps
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5524546540647924778, guid: c4cc9a6704293bc4fb1a050d55d4f80f,
         type: 3}
@@ -1986,7 +2011,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 215787678}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1987377982
+--- !u!114 &1987377983
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1998,4 +2023,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98214313410efc24895a9fbc26b59b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volume:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 11f110e5dcbef5547a1a0a264f71fe90,
+      type: 2}
   scroll: {fileID: 465472096}
