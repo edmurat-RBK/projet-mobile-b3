@@ -9,12 +9,12 @@ public class ShopMacro1 : MonoBehaviour
     public DataManager dataManager;
     
 
-    public int multiplier;
+    public bool multiplier;
     public int multiplierPrice = 5;
-    public int multiplierPriceIncrement = 5;
-    public int coinsMulti;
+    
+    public bool doubleCoins;
     public int doubleCoinsPrice = 5;
-    public int doubleCoinsPriceIncrement = 5;
+    
     public bool revive;
     public int extraLifePrice = 5;
     
@@ -65,9 +65,9 @@ public class ShopMacro1 : MonoBehaviour
         {
             
             
-            multiplier += 1;
+            multiplier = true;
             loadMenu.purpleCoins -= multiplierPrice;
-            multiplierPrice += multiplierPriceIncrement;
+            
             UpdatePrices();
             loadMenu.DisplayValues();
         }
@@ -81,8 +81,8 @@ public class ShopMacro1 : MonoBehaviour
             
             
             loadMenu.purpleCoins -= doubleCoinsPrice;
-            doubleCoinsPrice += doubleCoinsPriceIncrement;
-            coinsMulti += 2;
+            
+            doubleCoins = true;
             UpdatePrices();
             loadMenu.DisplayValues();
         }

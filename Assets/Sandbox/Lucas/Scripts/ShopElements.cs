@@ -128,9 +128,9 @@ public class ShopElements : MonoBehaviour
 
     public void CoinsMultiplier()
     {
-        if (economicManager.coinCounter >= shopManager.CoinsMultiplierPrice && !economicManager.multiplyCoins)
+        if (economicManager.coinCounter >= shopManager.CoinsMultiplierPrice && !economicManager.doubleCoins)
         {
-            economicManager.multiplyCoins = true;
+            economicManager.doubleCoins = true;
             coinsMultiplier.text = shopManager.CoinsMultiplierPrice.ToString();
             economicManager.coinCounter -= shopManager.CoinsMultiplierPrice;
             shopManager.CoinsMultiplierPrice *= 2;
@@ -146,6 +146,6 @@ public class ShopElements : MonoBehaviour
     IEnumerator ResetMultiplier()
     {
         yield return new WaitForSeconds(economicManager.boostDuration);
-        economicManager.multiplyCoins = false;
+        economicManager.doubleCoins = false;
     }
 }
