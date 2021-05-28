@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class Gameover : MonoBehaviour
 {
     float finalScore;
-    public Text enemiesDestroyedText;
-    public Text objectsDestroyedText;
-    public Text coinsText;
-    public Text scoreText;
+    // public Text enemiesDestroyedText;
+    // public Text objectsDestroyedText;
+    // public Text coinsText;
+    // public Text scoreText;
     public Text finalScoreText;
     // Start is called before the first frame update
     
@@ -22,13 +22,18 @@ public class Gameover : MonoBehaviour
     }
     void DisplayScore(int enemiesDestroyed,int objectsDestroyed,int coinsPickedUp,int score)
     {
-        enemiesDestroyedText.text = enemiesDestroyedText.text + enemiesDestroyed.ToString();
-        objectsDestroyedText.text = objectsDestroyedText.text + objectsDestroyed.ToString();
-        coinsText.text = coinsText.text + coinsPickedUp.ToString();
-        scoreText.text = scoreText.text + score.ToString();
+        // enemiesDestroyedText.text = enemiesDestroyedText.text + enemiesDestroyed.ToString();
+        // objectsDestroyedText.text = objectsDestroyedText.text + objectsDestroyed.ToString();
+        // coinsText.text = coinsText.text + coinsPickedUp.ToString();
+        // scoreText.text = scoreText.text + score.ToString();
         finalScoreText.text = finalScoreText.text + finalScore.ToString();
     }
-
+    public void Revive()
+    {
+        GameManager.Instance.playerManager.revive = true;
+        StartCoroutine(GameManager.Instance.playerManager.player.GetComponent<PlayerLife>().PlayerDeath());
+        gameObject.SetActive(false);
+    }
 
 
     public void QuitMenu()

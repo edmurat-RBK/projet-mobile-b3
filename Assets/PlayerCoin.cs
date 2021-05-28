@@ -16,7 +16,7 @@ public class PlayerCoin : MonoBehaviour
     {
         if(other.tag == "Coin")
         {
-            if (gameManager.economicManager.multiplyCoins)
+            if (gameManager.economicManager.doubleCoins)
             {
                 gameManager.economicManager.coinCounter += (int)(coinValue * gameManager.economicManager.coinsMultiplier);
             }

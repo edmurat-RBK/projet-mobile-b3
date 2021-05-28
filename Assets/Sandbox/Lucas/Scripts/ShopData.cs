@@ -3,8 +3,10 @@
 
 public class ShopData
 {
-    public int scoreMulti;
-    public int coinsMulti;
-    public int extraLives;
+    public bool unlockBoost;
+    public bool scoreMulti;
+    public bool doubleCoins;
+    public bool revive;
     public int maxLife;
+    public bool startShield;
 }

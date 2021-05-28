@@ -11,6 +11,8 @@ public class UIDisplay : MonoBehaviour
     public int displayedScore;
     [HideInInspector]
     public float multiplier;
+    [HideInInspector]
+    public bool multiply;
 
     [Header ("Life")]
     public Text playerLife;
@@ -21,7 +23,19 @@ public class UIDisplay : MonoBehaviour
     public Text playerCoins;
     void Start()
     {
-        multiplier = 1;
+        if(multiply)
+        {
+            multiplier = 2;
+            StartCoroutine(StopMulti());
+        }
+        else
+        {
+            multiplier = 1;
+        }
+        if(GameManager.Instance.economicManager.doubleCoins)
+        {
+            StartCoroutine(StopDoubleCoins());
+        }
         LoadValues();
     }
 
@@ -32,7 +46,7 @@ public class UIDisplay : MonoBehaviour
         displayedScore = (int)highScore; 
 
         highScoreText.text = displayedScore.ToString(); 
-
+        
         highScore = highScore + (GameManager.Instance.terrainManager.scrollSpeed / GameManager.Instance.terrainManager.baseScrollspeed) * Time.deltaTime * multiplier;
         #endregion
 
@@ -47,6 +61,16 @@ public class UIDisplay : MonoBehaviour
         #endregion
     }
 
+    IEnumerator StopMulti()
+    {
+        yield return new WaitForSeconds(15);
+        multiplier = 1;
+    }
+    IEnumerator StopDoubleCoins()
+    {
+        yield return new WaitForSeconds(30);
+        GameManager.Instance.economicManager.doubleCoins = false;
+    }
     void LoadValues()
     {
         ShopData data = DataManager.DMInstance.LoadShop();
@@ -54,11 +78,12 @@ public class UIDisplay : MonoBehaviour
         
         if (data != null)
         {
-            
-            GameManager.Instance.playerManager.numberOfRevives += data.extraLives;
+            GameManager.Instance.playerManager.boostUnlocked = data.unlockBoost;
+            GameManager.Instance.playerManager.revive = data.revive;
+            GameManager.Instance.playerManager.shieldActive = data.startShield;
             GameManager.Instance.playerManager.maxPlayerLife += data.maxLife;
-            GameManager.Instance.economicManager.coinsMultiplier += data.coinsMulti;
-            multiplier += data.scoreMulti;
+            GameManager.Instance.economicManager.doubleCoins = data.doubleCoins;
+            multiply = data.scoreMulti;
         }
         
     }

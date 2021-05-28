@@ -42,8 +42,8 @@ public class LoadMenu : MonoBehaviour
     public void DisplayValues()
     {
         highscoreText.text = "Hiscore: " + highscore.ToString();
-        coinsText.text = "Coins: " + coins.ToString();
-        purpleCoinsText.text = "Purple Coins: " + purpleCoins.ToString();
+        coinsText.text = coins.ToString();
+        purpleCoinsText.text = purpleCoins.ToString();
     }
     private void Update() {
         if (Keyboard.current.sKey.wasPressedThisFrame)
