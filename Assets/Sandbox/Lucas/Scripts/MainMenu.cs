@@ -22,7 +22,7 @@ public class MainMenu : MonoBehaviour
     public void ChangeScene(int index)
     {
         
-        DataManager.DMInstance.ShopSave(shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,index,shopMacro.startShield);
+        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,index,shopMacro.startShield);
         AudioManager.AMInstance.UIStartAudio.Post(gameObject);
         AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
     }

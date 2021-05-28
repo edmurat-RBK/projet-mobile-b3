@@ -45,10 +45,10 @@ public class DataManager : MonoBehaviour
         serializer.Serialize(streamWriter, data);
         streamWriter.Close();
     }
-    public void ShopSave(bool scoreMulti,bool doubleCoins,bool revive,int maxLife,int index,bool startShield)
+    public void ShopSave(bool unlockBoost,bool scoreMulti,bool doubleCoins,bool revive,int maxLife,int index,bool startShield)
     {
         StreamWriter streamWriter = new StreamWriter(path2, false);
-        ShopData data = new ShopData { scoreMulti = scoreMulti,doubleCoins = doubleCoins,revive=revive,maxLife=maxLife,startShield = startShield};
+        ShopData data = new ShopData {unlockBoost = unlockBoost,scoreMulti = scoreMulti,doubleCoins = doubleCoins,revive=revive,maxLife=maxLife,startShield = startShield};
         Debug.Log("hoho");
         serializer2.Serialize(streamWriter, data);
         streamWriter.Close();

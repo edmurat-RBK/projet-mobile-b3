@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     
     public bool revive;
+    public bool boostUnlocked;
     
     public bool playerIsAlive;
     public bool playerIsBoosting = false;
