@@ -11,12 +11,15 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="3982038551">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3837548124">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<GameParameters>
+				<GameParameter Id="2415836739" Name="volume" ObjectPath="\Game Parameters\Default Work Unit\volume"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="3626130597">
+		<SoundBank Id="1730564753" Language="SFX" Hash="2438766990">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
@@ -138,16 +141,24 @@
 				<Trigger Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
 			</Triggers>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="1533004652">
+		<SoundBank Id="1761240301" Language="SFX" Hash="894435595">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2389703494" Name="Boost" ObjectPath="\Events\Sound Effects\Player\Boost" DurationType="OneShot" DurationMin="4.043305" DurationMax="4.043305">
 					<IncludedMemoryFiles>
+						<File Id="132752888" Language="SFX">
+							<ShortName>Dash 2.wav</ShortName>
+							<Path>SFX\Dash 2_10C4C929.wem</Path>
+						</File>
 						<File Id="470228999" Language="SFX">
 							<ShortName>Engine_Boost.wav</ShortName>
 							<Path>SFX\Engine_Boost_4DAA267E.wem</Path>
+						</File>
+						<File Id="1040994138" Language="SFX">
+							<ShortName>Dash 1.wav</ShortName>
+							<Path>SFX\Dash 1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
@@ -173,9 +184,33 @@
 				</Event>
 				<Event Id="2746534638" Name="EnemyMotor" ObjectPath="\Events\Sound Effects\Ennemis\EnemyMotor" MaxAttenuation="100.000000" DurationType="Infinite">
 					<IncludedMemoryFiles>
+						<File Id="204246157" Language="SFX">
+							<ShortName>EnemyScream_1$.wav</ShortName>
+							<Path>SFX\EnemyScream_1$_10C4C929.wem</Path>
+						</File>
+						<File Id="215809572" Language="SFX">
+							<ShortName>EnemyVoice_3.wav</ShortName>
+							<Path>SFX\EnemyVoice_3_10C4C929.wem</Path>
+						</File>
+						<File Id="300821303" Language="SFX">
+							<ShortName>EnemyVoice_1.wav</ShortName>
+							<Path>SFX\EnemyVoice_1_10C4C929.wem</Path>
+						</File>
+						<File Id="316323639" Language="SFX">
+							<ShortName>EnemyVoice_4.wav</ShortName>
+							<Path>SFX\EnemyVoice_4_10C4C929.wem</Path>
+						</File>
+						<File Id="544938690" Language="SFX">
+							<ShortName>EnemyVoice_2.wav</ShortName>
+							<Path>SFX\EnemyVoice_2_10C4C929.wem</Path>
+						</File>
 						<File Id="605095972" Language="SFX">
 							<ShortName>PlayerTurbine.wav</ShortName>
 							<Path>SFX\PlayerTurbine_D79FB2B7.wem</Path>
+						</File>
+						<File Id="780049653" Language="SFX">
+							<ShortName>EnemyScream_2.wav</ShortName>
+							<Path>SFX\EnemyScream_2_10C4C929.wem</Path>
 						</File>
 						<File Id="972513170" Language="SFX">
 							<ShortName>Engine_Idle.wav</ShortName>

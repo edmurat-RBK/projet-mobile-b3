@@ -36,6 +36,16 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{14FC0474-C13C-407E-9919-ECC52D13A69F}" ShortID="620925084">
+									<PropertyList>
+										<Property Name="Probability" Type="Real64" Value="30"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Dash_Voice" ID="{D309FEAD-0BC0-422D-BFCF-8E5EDDBA28B0}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 					</ChildrenList>
@@ -59,6 +69,27 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Engine_Idle_Enemy" ID="{59C497C0-E412-42FC-92FC-B6BAF0710929}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{203F8BED-1168-4F6F-860F-098D2388818E}" ShortID="239437856">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="10">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{C4C586A6-8915-4F10-BA00-E01A1FD3710B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="10"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Enemy_Scream" ID="{F53B393D-449F-44A7-B919-AF37A8425423}" WorkUnitID="{98242F6C-A878-4D1F-AA30-5FFA5F426D9B}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

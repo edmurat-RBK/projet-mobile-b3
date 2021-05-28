@@ -1,18 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundSlider : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AK.Wwise.RTPC volume;
+    public Scrollbar scroll;
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
+        volume.SetGlobalValue(scroll.value);
     }
 }
