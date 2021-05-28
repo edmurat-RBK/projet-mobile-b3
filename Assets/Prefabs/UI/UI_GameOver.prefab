@@ -341,7 +341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6182026788164834730
 RectTransform:
   m_ObjectHideFlags: 0
@@ -441,10 +441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b94595cf71c094fa865e2458d227d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesDestroyedText: {fileID: 0}
-  objectsDestroyedText: {fileID: 0}
-  coinsText: {fileID: 0}
-  scoreText: {fileID: 0}
   finalScoreText: {fileID: 3983522595195678443}
 --- !u!1 &4623638810402641411
 GameObject:
@@ -1174,7 +1170,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8965195236833013775}
+        m_MethodName: Revive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6760750592992981752
 GameObject:
   m_ObjectHideFlags: 0
