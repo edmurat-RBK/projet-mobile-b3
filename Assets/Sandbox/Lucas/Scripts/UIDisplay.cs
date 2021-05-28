@@ -78,7 +78,7 @@ public class UIDisplay : MonoBehaviour
         
         if (data != null)
         {
-           
+           Debug.Log(data.startShield);
             GameManager.Instance.playerManager.boostCharges += data.unlockBoost;
             GameManager.Instance.playerManager.revive = data.revive;
             GameManager.Instance.playerManager.shieldActive = data.startShield;
