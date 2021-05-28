@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -520,6 +520,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[6].size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[7].size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[8].size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[7].prefab
+      value: 
+      objectReference: {fileID: 2237685348781439954, guid: f04c6e03c592cdc4a8aa14950f8ea280,
+        type: 3}
+    - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
+        type: 3}
+      propertyPath: poolList.Array.data[8].prefab
+      value: 
+      objectReference: {fileID: 1469493264242263166, guid: 5b6a10d22129c0648839ed2fe290ebf3,
+        type: 3}
     - target: {fileID: 7429081155984600150, guid: 8c42efb8c2c6e504694abdb31b2e39ba,
         type: 3}
       propertyPath: poolList.Array.data[0].parentInInspector
