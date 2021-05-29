@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class Tutorial : MonoBehaviour
 {
     public GameObject tutorialObject;
-    public List<Image> steps = new List<Image>();
+    public List<GameObject> steps = new List<GameObject>();
+    bool canChange = true;
     int i;
 
     PlayerManager playerManager;    // Start is called before the first frame update
     void Start()
     {
         playerManager = GameManager.Instance.playerManager;
-
     }
 
     public void StartTutorial()
@@ -23,6 +23,7 @@ public class Tutorial : MonoBehaviour
             Debug.Log("okiokki");
             tutorialObject.SetActive(true);
             Time.timeScale = 0;
+            NextStep();
         }
     }
     // Update is called once per frame
@@ -34,21 +35,23 @@ public class Tutorial : MonoBehaviour
 
     public void NextStep()
     {
-        if (i < steps.Count)
+        if (i < steps.Count && canChange)
         {
-            steps[i].gameObject.SetActive(true);
+            foreach (GameObject item in steps)
+            {
+                item.SetActive(false);
+            }
+            steps[i].SetActive(true);
             i += 1;
+            canChange = false;
+            StartCoroutine(nextStepCooldown());
         }
-
     }
 
-    public void PreviousStep()
+    IEnumerator nextStepCooldown()
     {
-        if (i > 0)
-        {
-            i -= 1;
-            steps[i].gameObject.SetActive(false);
-            
-        }
+        yield return new WaitForSecondsRealtime(1f);
+        canChange = true;
     }
+    
 }
