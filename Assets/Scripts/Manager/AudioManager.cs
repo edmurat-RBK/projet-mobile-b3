@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     #region Player
     public AK.Wwise.Event playerMotorAudio;
     public AK.Wwise.Event playerBoostAudio;
+    public AK.Wwise.Event playerDamageVoiceAudio;
     #endregion
     #region World
     public AK.Wwise.Event coinCollectAudio;
