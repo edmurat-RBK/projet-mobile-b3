@@ -8,6 +8,7 @@ public class PlayerObstacles : MonoBehaviour
     {
         if (other.tag == "Obstacle")
         {
+            Debug.Log("aaaaaaaaaaaaa");
             if ((GameManager.Instance.playerManager.player.GetComponent<Boost>().isBoosting))
             {
                 GameManager.Instance.playerManager.playerLife += 0;
@@ -16,14 +17,6 @@ public class PlayerObstacles : MonoBehaviour
             else if (GameManager.Instance.playerManager.shield <= 0)
             {
                 GameManager.Instance.playerManager.playerLife -= 1;
-
-
-                int index = Random.Range(1, 11);
-                if (index <= 4)
-                {
-                    AudioManager.AMInstance.playerDamageVoiceAudio.Post(gameObject);
-                }
-                
             }
             else
             {
