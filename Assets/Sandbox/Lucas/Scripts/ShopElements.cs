@@ -42,6 +42,8 @@ public class ShopElements : MonoBehaviour
     {
         shopManager.shopActive = false;
         shopManager.shopUI.SetActive(false);
+        GameManager.Instance.playerManager.isInMenu = false;
+        
     }
 
     public void RefillFuel()

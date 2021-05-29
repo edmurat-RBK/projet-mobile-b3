@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Android" BasePlatform="Android" SchemaVersion="12" SoundbankVersion="140">
 	<RootPaths>
-		<ProjectRoot>C:\Projets Unity\projet-mobile-b3\projet-mobile-b3_WwiseProject\</ProjectRoot>
-		<SourceFilesRoot>C:\Projets Unity\projet-mobile-b3\projet-mobile-b3_WwiseProject\.cache\Android\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Projets Unity\projet-mobile-b3\projet-mobile-b3_WwiseProject\GeneratedSoundBanks\Android\</SoundBanksRoot>
+		<ProjectRoot>D:\GitProject\projet-mobile-b3\projet-mobile-b3_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>D:\GitProject\projet-mobile-b3\projet-mobile-b3_WwiseProject\.cache\Android\</SourceFilesRoot>
+		<SoundBanksRoot>D:\GitProject\projet-mobile-b3\projet-mobile-b3_WwiseProject\GeneratedSoundBanks\Android\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Projets Unity\projet-mobile-b3\projet-mobile-b3_WwiseProject\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\GitProject\projet-mobile-b3\projet-mobile-b3_WwiseProject\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -19,7 +19,7 @@
 				<GameParameter Id="2415836739" Name="volume" ObjectPath="\Game Parameters\Default Work Unit\volume"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1730564753" Language="SFX" Hash="2438766990">
+		<SoundBank Id="1730564753" Language="SFX" Hash="3384215243">
 			<ObjectPath>\SoundBanks\Default Work Unit\Musics</ObjectPath>
 			<ShortName>Musics</ShortName>
 			<Path>Musics.bnk</Path>
@@ -141,7 +141,7 @@
 				<Trigger Id="2417839336" Name="Kill_Ennemy" ObjectPath="\Triggers\Musics\Kill_Ennemy"/>
 			</Triggers>
 		</SoundBank>
-		<SoundBank Id="1761240301" Language="SFX" Hash="894435595">
+		<SoundBank Id="1761240301" Language="SFX" Hash="679536170">
 			<ObjectPath>\SoundBanks\Default Work Unit\Sound_Effects</ObjectPath>
 			<ShortName>Sound_Effects</ShortName>
 			<Path>Sound_Effects.bnk</Path>
@@ -179,6 +179,18 @@
 						<File Id="547354128" Language="SFX">
 							<ShortName>Coin_Collect.wav</ShortName>
 							<Path>SFX\Coin_Collect_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1786804762" Name="Damage" ObjectPath="\Events\Sound Effects\Player\Damage" DurationType="OneShot" DurationMin="0.328353" DurationMax="0.396918">
+					<IncludedMemoryFiles>
+						<File Id="597208161" Language="SFX">
+							<ShortName>Damage 2.wav</ShortName>
+							<Path>SFX\Damage 2_10C4C929.wem</Path>
+						</File>
+						<File Id="819858697" Language="SFX">
+							<ShortName>Damage 1.wav</ShortName>
+							<Path>SFX\Damage 1_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

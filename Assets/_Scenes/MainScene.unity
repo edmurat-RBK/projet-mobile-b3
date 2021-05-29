@@ -167,11 +167,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5201864552955546972, guid: f27be8b1fa998da4ebe5076bdefad089,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6659876128593822074, guid: f27be8b1fa998da4ebe5076bdefad089,
         type: 3}
       propertyPath: gameOver
       value: 
       objectReference: {fileID: 989554792485120936}
+    - target: {fileID: 6659876128593822074, guid: f27be8b1fa998da4ebe5076bdefad089,
+        type: 3}
+      propertyPath: shieldFX
+      value: 
+      objectReference: {fileID: 1934425006}
     - target: {fileID: 8662309422103473568, guid: f27be8b1fa998da4ebe5076bdefad089,
         type: 3}
       propertyPath: m_RootOrder
@@ -1245,6 +1255,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1934425006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5201864552955546972, guid: f27be8b1fa998da4ebe5076bdefad089,
+    type: 3}
+  m_PrefabInstance: {fileID: 253849638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &178440232398823892
 PrefabInstance:
   m_ObjectHideFlags: 0

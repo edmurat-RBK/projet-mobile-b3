@@ -8,6 +8,7 @@ public class DeadlyObstacles : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            
             if (GameManager.Instance.playerManager.shield <= 0)
             {
                 GameManager.Instance.playerManager.playerLife -= GameManager.Instance.playerManager.playerLife;

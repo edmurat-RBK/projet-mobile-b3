@@ -24,15 +24,16 @@ public class PlayerLife : MonoBehaviour
     
     [HideInInspector]
     public int objectsDestroyed;
-    
+
     float scrollSpeed;
-    
+
     private PlayerManager playerManager;
     private EnnemiManager ennemiManager;
     public GameObject shieldFX;
 
-    
-    private void Awake() {
+
+    private void Awake()
+    {
         playerManager = GameManager.Instance.playerManager;
         ennemiManager = GameManager.Instance.ennemiManager;
     }
@@ -44,15 +45,15 @@ public class PlayerLife : MonoBehaviour
         playerManager.playerLife = playerManager.maxPlayerLife;
         if (playerManager.shieldActive)
         {
-           playerManager.shield = playerManager.maxShield; 
-           
+            playerManager.shield = playerManager.maxShield;
+
         }
-        
+
     }
 
     void Update()
     {
-        
+
         LifeDecreaseOverTime();
 
         // RefillShield();
@@ -65,15 +66,15 @@ public class PlayerLife : MonoBehaviour
         {
             StartCoroutine(PlayerDeath());
         }
-        if (playerManager.shield<=0)
+        if (playerManager.shield <= 0)
         {
             playerManager.shieldActive = false;
         }
 
         if (shieldFX != null)
-           {
-               shieldFX.SetActive(playerManager.shieldActive);
-           }
+        {
+            shieldFX.SetActive(playerManager.shieldActive);
+        }
     }
 
 
@@ -82,13 +83,13 @@ public class PlayerLife : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if(other.tag == ("Mine"))
+        if (other.tag == ("Mine"))
         {
-            if (playerManager.shieldActive && ennemiManager.mineDamage<playerManager.shield)
+            if (playerManager.shieldActive && ennemiManager.mineDamage < playerManager.shield)
             {
                 playerManager.shield -= ennemiManager.mineDamage;
             }
-            else if (ennemiManager.mineDamage>playerManager.shield && playerManager.shieldActive)
+            else if (ennemiManager.mineDamage > playerManager.shield && playerManager.shieldActive)
             {
                 playerManager.playerLife -= (ennemiManager.mineDamage - playerManager.shield);
                 playerManager.shield = 0;
@@ -98,7 +99,7 @@ public class PlayerLife : MonoBehaviour
                 playerManager.playerLife -= ennemiManager.mineDamage;
             }
 
-            
+
         }
 
     }
@@ -107,7 +108,7 @@ public class PlayerLife : MonoBehaviour
     #region Fonctions
     void LifeDecreaseOverTime()
     {
-        if(playerManager.playerIsAlive)
+        if (playerManager.playerIsAlive)
         {
             playerManager.playerLife -= (playerManager.lifeDecreaseSpeed * playerManager.decreaseMultiplicator * Time.deltaTime);
         }
@@ -115,41 +116,46 @@ public class PlayerLife : MonoBehaviour
 
     public IEnumerator PlayerDeath()
     {
-        
+
         if (!playerManager.revive)
         {
-            
+
+
+            explosionFX.SetActive(false);
             explosionFX.SetActive(true);
+            playerManager.isInMenu = true;
             playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("isHurt");
             AudioManager.AMInstance.explosionAudio.Post(gameObject);
             playerManager.playerIsAlive = false;
             playerManager.revive = false;
             //DataManager.DMInstance.Save(GameManager.Instance.highScoreManager.displayedScore,GameManager.Instance.economicManager.coinCounter);
             GameManager.Instance.terrainManager.scrollSpeed = 0;
-            
-            
-            
+
+
+
             yield return new WaitForSeconds(2f);
             gameOver.SetActive(true);
-            gameOver.GetComponent<Gameover>().CalculateScore(enemiesDestroyed,objectsDestroyed,GameManager.Instance.economicManager.coinCounter,FindObjectOfType<UIDisplay>().displayedScore);
-            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
+            gameOver.GetComponent<Gameover>().CalculateScore(enemiesDestroyed, objectsDestroyed, GameManager.Instance.economicManager.coinCounter, FindObjectOfType<UIDisplay>().displayedScore);
+            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore, GameManager.Instance.economicManager.coinCounter, GameManager.Instance.economicManager.coinVioletCounter);
         }
         else if (playerManager.revive)
         {
             reviveFX.SetActive(false);
+            playerManager.isInMenu = false;
             GameManager.Instance.terrainManager.scrollSpeed = scrollSpeed;
             Debug.Log("hummmm0");
             playerManager.playerIsAlive = true;
             playerManager.playerLife = playerManager.maxPlayerLife;
             reviveFX.SetActive(true);
+            playerManager.revive = false;
             yield return 0;
-            
-            
-            
-        }
-        
 
-        
+
+
+        }
+
+
+
     }
 
     public void MainMenu()
