@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class UIDisplay : MonoBehaviour
 {
-    [Header ("Highscore")]
+    public Tutorial tutorial;
+    [Header("Highscore")]
     public Text highScoreText;
     float highScore;
     public int displayedScore;
@@ -14,7 +15,7 @@ public class UIDisplay : MonoBehaviour
     [HideInInspector]
     public bool multiply;
 
-    [Header ("Life")]
+    [Header("Life")]
     public Text playerLife;
     public Slider hpSlider;
     int playerHp;
@@ -23,7 +24,8 @@ public class UIDisplay : MonoBehaviour
     public Text playerCoins;
     void Start()
     {
-        if(multiply)
+        tutorial = FindObjectOfType<Tutorial>();
+        if (multiply)
         {
             multiplier = 2;
             StartCoroutine(StopMulti());
@@ -32,7 +34,7 @@ public class UIDisplay : MonoBehaviour
         {
             multiplier = 1;
         }
-        if(GameManager.Instance.economicManager.doubleCoins)
+        if (GameManager.Instance.economicManager.doubleCoins)
         {
             StartCoroutine(StopDoubleCoins());
         }
@@ -43,15 +45,15 @@ public class UIDisplay : MonoBehaviour
     void Update()
     {
         #region highscore
-        displayedScore = (int)highScore; 
+        displayedScore = (int)highScore;
 
-        highScoreText.text = displayedScore.ToString(); 
-        
+        highScoreText.text = displayedScore.ToString();
+
         highScore = highScore + (GameManager.Instance.terrainManager.scrollSpeed / GameManager.Instance.terrainManager.baseScrollspeed) * Time.deltaTime * multiplier;
         #endregion
 
         #region Life
-        hpSlider.value = GameManager.Instance.playerManager.playerLife/GameManager.Instance.playerManager.maxPlayerLife;
+        hpSlider.value = GameManager.Instance.playerManager.playerLife / GameManager.Instance.playerManager.maxPlayerLife;
         playerHp = (int)GameManager.Instance.playerManager.playerLife;
         playerLife.text = playerHp.ToString();
         #endregion
@@ -75,10 +77,12 @@ public class UIDisplay : MonoBehaviour
     {
         ShopData data = DataManager.DMInstance.LoadShop();
         Debug.Log(data);
-        
+
         if (data != null)
         {
-           Debug.Log(data.startShield);
+            
+            GameManager.Instance.playerManager.tutorial = data.tutorial;
+            tutorial.StartTutorial();
             GameManager.Instance.playerManager.boostCharges += data.unlockBoost;
             GameManager.Instance.playerManager.revive = data.revive;
             GameManager.Instance.playerManager.shieldActive = data.startShield;
@@ -86,6 +90,6 @@ public class UIDisplay : MonoBehaviour
             GameManager.Instance.economicManager.doubleCoins = data.doubleCoins;
             multiply = data.scoreMulti;
         }
-        
+
     }
 }

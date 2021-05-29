@@ -14,6 +14,7 @@ public class MainMenu : MonoBehaviour
     public GameObject questsButtons;
 
     public ShopMacro1 shopMacro;
+    public LoadMenu loadMenu;
     
     private void Start() {
         
@@ -21,7 +22,7 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeScene(int index)
     {
-        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield);
+        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield,loadMenu.tutorial);
         SceneManager.LoadScene(index);
         AudioManager.AMInstance.UIStartAudio.Post(gameObject);
         AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
@@ -37,7 +38,7 @@ public class MainMenu : MonoBehaviour
     }
     public void CloseShop()
     {
-        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield);
+        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield,loadMenu.tutorial);
         Debug.Log(shopMacro.boostUnlocked);
         shopButtons.SetActive(false);
         mainMenuButtons.SetActive(true);

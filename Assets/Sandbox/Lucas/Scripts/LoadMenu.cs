@@ -12,6 +12,7 @@ public class LoadMenu : MonoBehaviour
     public int highscore;
     public int coins;
     public int purpleCoins;
+    public bool tutorial;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,10 @@ public class LoadMenu : MonoBehaviour
             coins = data.coinsCollected;
             highscore = data.highscore;
             
+        }
+        else
+        {
+           tutorial = true; 
         }
         DisplayValues();
     }

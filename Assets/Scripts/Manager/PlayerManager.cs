@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour
     public bool isInMenu;
     public bool revive;
     public int boostCharges;
+    public bool tutorial;
     
     public bool playerIsAlive;
     public bool playerIsBoosting = false;
