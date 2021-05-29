@@ -6,6 +6,7 @@ public class PlayerCoin : MonoBehaviour
 {
     public int coinValue = 1;
     GameManager gameManager;
+    public GameObject coinFx;
 
     private void Start()
     {
@@ -18,11 +19,15 @@ public class PlayerCoin : MonoBehaviour
         {
             if (gameManager.economicManager.doubleCoins)
             {
+                coinFx.SetActive(false);
                 gameManager.economicManager.coinCounter += (int)(coinValue * gameManager.economicManager.coinsMultiplier);
+                coinFx.SetActive(true);
             }
             else
             {
+                coinFx.SetActive(false);
                 gameManager.economicManager.coinCounter += coinValue;
+                coinFx.SetActive(true);
             }
 
             AudioManager.AMInstance.coinCollectAudio.Post(gameObject);

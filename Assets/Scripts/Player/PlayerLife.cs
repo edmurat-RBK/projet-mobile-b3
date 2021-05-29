@@ -17,9 +17,11 @@ public class PlayerLife : MonoBehaviour
 {
     public GameObject explosionFX;
     public GameObject gameOver;
+    public GameObject reviveFX;
 
     [HideInInspector]
     public int enemiesDestroyed;
+    
     [HideInInspector]
     public int objectsDestroyed;
     
@@ -134,10 +136,12 @@ public class PlayerLife : MonoBehaviour
         }
         else if (playerManager.revive)
         {
+            reviveFX.SetActive(false);
             GameManager.Instance.terrainManager.scrollSpeed = scrollSpeed;
             Debug.Log("hummmm0");
             playerManager.playerIsAlive = true;
             playerManager.playerLife = playerManager.maxPlayerLife;
+            reviveFX.SetActive(true);
             yield return 0;
             
             

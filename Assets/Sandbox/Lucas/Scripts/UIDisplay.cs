@@ -21,6 +21,8 @@ public class UIDisplay : MonoBehaviour
 
     [Header("Money")]
     public Text playerCoins;
+    public GameObject multiplicateurCoinFX;
+
     void Start()
     {
         if(multiply)
@@ -34,6 +36,7 @@ public class UIDisplay : MonoBehaviour
         }
         if(GameManager.Instance.economicManager.doubleCoins)
         {
+            multiplicateurCoinFX.SetActive(true);
             StartCoroutine(StopDoubleCoins());
         }
         LoadValues();
@@ -70,6 +73,7 @@ public class UIDisplay : MonoBehaviour
     {
         yield return new WaitForSeconds(15);
         GameManager.Instance.economicManager.doubleCoins = false;
+        multiplicateurCoinFX.SetActive(false);
     }
     void LoadValues()
     {

@@ -6,6 +6,7 @@ public class Attaque : MonoBehaviour
 {
     Boost boostRef;
     public int enemiesDestroyed;
+    public GameObject essenceFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,10 @@ public class Attaque : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ennemy") && boostRef.isBoosting)
         {
+            essenceFX.SetActive(false);
             collision.gameObject.GetComponent<GlobalEnnemiBehavior>().life --;
             GetComponent<PlayerLife>().enemiesDestroyed += 1;
+            essenceFX.SetActive(true);
             GameManager.Instance.playerManager.player.GetComponent<PlayerController>().animator.SetTrigger("Kill");
             Debug.Log("KABOOOOOM");
         }

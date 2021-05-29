@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -244,6 +244,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f27be8b1fa998da4ebe5076bdefad089, type: 3}
+--- !u!1 &253849639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2325255376758654262, guid: f27be8b1fa998da4ebe5076bdefad089,
+    type: 3}
+  m_PrefabInstance: {fileID: 253849638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &436394632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7900983418033125458, guid: 25134542b13beb04dbf8684efa4e454d,
@@ -675,6 +681,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 505797521971181059, guid: 9e799451dc12584459dceca1a4b12058,
+        type: 3}
+      propertyPath: multiplicateurCoinFX
+      value: 
+      objectReference: {fileID: 253849639}
     - target: {fileID: 3077346392114621605, guid: 9e799451dc12584459dceca1a4b12058,
         type: 3}
       propertyPath: m_Name
