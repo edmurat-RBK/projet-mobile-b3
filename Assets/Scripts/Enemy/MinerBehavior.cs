@@ -65,7 +65,14 @@ public class MinerBehavior : GlobalEnnemiBehavior
     }
 
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Limites")
+        {
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.minerStored);
+        }
+    }
 
 
     IEnumerator attackDuration()

@@ -90,6 +90,11 @@ public class BumperBehavior : GlobalEnnemiBehavior
                 StartCoroutine(BumpCoolDown());
             }
         }
+        else if(collision.gameObject.tag == "Limites")
+        {
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
+        }
     }
 
 

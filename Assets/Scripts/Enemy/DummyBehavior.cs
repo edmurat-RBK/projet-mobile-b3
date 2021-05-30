@@ -50,7 +50,14 @@ public class DummyBehavior : GlobalEnnemiBehavior
     }
 
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Limites")
+        {
+            ResetEnemy();
+            Teleport(GameManager.Instance.otherWorldManager.dummyStored);
+        }
+    }
 
 
     void ResetEnemy()
