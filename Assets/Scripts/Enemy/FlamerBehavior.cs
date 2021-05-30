@@ -81,7 +81,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
         Vector3 position = transform.position;
         position.z -= 60;
 
-
+        Debug.Log("Feu");
         GameObject fireTail = Instantiate(fireTailPrefab, position, transform.rotation, transform);
         AudioManager.AMInstance.flamerStartAudio.Post(gameObject);
 

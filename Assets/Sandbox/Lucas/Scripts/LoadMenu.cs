@@ -24,7 +24,7 @@ public class LoadMenu : MonoBehaviour
     {
         Datas data = DataManager.DMInstance.Load();
         
-        Debug.Log(data);
+
         if (data != null)
         {
             

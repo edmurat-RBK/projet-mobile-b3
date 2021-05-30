@@ -8,7 +8,7 @@ public class PlayerDeadlyObstacles : MonoBehaviour
     {
         if (collision.gameObject.tag == "DeadlyObstacle")
         {
-            Debug.Log("aaaaaaaaaaaaa");
+
             if (GameManager.Instance.playerManager.shield <= 0)
             {
                 GameManager.Instance.playerManager.playerLife -= GameManager.Instance.playerManager.playerLife;
