@@ -40,7 +40,7 @@ public class DataManager : MonoBehaviour
     public void Save(int highscore,int coins,int purpleCoins)
     {
         StreamWriter streamWriter = new StreamWriter(path, false);
-        Datas data = new Datas { highscore = highscore,coinsCollected = coins};
+        Datas data = new Datas { highscore = highscore,coinsCollected = coins,purpleCoins = purpleCoins};
 
         serializer.Serialize(streamWriter, data);
         streamWriter.Close();
