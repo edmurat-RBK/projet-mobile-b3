@@ -27,8 +27,9 @@ public class LoadMenu : MonoBehaviour
 
         if (data != null)
         {
-            
+            purpleCoins += data.purpleCoins;
             coins = data.coinsCollected;
+            Debug.Log(data.purpleCoins);
             highscore = data.highscore;
             
         }
