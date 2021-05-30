@@ -79,7 +79,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
         readyToFlaming = true;
 
         Vector3 position = transform.position;
-        position.z -= 60;
+        position.z -= 5;
 
         Debug.Log("Feu");
         GameObject fireTail = Instantiate(fireTailPrefab, position, transform.rotation, transform);
