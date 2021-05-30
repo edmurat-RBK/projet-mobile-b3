@@ -27,9 +27,9 @@ public class WaveManager : MonoBehaviour
         otherWorldManager = GameManager.Instance.otherWorldManager;
 
 
-        spawnPointList.Add(new Vector3(-10, 2, 70));
-        spawnPointList.Add(new Vector3(0, 2, 70));
-        spawnPointList.Add(new Vector3(10, 2, 70));
+        spawnPointList.Add(new Vector3(-60, 3, 70));
+        spawnPointList.Add(new Vector3(0, 3, 70));
+        spawnPointList.Add(new Vector3(60, 3, 70));
     }
     private void Update()
     {
