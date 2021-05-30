@@ -18,7 +18,7 @@ public class Tutorial : MonoBehaviour
 
     public void StartTutorial()
     {
-        if (playerManager.tutorial)
+        if (playerManager.tutorial == 1)
         {
             Debug.Log("okiokki");
             tutorialObject.SetActive(true);

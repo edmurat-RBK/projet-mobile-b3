@@ -45,7 +45,7 @@ public class DataManager : MonoBehaviour
         serializer.Serialize(streamWriter, data);
         streamWriter.Close();
     }
-    public void ShopSave(int unlockBoost,bool scoreMulti,bool doubleCoins,bool revive,int maxLife,bool startShield,bool tutorial)
+    public void ShopSave(int unlockBoost,bool scoreMulti,bool doubleCoins,bool revive,int maxLife,bool startShield,int tutorial)
     {
         StreamWriter streamWriter = new StreamWriter(path2, false);
         ShopData data = new ShopData {unlockBoost = unlockBoost,scoreMulti = scoreMulti,doubleCoins = doubleCoins,revive=revive,maxLife=maxLife,startShield = startShield,tutorial = tutorial};
