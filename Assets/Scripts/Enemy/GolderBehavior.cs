@@ -18,7 +18,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.dummyLife;
-        explosionGolderDeath.SetActive(false);
+        
         StartCoroutine(RandomiseDirection());
     }
 
@@ -56,7 +56,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(explosionGolderDeath);
+            Instantiate(explosionGolderDeath, transform.position, transform.rotation);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.golderStored, ennemiManager.golderLoot);
         }

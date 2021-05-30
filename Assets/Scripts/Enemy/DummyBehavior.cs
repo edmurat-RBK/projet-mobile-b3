@@ -19,7 +19,7 @@ public class DummyBehavior : GlobalEnnemiBehavior
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.dummyLife;
-        explosionDeathDummy.SetActive(false);
+        
         StartCoroutine(RandomiseDirection());
 
         
@@ -42,7 +42,7 @@ public class DummyBehavior : GlobalEnnemiBehavior
 
         if(life <= 0)
         {
-            Instantiate(explosionDeathDummy);
+            Instantiate(explosionDeathDummy, transform.position, transform.rotation);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.dummyStored, ennemiManager.dummyLoot);
         }

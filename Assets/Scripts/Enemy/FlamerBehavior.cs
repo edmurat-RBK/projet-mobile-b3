@@ -21,7 +21,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.flamerLife;
         StartCoroutine(RandomiseDirection());
-        explosionDeath.SetActive(false);
+        
     }
 
     private void Update()
@@ -62,7 +62,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
-            Instantiate(explosionDeath);
+            Instantiate(explosionDeath, transform.position, transform.rotation);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.flamerLoot);
         }

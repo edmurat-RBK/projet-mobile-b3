@@ -19,7 +19,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.minerLife;
-        explosionDeathMiner.SetActive(false);
+        
         StartCoroutine(RandomiseDirection());
     }
 
