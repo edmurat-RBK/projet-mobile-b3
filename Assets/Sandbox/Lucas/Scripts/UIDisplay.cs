@@ -84,7 +84,7 @@ public class UIDisplay : MonoBehaviour
         {
             
             GameManager.Instance.playerManager.tutorial = data.tutorial;
-            tutorial.StartTutorial();
+            // tutorial.StartTutorial();
             GameManager.Instance.playerManager.boostCharges += data.unlockBoost;
             GameManager.Instance.playerManager.revive = data.revive;
             GameManager.Instance.playerManager.shieldActive = data.startShield;

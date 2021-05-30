@@ -16,6 +16,8 @@ public class MainMenu : MonoBehaviour
     public ShopMacro1 shopMacro;
     public LoadMenu loadMenu;
     
+
+    public GameObject tuto;
     private void Start() 
     {
         
@@ -29,13 +31,10 @@ public class MainMenu : MonoBehaviour
         AudioManager.AMInstance.UIStartAudio.Post(gameObject);
         AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
     }
-    public void ChangeSceneTuto(int index)
+    public void DisplayTuto()
     {
-        loadMenu.tutorial = true;
-        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield,loadMenu.tutorial);
-        SceneManager.LoadScene(index);
-        AudioManager.AMInstance.UIStartAudio.Post(gameObject);
-        AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
+        tuto.SetActive(true);
+        GetComponent<Tutorial>().NextStep();
     }
 
     public void OpenShop()

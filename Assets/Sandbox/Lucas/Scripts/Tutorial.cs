@@ -13,19 +13,19 @@ public class Tutorial : MonoBehaviour
     PlayerManager playerManager;    // Start is called before the first frame update
     void Start()
     {
-        playerManager = GameManager.Instance.playerManager;
+        // playerManager = GameManager.Instance.playerManager;
     }
 
-    public void StartTutorial()
-    {
-        if (playerManager.tutorial)
-        {
-            Debug.Log("okiokki");
-            tutorialObject.SetActive(true);
-            Time.timeScale = 0;
-            NextStep();
-        }
-    }
+    // public void StartTutorial()
+    // {
+    //     if (playerManager.tutorial)
+    //     {
+    //         Debug.Log("okiokki");
+    //         tutorialObject.SetActive(true);
+    //         Time.timeScale = 0;
+    //         NextStep();
+    //     }
+    // }
     // Update is called once per frame
     public void EndTutorial()
     {
