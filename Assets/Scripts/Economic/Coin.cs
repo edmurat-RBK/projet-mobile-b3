@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
     {
         if(coinNeedToMove)
         {
-            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), GameManager.Instance.terrainManager.scrollSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + (Vector3.back * 100), 10 * Time.deltaTime);
         }
 
         if (transform.position.z < gameManager.ennemiManager.deadZone.position.z)

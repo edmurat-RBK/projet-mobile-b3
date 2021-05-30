@@ -79,11 +79,12 @@ public class GolderBehavior : GlobalEnnemiBehavior
         if (!acceleration)
         {
             Vector3 position = transform.position;
-            position.y += 0;
 
             AudioManager.AMInstance.coinDropAudio.Post(gameObject);
 
+            Debug.Log("Drop Coin");
             GameObject coin = Instantiate(coinPrefab, position, transform.rotation);
+            Debug.Log(coin);
             coin.GetComponent<Coin>().coinNeedToMove = true;
         }
 
