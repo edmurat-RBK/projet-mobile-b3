@@ -4,4 +4,5 @@ public class Datas
     public int purpleCoins;
     public int highscore;
     public int coinsCollected;
+    public int tutorial;
 }

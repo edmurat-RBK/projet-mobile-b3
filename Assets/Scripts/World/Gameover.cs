@@ -56,7 +56,7 @@ public class Gameover : MonoBehaviour
         Destroy(AudioManager.AMInstance.gameObject);
         AudioManager.AMInstance = null;
         
-        DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter);
+        DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore,GameManager.Instance.economicManager.coinCounter,GameManager.Instance.economicManager.coinVioletCounter,GameManager.Instance.playerManager.tutorial);
         SceneManager.LoadScene("Menu Start");
     }
 }

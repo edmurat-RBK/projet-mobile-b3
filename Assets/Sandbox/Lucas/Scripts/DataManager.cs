@@ -37,10 +37,10 @@ public class DataManager : MonoBehaviour
         path2 = Path.Combine(Application.persistentDataPath, "ShopData.xml");
     }
 
-    public void Save(int highscore,int coins,int purpleCoins)
+    public void Save(int highscore,int coins,int purpleCoins,int tutorial)
     {
         StreamWriter streamWriter = new StreamWriter(path, false);
-        Datas data = new Datas { highscore = highscore,coinsCollected = coins,purpleCoins = purpleCoins};
+        Datas data = new Datas { highscore = highscore,coinsCollected = coins,purpleCoins = purpleCoins,tutorial = tutorial};
 
         serializer.Serialize(streamWriter, data);
         streamWriter.Close();

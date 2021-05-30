@@ -27,6 +27,7 @@ public class LoadMenu : MonoBehaviour
 
         if (data != null)
         {
+            tutorial = data.tutorial;
             purpleCoins += data.purpleCoins;
             coins = data.coinsCollected;
             Debug.Log(data.purpleCoins);
@@ -39,7 +40,7 @@ public class LoadMenu : MonoBehaviour
 
     void SaveValues()
     {
-        DataManager.DMInstance.Save(highscore,coins,purpleCoins);
+        DataManager.DMInstance.Save(highscore,coins,purpleCoins,tutorial);
     }
 
     public void DisplayValues()

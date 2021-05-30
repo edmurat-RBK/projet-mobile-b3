@@ -139,7 +139,7 @@ public class PlayerLife : MonoBehaviour
             yield return new WaitForSeconds(2f);
             gameOver.SetActive(true);
             gameOver.GetComponent<Gameover>().CalculateScore(enemiesDestroyed, objectsDestroyed, GameManager.Instance.economicManager.coinCounter, FindObjectOfType<UIDisplay>().displayedScore);
-            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore, GameManager.Instance.economicManager.coinCounter, GameManager.Instance.economicManager.coinVioletCounter);
+            DataManager.DMInstance.Save(FindObjectOfType<UIDisplay>().displayedScore, GameManager.Instance.economicManager.coinCounter, GameManager.Instance.economicManager.coinVioletCounter,GameManager.Instance.playerManager.tutorial);
         }
         else if (playerManager.revive)
         {
