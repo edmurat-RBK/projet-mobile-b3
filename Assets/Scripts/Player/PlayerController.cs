@@ -10,6 +10,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController pmInstance;
     public Animator animator;
     public float speed;
     public bool move;
@@ -38,7 +39,10 @@ public class PlayerController : MonoBehaviour
 
     bool isBumped = false;
 
-
+    private void Awake()
+    {
+        pmInstance = this;
+    }
 
     private void OnEnable()
     {
@@ -269,7 +273,9 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.shopManager.shopUI.SetActive(true);
             GameManager.Instance.playerManager.isInMenu = true;
             StartCoroutine(DesactivateShop(other.gameObject));
-        
+
+            direction2.x = 0;
+            direction.x = 0;
         }
     }
 

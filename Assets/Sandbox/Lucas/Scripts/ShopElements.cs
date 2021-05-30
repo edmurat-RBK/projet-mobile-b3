@@ -45,6 +45,8 @@ public class ShopElements : MonoBehaviour
         GameManager.Instance.shopManager.shopActive = false;
         GameManager.Instance.shopManager.shopUI.SetActive(false);
         GameManager.Instance.playerManager.isInMenu = false;
+        PlayerController.pmInstance.direction.x = 0;
+        PlayerController.pmInstance.direction2.x = 0;
         Time.timeScale = 1;
         
     }

@@ -16,7 +16,8 @@ public class MainMenu : MonoBehaviour
     public ShopMacro1 shopMacro;
     public LoadMenu loadMenu;
     
-    private void Start() {
+    private void Start() 
+    {
         
     }
 
