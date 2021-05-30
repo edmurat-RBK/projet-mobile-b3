@@ -13,7 +13,7 @@ public class Gameover : MonoBehaviour
     // public Text scoreText;
     public Text finalScoreText;
     // Start is called before the first frame update
-    
+
     public void CalculateScore(int enemiesDestroyed,int objectsDestroyed,int coinsPickedUp,int score)
     {
         finalScore = (enemiesDestroyed/10 )+ (objectsDestroyed/10) + (coinsPickedUp/10) + (score/100);
@@ -30,9 +30,20 @@ public class Gameover : MonoBehaviour
     }
     public void Revive()
     {
-        GameManager.Instance.playerManager.revive = true;
-        StartCoroutine(GameManager.Instance.playerManager.player.GetComponent<PlayerLife>().PlayerDeath());
-        gameObject.SetActive(false);
+        if(GameManager.Instance.economicManager.coinVioletCounter >= GameManager.Instance.economicManager.revivePrice)
+        {
+            GameManager.Instance.playerManager.revive = true;
+            StartCoroutine(GameManager.Instance.playerManager.player.GetComponent<PlayerLife>().PlayerDeath());
+            gameObject.SetActive(false);
+
+            GameManager.Instance.economicManager.coinVioletCounter -= GameManager.Instance.economicManager.revivePrice;
+        }
+        else
+        {
+            AudioManager.AMInstance.UIImpossibleAudio.Post(gameObject);
+        }
+
+        
     }
 
 
