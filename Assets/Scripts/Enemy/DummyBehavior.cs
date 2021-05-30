@@ -42,22 +42,13 @@ public class DummyBehavior : GlobalEnnemiBehavior
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.dummyStored, ennemiManager.dummyLoot);
         }
-        if(transform.position.z < ennemiManager.deadZone.position.z)
+        if(transform.position.z < ennemiManager.deadZone.position.z || transform.position.x < -100 || transform.position.x > 100)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.dummyStored);
         }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Limites")
-        {
-            ResetEnemy();
-            Teleport(GameManager.Instance.otherWorldManager.dummyStored);
-        }
-    }
 
 
     void ResetEnemy()

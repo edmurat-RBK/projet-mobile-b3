@@ -54,9 +54,8 @@ public class MinerBehavior : GlobalEnnemiBehavior
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.minerLoot);
         }
-        if (transform.position.z < ennemiManager.deadZone.position.z)
+        if (transform.position.z < ennemiManager.deadZone.position.z || transform.position.x < -100 || transform.position.x > 100)
         {
-            Debug.Log("Miner Out");
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
         }
@@ -64,15 +63,6 @@ public class MinerBehavior : GlobalEnnemiBehavior
         animator.SetBool("bomberIsAttacking",readyToMining);
     }
 
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Limites")
-        {
-            ResetEnemy();
-            Teleport(GameManager.Instance.otherWorldManager.minerStored);
-        }
-    }
 
 
     IEnumerator attackDuration()

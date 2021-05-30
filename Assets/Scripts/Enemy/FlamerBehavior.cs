@@ -57,12 +57,13 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
 
 
+
         if (life <= 0)
         {
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.flamerLoot);
         }
-        if(transform.position.z < ennemiManager.deadZone.position.z)
+        if(transform.position.z < ennemiManager.deadZone.position.z || transform.position.x < -100 || transform.position.x > 100)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.flamerStored);
@@ -71,15 +72,6 @@ public class FlamerBehavior : GlobalEnnemiBehavior
     }
 
 
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Limites")
-        {
-            ResetEnemy();
-            Teleport(GameManager.Instance.otherWorldManager.flamerStored);
-        }
-    }
 
     IEnumerator attackDuration()
     {

@@ -59,7 +59,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.bumperLoot);
         }
-        if(transform.position.z < ennemiManager.deadZone.position.z)
+        if(transform.position.z < ennemiManager.deadZone.position.z || transform.position.x < -100 || transform.position.x > 100)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
@@ -90,11 +90,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
                 StartCoroutine(BumpCoolDown());
             }
         }
-        else if(collision.gameObject.tag == "Limites")
-        {
-            ResetEnemy();
-            Teleport(GameManager.Instance.otherWorldManager.bumpedStored);
-        }
+        
     }
 
 

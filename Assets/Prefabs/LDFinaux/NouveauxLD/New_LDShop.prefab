@@ -616,6 +616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1903976371331719108}
   - component: {fileID: 1903976371331719109}
+  - component: {fileID: 2037147234444836784}
   m_Layer: 17
   m_Name: Droite
   m_TagString: Limites
@@ -650,6 +651,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 24.79969, y: 33.057938, z: 310.3987}
   m_Center: {x: 11.899845, y: 16.028969, z: -11.464218}
+--- !u!65 &2037147234444836784
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903976371331719111}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 24.79969, y: 33.057938, z: 310.3987}
+  m_Center: {x: 11.899845, y: 16.028969, z: -11.464218}
 --- !u!1 &1903976371808244485
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1903976371808244506}
   - component: {fileID: 1903976371808244507}
+  - component: {fileID: 1739037400549195499}
   m_Layer: 17
   m_Name: Gauche
   m_TagString: Limites
@@ -690,6 +705,19 @@ BoxCollider:
   m_GameObject: {fileID: 1903976371808244485}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 24.79969, y: 33.057938, z: 310.9176}
+  m_Center: {x: 11.899845, y: 16.028969, z: -11.204773}
+--- !u!65 &1739037400549195499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903976371808244485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 24.79969, y: 33.057938, z: 310.9176}

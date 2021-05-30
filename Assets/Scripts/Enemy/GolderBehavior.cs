@@ -56,7 +56,7 @@ public class GolderBehavior : GlobalEnnemiBehavior
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.golderStored, ennemiManager.golderLoot);
         }
-        if(transform.position.z < ennemiManager.deadZone.position.z)
+        if(transform.position.z < ennemiManager.deadZone.position.z || transform.position.x < -100 || transform.position.x > 100)
         {
             ResetEnemy();
             Teleport(GameManager.Instance.otherWorldManager.golderStored);
@@ -65,15 +65,6 @@ public class GolderBehavior : GlobalEnnemiBehavior
         animator.SetBool("coinIsDropping",hasStartDroping);
     }
 
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Limites")
-        {
-            ResetEnemy();
-            Teleport(GameManager.Instance.otherWorldManager.golderStored);
-        }
-    }
     IEnumerator dropCoin()
     {
         if (hasStartDroping == false)

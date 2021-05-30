@@ -16,6 +16,7 @@ public class GlobalEnnemiBehavior : MonoBehaviour
     public LayerMask obstacleMask;
     public LayerMask playerMask;
     public LayerMask somethingBehindMask;
+    public LayerMask limitesLayer;
 
 
     public float speedMultiplicator = 1f;
@@ -223,6 +224,9 @@ public class GlobalEnnemiBehavior : MonoBehaviour
         {
             somethingBehind = false;
         }
+
+
+        
     }
 
 
