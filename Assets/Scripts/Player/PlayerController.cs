@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (ShopManager.Instance.shopActive)
+        if (GameManager.Instance.shopManager.shopActive)
         {
             return;
         }
@@ -265,11 +265,19 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.name == "Shop Trigger")
         {
             Time.timeScale = 0;
-            ShopManager.Instance.shopActive = true;
-            ShopManager.Instance.shopUI.SetActive(true);
+            GameManager.Instance.shopManager.shopActive = true;
+            GameManager.Instance.shopManager.shopUI.SetActive(true);
             GameManager.Instance.playerManager.isInMenu = true;
+            StartCoroutine(DesactivateShop(other.gameObject));
         
         }
+    }
+
+    IEnumerator DesactivateShop(GameObject triggerShop)
+    {
+        triggerShop.SetActive(false);
+        yield return new WaitForSeconds(2);
+        triggerShop.SetActive(true);
     }
 
 }

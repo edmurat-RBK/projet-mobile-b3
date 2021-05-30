@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ShopElements : MonoBehaviour
 {
-    ShopManager shopManager;
+    public ShopManager shopManager;
     EconomicManager economicManager;
     PlayerManager playerManager;
 
@@ -38,11 +38,14 @@ public class ShopElements : MonoBehaviour
         fuelMultiplier.text = shopManager.fuelMultiplierPrice.ToString();
         coinsMultiplier.text = shopManager.CoinsMultiplierPrice.ToString();
     }
+
     public void CloseShop()
     {
-        shopManager.shopActive = false;
-        shopManager.shopUI.SetActive(false);
+        Debug.Log(shopManager);
+        GameManager.Instance.shopManager.shopActive = false;
+        GameManager.Instance.shopManager.shopUI.SetActive(false);
         GameManager.Instance.playerManager.isInMenu = false;
+        Time.timeScale = 1;
         
     }
 

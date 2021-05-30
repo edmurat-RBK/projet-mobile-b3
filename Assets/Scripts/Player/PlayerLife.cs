@@ -31,6 +31,7 @@ public class PlayerLife : MonoBehaviour
     private EnnemiManager ennemiManager;
     public GameObject shieldFX;
 
+    public GameObject colliderPlayer;
 
     private void Awake()
     {
@@ -49,6 +50,7 @@ public class PlayerLife : MonoBehaviour
 
         }
 
+        colliderPlayer.SetActive(true);
     }
 
     void Update()
@@ -148,7 +150,9 @@ public class PlayerLife : MonoBehaviour
             playerManager.playerLife = playerManager.maxPlayerLife;
             reviveFX.SetActive(true);
             playerManager.revive = false;
+            StartCoroutine(DesactivateColliders());
             yield return 0;
+
 
 
 
@@ -156,6 +160,13 @@ public class PlayerLife : MonoBehaviour
 
 
 
+    }
+
+    IEnumerator DesactivateColliders()
+    {
+        colliderPlayer.SetActive(false);
+        yield return new WaitForSeconds(2);
+        colliderPlayer.SetActive(true);
     }
 
     public void MainMenu()

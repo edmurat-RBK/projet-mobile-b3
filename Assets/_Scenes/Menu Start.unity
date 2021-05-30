@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -128,6 +128,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: boostPrice
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: maxLifePrice
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: extraLifePrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: multiplierPrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: doubleCoinsPrice
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: startShieldPrice
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: boostPriceIncrement
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: maxLifePriceIncrement
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 830092514, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
+      propertyPath: startShieldPriceIncrement
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2637339453740406, guid: c4cc9a6704293bc4fb1a050d55d4f80f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -35,7 +35,7 @@ public class Shop : MonoBehaviour
     }
 
     public void CloseShop() { 
-        ShopManager.Instance.shopActive = false;
-        ShopManager.Instance.shopUI.SetActive(false);
+        GameManager.Instance.shopManager.shopActive = false;
+        GameManager.Instance.shopManager.shopUI.SetActive(false);
     }
 }

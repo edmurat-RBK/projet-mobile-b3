@@ -81,7 +81,7 @@ public class TerrainManager : MonoBehaviour
     {
         try
         {
-            if(!ShopManager.Instance.shopActive) {
+            if(!GameManager.Instance.shopManager.shopActive) {
                 MoveAllTerrains();
             }
         }
