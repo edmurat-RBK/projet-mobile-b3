@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlamerBehavior : GlobalEnnemiBehavior
 {
     public GameObject fireTailPrefab;
+    public GameObject explosionDeath;
 
     bool readyToFlaming = false;
     bool hasFinishAttack = false;
@@ -20,6 +21,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.flamerLife;
         StartCoroutine(RandomiseDirection());
+        explosionDeath.SetActive(false);
     }
 
     private void Update()
@@ -60,6 +62,7 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
+            Instantiate(explosionDeath);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.flamerLoot);
         }
@@ -102,5 +105,6 @@ public class FlamerBehavior : GlobalEnnemiBehavior
 
         readyToFlaming = false;
         hasFinishAttack = false;
+
     }
 }

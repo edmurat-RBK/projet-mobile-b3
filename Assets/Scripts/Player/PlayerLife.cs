@@ -47,6 +47,7 @@ public class PlayerLife : MonoBehaviour
         if (playerManager.shieldActive)
         {
             playerManager.shield = playerManager.maxShield;
+            shieldFX.SetActive(true);
 
         }
 
@@ -75,7 +76,7 @@ public class PlayerLife : MonoBehaviour
 
         if (shieldFX != null)
         {
-            shieldFX.SetActive(playerManager.shieldActive);
+            shieldFX.SetActive(true);
         }
     }
 

@@ -14,6 +14,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
     bool canBump = false;
     bool firstBump = true;
     Animator animator;
+    public GameObject explosionDeathBumper;
 
 
     private void Start()
@@ -23,6 +24,8 @@ public class BumperBehavior : GlobalEnnemiBehavior
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.bumperLife;
+        explosionDeathBumper.SetActive(false);
+
         StartCoroutine(RandomiseDirection());
     }
     private void Update()
@@ -56,6 +59,7 @@ public class BumperBehavior : GlobalEnnemiBehavior
 
         if (life <= 0)
         {
+            Instantiate(explosionDeathBumper);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.bumperLoot);
         }

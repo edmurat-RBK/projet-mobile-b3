@@ -11,12 +11,15 @@ using UnityEngine;
 public class DummyBehavior : GlobalEnnemiBehavior
 {
 
+    public GameObject explosionDeathDummy;
+
     private void Start()
     {
         ennemiManager = GameManager.Instance.ennemiManager;
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.dummyLife;
+        explosionDeathDummy.SetActive(false);
         StartCoroutine(RandomiseDirection());
 
         
@@ -39,6 +42,7 @@ public class DummyBehavior : GlobalEnnemiBehavior
 
         if(life <= 0)
         {
+            Instantiate(explosionDeathDummy);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.dummyStored, ennemiManager.dummyLoot);
         }
@@ -54,7 +58,7 @@ public class DummyBehavior : GlobalEnnemiBehavior
     void ResetEnemy()
     {
         GlobalReset();
-
+        
         life = ennemiManager.dummyLife;
     }
 }

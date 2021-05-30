@@ -8,6 +8,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
     bool readyToMining = false;
     bool hasFinishAttack = false;
+    public GameObject explosionDeathMiner;
 
     Animator animator;
 
@@ -18,6 +19,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
         playerManager = GameManager.Instance.playerManager;
         terrainManager = GameManager.Instance.terrainManager;
         life = ennemiManager.minerLife;
+        explosionDeathMiner.SetActive(false);
         StartCoroutine(RandomiseDirection());
     }
 
@@ -51,6 +53,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
         if (life <= 0 || transform.position.z < ennemiManager.deadZone.position.z)
         {
+            Instantiate(explosionDeathMiner);
             ResetEnemy();
             Death(GameManager.Instance.otherWorldManager.bumpedStored, ennemiManager.minerLoot);
         }
@@ -93,6 +96,7 @@ public class MinerBehavior : GlobalEnnemiBehavior
 
     void ResetEnemy()
     {
+        
         GlobalReset();
 
         life = ennemiManager.minerLife;
