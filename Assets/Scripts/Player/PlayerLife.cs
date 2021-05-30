@@ -78,11 +78,6 @@ public class PlayerLife : MonoBehaviour
             playerManager.shieldActive = false;
             shieldFX.SetActive(false);
         }
-
-        if (shieldFX != null)
-        {
-            shieldFX.SetActive(true);
-        }
     }
 
 
