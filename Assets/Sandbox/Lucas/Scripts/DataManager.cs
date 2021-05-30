@@ -37,7 +37,7 @@ public class DataManager : MonoBehaviour
         path2 = Path.Combine(Application.persistentDataPath, "ShopData.xml");
     }
 
-    public void Save(int highscore,int coins,int purpleCoins,int tutorial)
+    public void Save(int highscore,int coins,int purpleCoins,bool tutorial)
     {
         StreamWriter streamWriter = new StreamWriter(path, false);
         Datas data = new Datas { highscore = highscore,coinsCollected = coins,purpleCoins = purpleCoins,tutorial = tutorial};
@@ -45,7 +45,7 @@ public class DataManager : MonoBehaviour
         serializer.Serialize(streamWriter, data);
         streamWriter.Close();
     }
-    public void ShopSave(int unlockBoost,bool scoreMulti,bool doubleCoins,bool revive,int maxLife,bool startShield,int tutorial)
+    public void ShopSave(int unlockBoost,bool scoreMulti,bool doubleCoins,bool revive,int maxLife,bool startShield,bool tutorial)
     {
         StreamWriter streamWriter = new StreamWriter(path2, false);
         ShopData data = new ShopData {unlockBoost = unlockBoost,scoreMulti = scoreMulti,doubleCoins = doubleCoins,revive=revive,maxLife=maxLife,startShield = startShield,tutorial = tutorial};

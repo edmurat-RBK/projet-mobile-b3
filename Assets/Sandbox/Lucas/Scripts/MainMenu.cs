@@ -23,7 +23,15 @@ public class MainMenu : MonoBehaviour
 
     public void ChangeScene(int index)
     {
-        loadMenu.tutorial += 1 ;
+        
+        DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield,loadMenu.tutorial);
+        SceneManager.LoadScene(index);
+        AudioManager.AMInstance.UIStartAudio.Post(gameObject);
+        AudioManager.AMInstance.playerMotorAudio.Post(gameObject);
+    }
+    public void ChangeSceneTuto(int index)
+    {
+        loadMenu.tutorial = true;
         DataManager.DMInstance.ShopSave(shopMacro.boostUnlocked,shopMacro.multiplier,shopMacro.doubleCoins,shopMacro.revive,shopMacro.maxLife,shopMacro.startShield,loadMenu.tutorial);
         SceneManager.LoadScene(index);
         AudioManager.AMInstance.UIStartAudio.Post(gameObject);

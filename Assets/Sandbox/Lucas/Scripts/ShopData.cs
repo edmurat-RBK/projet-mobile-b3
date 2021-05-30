@@ -3,7 +3,7 @@
 
 public class ShopData
 {
-    public int tutorial;
+    public bool tutorial;
     public int unlockBoost;
     public bool scoreMulti;
     public bool doubleCoins;

@@ -12,7 +12,7 @@ public class LoadMenu : MonoBehaviour
     public int highscore;
     public int coins;
     public int purpleCoins;
-    public int tutorial;
+    public bool tutorial;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +27,7 @@ public class LoadMenu : MonoBehaviour
 
         if (data != null)
         {
-            tutorial = data.tutorial;
+            
             purpleCoins += data.purpleCoins;
             coins = data.coinsCollected;
             Debug.Log(data.purpleCoins);
@@ -38,10 +38,7 @@ public class LoadMenu : MonoBehaviour
         DisplayValues();
     }
 
-    void SaveValues()
-    {
-        DataManager.DMInstance.Save(highscore,coins,purpleCoins,tutorial);
-    }
+    
 
     public void DisplayValues()
     {
@@ -49,10 +46,5 @@ public class LoadMenu : MonoBehaviour
         coinsText.text = coins.ToString();
         purpleCoinsText.text = purpleCoins.ToString();
     }
-    private void Update() {
-        if (Keyboard.current.sKey.wasPressedThisFrame)
-        {
-            SaveValues();
-        }
-    }
+    
 }
