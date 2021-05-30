@@ -50,6 +50,10 @@ public class PlayerLife : MonoBehaviour
             shieldFX.SetActive(true);
 
         }
+        else
+        {
+            shieldFX.SetActive(false);
+        }
 
         colliderPlayer.SetActive(true);
     }
@@ -72,6 +76,7 @@ public class PlayerLife : MonoBehaviour
         if (playerManager.shield <= 0)
         {
             playerManager.shieldActive = false;
+            shieldFX.SetActive(false);
         }
 
         if (shieldFX != null)
